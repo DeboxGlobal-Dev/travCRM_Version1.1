@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Postdata extends Model
+class StateModel extends Model
 {
     use HasFactory;
-    protected $table = "posts";
+    protected $table = "master.stateMaster";
     protected $fillable = [
         'id',
-        'title',
-        'body',
+        'countryId',
+        'name',
+        'status',
     ];
 }
