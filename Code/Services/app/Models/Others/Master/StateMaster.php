@@ -19,6 +19,7 @@ class StateMaster extends Model
      'DateAdded',
      
     ];
+    
     public $timestamps = false;
 
 }

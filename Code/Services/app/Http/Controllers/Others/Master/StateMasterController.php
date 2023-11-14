@@ -10,7 +10,7 @@ use App\Models\Others\Master\StateMaster;
 class StateMasterController extends Controller
 {
     public function index(Request $request){
-        
+        call_logger($request);
         $statelist = StateMaster::orderBy('Name','ASC')->get();
         $totalRecord = count($statelist);
         if($totalRecord>0){
@@ -31,6 +31,7 @@ class StateMasterController extends Controller
 
     public function store(Request $request)
     {
+        call_logger($request);
         $val = $request->input('id');
         if ($val == '') {
              
