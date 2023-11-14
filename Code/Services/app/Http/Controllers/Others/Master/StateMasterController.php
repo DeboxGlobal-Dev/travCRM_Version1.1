@@ -9,15 +9,30 @@ use App\Models\Others\Master\StateMaster;
 
 class StateMasterController extends Controller
 {
-    public function index(){
-        $statelist = StateMaster::all();
-        return $statelist;
+    public function index(Request $request){
+        
+        $statelist = StateMaster::orderBy('Name','ASC')->get();
+        $totalRecord = count($statelist);
+        if($totalRecord>0){
+            return response()->json([
+                "Status" => 0, 
+                "TotalRecord" => $totalRecord, 
+                "DataList" => $statelist
+            ]);
+        }else{
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $totalRecord, 
+                "Message" => "No Record Found."
+            ]);
+        }
+        
     }
 
     public function store(Request $request)
     {
-          $val = $request->input('id');
-          if ($val == '') {
+        $val = $request->input('id');
+        if ($val == '') {
              
             $businessvalidation =array(
                 'Name' => 'required',
@@ -35,34 +50,35 @@ class StateMasterController extends Controller
                 'AddedBy' => $request->AddedBy,   
                 'Status' => $request->Status,
                 'DateAdded' => date('Y-m-d h:i:sa'),
-             ]);
-             if ($brand) {
-                return response()->json(['result' =>'Data added successfully!']);
+            ]);
+
+            if ($brand) {
+                return response()->json(['Message' =>'Data added successfully!']);
             } else {
-                return response()->json(['result' =>'Failed to add data.'], 500);
+                return response()->json(['Message' =>'Failed to add data.'], 500);
             }
           }
  
-          }else{
+        }else{
 
 
-                $id = $request->input('id');
-            
-                $edit = StateMaster::find($id);
-            
-                if ($edit) {
-                    $edit->Name = $request->input('Name');
-                    $edit->CountryId = $request->input('CountryId');
-                    $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->Status = $request->input('Status');
-                    $edit->DateUpdated = now();
-                    $edit->save();
-            
-                    return response()->json(['result' => 'Data updated successfully']);
-                } else {
-                    return response()->json(['result' => 'Failed to update data. Record not found.'], 404);
-                }
-          }
+            $id = $request->input('id');
+        
+            $edit = StateMaster::find($id);
+        
+            if ($edit) {
+                $edit->Name = $request->input('Name');
+                $edit->CountryId = $request->input('CountryId');
+                $edit->UpdatedBy = $request->input('UpdatedBy');
+                $edit->Status = $request->input('Status');
+                $edit->DateUpdated = now();
+                $edit->save();
+        
+                return response()->json(['Message' => 'Data updated successfully']);
+            } else {
+                return response()->json(['Message' => 'Failed to update data. Record not found.'], 404);
+            }
+        }
  
     
     
@@ -70,16 +86,16 @@ class StateMasterController extends Controller
  
   
      
-          public function destroy($id)
-          {
-             $brands = StateMaster::find($id);
-             $brands->delete();
- 
-            if ($brands) {
-                return response()->json(['result' =>'Data deleted successfully!']);
-          } else {
-                return response()->json(['result' =>'Failed to delete data.'], 500);
-          }
-          
-          }
+    public function destroy($id)
+    {
+        $brands = StateMaster::find($id);
+        $brands->delete();
+
+        if ($brands) {
+            return response()->json(['result' =>'Data deleted successfully!']);
+        } else {
+            return response()->json(['result' =>'Failed to delete data.'], 500);
+        }
+    
+    }
 }

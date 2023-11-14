@@ -20,4 +20,5 @@ class StateMaster extends Model
      
     ];
     public $timestamps = false;
+
 }

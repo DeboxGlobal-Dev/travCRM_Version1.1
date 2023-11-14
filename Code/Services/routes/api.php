@@ -14,6 +14,8 @@ Route::post('/CountryMaster',[CountryMasterController::class,'save']);
 
 Route::post('statelist',[StateMasterController::class,'index']);
 Route::post('addupdatestate',[StateMasterController::class,'store']);
+Route::delete('/statelist/{id}',[StateMasterController::class,'destroy']);
+//Route::post('deletestate',[StateMasterController::class,'destroy']);
 
 Route::post('/CityMaster',[CityMasterController::class,'save']);
 
@@ -24,3 +26,7 @@ Route::post('/BusinessTypeMaster',[BusinessTypeMasterController::class,'save']);
 Route::post('/LanguageMaster',[LanguageMasterController::class,'save']);
 
 Route::post('/users-api',[ExampleController::class,'apidata']);
+
+Route::get('/test',function(){
+    echo call_logger('Hi Satendra Gurjar');
+});
