@@ -1,20 +1,20 @@
 <?php
 
-Namespace App\Http\Controllers\Master;
+Namespace App\Http\Controllers\Others\Master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Master\StateMaster;
+use App\Models\Others\Master\StateMaster;
 
 class StateMasterController extends Controller
 {
     public function index(){
-        $student = StateMaster::all();
-        return $student;
+        $statelist = StateMaster::all();
+        return $statelist;
     }
 
-    public function save(Request $request)
+    public function store(Request $request)
     {
           $val = $request->input('id');
           if ($val == '') {
