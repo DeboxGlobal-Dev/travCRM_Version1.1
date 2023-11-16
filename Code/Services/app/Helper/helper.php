@@ -12,7 +12,7 @@ function call_logger($errorlog){
     
         $logfile=fopen(Storage::path($newfile),'a');
         
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = \Request::ip();
         date_default_timezone_set('Asia/Kolkata');
         $time = date('d-m-Y h:i:s A',time());
         $contents = "$ip\t$time\t$errorlog\r";

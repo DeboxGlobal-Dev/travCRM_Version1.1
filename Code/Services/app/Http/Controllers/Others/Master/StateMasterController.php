@@ -87,9 +87,9 @@ class StateMasterController extends Controller
  
   
      
-    public function destroy($id)
+    public function destroy(Request $request)
     {
-        $brands = StateMaster::find($id);
+        $brands = StateMaster::find($request->id);
         $brands->delete();
 
         if ($brands) {
