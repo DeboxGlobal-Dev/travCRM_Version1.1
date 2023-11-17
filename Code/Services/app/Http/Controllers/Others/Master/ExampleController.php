@@ -8,17 +8,27 @@ use DB;
 use App\Models\main;
 
 class ExampleController extends Controller
-{
-   public function apidata(Request $request)
+{   
+   public function index(){
+      $brands = main::all();
+      if(count($brands)>0){
+         return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
+      }else{
+         return response()->json(['message'=>'data not found'],404);
+      }
+ 
+     }
+     
+   public function save(Request $request)
    {
          $val = $request->input('id');
          if ($val === null) {
             $validationData =array(
-               'name' => 'required',
-               'description' => 'required',
-               'addedby' => 'required',
-               'updatedby' => 'required',
-               'status' => 'required',
+               'Name' => 'required',
+               'Description' => 'required',
+               'Addedby' => 'required',
+               'Updatedby' => 'required',
+               'Status' => 'required',
             );
             
             $validator = validator::make($request->all(), $validationData); 
@@ -27,11 +37,11 @@ class ExampleController extends Controller
       
            }else{
             $brand = main::create([
-               'name' => $request->name,
-               'description' => $request->description,   
-               'addedby' => $request->addedby,   
-               'updatedby' => $request->updatedby,   
-               'status' => $request->status,
+               'Name' => $request->Name,
+               'Description' => $request->Description,   
+               'Addedby' => $request->Addedby,   
+               'Updatedby' => $request->Updatedby,   
+               'Status' => $request->Status,
             ]);
             if ($brand) {
                return response()->json(['result' =>'Data added successfully!']);
@@ -46,11 +56,11 @@ class ExampleController extends Controller
                $edit = main::find($id);
            
                if ($edit) {
-                   $edit->name = $request->input('name');
-                   $edit->description = $request->input('description');
-                   $edit->addedby = $request->input('addedby');
-                   $edit->updatedby = $request->input('updatedby');
-                   $edit->status = $request->input('status');
+                   $edit->Name = $request->input('Name');
+                   $edit->Description = $request->input('Description');
+                   $edit->Addedby = $request->input('Addedby');
+                   $edit->Updatedby = $request->input('Updatedby');
+                   $edit->Status = $request->input('status');
                    $edit->save();
            
                    return response()->json(['result' => 'Data updated successfully']);

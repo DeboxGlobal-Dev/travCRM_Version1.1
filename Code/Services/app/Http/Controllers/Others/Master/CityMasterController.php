@@ -7,18 +7,30 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\CityMaster;
 class CityMasterController extends Controller
-{
+{   
+
+    public function index(){
+        $brands = CityMaster::all();
+        if(count($brands)>0){
+           return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
+        }else{
+           return response()->json(['message'=>'data not found'],404);
+        }
+   
+       }
+
     public function save(Request $request)
     {
+
           $val = $request->input('id');
           if ($val === null) {
              $businessvalidation =array(
-                'name' => 'required',
+                'Name' => 'required',
                 'CountryId' => 'required',
                 'StateId' => 'required',
                 'AddedBy' => 'required',
                 'UpdatedBy' => 'required',
-                'status' => 'required',
+                'Status' => 'required',
              );
              
              $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -27,13 +39,13 @@ class CityMasterController extends Controller
        
             }else{
              $brand = CityMaster::create([
-                'name' => $request->name,
+                'Name' => $request->Name,
                 'CountryId' => $request->CountryId,   
                 'StateId' => $request->StateId,   
                 'AddedBy' => $request->AddedBy,   
                 'UpdatedBy' => $request->UpdatedBy,   
-                'status' => $request->status,
-                'date_added' => now(),
+                'Status' => $request->Status,
+                'Date_added' => now(),
              ]);
              if ($brand) {
                 return response()->json(['result' =>'Data added successfully!']);
@@ -48,13 +60,13 @@ class CityMasterController extends Controller
                 $edit = CityMaster::find($id);
             
                 if ($edit) {
-                    $edit->name = $request->input('name');
+                    $edit->Name = $request->input('Name');
                     $edit->CountryId = $request->input('CountryId');
                     $edit->StateId = $request->input('StateId');
                     $edit->AddedBy = $request->input('AddedBy');
                     $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->status = $request->input('status');
-                    $edit->updated_at = now();
+                    $edit->Status = $request->input('Status');
+                    $edit->Updated_at = now();
                     $edit->save();
             
                     return response()->json(['result' => 'Data updated successfully']);

@@ -3,22 +3,23 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use App\Models\CountryMaster;
-
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Models\QueryMaster;
 
-class CountryMasterController extends Controller
-{   
+
+class QueryMasterController extends Controller
+{
+     
     public function index(){
-        $brands = CountryMaster::all();
+        $brands = QueryMaster::all();
         if(count($brands)>0){
            return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
         }else{
            return response()->json(['message'=>'data not found'],404);
         }
    
-       }
+       } 
 
     public function save(Request $request)
     {
@@ -26,8 +27,8 @@ class CountryMasterController extends Controller
           if ($val === null) {
              $businessvalidation =array(
                 'Name' => 'required',
-                'ShortName' => 'required',
-                'SetDefault' => 'required',
+                'Companyid' => 'required',
+                'Priority' => 'required',
                 'AddedBy' => 'required',
                 'UpdatedBy' => 'required',
              );
@@ -37,17 +38,17 @@ class CountryMasterController extends Controller
              return $validatordata->errors();
        
             }else{
-             $brand = CountryMaster::create([
+             $brand = QueryMaster::create([
                 'Name' => $request->Name,
-                'ShortName' => $request->ShortName,
-                'SetDefault' => $request->SetDefault,   
+                'Companyid' => $request->Companyid,
+                'Priority' => $request->Priority,
                 'AddedBy' => $request->AddedBy,   
                 'UpdatedBy' => $request->UpdatedBy,   
                 'Status' => $request->Status,
                 'Date_added' => now(),
              ]);
              if ($brand) {
-                return response()->json(['result' =>'Data added successfully!']);
+                return response()->json(['queryId'=>'000'.$brand->count("id"),'result' =>'Data added successfully!']);
             } else {
                 return response()->json(['result' =>'Failed to add data.'], 500);
             }
@@ -56,12 +57,12 @@ class CountryMasterController extends Controller
           }else{
                 $id = $request->input('id');
             
-                $edit = CountryMaster::find($id);
+                $edit = QueryMaster::find($id);
             
                 if ($edit) {
                     $edit->Name = $request->input('Name');
-                    $edit->ShortName = $request->input('ShortName');
-                    $edit->SetDefault = $request->input('SetDefault');
+                    $edit->Companyid = $request->input('Companyid');
+                    $edit->Priority = $request->input('Priority');
                     $edit->AddedBy = $request->input('AddedBy');
                     $edit->UpdatedBy = $request->input('UpdatedBy');
                     $edit->Status = $request->input('Status');
@@ -82,7 +83,7 @@ class CountryMasterController extends Controller
      
           public function destroy($id)
           {
-             $brands = CountryMaster::find($id);
+             $brands = QueryMaster::find($id);
              $brands->delete();
  
              if ($brands) {

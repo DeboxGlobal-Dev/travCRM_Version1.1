@@ -9,8 +9,9 @@ use App\Models\Others\Master\StateMaster;
 
 class StateMasterController extends Controller
 {
+
     public function index(Request $request){
-        call_logger($request);
+        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
         $statelist = StateMaster::orderBy('Name','ASC')->get();
         $totalRecord = count($statelist);
         if($totalRecord>0){
@@ -31,12 +32,12 @@ class StateMasterController extends Controller
 
     public function store(Request $request)
     {
-        call_logger($request);
+        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
         $val = $request->input('id');
         if ($val == '') {
              
             $businessvalidation =array(
-                'Name' => 'required',
+                'Name' => 'required|unique:pgsql.master.stateMaster,Name',
                 'CountryId' => 'required'
             );
              

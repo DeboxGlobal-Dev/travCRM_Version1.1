@@ -18,8 +18,7 @@ function call_logger($errorlog){
         $contents = "$ip\t$time\t$errorlog\r";
         fwrite($logfile,$contents);
         
-    }
-    
-	
+    }	
 }
+
 ?>

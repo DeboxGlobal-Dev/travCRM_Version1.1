@@ -9,16 +9,27 @@ use App\Models\BusinessTypeMaster;
 
 class BusinessTypeMasterController extends Controller
 {
+
+    public function index(){
+        $brands = BusinessTypeMaster::all();
+        if(count($brands)>0){
+           return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
+        }else{
+           return response()->json(['message'=>'brand not found'],404);
+        }
+   
+       }
+
     public function save(Request $request)
     {
           $val = $request->input('id');
           if ($val === null) {
              $businessvalidation =array(
-                'name' => 'required',
+                'Name' => 'required',
                 'SetDefault' => 'required',
                 'AddedBy' => 'required',
                 'UpdatedBy' => 'required',
-                'status' => 'required',
+                'Status' => 'required',
              );
              
              $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -27,12 +38,12 @@ class BusinessTypeMasterController extends Controller
        
             }else{
              $brand = BusinessTypeMaster::create([
-                'name' => $request->name,
+                'Name' => $request->Name,
                 'SetDefault' => $request->SetDefault,   
                 'AddedBy' => $request->AddedBy,   
                 'UpdatedBy' => $request->UpdatedBy,   
-                'status' => $request->status,
-                'date_added' => now(),
+                'Status' => $request->Status,
+                'Date_added' => now(),
              ]);
              if ($brand) {
                 return response()->json(['result' =>'Data added successfully!']);
@@ -47,12 +58,12 @@ class BusinessTypeMasterController extends Controller
                 $edit = BusinessTypeMaster::find($id);
             
                 if ($edit) {
-                    $edit->name = $request->input('name');
+                    $edit->Name = $request->input('Name');
                     $edit->SetDefault = $request->input('SetDefault');
                     $edit->AddedBy = $request->input('AddedBy');
                     $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->status = $request->input('status');
-                    $edit->updated_at = now();
+                    $edit->Status = $request->input('Status');
+                    $edit->Updated_at = now();
                     $edit->save();
             
                     return response()->json(['result' => 'Data updated successfully']);

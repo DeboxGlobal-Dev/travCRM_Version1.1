@@ -7,7 +7,17 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\DestinationMaster;
 class DestinationMasterController extends Controller
-{
+{   
+    public function index(){
+        $brands = DestinationMaster::all();
+        if(count($brands)>0){
+           return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
+        }else{
+           return response()->json(['message'=>'data not found'],404);
+        }
+   
+       }
+
     public function save(Request $request)
     {
           $val = $request->input('id');
@@ -20,7 +30,7 @@ class DestinationMasterController extends Controller
                 'SetDefault' => 'required',
                 'AddedBy' => 'required',
                 'UpdatedBy' => 'required',
-                'status' => 'required',
+                'Status' => 'required',
              );
              
              $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -36,7 +46,7 @@ class DestinationMasterController extends Controller
                 'SetDefault' => $request->SetDefault,   
                 'AddedBy' => $request->AddedBy,   
                 'UpdatedBy' => $request->UpdatedBy,   
-                'status' => $request->status,
+                'Status' => $request->Status,
                 'date_added' => now(),
              ]);
              if ($brand) {
@@ -59,7 +69,7 @@ class DestinationMasterController extends Controller
                     $edit->SetDefault = $request->input('SetDefault');
                     $edit->AddedBy = $request->input('AddedBy');
                     $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->status = $request->input('status');
+                    $edit->Status = $request->input('Status');
                     $edit->updated_at = now();
                     $edit->save();
             
