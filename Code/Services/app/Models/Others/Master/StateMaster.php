@@ -13,10 +13,11 @@ class StateMaster extends Model
     protected $fillable = [
      'Name',
      'CountryId',
+     'Status',
      'AddedBy',
      'UpdatedBy',
-     'Status',
      'DateAdded',
+     'DateUpdated',
      
     ];
     

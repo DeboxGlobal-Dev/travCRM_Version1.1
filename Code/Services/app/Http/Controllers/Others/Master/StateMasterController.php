@@ -12,7 +12,7 @@ class StateMasterController extends Controller
 
     public function index(Request $request){
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
-        $statelist = StateMaster::orderBy('Name','ASC')->get();
+        $statelist = StateMaster::orderBy('id','ASC')->get();
         $totalRecord = count($statelist);
         if($totalRecord>0){
             return response()->json([
@@ -27,63 +27,74 @@ class StateMasterController extends Controller
                 "Message" => "No Record Found."
             ]);
         }
-        
     }
 
     public function store(Request $request)
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
-        $val = $request->input('id');
-        if ($val == '') {
-             
-            $businessvalidation =array(
-                'Name' => 'required|unique:pgsql.master.stateMaster,Name',
-                'CountryId' => 'required'
-            );
-             
-            $validatordata = validator::make($request->all(), $businessvalidation); 
-            
-            if($validatordata->fails()){
-             return $validatordata->errors();
-            }else{
-             $brand = StateMaster::create([
-                'Name' => $request->Name,
-                'CountryId' => $request->CountryId,
-                'AddedBy' => $request->AddedBy,   
-                'Status' => $request->Status,
-                'DateAdded' => date('Y-m-d h:i:sa'),
-            ]);
-
-            if ($brand) {
-                return response()->json(['Message' =>'Data added successfully!']);
-            } else {
-                return response()->json(['Message' =>'Failed to add data.'], 500);
-            }
-          }
- 
-        }else{
-
-
+        
+        try{
             $id = $request->input('id');
-        
-            $edit = StateMaster::find($id);
-        
-            if ($edit) {
-                $edit->Name = $request->input('Name');
-                $edit->CountryId = $request->input('CountryId');
-                $edit->UpdatedBy = $request->input('UpdatedBy');
-                $edit->Status = $request->input('Status');
-                $edit->DateUpdated = now();
-                $edit->save();
-        
-                return response()->json(['Message' => 'Data updated successfully']);
-            } else {
-                return response()->json(['Message' => 'Failed to update data. Record not found.'], 404);
-            }
+            if($id == '') {
+                 
+                $businessvalidation =array(
+                    'Name' => 'required|unique:pgsql.master.stateMaster,Name',
+                    'CountryId' => 'required'
+                );
+                 
+                $validatordata = validator::make($request->all(), $businessvalidation); 
+                
+                if($validatordata->fails()){
+                    return $validatordata->errors();
+                }else{
+                 $savedata = StateMaster::create([
+                    'Name' => $request->Name,
+                    'CountryId' => $request->CountryId,
+                    'Status' => $request->Status,
+                    'AddedBy' => $request->AddedBy, 
+                    'DateAdded' => date('Y-m-d h:i:s'),
+                ]);
+
+                if ($savedata) {
+                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                } else {
+                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                }
+              }
+     
+            }else{
+    
+                $id = $request->input('id');
+                $edit = StateMaster::find($id);
+    
+                $businessvalidation =array(
+                    'Name' => 'required',
+                    'CountryId' => 'required'
+                );
+                 
+                $validatordata = validator::make($request->all(), $businessvalidation);
+                
+                if($validatordata->fails()){
+                 return $validatordata->errors();
+                }else{
+                    if ($edit) {
+                        $edit->Name = $request->input('Name');
+                        $edit->CountryId = $request->input('CountryId');
+                        $edit->Status = $request->input('Status');
+                        $edit->UpdatedBy = $request->input('UpdatedBy');
+                        $edit->DateUpdated = now();
+                        $edit->save();
+                        
+                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                    } else {
+                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                    }
+                }
+            } 
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
- 
-    
-    
     }
  
   
