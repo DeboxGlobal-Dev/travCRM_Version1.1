@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class StateMaster extends Model
 {
     use HasFactory;
-    protected $table = "master.stateMaster";
+    protected $table = _STATE_MASTER_;
     protected $primarykey = "id";
     protected $fillable = [
      'Name',

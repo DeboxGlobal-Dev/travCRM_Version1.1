@@ -12,13 +12,36 @@ class StateMasterController extends Controller
 
     public function index(Request $request){
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
-        $statelist = StateMaster::orderBy('id','ASC')->get();
+        $Search = $request->input('Search');
+        $Status = $request->input('Status');
+
+        $posts = StateMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%')
+                   ->orwhere('CountryId', 'like', '%' . $Search . '%');
+        })->when($Status, function ($query) use ($Status) {
+             return $query->where('Status', 'like', '%' . $Status . '%');
+        })->select('*')->get('*');
+
+        if ($posts->isNotEmpty()) {
+            return response()->json([
+                'Status' => 200,
+                'TotalRecord' => $posts->count('id'),
+                'DataList' => $posts
+            ]);
+        } else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'), 
+                "Message" => "No Record Found."
+            ]);
+        }
+        /*$dataList = StateMaster::orderBy('Name','ASC')->get();
         $totalRecord = count($statelist);
         if($totalRecord>0){
             return response()->json([
                 "Status" => 0, 
                 "TotalRecord" => $totalRecord, 
-                "DataList" => $statelist
+                "DataList" => $dataList
             ]);
         }else{
             return response()->json([
@@ -26,7 +49,7 @@ class StateMasterController extends Controller
                 "TotalRecord" => $totalRecord, 
                 "Message" => "No Record Found."
             ]);
-        }
+        }*/
     }
 
     public function store(Request $request)
@@ -38,7 +61,7 @@ class StateMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:pgsql.master.stateMaster,Name',
+                    'Name' => 'required|unique:'._PGSQL_.'.'._STATE_MASTER_.',Name',
                     'CountryId' => 'required'
                 );
                  
@@ -52,7 +75,7 @@ class StateMasterController extends Controller
                     'CountryId' => $request->CountryId,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
-                    'DateAdded' => date('Y-m-d h:i:s'),
+                    'DateAdded' => now(),
                 ]);
 
                 if ($savedata) {
@@ -90,7 +113,7 @@ class StateMasterController extends Controller
                         return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
                     }
                 }
-            } 
+            }
         }catch (\Exception $e){
             call_logger("Exception Error  ===>  ". $e->getMessage());
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
