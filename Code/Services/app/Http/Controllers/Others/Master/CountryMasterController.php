@@ -1,95 +1,115 @@
 <?php
 
-namespace App\Http\Controllers\Api;
-
-use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Validator;
-use App\Models\CountryMaster;
+namespace App\Http\Controllers\Others\Master;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Validator;
+use App\Models\Others\Master\CountryMaster;
 
 class CountryMasterController extends Controller
-{   
-    public function index(){
-        $brands = CountryMaster::all();
-        if(count($brands)>0){
-           return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
-        }else{
-           return response()->json(['message'=>'data not found'],404);
-        }
-   
-       }
+{
+    public function index(Request $request){
+        $Search = $request->input('Search');
+        $Status = $request->input('Status');
 
-    public function save(Request $request)
-    {
-          $val = $request->input('id');
-          if ($val === null) {
-             $businessvalidation =array(
-                'Name' => 'required',
-                'ShortName' => 'required',
-                'SetDefault' => 'required',
-                'AddedBy' => 'required',
-                'UpdatedBy' => 'required',
-             );
-             
-             $validatordata = validator::make($request->all(), $businessvalidation); 
-            if($validatordata->fails()){
-             return $validatordata->errors();
-       
-            }else{
-             $brand = CountryMaster::create([
-                'Name' => $request->Name,
-                'ShortName' => $request->ShortName,
-                'SetDefault' => $request->SetDefault,   
-                'AddedBy' => $request->AddedBy,   
-                'UpdatedBy' => $request->UpdatedBy,   
-                'Status' => $request->Status,
-                'Date_added' => now(),
-             ]);
-             if ($brand) {
-                return response()->json(['result' =>'Data added successfully!']);
-            } else {
-                return response()->json(['result' =>'Failed to add data.'], 500);
-            }
-          }
- 
-          }else{
-                $id = $request->input('id');
+        $posts = CountryMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%')
+                   ->orwhere('ShortName', 'like', '%' . $Search . '%');
+        })->when($Status, function ($query) use ($Status) {
+             return $query->where('Status', 'like', '%' . $Status . '%');
+        })->select('*')->get('*');
+
+        if ($posts->isNotEmpty()) {
+
+            /*$responseData = [
+                "id" => $posts->id,
+                "Name" => $posts->Name,
+                "ShortName" => $posts->ShortName,
+                "Status" => $posts->Status,
+            ];*/
             
-                $edit = CountryMaster::find($id);
+            call_logger($posts);
             
-                if ($edit) {
-                    $edit->Name = $request->input('Name');
-                    $edit->ShortName = $request->input('ShortName');
-                    $edit->SetDefault = $request->input('SetDefault');
-                    $edit->AddedBy = $request->input('AddedBy');
-                    $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->Status = $request->input('Status');
-                    $edit->Updated_at = now();
-                    $edit->save();
-            
-                    return response()->json(['result' => 'Data updated successfully']);
-                } else {
-                    return response()->json(['result' => 'Failed to update data. Record not found.'], 404);
-                }
-          }
- 
-    
-    
+            return response()->json([
+                'Status' => 200,
+                'TotalRecord' => $posts->count('id'),
+                'DataList' => $posts
+            ]);
+        } else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'), 
+                "Message" => "No Record Found."
+            ]);
+        }
     }
- 
-  
+
+    public function store(Request $request)
+    {
+        try{
+            $id = $request->input('id');
+            if($id == '') {
+                 
+                $businessvalidation =array(
+                    'Name' => 'required|unique:'._PGSQL_.'.'._COUNTRY_MASTER_.',Name',
+                    'ShortName' => 'required'
+                );
+                 
+                $validatordata = validator::make($request->all(), $businessvalidation); 
+                
+                if($validatordata->fails()){
+                    return $validatordata->errors();
+                }else{
+                 $savedata = CountryMaster::create([
+                    'Name' => $request->Name,
+                    'ShortName' => $request->ShortName,
+                    'SetDefault' => $request->SetDefault,
+                    'Status' => $request->Status,
+                    'AddedBy' => $request->AddedBy, 
+                    'created_at' => now(),
+                ]);
+
+                if ($savedata) {
+                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                } else {
+                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                }
+              }
      
-          public function destroy($id)
-          {
-             $brands = CountryMaster::find($id);
-             $brands->delete();
- 
-             if ($brands) {
-                return response()->json(['result' =>'Data deleted successfully!']);
-          } else {
-                return response()->json(['result' =>'Failed to delete data.'], 500);
-          }
-          
-          }
+            }else{
+    
+                $id = $request->input('id');
+                $edit = CountryMaster::find($id);
+    
+                $businessvalidation =array(
+                    'Name' => 'required',
+                    'ShortName' => 'required'
+                );
+                 
+                $validatordata = validator::make($request->all(), $businessvalidation);
+                
+                if($validatordata->fails()){
+                 return $validatordata->errors();
+                }else{
+                    if ($edit) {
+                        $edit->Name = $request->input('Name');
+                        $edit->ShortName = $request->input('ShortName');
+                        $edit->SetDefault = $request->input('SetDefault');
+                        $edit->Status = $request->input('Status');
+                        $edit->UpdatedBy = $request->input('UpdatedBy');
+                        $edit->updated_at = now();
+                        $edit->save();
+                        
+                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                    } else {
+                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                    }
+                }
+            }
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
+    }
 }

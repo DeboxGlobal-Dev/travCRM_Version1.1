@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,15 +8,20 @@ use Illuminate\Database\Eloquent\Model;
 class CountryMaster extends Model
 {
     use HasFactory;
-   protected $table = "countrymaster";
-   protected $primarykey = "id";
-   protected $fillable = [
-    'name',
-    'ShortName',
-    'SetDefault',
-    'AddedBy',
-    'UpdatedBy',
-    'status',
-   ];
-   public $timestamps = false;
+    protected $table = _COUNTRY_MASTER_;
+    protected $primarykey = "id";
+    protected $fillable = [
+        'Name',
+        'ShortName',
+        'SetDefault',
+        'AddedBy',
+        'UpdatedBy',
+        'Status',
+        'created_at',
+        'updated_at',
+    ];
+    
+    public $timestamps = false;
+
+    
 }

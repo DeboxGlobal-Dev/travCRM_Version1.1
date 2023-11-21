@@ -11,7 +11,7 @@ use App\Http\Controllers\Others\Master\DestinationMasterController;
 use App\Http\Controllers\Others\Master\LanguageMasterController;
 
 Route::post('/countrylist',[CountryMasterController::class,'index']);
-Route::post('/addupdatecountry',[CountryMasterController::class,'save']);
+Route::post('/addupdatecountry',[CountryMasterController::class,'store']);
 
 Route::post('statelist',[StateMasterController::class,'index']);
 Route::post('addupdatestate',[StateMasterController::class,'store']);
