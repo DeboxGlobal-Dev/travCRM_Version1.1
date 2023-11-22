@@ -25,7 +25,7 @@ class StateMasterController extends Controller
 
         $countryName = getName(_COUNTRY_MASTER_,2);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
-        call_logger('REQUEST2: '.$countryName22);
+        call_logger('REQUEST2: '.$countryName);
 
         if ($posts->isNotEmpty()) {
             return response()->json([
