@@ -29,7 +29,7 @@ class CountryMasterController extends Controller
                 "Status" => $posts->Status,
             ];*/
             
-            call_logger($posts);
+            //call_logger($posts);
             
             return response()->json([
                 'Status' => 200,

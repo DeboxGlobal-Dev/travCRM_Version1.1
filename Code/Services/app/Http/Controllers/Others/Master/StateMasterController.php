@@ -1,11 +1,11 @@
 <?php
 
 Namespace App\Http\Controllers\Others\Master;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Models\Others\Master\StateMaster;
+use Illuminate\Support\Facades\Validator;
 
 class StateMasterController extends Controller
 {
@@ -21,6 +21,10 @@ class StateMasterController extends Controller
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status', 'like', '%' . $Status . '%');
         })->select('*')->get('*');
+
+        $countryName = getValue(_COUNTRY_MASTER_,3,"Name");
+        
+        call_logger('REQUEST2: '.$countryName);
 
         if ($posts->isNotEmpty()) {
             return response()->json([
