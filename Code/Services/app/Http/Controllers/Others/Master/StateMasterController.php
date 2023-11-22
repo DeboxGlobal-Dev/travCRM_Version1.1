@@ -12,9 +12,10 @@ class StateMasterController extends Controller
 
     public function index(Request $request){
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+        
         $Search = $request->input('Search');
         $Status = $request->input('Status');
-        call_logger('REQUEST1');
+        
         $posts = StateMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
                    ->orwhere('CountryId', 'like', '%' . $Search . '%');
@@ -22,9 +23,9 @@ class StateMasterController extends Controller
              return $query->where('Status', 'like', '%' . $Status . '%');
         })->select('*')->get('*');
 
-        $countryName = getValue(_COUNTRY_MASTER_,3,"Name");
-        
-        call_logger('REQUEST2: '.$countryName);
+        $countryName = getName(_COUNTRY_MASTER_,2);
+        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
+        call_logger('REQUEST2: '.$countryName22);
 
         if ($posts->isNotEmpty()) {
             return response()->json([

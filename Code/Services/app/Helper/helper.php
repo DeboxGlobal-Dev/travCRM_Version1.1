@@ -22,9 +22,15 @@ function call_logger($errorlog){
     }	
 }
 
-function getValue($tableName,$id,$columnName){
-    $value = DB::table($tableName)->where('id',$id)->first()->$columnName;
+function getName($tableName,$id){
+    $name = DB::table($tableName)->where('id',$id)->first()->Name;
+    return $name;
+}
+
+function getColumnValue($tableName,$where,$val,$columnName){
+    $value = DB::table($tableName)->where($where,$val)->first()->$columnName;
     return $value;
 }
+
 
 ?>

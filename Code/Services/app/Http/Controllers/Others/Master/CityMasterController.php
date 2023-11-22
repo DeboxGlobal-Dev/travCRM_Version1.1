@@ -1,23 +1,37 @@
 <?php
 
-namespace App\Http\Controllers\Api;
-
+namespace App\Http\Controllers\Others\Master;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\CityMaster;
+use App\Models\Others\Master\CityMaster;
 class CityMasterController extends Controller
 {   
 
-    public function index(){
-        $brands = CityMaster::all();
-        if(count($brands)>0){
-           return response()->json(['Status'=>200,'message'=>'','TotalRecord'=>$brands->count('id'),'DataList'=>$brands]);
-        }else{
-           return response()->json(['message'=>'data not found'],404);
-        }
-   
-       }
+   public function index(Request $request){
+      $Search = $request->input('Search');
+      $Status = $request->input('Status');
+
+    $posts = CityMaster::when($Search, function ($query) use ($Search) {
+        return $query->where('Name', 'like', '%' . $Search . '%')
+                     ->orwhere('CountryId', 'like', '%' . $Search . '%')
+                     ->orwhere('StateId', 'like', '%' . $Search . '%');
+    })->when($Status, function ($query) use ($Status) {
+         return $query->where('Status', 'like', '%' . $Status . '%');
+    })->select('*')->get('*');
+
+    if ($posts->isNotEmpty()) {
+        return response()->json([
+            'Status' => 200,
+            'message' => '',
+            'TotalRecord' => $posts->count('id'),
+            'DataList' => $posts
+        ]);
+    } else {
+        return response()->json(['message' => 'Data not found'], 404);
+    }
+}
 
     public function save(Request $request)
     {
