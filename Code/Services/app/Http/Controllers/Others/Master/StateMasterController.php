@@ -14,7 +14,7 @@ class StateMasterController extends Controller
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
         $Search = $request->input('Search');
         $Status = $request->input('Status');
-
+        call_logger('REQUEST1');
         $posts = StateMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
                    ->orwhere('CountryId', 'like', '%' . $Search . '%');
