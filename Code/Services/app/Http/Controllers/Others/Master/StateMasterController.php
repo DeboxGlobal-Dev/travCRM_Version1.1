@@ -80,7 +80,7 @@ class StateMasterController extends Controller
                     'CountryId' => $request->CountryId,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
-                    'DateAdded' => now(),
+                    'created_at' => now(),
                 ]);
 
                 if ($savedata) {
@@ -110,7 +110,7 @@ class StateMasterController extends Controller
                         $edit->CountryId = $request->input('CountryId');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
-                        $edit->DateUpdated = now();
+                        $edit->updated_at = now();
                         $edit->save();
                         
                         return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);

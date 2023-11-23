@@ -16,8 +16,8 @@ class StateMaster extends Model
      'Status',
      'AddedBy',
      'UpdatedBy',
-     'DateAdded',
-     'DateUpdated',
+     'created_at',
+     'updated_at',
      
     ];
     
