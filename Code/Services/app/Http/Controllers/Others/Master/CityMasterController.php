@@ -14,11 +14,9 @@ class CityMasterController extends Controller
       $Status = $request->input('Status');
 
     $posts = CityMaster::when($Search, function ($query) use ($Search) {
-        return $query->where('Name', 'like', '%' . $Search . '%')
-                     ->orwhere('CountryId', 'like', '%' . $Search . '%')
-                     ->orwhere('StateId', 'like', '%' . $Search . '%');
+        return $query->where('Name', 'like', '%' . $Search . '%');
     })->when($Status, function ($query) use ($Status) {
-         return $query->where('Status', 'like', '%' . $Status . '%');
+         return $query->where('Status',$Status);
     })->select('*')->get('*');
 
     if ($posts->isNotEmpty()) {

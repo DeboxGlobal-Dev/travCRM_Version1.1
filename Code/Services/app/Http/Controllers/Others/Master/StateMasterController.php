@@ -17,13 +17,12 @@ class StateMasterController extends Controller
         $Status = $request->input('Status');
         
         $posts = StateMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%')
-                   ->orwhere('CountryId', 'like', '%' . $Search . '%');
+            return $query->where('Name', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
-             return $query->where('Status', 'like', '%' . $Status . '%');
+             return $query->where('Status',$Status);
         })->select('*')->get('*');
 
-        $countryName = getName(_COUNTRY_MASTER_,2);
+        $countryName = getName(_COUNTRY_MASTER_,3);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
         call_logger('REQUEST2: '.$countryName);
 
