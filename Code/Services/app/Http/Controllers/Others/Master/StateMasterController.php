@@ -23,7 +23,7 @@ class StateMasterController extends Controller
              return $query->where('Status', 'like', '%' . $Status . '%');
         })->select('*')->get('*');
 
-        $countryName = getName(_COUNTRY_MASTER_,2);
+        $countryName = getName(_COUNTRY_MASTER_,1);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
         call_logger('REQUEST2: '.$countryName);
 
