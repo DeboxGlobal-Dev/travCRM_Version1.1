@@ -21,16 +21,6 @@ class CountryMasterController extends Controller
         })->select('*')->get('*');
 
         if ($posts->isNotEmpty()) {
-
-            /*$responseData = [
-                "id" => $posts->id,
-                "Name" => $posts->Name,
-                "ShortName" => $posts->ShortName,
-                "Status" => $posts->Status,
-            ];*/
-            
-            call_logger($posts);
-            
             return response()->json([
                 'Status' => 200,
                 'TotalRecord' => $posts->count('id'),

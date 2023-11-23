@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,15 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class CityMaster extends Model
 {
     use HasFactory;
-    protected $table = 'citymaster';
+    protected $table = _CITY_MASTER_;
     protected $primarykey = 'id'; 
     protected $fillable = [
-        'name',
+        'Name',
         'CountryId',
         'StateId',
         'AddedBy',
         'UpdatedBy',
-        'status',
+        'Status',
+        'DateAdded',
+        'DateUpdated',
        
        
     ];

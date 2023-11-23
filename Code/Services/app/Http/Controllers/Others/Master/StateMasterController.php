@@ -1,26 +1,31 @@
 <?php
 
 Namespace App\Http\Controllers\Others\Master;
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 use App\Models\Others\Master\StateMaster;
+use Illuminate\Support\Facades\Validator;
 
 class StateMasterController extends Controller
 {
 
     public function index(Request $request){
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+        
         $Search = $request->input('Search');
         $Status = $request->input('Status');
-
+        
         $posts = StateMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
                    ->orwhere('CountryId', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status', 'like', '%' . $Status . '%');
         })->select('*')->get('*');
+
+        $countryName = getName(_COUNTRY_MASTER_,2);
+        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
+        call_logger('REQUEST2: '.$countryName);
 
         if ($posts->isNotEmpty()) {
             return response()->json([

@@ -1,4 +1,5 @@
 <?php
+
 function call_logger($errorlog){
     $isActive = true;
     if($isActive){
@@ -20,5 +21,16 @@ function call_logger($errorlog){
         
     }	
 }
+
+function getName($tableName,$id){
+    $name = DB::table($tableName)->where('id',$id)->first()->Name;
+    return $name;
+}
+
+function getColumnValue($tableName,$where,$val,$columnName){
+    $value = DB::table($tableName)->where($where,$val)->first()->$columnName;
+    return $value;
+}
+
 
 ?>
