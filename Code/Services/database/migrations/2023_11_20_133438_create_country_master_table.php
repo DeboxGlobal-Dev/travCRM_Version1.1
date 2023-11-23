@@ -16,11 +16,9 @@ class CreateCountryMasterTable extends Migration
         Schema::create('country_master', function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
-            $table->string('ShortName', 10);
-            $table->integer('SetDefault')->length(1);
             $table->integer('Status')->length(1);
-            $table->integer('AddedBy')->default('0');
-            $table->integer('UpdatedBy')->default('0');
+            $table->integer('AddedBy');
+            $table->integer('UpdatedBy');
             $table->timestamps();
         });
     }
