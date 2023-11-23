@@ -23,13 +23,18 @@ function call_logger($errorlog){
 }
 
 function getName($tableName,$id){
-    $name = DB::table($tableName)->where('id',$id)->first()->Name;
-    return $name;
+    $name = DB::table($tableName)->where('id',$id)->get('Name');
+    if($name->isNotEmpty()){
+        return $name[0]->Name;
+    }
+    
 }
 
 function getColumnValue($tableName,$where,$val,$columnName){
-    $value = DB::table($tableName)->where($where,$val)->first()->$columnName;
-    return $value;
+    $value = DB::table($tableName)->where($where,$val)->get($columnName);
+    if($value->isNotEmpty()){
+        return $value[0]->$columnName;
+    }
 }
 
 

@@ -7,24 +7,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Others\Master\StateMaster;
 use Illuminate\Support\Facades\Validator;
 
-class clsDataTable
-{
-
-  public $Id;
-  public $Name;
-  public $CountryId;
-  public $CountryName; 
-  public $Status;
-  public $AddedBy;
-  public $DateAdded;
-}
-
-class clsDBResponse 
-{
-    public $Status;
-    public $TotalRecord;
-    public $DataList=array();
-}  
 
 class StateMasterController extends Controller
 {
@@ -44,37 +26,40 @@ class StateMasterController extends Controller
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
-
-        // $dataArray = json_decode($posts, true);
-        // $names = collect($dataArray)->pluck('Name');
-
-        $countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
-        call_logger('REQUEST2: '.$posts);
+ 
+        //$countryName = getName(_COUNTRY_MASTER_,3);
+        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
+        //call_logger('REQUEST2: '.$countryName22);
 
         if ($posts->isNotEmpty()) {
+            $arrayDataRows = [];
             foreach ($posts as $post){
-
-                $objDataTable = new clsDataTable(); 
-                $objDataTable->Id = $post->id;
-                $objDataTable->Name = $post->Name;
-                $objDataTable->CountryId = $post->CountryId;
-                $objDataTable->CountryName = getColumnValue(_COUNTRY_MASTER_,'id',$post->CountryId,'Name');;
-                $objDataTable->Status = $post->Status;
-                $objDataTable->AddedBy = $post->AddedBy;
-                $objDataTable->DateAdded = $post->created_at;
-      
-                $a = array_push($arrayDataRows,$objDataTable);
+                $arrayDataRows[] = [
+                    "Id" => $post->id,
+                    "Name" => $post->Name,
+                    "CountryId" => $post->CountryId,
+                    "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
+                    "Status" => $post->Status,
+                    "AddedBy" => $post->AddedBy,
+                    "UpdatedBy" => $post->UpdatedBy,
+                    "created_at" => $post->created_at,
+                    "updated_at" => $post->updated_at
+                ];
+            }
             
+            return response()->json([
+                'Status' => 200,
+                'TotalRecord' => $posts->count('id'),
+                'DataList' => $arrayDataRows
+            ]);
+        
+        }else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'), 
+                "Message" => "No Record Found."
+            ]);
         }
-        }
-    $objResponse = new clsDBResponse();
-    $objResponse->Status = "0";
-    $objResponse->TotalRecord = $posts->count('id');
-    $objResponse->DataList = $arrayDataRows;
-    
-    return json_encode($objResponse,JSON_PRETTY_PRINT);
- 
     }
 
     public function store(Request $request)
