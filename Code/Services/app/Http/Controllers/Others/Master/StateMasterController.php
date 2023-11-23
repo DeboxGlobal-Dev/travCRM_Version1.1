@@ -7,10 +7,33 @@ use App\Http\Controllers\Controller;
 use App\Models\Others\Master\StateMaster;
 use Illuminate\Support\Facades\Validator;
 
-class StateMasterController extends Controller
+class clsDataTable
 {
 
+  public $Id;
+  public $Name;
+  public $CountryId;
+  public $CountryName; 
+  public $Status;
+  public $AddedBy;
+  public $DateAdded;
+}
+
+class clsDBResponse 
+{
+    public $Status;
+    public $TotalRecord;
+    public $DataList=array();
+}  
+
+class StateMasterController extends Controller
+{
+   
     public function index(Request $request){
+       
+         
+        $arrayDataRows = array();
+
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
         
         $Search = $request->input('Search');
@@ -22,38 +45,36 @@ class StateMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->get('*');
 
+        // $dataArray = json_decode($posts, true);
+        // $names = collect($dataArray)->pluck('Name');
+
         $countryName = getName(_COUNTRY_MASTER_,3);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','id');
-        call_logger('REQUEST2: '.$countryName);
+        call_logger('REQUEST2: '.$posts);
 
         if ($posts->isNotEmpty()) {
-            return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $posts
-            ]);
-        } else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'), 
-                "Message" => "No Record Found."
-            ]);
+            foreach ($posts as $post){
+
+                $objDataTable = new clsDataTable(); 
+                $objDataTable->Id = $post->id;
+                $objDataTable->Name = $post->Name;
+                $objDataTable->CountryId = $post->CountryId;
+                $objDataTable->CountryName = getColumnValue(_COUNTRY_MASTER_,'id',$post->CountryId,'Name');;
+                $objDataTable->Status = $post->Status;
+                $objDataTable->AddedBy = $post->AddedBy;
+                $objDataTable->DateAdded = $post->created_at;
+      
+                $a = array_push($arrayDataRows,$objDataTable);
+            
         }
-        /*$dataList = StateMaster::orderBy('Name','ASC')->get();
-        $totalRecord = count($statelist);
-        if($totalRecord>0){
-            return response()->json([
-                "Status" => 0, 
-                "TotalRecord" => $totalRecord, 
-                "DataList" => $dataList
-            ]);
-        }else{
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $totalRecord, 
-                "Message" => "No Record Found."
-            ]);
-        }*/
+        }
+    $objResponse = new clsDBResponse();
+    $objResponse->Status = "0";
+    $objResponse->TotalRecord = $posts->count('id');
+    $objResponse->DataList = $arrayDataRows;
+    
+    return json_encode($objResponse,JSON_PRETTY_PRINT);
+ 
     }
 
     public function store(Request $request)
