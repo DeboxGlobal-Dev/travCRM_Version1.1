@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,14 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class BusinessTypeMaster extends Model
 {
     use HasFactory;
-    protected $table = 'BusinessTypeMaster';
+    protected $table = _BUSINESS_TYPE_MASTER_;
     protected $primarykey = 'id'; 
     protected $fillable = [
-        'name',
+        'Name',
         'SetDefault',
         'AddedBy',
         'UpdatedBy',
-        'status',
+        'Status',
        
        
     ];

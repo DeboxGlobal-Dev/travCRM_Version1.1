@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DestinationMaster extends Model
 {
     use HasFactory;
-    protected $table = "destinationmaster";
+    protected $table = _DESTINATION_MASTER_;
     protected $primarykey = "id";
     protected $fillable = [
      'CountryId',
@@ -18,7 +18,7 @@ class DestinationMaster extends Model
      'SetDefault',
      'AddedBy',
      'UpdatedBy',
-     'status',
+     'Status',
     ];
     public $timestamps = false;
 }

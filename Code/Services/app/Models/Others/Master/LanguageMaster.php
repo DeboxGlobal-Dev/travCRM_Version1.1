@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -8,13 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class LanguageMaster extends Model
 {
     use HasFactory;
-    protected $table = "languagemaster";
+    protected $table = _LANGUAGE_MASTER_;
     protected $primarykey = "id";
     protected $fillable = [
-     'name',
+     'Name',
+     'Status',
      'AddedBy',
      'UpdatedBy',
-     'status',
     ];
     public $timestamps = false;
 }
