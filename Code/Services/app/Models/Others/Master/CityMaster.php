@@ -17,8 +17,8 @@ class CityMaster extends Model
         'AddedBy',
         'UpdatedBy',
         'Status',
-        'DateAdded',
-        'DateUpdated',
+        'created_at',
+        'updated_at',
        
        
     ];
