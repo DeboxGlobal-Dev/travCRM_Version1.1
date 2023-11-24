@@ -38,17 +38,18 @@ class DestinationMasterController extends Controller
           foreach ($posts as $post){
               $arrayDataRows[] = [
                   "Id" => $post->id,
-                  "CountryId" => $post->CountryId,
+                  "Name" => $post->Name,
+                  "StateName" => getName(_STATE_MASTER_,$post->StateId),
                   "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
-                  "State" => $post->State,
-                  "DestinationName" => $post->DestinationName,
+                  "CountryId" => $post->CountryId,
+                  "StateId" => $post->StateId,
                   "Description" => $post->Description,
                   "SetDefault" => $post->SetDefault,
                   "Status" => $post->Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
-                  "Created_at" => $post->Created_at,
-                  "Updated_at" => $post->Updated_at
+                  "created_at" => $post->created_at,
+                  "updated_at" => $post->updated_at
               ];
           }
           
@@ -77,12 +78,11 @@ class DestinationMasterController extends Controller
                
               $businessvalidation =array(
                   'CountryId' => 'required',
-                  'State' => 'required',
-                  'DestinationName' => 'required',
+                  'StateId' => 'required',
+                  'Name' => 'required',
                   'Description' => 'required',
                   'SetDefault' => 'required',
                   'AddedBy' => 'required',
-                  'UpdatedBy' => 'required',
                   'Status' => 'required',
 
               );
@@ -94,14 +94,13 @@ class DestinationMasterController extends Controller
               }else{
                $savedata = DestinationMaster::create([
                   'CountryId' => $request->CountryId,
-                  'State' => $request->State,   
-                  'DestinationName' => $request->DestinationName,   
+                  'StateId' => $request->StateId,   
+                  'Name' => $request->Name,   
                   'Description' => $request->Description,   
                   'SetDefault' => $request->SetDefault,   
                   'AddedBy' => $request->AddedBy,   
-                  'UpdatedBy' => $request->UpdatedBy,   
                   'Status' => $request->Status,
-                  'Created_at' => now(),
+                  'created_at' => now(),
               ]);
 
               if ($savedata) {
@@ -118,11 +117,9 @@ class DestinationMasterController extends Controller
   
               $businessvalidation =array(
                   'CountryId' => 'required',
-                  'State' => 'required',
-                  'DestinationName' => 'required',
+                  'StateId' => 'required',
+                  'Name' => 'required',
                   'Description' => 'required',
-                  'SetDefault' => 'required',
-                  'AddedBy' => 'required',
                   'UpdatedBy' => 'required',
                   'Status' => 'required',
               );
@@ -134,14 +131,13 @@ class DestinationMasterController extends Controller
               }else{
                   if ($edit) {
                       $edit->CountryId = $request->input('CountryId');
-                      $edit->State = $request->input('State');
-                      $edit->DestinationName = $request->input('DestinationName');
+                      $edit->StateId = $request->input('StateId');
+                      $edit->Name = $request->input('Name');
                       $edit->Description = $request->input('Description');
                       $edit->SetDefault = $request->input('SetDefault');
-                      $edit->AddedBy = $request->input('AddedBy');
                       $edit->UpdatedBy = $request->input('UpdatedBy');
                       $edit->Status = $request->input('Status');
-                      $edit->Updated_at = now();
+                      $edit->updated_at = now();
                       $edit->save();
 
                       
@@ -157,18 +153,4 @@ class DestinationMasterController extends Controller
       }
   }
 
-
-   
-  public function destroy(Request $request)
-  {
-      $brands = DestinationMaster::find($request->id);
-      $brands->delete();
-
-      if ($brands) {
-          return response()->json(['result' =>'Data deleted successfully!']);
-      } else {
-          return response()->json(['result' =>'Failed to delete data.'], 500);
-      }
-  
-  }
 }

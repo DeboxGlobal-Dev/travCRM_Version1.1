@@ -16,10 +16,10 @@ class DestinationMaster extends Migration
         Schema::create('destination_master', function (Blueprint $table) {
             $table->id();
             $table->integer('CountryId', 50);
-            $table->string('State', 10);
-            $table->string('DestinationName', 50)->default(0);
-            $table->string('Description', 1024)->default(0);
-            $table->string('SetDefault', 100)->default(0);
+            $table->integer('StateId', 10);
+            $table->string('Name', 50)->default(null);
+            $table->string('Description', 1024)->default(null);
+            $table->integer('SetDefault', 100)->default(0);
             $table->integer('Status')->default(0);
             $table->integer('AddedBy')->default(0);
             $table->integer('UpdatedBy')->default(0);

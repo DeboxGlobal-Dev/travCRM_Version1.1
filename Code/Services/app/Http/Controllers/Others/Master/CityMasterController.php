@@ -12,7 +12,7 @@ class CityMasterController extends Controller
    public function index(Request $request){
       $Search = $request->input('Search');
       $Status = $request->input('Status');
-
+    
     $posts = CityMaster::when($Search, function ($query) use ($Search) {
         return $query->where('Name', 'like', '%' . $Search . '%');
     })->when($Status, function ($query) use ($Status) {
