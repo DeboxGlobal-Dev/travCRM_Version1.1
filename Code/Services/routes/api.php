@@ -18,7 +18,7 @@ Route::post('addupdatestate',[StateMasterController::class,'store']);
 Route::post('deletestate',[StateMasterController::class,'destroy']);
 
 Route::post('/citylist',[CityMasterController::class,'index']);
-Route::post('/addupdatecity',[CityMasterController::class,'save']);
+Route::post('/addupdatecity',[CityMasterController::class,'store']);
 
 Route::post('/destinationlist',[DestinationMasterController::class,'index']);
 Route::post('/addupdatedestination',[DestinationMasterController::class,'store']);
