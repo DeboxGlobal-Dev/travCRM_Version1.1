@@ -18,19 +18,19 @@ Route::post('/addupdatestate',[StateMasterController::class,'store']);
 Route::post('/deletestate',[StateMasterController::class,'destroy']);
 
 Route::post('/citylist',[CityMasterController::class,'index']);
-Route::post('/addupdatecity',[CityMasterController::class,'save']);
+Route::post('/addupdatecity',[CityMasterController::class,'store']);
 
 Route::post('/destinationlist',[DestinationMasterController::class,'index']);
-Route::post('/addupdatedestination',[DestinationMasterController::class,'save']);
+Route::post('/addupdatedestination',[DestinationMasterController::class,'store']);
 
 Route::post('/businesslist',[BusinessTypeMasterController::class,'index']);
-Route::post('/addupdatebusiness',[BusinessTypeMasterController::class,'save']);
+Route::post('/addupdatebusiness',[BusinessTypeMasterController::class,'store']);
 
 Route::post('/languagelist',[LanguageMasterController::class,'index']);
-Route::post('/addupdatelanguage',[LanguageMasterController::class,'save']);
+Route::post('/addupdatelanguage',[LanguageMasterController::class,'store']);
 
 Route::post('/querylist',[QueryMasterController::class,'index']);
-Route::post('/addupdatequery',[QueryMasterController::class,'save']);
+Route::post('/addupdatequery',[QueryMasterController::class,'store']);
 
 Route::post('/users-api',[ExampleController::class,'apidata']);
 

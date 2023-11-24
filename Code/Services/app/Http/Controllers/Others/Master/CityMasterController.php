@@ -50,7 +50,7 @@ class CityMasterController extends Controller
     }
 }
 
-    public function save(Request $request)
+    public function store(Request $request)
     {
 
           $val = $request->input('id');
