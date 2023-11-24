@@ -38,8 +38,8 @@ class LanguageMasterController extends Controller
                   "Status" => $post->Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
-                  "Created_at" => $post->Created_at,
-                  "Cpdated_at" => $post->Updated_at
+                  "created_at" => $post->Created_at,
+                  "updated_at" => $post->Updated_at
               ];
           }
           
@@ -67,7 +67,7 @@ class LanguageMasterController extends Controller
           if($id == '') {
                
               $businessvalidation =array(
-                  'Name' => 'required|unique:'._PGSQL_.'.'._STATE_MASTER_.',Name',
+                  'Name' => 'required|unique:'._PGSQL_.'.'._LANGUAGE_MASTER_.',Name',
               );
                
               $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -79,7 +79,7 @@ class LanguageMasterController extends Controller
                   'Name' => $request->Name,
                   'Status' => $request->Status,
                   'AddedBy' => $request->AddedBy, 
-                  'Created_at' => now(),
+                  'created_at' => now(),
               ]);
 
               if ($savedata) {
@@ -107,7 +107,7 @@ class LanguageMasterController extends Controller
                       $edit->Name = $request->input('Name');
                       $edit->Status = $request->input('Status');
                       $edit->UpdatedBy = $request->input('UpdatedBy');
-                      $edit->Updated_at = now();
+                      $edit->updated_at = now();
                       $edit->save();
                       
                       return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
@@ -122,18 +122,4 @@ class LanguageMasterController extends Controller
       }
   }
 
-
-   
-  public function destroy(Request $request)
-  {
-      $brands = LanguageMaster::find($request->id);
-      $brands->delete();
-
-      if ($brands) {
-          return response()->json(['result' =>'Data deleted successfully!']);
-      } else {
-          return response()->json(['result' =>'Failed to delete data.'], 500);
-      }
-  
-  }
 }

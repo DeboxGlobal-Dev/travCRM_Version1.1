@@ -13,7 +13,7 @@ class DestinationMaster extends Model
     protected $fillable = [
      'CountryId',
      'State',
-     'DestinationName',
+     'Name',
      'Description',
      'SetDefault',
      'AddedBy',
