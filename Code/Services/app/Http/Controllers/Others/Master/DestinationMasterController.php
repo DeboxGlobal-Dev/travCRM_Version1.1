@@ -19,9 +19,10 @@ class DestinationMasterController extends Controller
       $Status = $request->input('Status');
       
       $posts = DestinationMaster::when($Search, function ($query) use ($Search) {
-          return $query->where('Name', 'like', '%' . $Search . '%')
+          return $query->where('CountryId', 'like', '%' . $Search . '%')
+                     ->orwhere('State', 'like', '%' . $Search . '%')
+                     ->orwhere('DestinationName', 'like', '%' . $Search . '%')
                      ->orwhere('Description', 'like', '%' . $Search . '%')
-                     ->orwhere('CountryId', 'like', '%' . $Search . '%')
                      ->orwhere('SetDefault', 'like', '%' . $Search . '%')
                      ->orwhere('State', 'like', '%' . $Search . '%');
       })->when($Status, function ($query) use ($Status) {
@@ -46,8 +47,8 @@ class DestinationMasterController extends Controller
                   "Status" => $post->Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
-                  "created_at" => $post->created_at,
-                  "updated_at" => $post->updated_at
+                  "Created_at" => $post->Created_at,
+                  "Updated_at" => $post->Updated_at
               ];
           }
           
@@ -100,7 +101,7 @@ class DestinationMasterController extends Controller
                   'AddedBy' => $request->AddedBy,   
                   'UpdatedBy' => $request->UpdatedBy,   
                   'Status' => $request->Status,
-                  'date_added' => now(),
+                  'Created_at' => now(),
               ]);
 
               if ($savedata) {
@@ -140,7 +141,7 @@ class DestinationMasterController extends Controller
                       $edit->AddedBy = $request->input('AddedBy');
                       $edit->UpdatedBy = $request->input('UpdatedBy');
                       $edit->Status = $request->input('Status');
-                      $edit->updated_at = now();
+                      $edit->Updated_at = now();
                       $edit->save();
 
                       
