@@ -1,44 +1,42 @@
 <?php
 
-Namespace App\Http\Controllers\Others\Master;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Hotel\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Others\Master\StateMaster;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Hotel\Master\AmenitiesMaster;
 
-
-class StateMasterController extends Controller
+class AmenitiesMasterController extends Controller
 {
-   
     public function index(Request $request){
        
          
         $arrayDataRows = array();
-
+  
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
         
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = StateMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%');
+        $posts = AmenitiesMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%')
+                         ->orwhere('SetDefault', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
- 
+  
         //$countryName = getName(_COUNTRY_MASTER_,3);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
         //call_logger('REQUEST2: '.$countryName22);
-
+  
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
-                    "CountryId" => $post->CountryId,
-                    "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
+                    "SetDefault" => $post->SetDefault,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -61,7 +59,7 @@ class StateMasterController extends Controller
             ]);
         }
     }
-
+  
     public function store(Request $request)
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
@@ -71,8 +69,7 @@ class StateMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._STATE_MASTER_.',Name',
-                    'CountryId' => 'required'
+                    'Name' => 'required|unique:'._PGSQL_.'.'._AMENITIES_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -80,14 +77,14 @@ class StateMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = StateMaster::create([
+                 $savedata = AmenitiesMaster::create([
                     'Name' => $request->Name,
-                    'CountryId' => $request->CountryId,
+                    'SetDefault' => $request->SetDefault,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
                 ]);
-
+  
                 if ($savedata) {
                     return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
                 } else {
@@ -98,11 +95,10 @@ class StateMasterController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = StateMaster::find($id);
+                $edit = AmenitiesMaster::find($id);
     
                 $businessvalidation =array(
                     'Name' => 'required',
-                    'CountryId' => 'required'
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -112,7 +108,7 @@ class StateMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->Name = $request->input('Name');
-                        $edit->CountryId = $request->input('CountryId');
+                        $edit->SetDefault = $request->input('SetDefault');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -129,14 +125,14 @@ class StateMasterController extends Controller
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
     }
- 
+  
   
      
     public function destroy(Request $request)
     {
-        $brands = StateMaster::find($request->id);
+        $brands = AmenitiesMaster::find($request->id);
         $brands->delete();
-
+  
         if ($brands) {
             return response()->json(['result' =>'Data deleted successfully!']);
         } else {

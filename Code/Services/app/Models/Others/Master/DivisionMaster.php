@@ -5,22 +5,18 @@ namespace App\Models\Others\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class DestinationMaster extends Model
+class DivisionMaster extends Model
 {
     use HasFactory;
-    protected $table = _DESTINATION_MASTER_;
+    protected $table = _DIVISION_MASTER_;
     protected $primarykey = "id";
     protected $fillable = [
-     'CountryId',
-     'State',
      'Name',
-     'Description',
-     'SetDefault',
+     'Status',
      'AddedBy',
      'UpdatedBy',
-     'Status',
      'created_at',
      'updated_at',
+     
     ];
-    public $timestamps = false;
 }

@@ -1,28 +1,27 @@
 <?php
 
-Namespace App\Http\Controllers\Others\Master;
-use Illuminate\Http\Request;
+namespace App\Http\Controllers\Others\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use App\Models\Others\Master\StateMaster;
+use Illuminate\Http\Request;
+use App\Models\Others\Master\LeadSourceMaster;
 use Illuminate\Support\Facades\Validator;
 
-
-class StateMasterController extends Controller
+class LeadSourceMasterController extends Controller
 {
-   
     public function index(Request $request){
        
          
         $arrayDataRows = array();
 
-        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+        call_logger('REQUEST COMES FROM LEAD SOURCE: '.$request->getContent());
         
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = StateMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%');
+        $posts = LeadSourceMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%')
+                         ->orwhere('SetDefault', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
@@ -37,8 +36,7 @@ class StateMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
-                    "CountryId" => $post->CountryId,
-                    "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
+                    "SetDefault" => $post->SetDefault,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -64,15 +62,15 @@ class StateMasterController extends Controller
 
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+        call_logger('REQUEST COMES FROM ADD/UPDATE LEAD: '.$request->getContent());
         
         try{
             $id = $request->input('id');
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._STATE_MASTER_.',Name',
-                    'CountryId' => 'required'
+                    'Name' => 'required|unique:'._PGSQL_.'.'._LEAD_SOURCE_MASTER_.',Name',
+                    'SetDefault' => 'required'
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -80,9 +78,9 @@ class StateMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = StateMaster::create([
+                 $savedata = LeadSourceMaster::create([
                     'Name' => $request->Name,
-                    'CountryId' => $request->CountryId,
+                    'SetDefault' => $request->SetDefault,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
@@ -98,11 +96,11 @@ class StateMasterController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = StateMaster::find($id);
+                $edit = LeadSourceMaster::find($id);
     
                 $businessvalidation =array(
                     'Name' => 'required',
-                    'CountryId' => 'required'
+                    'SetDefault' => 'required'
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -112,7 +110,7 @@ class StateMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->Name = $request->input('Name');
-                        $edit->CountryId = $request->input('CountryId');
+                        $edit->SetDefault = $request->input('SetDefault');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -134,7 +132,7 @@ class StateMasterController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = StateMaster::find($request->id);
+        $brands = LeadSourceMaster::find($request->id);
         $brands->delete();
 
         if ($brands) {

@@ -48,8 +48,8 @@ class DestinationMasterController extends Controller
                   "Status" => $post->Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
-                  "created_at" => $post->created_at,
-                  "updated_at" => $post->updated_at
+                  "Created_at" => $post->created_at,
+                  "Updated_at" => $post->updated_at
               ];
           }
           

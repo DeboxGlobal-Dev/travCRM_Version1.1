@@ -41,8 +41,8 @@ class BusinessTypeMasterController extends Controller
                   "Status" => $post->Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
-                  "Created_at" => $post->Created_at,
-                  "Updated_at" => $post->Updated_at
+                  "Created_at" => $post->created_at,
+                  "Updated_at" => $post->updated_at
               ];
           }
           
@@ -70,7 +70,7 @@ class BusinessTypeMasterController extends Controller
           if($id == '') {
                
               $businessvalidation =array(
-                  'Name' => 'required|unique:'._PGSQL_.'.'._STATE_MASTER_.',Name',
+                  'Name' => 'required|unique:'._PGSQL_.'.'._BUSINESS_TYPE_MASTER_.',Name',
               );
                
               $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -83,7 +83,7 @@ class BusinessTypeMasterController extends Controller
                   'SetDefault' => $request->SetDefault,
                   'Status' => $request->Status,
                   'AddedBy' => $request->AddedBy, 
-                  'Created_at' => now(),
+                  'created_at' => now(),
               ]);
 
               if ($savedata) {
@@ -112,7 +112,7 @@ class BusinessTypeMasterController extends Controller
                       $edit->SetDefault = $request->input('SetDefault');
                       $edit->Status = $request->input('Status');
                       $edit->UpdatedBy = $request->input('UpdatedBy');
-                      $edit->Updated_at = now();
+                      $edit->updated_at = now();
                       $edit->save();
                       
                       return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
