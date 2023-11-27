@@ -1,3 +1,4 @@
+
 <?php
 
 function call_logger($errorlog){
