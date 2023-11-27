@@ -20,6 +20,10 @@ define("_HOTEL_TYPE_MASTER_", "master.hotel_type_master");
 define("_HOTEL_CATEGORY_MASTER_", "master.hotel_category_master");
 define("_MEAL_PLAN_MASTER_", "master.meal_plan_master");
 define("_AMENITIES_MASTER_", "master.amenities_master");
+define("_TOUR_TYPE_MASTER_", "master.tour_type_master");
+define("_SEASOM_MASTER_", "master.season_master");
+define("RESTAURANT_MEAL_PLAN_MASTER_", "master.restaurant_meal_plan_master");
+define("_HOTEL_ADDITIONAL_MASTER_", "master.hotel_additional_master");
 
 
 
