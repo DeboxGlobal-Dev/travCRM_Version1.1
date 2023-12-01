@@ -13,7 +13,7 @@ class DivisionMaster extends Migration
      */
     public function up()
     {
-        Schema::create('division_master', function (Blueprint $table) {
+        Schema::create(_DIVISION_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->integer('Status');

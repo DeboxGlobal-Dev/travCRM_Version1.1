@@ -13,7 +13,7 @@ class CountryMaster extends Migration
      */
     public function up()
     {
-        Schema::create('country_master', function (Blueprint $table) {
+        Schema::create(_COUNTRY_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->string('ShortName', 10);

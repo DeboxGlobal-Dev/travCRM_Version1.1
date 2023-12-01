@@ -13,7 +13,7 @@ class LanguageMaster extends Migration
      */
     public function up()
     {
-        Schema::create('language_master', function (Blueprint $table) {
+        Schema::create(_LANGUAGE_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->integer('Status')->default(0);

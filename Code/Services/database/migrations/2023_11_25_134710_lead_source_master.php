@@ -13,7 +13,7 @@ class LeadSourceMaster extends Migration
      */
     public function up()
     {
-        Schema::create('lead_source_master', function (Blueprint $table) {
+        Schema::create(_LEAD_SOURCE_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->integer('SetDefault')->default('0');

@@ -16,11 +16,10 @@ class HotelTypeMaster extends Migration
         Schema::create(_HOTEL_TYPE_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
-            $table->integer('StateId');
-            $table->integer('CountryId');
-            $table->integer('Status');
-            $table->integer('AddedBy')->default('0');
-            $table->integer('UpdatedBy')->default('0');
+            $table->string('UploadKeyword', 155)->nullable();
+            $table->integer('Status')->default(0);
+            $table->integer('AddedBy')->default(0);
+            $table->integer('UpdatedBy')->default(0);
             $table->timestamps();
         });
     }

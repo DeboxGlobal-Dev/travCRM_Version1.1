@@ -13,7 +13,7 @@ class BusinessTypeMaster extends Migration
      */
     public function up()
     {
-        Schema::create('business_type_master', function (Blueprint $table) {
+        Schema::create(_BUSINESS_TYPE_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->integer('SetDefault')->default(0);

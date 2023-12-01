@@ -13,7 +13,7 @@ class DestinationMaster extends Migration
      */
     public function up()
     {
-        Schema::create('destination_master', function (Blueprint $table) {
+        Schema::create(_DESTINATION_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->integer('CountryId')->default(0);
             $table->integer('StateId')->default(0);

@@ -13,7 +13,7 @@ class CityMaster extends Migration
      */
     public function up()
     {
-        Schema::create('city_master', function (Blueprint $table) {
+        Schema::create(_CITY_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->integer('StateId');

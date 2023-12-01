@@ -13,7 +13,7 @@ class StateMaster extends Migration
      */
     public function up()
     {
-        Schema::create('state_master', function (Blueprint $table) {
+        Schema::create(_STATE_MASTER_, function (Blueprint $table) {
             $table->id();
             $table->string('Name', 50);
             $table->integer('CountryId');
