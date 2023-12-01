@@ -54,7 +54,7 @@ Route::post('/addupdatedivision',[DivisionMasterController::class,'store']);
 Route::post('/leadlist',[LeadSourceMasterController::class,'index']);
 Route::post('/addupdatelead',[LeadSourceMasterController::class,'store']);
 //////////////////////////////ROUTES FOR OTHERS END//////////////////////////////////////
- 
+
 //////////////////////////////ROUTES FOR HOTEL MASTERS /////////////////////////////////
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
 Route::post('/addupdateamenities',[AmenitiesMasterController::class,'store']);
