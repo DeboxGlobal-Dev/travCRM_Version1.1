@@ -69,7 +69,7 @@ class HotelAdditionalMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._HOTEL_ADDITIONAL_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._HOTEL_ADDITIONAL_MASTER_.',Name',
                     'Details' =>'required',
                 );
                  

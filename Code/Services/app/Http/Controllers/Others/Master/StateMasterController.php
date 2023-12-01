@@ -71,7 +71,7 @@ class StateMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._STATE_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._STATE_MASTER_.',Name',
                     'CountryId' => 'required'
                 );
                  

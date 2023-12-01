@@ -26,10 +26,7 @@ class LeadSourceMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->get('*');
  
-        //$countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-        //call_logger('REQUEST2: '.$countryName22);
-
+         
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
@@ -69,7 +66,7 @@ class LeadSourceMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._LEAD_SOURCE_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._LEAD_SOURCE_MASTER_.',Name',
                     'SetDefault' => 'required'
                 );
                  

@@ -56,7 +56,7 @@ class CityMasterController extends Controller
           $val = $request->input('id');
           if ($val === null) {
              $businessvalidation =array(
-                'Name' => 'required|unique:'._PGSQL_.'.'._CITY_MASTER_.',Name',
+                'Name' => 'required|unique:'._DB_.'.'._CITY_MASTER_.',Name',
                 'CountryId' => 'required',
                 'StateId' => 'required',
                 'AddedBy' => 'required',

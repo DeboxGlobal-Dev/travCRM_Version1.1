@@ -42,7 +42,7 @@ class CountryMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._COUNTRY_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._COUNTRY_MASTER_.',Name',
                     'ShortName' => 'required'
                 );
                  

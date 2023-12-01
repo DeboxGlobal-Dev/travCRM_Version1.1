@@ -67,7 +67,7 @@ class TourTypeMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._TOUR_TYPE_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._TOUR_TYPE_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 

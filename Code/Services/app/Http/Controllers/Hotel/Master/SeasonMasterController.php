@@ -71,7 +71,7 @@ class SeasonMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._SEASOM_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._SEASOM_MASTER_.',Name',
                     'FromDate' =>'required',
                     'ToDate ' =>'required',
                 );

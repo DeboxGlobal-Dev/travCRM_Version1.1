@@ -68,7 +68,7 @@ class DivisionMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._DIVISION_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._DIVISION_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 

@@ -24,7 +24,7 @@ define("_MEAL_PLAN_MASTER_", "hotel.meal_plan_master");
 define("_AMENITIES_MASTER_", "hotel.amenities_master");
 define("_TOUR_TYPE_MASTER_", "hotel.tour_type_master");
 define("_SEASOM_MASTER_", "hotel.season_master");
-define("RESTAURANT_MEAL_PLAN_MASTER_", "hotel.restaurant_meal_plan_master");
+define("_RESTAURANT_MEAL_PLAN_MASTER_", "hotel.restaurant_meal_plan_master");
 define("_HOTEL_ADDITIONAL_MASTER_", "hotel.hotel_additional_master");
 define("_WEEKEND_MASTER_", "hotel.weekend_master");
 define("_HOTEL_CHAIN_MASTER_", "hotel.hotel_chain_master");
