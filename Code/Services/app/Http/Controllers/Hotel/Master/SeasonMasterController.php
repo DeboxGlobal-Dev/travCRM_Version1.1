@@ -64,7 +64,7 @@ class SeasonMasterController extends Controller
   
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+        call_logger('REQUEST COMES FROM ADD/UPDATE SEASON: '.$request->getContent());
         
         try{
             $id = $request->input('id');
