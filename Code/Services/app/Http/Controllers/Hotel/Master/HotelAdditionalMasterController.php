@@ -26,7 +26,7 @@ class HotelAdditionalMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->get('*');
   
-        //$countryName = getName(_COUNTRY_MASTER_,3);
+        ////$countryName = getName(_COUNTRY_MASTER_,3);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
         //call_logger('REQUEST2: '.$countryName22);
   

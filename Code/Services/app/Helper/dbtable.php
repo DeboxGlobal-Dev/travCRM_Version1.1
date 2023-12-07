@@ -29,6 +29,8 @@ define("_HOTEL_ADDITIONAL_MASTER_", "hotel.hotel_additional_master");
 define("_WEEKEND_MASTER_", "hotel.weekend_master");
 define("_HOTEL_CHAIN_MASTER_", "hotel.hotel_chain_master");
 define("_ROOM_MASTER_", "hotel.room_master");
-/////////////////////////////END HERE///////////////////////////
+define("_RESTAURANT_MASTER_", "hotel.restaurant_master");
+// >>>>>>> e1dd4ab9ef3eab251320fe65cf8b2fccdf334e27
+/////////////////////END HERE///////////////////////////////
 
 ?>
