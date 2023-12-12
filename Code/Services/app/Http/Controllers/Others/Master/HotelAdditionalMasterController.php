@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Hotel\master;
+namespace App\Http\Controllers\Others\master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Hotel\Master\HotelAdditionalMaster;
+use App\Models\Others\Master\HotelAdditionalMaster;
 
 class HotelAdditionalMasterController extends Controller
 {
@@ -14,7 +14,7 @@ class HotelAdditionalMasterController extends Controller
          
         $arrayDataRows = array();
   
-        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+        call_logger('REQUEST COMES FROM Hotel Addition LIST: '.$request->getContent());
         
         $Search = $request->input('Search');
         $Status = $request->input('Status');

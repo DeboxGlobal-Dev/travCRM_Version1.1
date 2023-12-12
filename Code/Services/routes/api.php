@@ -65,8 +65,8 @@ Route::post('/addupdatelanguage',[LanguageMasterController::class,'store']);
 Route::post('/leadlist',[LeadSourceMasterController::class,'index']);
 Route::post('/addupdatelead',[LeadSourceMasterController::class,'store']);
 
-Route::post('/meallist',[MealPlanMasterController::class,'index']);
-Route::post('/addupdatemeal',[MealPlanMasterController::class,'store']);
+Route::post('/hotelmealplanlist',[MealPlanMasterController::class,'index']);
+Route::post('/addupdatehotelmealplan',[MealPlanMasterController::class,'store']);
 
 Route::post('/restaurantmasterlist',[RestaurantMasterController::class,'index']);
 Route::post('/addupdaterestaurantmaster',[RestaurantMasterController::class,'store']);

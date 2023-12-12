@@ -11,16 +11,16 @@ function call_logger($errorlog){
         {
             Storage::put($newfile, '');
         }
-    
+
         $logfile=fopen(Storage::path($newfile),'a');
-        
+
         $ip = \Request::ip();
         date_default_timezone_set('Asia/Kolkata');
         $time = date('d-m-Y h:i:s A',time());
         $contents = "$ip\t$time\t$errorlog\r";
         fwrite($logfile,$contents);
-        
-    }	
+
+    }
 }
 
 function getName($tableName,$id){
@@ -28,7 +28,7 @@ function getName($tableName,$id){
     if($name->isNotEmpty()){
         return $name[0]->Name;
     }
-    
+
 }
 
 function getColumnValue($tableName,$where,$val,$columnName){
