@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Hotel\Master;
+namespace App\Http\Controllers\Others\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Hotel\Master\HotelTypeMaster;
+use App\Models\Others\Master\SeasonMaster;
 
-class HotelTypeMasterController extends Controller
+class SeasonMasterController extends Controller
 {
     public function index(Request $request){
        
@@ -19,9 +19,10 @@ class HotelTypeMasterController extends Controller
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = HotelTypeMaster::when($Search, function ($query) use ($Search) {
+        $posts = SeasonMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
-                         ->orwhere('UploadKeyword', 'like', '%' . $Search . '%');
+                         ->orwhere('FromDate', 'like', '%' . $Search . '%')
+                         ->orwhere('ToDate ', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
@@ -36,7 +37,8 @@ class HotelTypeMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
-                    "UploadKeyword" => $post->UploadKeyword,
+                    "FromDate " => $post->FromDate,
+                    "ToDate " => $post->ToDate,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -62,15 +64,16 @@ class HotelTypeMasterController extends Controller
   
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+        call_logger('REQUEST COMES FROM ADD/UPDATE SEASON: '.$request->getContent());
         
         try{
             $id = $request->input('id');
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._HOTEL_TYPE_MASTER_.',Name',
-                    'UploadKeyword' =>'required',
+                    'Name' => 'required|unique:'._DB_.'.'._SEASOM_MASTER_.',Name',
+                    'FromDate' =>'required',
+                    'ToDate ' =>'required',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -78,9 +81,10 @@ class HotelTypeMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = HotelTypeMaster::create([
+                 $savedata = SeasonMaster::create([
                     'Name' => $request->Name,
-                    'UploadKeyword' => $request->UploadKeyword,
+                    'FromDate' => $request->FromDate,
+                    'ToDate ' => $request->ToDate,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
@@ -96,11 +100,12 @@ class HotelTypeMasterController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = HotelTypeMaster::find($id);
+                $edit = SeasonMaster::find($id);
     
                 $businessvalidation =array(
                     'Name' => 'required',
-                    'UploadKeyword' =>'required',
+                    'FromDate' =>'required',
+                    'ToDate' =>'required',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -110,7 +115,8 @@ class HotelTypeMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->Name = $request->input('Name');
-                        $edit->UploadKeyword = $request->input('UploadKeyword');
+                        $edit->FromDate = $request->input('FromDate');
+                        $edit->ToDate  = $request->input('ToDate');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -132,7 +138,7 @@ class HotelTypeMasterController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = HotelTypeMaster::find($request->id);
+        $brands = SeasonMaster::find($request->id);
         $brands->delete();
   
         if ($brands) {

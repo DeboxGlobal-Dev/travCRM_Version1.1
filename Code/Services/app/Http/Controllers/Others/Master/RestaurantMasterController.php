@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Hotel\master;
+namespace App\Http\Controllers\Others\master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Hotel\Master\RestaurantMaster;
+use App\Models\Others\Master\RestaurantMaster;
 
 class RestaurantMasterController extends Controller
 {

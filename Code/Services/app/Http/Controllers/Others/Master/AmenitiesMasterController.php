@@ -1,27 +1,34 @@
 <?php
 
-namespace App\Http\Controllers\Hotel\Master;
+namespace App\Http\Controllers\Others\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Hotel\Master\RoomMaster;
+use App\Models\Others\Master\AmenitiesMaster;
 
-class RoomMasterController extends Controller
+class AmenitiesMasterController extends Controller
 {
     public function index(Request $request){
        
          
         $arrayDataRows = array();
-   
+  
+        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+        
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = RoomMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%');
+        $posts = AmenitiesMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%')
+                         ->orwhere('SetDefault', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
+  
+        //$countryName = getName(_COUNTRY_MASTER_,3);
+        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
+        //call_logger('REQUEST2: '.$countryName22);
   
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
@@ -29,6 +36,7 @@ class RoomMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
+                    "SetDefault" => $post->SetDefault,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -54,12 +62,14 @@ class RoomMasterController extends Controller
   
     public function store(Request $request)
     {
+        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+        
         try{
             $id = $request->input('id');
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._ROOM_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._AMENITIES_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -67,8 +77,9 @@ class RoomMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = RoomMaster::create([
+                 $savedata = AmenitiesMaster::create([
                     'Name' => $request->Name,
+                    'SetDefault' => $request->SetDefault,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
@@ -84,7 +95,7 @@ class RoomMasterController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = RoomMaster::find($id);
+                $edit = AmenitiesMaster::find($id);
     
                 $businessvalidation =array(
                     'Name' => 'required',
@@ -97,6 +108,7 @@ class RoomMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->Name = $request->input('Name');
+                        $edit->SetDefault = $request->input('SetDefault');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -118,7 +130,7 @@ class RoomMasterController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = RoomMaster::find($request->id);
+        $brands = AmenitiesMaster::find($request->id);
         $brands->delete();
   
         if ($brands) {

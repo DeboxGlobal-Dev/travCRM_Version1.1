@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Hotel\Master;
+namespace App\Http\Controllers\Others\master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Hotel\Master\HotelCategoryMaster;
-
-class HotelCategoryMasterController extends Controller
+use App\Models\Others\Master\RestaurantMealPlanMaster;
+class RestaurantMealPlanMasterController extends Controller
 {
     public function index(Request $request){
        
@@ -19,9 +18,8 @@ class HotelCategoryMasterController extends Controller
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = HotelCategoryMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%')
-                         ->orwhere('UploadKeyword', 'like', '%' . $Search . '%');
+        $posts = RestaurantMealPlanMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
@@ -36,7 +34,6 @@ class HotelCategoryMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
-                    "UploadKeyword" => $post->UploadKeyword,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -62,15 +59,12 @@ class HotelCategoryMasterController extends Controller
   
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
-        
         try{
             $id = $request->input('id');
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._HOTEL_CATEGORY_MASTER_.',Name',
-                    'UploadKeyword' =>'required',
+                    'Name' => 'required|unique:'._DB_.'.'._RESTAURANT_MEAL_PLAN_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -78,9 +72,8 @@ class HotelCategoryMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = HotelCategoryMaster::create([
+                 $savedata = RestaurantMealPlanMaster::create([
                     'Name' => $request->Name,
-                    'UploadKeyword' => $request->UploadKeyword,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
@@ -96,11 +89,10 @@ class HotelCategoryMasterController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = HotelCategoryMaster::find($id);
+                $edit = RestaurantMealPlanMaster::find($id);
     
                 $businessvalidation =array(
                     'Name' => 'required',
-                    'UploadKeyword' =>'required',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -110,7 +102,6 @@ class HotelCategoryMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->Name = $request->input('Name');
-                        $edit->UploadKeyword = $request->input('UploadKeyword');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -132,7 +123,7 @@ class HotelCategoryMasterController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = HotelCategoryMaster::find($request->id);
+        $brands = RestaurantMealPlanMaster::find($request->id);
         $brands->delete();
   
         if ($brands) {
