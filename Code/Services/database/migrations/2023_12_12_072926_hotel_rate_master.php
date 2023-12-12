@@ -43,6 +43,7 @@ class HotelRateMaster extends Migration
             $table->text('Remarks');
             $table->integer('AddedBy')->default(0);
             $table->integer('UpdatedBy')->default(0);
+            $table->integer('ClientId');
             $table->timestamps();
         });
     }
