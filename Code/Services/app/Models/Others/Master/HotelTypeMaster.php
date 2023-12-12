@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Models\Hotel\Master;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RestaurantMealPlanMaster extends Model
+class HotelTypeMaster extends Model
 {
     use HasFactory;
-    protected $table = _RESTAURANT_MEAL_PLAN_MASTER_;
+    protected $table = _HOTEL_TYPE_MASTER_;
     protected $primarykey = 'id'; 
     protected $fillable = [
         'Name',
+        'UploadKeyword',
         'AddedBy',
         'UpdatedBy',
         'Status',

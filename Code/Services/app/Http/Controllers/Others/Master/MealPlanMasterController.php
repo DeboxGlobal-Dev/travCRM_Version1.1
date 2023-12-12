@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Hotel\Master;
+namespace App\Http\Controllers\Others\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Hotel\Master\AmenitiesMaster;
+use App\Models\Others\Master\MealPlanMaster;
 
-class AmenitiesMasterController extends Controller
+class MealPlanMasterController extends Controller
 {
     public function index(Request $request){
        
@@ -19,9 +19,10 @@ class AmenitiesMasterController extends Controller
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = AmenitiesMaster::when($Search, function ($query) use ($Search) {
+        $posts = MealPlanMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
-                         ->orwhere('SetDefault', 'like', '%' . $Search . '%');
+                         ->orwhere('SetDefault', 'like', '%' . $Search . '%')
+                         ->orwhere('ShortName', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->get('*');
@@ -36,6 +37,7 @@ class AmenitiesMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
+                    "ShortName" => $post->ShortName,
                     "SetDefault" => $post->SetDefault,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
@@ -69,7 +71,7 @@ class AmenitiesMasterController extends Controller
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._AMENITIES_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._MEAL_PLAN_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -77,8 +79,9 @@ class AmenitiesMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = AmenitiesMaster::create([
+                 $savedata = MealPlanMaster::create([
                     'Name' => $request->Name,
+                    'ShortName' => $request->ShortName,
                     'SetDefault' => $request->SetDefault,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
@@ -95,7 +98,7 @@ class AmenitiesMasterController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = AmenitiesMaster::find($id);
+                $edit = MealPlanMaster::find($id);
     
                 $businessvalidation =array(
                     'Name' => 'required',
@@ -108,6 +111,7 @@ class AmenitiesMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->Name = $request->input('Name');
+                        $edit->ShortName = $request->input('ShortName');
                         $edit->SetDefault = $request->input('SetDefault');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
@@ -130,7 +134,7 @@ class AmenitiesMasterController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = AmenitiesMaster::find($request->id);
+        $brands = MealPlanMaster::find($request->id);
         $brands->delete();
   
         if ($brands) {

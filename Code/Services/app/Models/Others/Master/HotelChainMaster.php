@@ -1,37 +1,29 @@
 <?php
 
-namespace App\Models\Hotel\Master;
+namespace App\Models\Others\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RestaurantMaster extends Model
+class HotelChainMaster extends Model
 {
     use HasFactory;
-    protected $table = _RESTAURANT_MASTER_;
+    protected $table = _HOTEL_CHAIN_MASTER_;
     protected $primarykey = 'id'; 
     protected $fillable = [
         'Name',
-        'DestinationId',
-        'Address',
-        'CountryId',
-        'StateId',
-        'CityId',
+        'Location',
+        'HotelWebsite',
         'SelfSupplier',
-        'PinCode',
-        'GSTN',
         'ContactType',
         'ContactName',
         'ContactDesignation',
-        'CountryCode',
-        'Phone1',
-        'Phone2',
-        'Phone3',
+        'ContactCountryCode',
+        'ContactMobile',
         'ContactEmail',
-        'Image',
-        'Status',
         'AddedBy',
         'UpdatedBy',
+        'Status',
         'created_at',
         'updated_at',
        
