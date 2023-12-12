@@ -9,6 +9,7 @@ use App\Http\Controllers\Others\Master\StateMasterController;
 use App\Http\Controllers\Hotel\Master\WeekendMasterController;
 use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
+use App\Http\Controllers\Others\Master\CurrencyMasterController;
 use App\Http\Controllers\Others\Master\DivisionMasterController;
 use App\Http\Controllers\Others\Master\LanguageMasterController;
 use App\Http\Controllers\Others\Master\MealPlanMasterController;
@@ -85,6 +86,9 @@ Route::post('/addupdatetour',[TourTypeMasterController::class,'store']);
 
 Route::post('/weekendlist',[WeekendMasterController::class,'index']);
 Route::post('/addupdateweekend',[WeekendMasterController::class,'store']);
+
+Route::post('/currencymasterlist',[CurrencyMasterController::class,'index']);
+Route::post('/addupdatecurrencymaster',[CurrencyMasterController::class,'store']);
 //===========================================END HERE========================================
 
 

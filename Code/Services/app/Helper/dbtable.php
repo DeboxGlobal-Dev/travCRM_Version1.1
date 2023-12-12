@@ -15,6 +15,7 @@ define("_LANGUAGE_MASTER_", "others.language_master");
 define("_BUSINESS_TYPE_MASTER_", "others.business_type_master");
 define("_DIVISION_MASTER_", "others.division_master");
 define("_LEAD_SOURCE_MASTER_", "others.lead_source_master");
+define("_CURRENCY_MASTER_", "others.currency_master");
 /////////////////////////////END HERE///////////////////////////
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
