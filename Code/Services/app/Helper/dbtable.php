@@ -2,7 +2,6 @@
 ////////////////Define all table name here/////////////////////
 
 /*-------FOR CUSTOM DB SELECTION  PGSQL OR MYSQL ------*/
-define("_PGSQL_", "pgsql");
 define("_DB_", "pgsql");
 /*-----------------------------------------------------*/
 
@@ -15,23 +14,29 @@ define("_LANGUAGE_MASTER_", "others.language_master");
 define("_BUSINESS_TYPE_MASTER_", "others.business_type_master");
 define("_DIVISION_MASTER_", "others.division_master");
 define("_LEAD_SOURCE_MASTER_", "others.lead_source_master");
+define("_HOTEL_TYPE_MASTER_", "others.hotel_type_master");
+define("_HOTEL_CATEGORY_MASTER_", "others.hotel_category_master");
+define("_MEAL_PLAN_MASTER_", "others.meal_plan_master");
+define("_AMENITIES_MASTER_", "others.amenities_master");
+define("_TOUR_TYPE_MASTER_", "others.tour_type_master");
+define("_SEASOM_MASTER_", "others.season_master");
+define("_RESTAURANT_MEAL_PLAN_MASTER_", "others.restaurant_meal_plan_master");
+define("_HOTEL_ADDITIONAL_MASTER_", "others.hotel_additional_master");
+define("_WEEKEND_MASTER_", "others.weekend_master");
+define("_ROOM_MASTER_", "others.room_master");
+define("_HOTEL_CHAIN_MASTER_", "others.hotel_chain_master");
+define("_RESTAURANT_MASTER_", "others.restaurant_master");
 define("_CURRENCY_MASTER_", "others.currency_master");
+define("_HOTEL_RATE_MASTER_", "others.hotel_rate_master");
+
 /////////////////////////////END HERE///////////////////////////
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
-define("_HOTEL_TYPE_MASTER_", "hotel.hotel_type_master");
-define("_HOTEL_CATEGORY_MASTER_", "hotel.hotel_category_master");
-define("_MEAL_PLAN_MASTER_", "hotel.meal_plan_master");
-define("_AMENITIES_MASTER_", "hotel.amenities_master");
-define("_TOUR_TYPE_MASTER_", "hotel.tour_type_master");
-define("_SEASOM_MASTER_", "hotel.season_master");
-define("_RESTAURANT_MEAL_PLAN_MASTER_", "hotel.restaurant_meal_plan_master");
-define("_HOTEL_ADDITIONAL_MASTER_", "hotel.hotel_additional_master");
-define("_WEEKEND_MASTER_", "hotel.weekend_master");
-define("_HOTEL_CHAIN_MASTER_", "hotel.hotel_chain_master");
-define("_ROOM_MASTER_", "hotel.room_master");
-define("_RESTAURANT_MASTER_", "hotel.restaurant_master");
-// >>>>>>> e1dd4ab9ef3eab251320fe65cf8b2fccdf334e27
+
+
+    //code here
+
+
 /////////////////////END HERE///////////////////////////////
 
 ?>

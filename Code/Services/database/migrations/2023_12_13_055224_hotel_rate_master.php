@@ -23,7 +23,6 @@ class HotelRateMaster extends Migration
             $table->integer('SeasonYear');
             $table->date('ValidFrom');
             $table->date('ValidTo');
-            $table->Integer('Status')->default(0);
             $table->Integer('RoomType');
             $table->Integer('MealType');
             $table->Integer('Currency');
@@ -41,6 +40,7 @@ class HotelRateMaster extends Migration
             $table->integer('MarkUpType');
             $table->integer('MarkUpValue');
             $table->text('Remarks');
+            $table->Integer('Status')->default(0);
             $table->integer('AddedBy')->default(0);
             $table->integer('UpdatedBy')->default(0);
             $table->integer('ClientId');
