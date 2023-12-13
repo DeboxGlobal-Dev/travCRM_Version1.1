@@ -15,12 +15,4 @@ class HotelRateMaster extends Model
         'SeasonYear', 'ValidFrom', 'ValidTo', 'RoomType', 'MealType', 'Currency', 'SingleOccupancy', 'DoubleOccupancy', 'ExtraBedAdult', 'ExtraBedChild', 'ChildWithBed', 'Breakfast', 'Lunch', 'Dinner', 'TAC', 'RoomTaxSlab', 'MealTaxSlab', 'MarkUpType', 'MarkUpValue', 'Remarks', 'Status', 'AddedBy', 'UpdatedBy', 'created_at', 'updated_at'
     ];
     public $timestamps = false;
-
-    public static function HotelList($data){
-        call_logger('REQUEST COMES FROM HOTEL RATE LIST: '.$data->getContent());
-        return 'Hi Satendra..';
-    }
-
-
-
 }
