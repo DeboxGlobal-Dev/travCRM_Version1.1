@@ -2,11 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Others\Master\ExampleController;
 use App\Http\Controllers\Others\Master\CityMasterController;
 use App\Http\Controllers\Others\Master\RoomMasterController;
 use App\Http\Controllers\Others\Master\StateMasterController;
-use App\Http\Controllers\Hotel\Master\WeekendMasterController;
+use App\Http\Controllers\Others\Master\WeekendMasterController;
 use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
 use App\Http\Controllers\Others\Master\CurrencyMasterController;
