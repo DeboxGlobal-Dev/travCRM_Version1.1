@@ -11,7 +11,7 @@ class HotelRateMaster extends Model
     protected $table = _HOTEL_RATE_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'ClientId', 'MarketType', 'SupplierId', 'PaxType', 'TariffType', 'SeasonType',
+        'HotelId', 'ClientId', 'MarketType', 'SupplierId', 'PaxType', 'TariffType', 'SeasonType',
         'SeasonYear', 'ValidFrom', 'ValidTo', 'RoomType', 'MealType', 'Currency', 'SingleOccupancy', 'DoubleOccupancy', 'ExtraBedAdult', 'ExtraBedChild', 'ChildWithBed', 'Breakfast', 'Lunch', 'Dinner', 'TAC', 'RoomTaxSlab', 'MealTaxSlab', 'MarkUpType', 'MarkUpValue', 'Remarks', 'Status', 'AddedBy', 'UpdatedBy', 'created_at', 'updated_at'
     ];
     public $timestamps = false;

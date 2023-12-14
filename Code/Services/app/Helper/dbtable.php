@@ -27,14 +27,12 @@ define("_ROOM_MASTER_", "others.room_master");
 define("_HOTEL_CHAIN_MASTER_", "others.hotel_chain_master");
 define("_RESTAURANT_MASTER_", "others.restaurant_master");
 define("_CURRENCY_MASTER_", "others.currency_master");
-define("_HOTEL_RATE_MASTER_", "others.hotel_rate_master");
-
+define("_HOTEL_MASTER_", "others.hotel_master");
+define("_CONTACT_PERSON_MASTER_", "others.contact_person_master");
 /////////////////////////////END HERE///////////////////////////
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
-
-
-    //code here
+define("_HOTEL_RATE_MASTER_", "hotel.hotel_rate_master");
 
 
 /////////////////////END HERE///////////////////////////////

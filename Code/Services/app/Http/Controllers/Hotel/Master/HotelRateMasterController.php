@@ -28,16 +28,17 @@ class HotelRateMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "ClientId" => $post->ClientId,
+                    "HotelId" => getColumnValue(_HOTEL_MASTER_,'id',$post->HotelId,'HotelName'),
                     "MarketType" => $post->MarketType,
                     "SupplierId" => $post->SupplierId,
                     "PaxType" => $post->PaxType,
                     "TariffType" => $post->TariffType,
-                    "SeasonType" => $post->SeasonType,
+                    "SeasonType" => getName(_SEASOM_MASTER_,$post->SeasonType),
                     "SeasonYear" => $post->SeasonYear,
                     "ValidFrom" => $post->ValidFrom,
                     "ValidTo" => $post->ValidTo,
-                    "RoomType" => $post->RoomType,
-                    "MealType" => $post->MealType,
+                    "RoomType" => getName(_ROOM_MASTER_,$post->RoomType),
+                    "MealType" => getName(_MEAL_PLAN_MASTER_,$post->MealType),
                     "Currency" => $post->Currency,
                     "SingleOccupancy" => $post->SingleOccupancy,
                     "DoubleOccupancy" => $post->DoubleOccupancy,
@@ -95,6 +96,7 @@ class HotelRateMasterController extends Controller
                 }else{
                  $savedata = HotelRateMaster::create([
                     'ClientId' => $request->ClientId,
+                    'HotelId' => $request->HotelId,
                     'MarketType' => $request->MarketType,
                     'SupplierId' => $request->SupplierId,
                     'PaxType' => $request->PaxType,
@@ -148,6 +150,7 @@ class HotelRateMasterController extends Controller
                 }else{
                     if ($edit) {
                         $edit->ClientId = $request->input('ClientId');
+                        $edit->HotelId = $request->input('HotelId');
                         $edit->MarketType = $request->input('MarketType');
                         $edit->SupplierId = $request->input('SupplierId');
                         $edit->PaxType = $request->input('PaxType');

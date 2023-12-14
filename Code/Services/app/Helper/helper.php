@@ -28,7 +28,6 @@ function getName($tableName,$id){
     if($name->isNotEmpty()){
         return $name[0]->Name;
     }
-
 }
 
 function getColumnValue($tableName,$where,$val,$columnName){

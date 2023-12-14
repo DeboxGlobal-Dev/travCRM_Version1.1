@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Others\Master\CityMasterController;
 use App\Http\Controllers\Others\Master\RoomMasterController;
+use App\Http\Controllers\Others\Master\HotelMasterController;
 use App\Http\Controllers\Others\Master\StateMasterController;
 use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
@@ -90,8 +91,11 @@ Route::post('/addupdateweekend',[WeekendMasterController::class,'store']);
 Route::post('/currencymasterlist',[CurrencyMasterController::class,'index']);
 Route::post('/addupdatecurrencymaster',[CurrencyMasterController::class,'store']);
 
-//===========================================END HERE========================================
+Route::post('/hotellist',[HotelMasterController::class,'index']);
+Route::post('/addupdatehotel',[HotelMasterController::class,'store']);
 
+
+//===========================================END HERE========================================
 
 // ========================================Hotel API ROUTE===================================
 Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
