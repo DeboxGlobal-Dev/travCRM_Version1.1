@@ -25,7 +25,7 @@ class MealPlanMasterController extends Controller
                          ->orwhere('ShortName', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->get('*');
+        })->select('*')->orderBy('Name')->get('*');
 
         //$countryName = getName(_COUNTRY_MASTER_,3);
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');

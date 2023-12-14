@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Others\Master;
+namespace App\Http\Controllers\Hotel\Master;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Others\Master\HotelRateMaster;
+use App\Models\Hotel\Master\HotelRateMaster;
 
 class HotelRateMasterController extends Controller
 {

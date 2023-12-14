@@ -8,13 +8,13 @@ use App\Http\Controllers\Others\Master\StateMasterController;
 use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
 use App\Http\Controllers\Others\Master\WeekendMasterController;
+use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
 use App\Http\Controllers\Others\Master\CurrencyMasterController;
 use App\Http\Controllers\Others\Master\DivisionMasterController;
 use App\Http\Controllers\Others\Master\LanguageMasterController;
 use App\Http\Controllers\Others\Master\MealPlanMasterController;
 use App\Http\Controllers\Others\Master\TourTypeMasterController;
 use App\Http\Controllers\Others\Master\AmenitiesMasterController;
-use App\Http\Controllers\Others\Master\HotelRateMasterController;
 use App\Http\Controllers\Others\Master\HotelTypeMasterController;
 use App\Http\Controllers\Others\Master\HotelChainMasterController;
 use App\Http\Controllers\Others\Master\LeadSourceMasterController;
@@ -90,14 +90,12 @@ Route::post('/addupdateweekend',[WeekendMasterController::class,'store']);
 Route::post('/currencymasterlist',[CurrencyMasterController::class,'index']);
 Route::post('/addupdatecurrencymaster',[CurrencyMasterController::class,'store']);
 
-Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
-Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
 //===========================================END HERE========================================
 
 
 // ========================================Hotel API ROUTE===================================
-
-//code here
+Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
+Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
 
 
 // ===========================================END HERE=======================================

@@ -18,7 +18,7 @@ class CountryMasterController extends Controller
                    ->orwhere('ShortName', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->get('*');
+        })->select('*')->orderBy('Name')->get('*');
 
         if ($posts->isNotEmpty()) {
             return response()->json([
