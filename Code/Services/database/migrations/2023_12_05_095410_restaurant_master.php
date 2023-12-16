@@ -27,7 +27,7 @@ class RestaurantMaster extends Migration
             $table->integer('ContactType');
             $table->string('ContactName',100);
             $table->string('ContactDesignation',100);
-            $table->string('CountryCOde',100);
+            $table->string('CountryCode',100);
             $table->integer('Phone1');
             $table->integer('Phone2');
             $table->integer('Phone3');
