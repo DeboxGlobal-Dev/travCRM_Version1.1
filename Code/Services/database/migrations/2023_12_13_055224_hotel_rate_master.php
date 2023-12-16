@@ -15,6 +15,8 @@ class HotelRateMaster extends Migration
     {
         Schema::create(_HOTEL_RATE_MASTER_, function (Blueprint $table) {
             $table->id();
+            $table->integer('ClientId');
+            $table->integer('HotelId');
             $table->integer('MarketType');
             $table->integer('SupplierId');
             $table->integer('PaxType');
@@ -43,7 +45,6 @@ class HotelRateMaster extends Migration
             $table->Integer('Status')->default(0);
             $table->integer('AddedBy')->default(0);
             $table->integer('UpdatedBy')->default(0);
-            $table->integer('ClientId');
             $table->timestamps();
         });
     }
