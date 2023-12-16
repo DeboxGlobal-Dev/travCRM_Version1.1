@@ -19,7 +19,7 @@ define("_HOTEL_CATEGORY_MASTER_", "others.hotel_category_master");
 define("_MEAL_PLAN_MASTER_", "others.meal_plan_master");
 define("_AMENITIES_MASTER_", "others.amenities_master");
 define("_TOUR_TYPE_MASTER_", "others.tour_type_master");
-define("_SEASOM_MASTER_", "others.season_master");
+define("_SEASON_MASTER_", "others.season_master");
 define("_RESTAURANT_MEAL_PLAN_MASTER_", "others.restaurant_meal_plan_master");
 define("_HOTEL_ADDITIONAL_MASTER_", "others.hotel_additional_master");
 define("_WEEKEND_MASTER_", "others.weekend_master");

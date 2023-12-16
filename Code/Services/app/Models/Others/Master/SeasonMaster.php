@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SeasonMaster extends Model
 {
     use HasFactory;
-    protected $table = _SEASOM_MASTER_;
+    protected $table = _SEASON_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
         'Name',

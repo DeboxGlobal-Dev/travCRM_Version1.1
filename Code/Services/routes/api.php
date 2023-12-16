@@ -6,6 +6,7 @@ use App\Http\Controllers\Others\Master\CityMasterController;
 use App\Http\Controllers\Others\Master\RoomMasterController;
 use App\Http\Controllers\Others\Master\HotelMasterController;
 use App\Http\Controllers\Others\Master\StateMasterController;
+use App\Http\Controllers\Others\Master\MarketMasterController;
 use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
 use App\Http\Controllers\Others\Master\WeekendMasterController;
