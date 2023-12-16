@@ -10,6 +10,7 @@ use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
 use App\Http\Controllers\Others\Master\WeekendMasterController;
 use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
+use App\Http\Controllers\Hotel\Master\SearchHotelRateController;
 use App\Http\Controllers\Others\Master\CurrencyMasterController;
 use App\Http\Controllers\Others\Master\DivisionMasterController;
 use App\Http\Controllers\Others\Master\LanguageMasterController;
@@ -101,5 +102,6 @@ Route::post('/addupdatehotel',[HotelMasterController::class,'store']);
 Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
 Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
 
-
+Route::post('/searchhotelratelist',[SearchHotelRateController::class,'index']);
+Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
 // ===========================================END HERE=======================================
