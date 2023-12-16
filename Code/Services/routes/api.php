@@ -11,6 +11,7 @@ use App\Http\Controllers\Others\Master\CountryMasterController;
 use App\Http\Controllers\Others\Master\WeekendMasterController;
 use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
 use App\Http\Controllers\Hotel\Master\SearchHotelRateController;
+use App\Http\Controllers\Others\Master\ContactDetailsController;
 use App\Http\Controllers\Others\Master\CurrencyMasterController;
 use App\Http\Controllers\Others\Master\DivisionMasterController;
 use App\Http\Controllers\Others\Master\LanguageMasterController;
@@ -95,7 +96,11 @@ Route::post('/addupdatecurrencymaster',[CurrencyMasterController::class,'store']
 Route::post('/hotellist',[HotelMasterController::class,'index']);
 Route::post('/addupdatehotel',[HotelMasterController::class,'store']);
 
+Route::post('/contactlist',[ContactDetailsController::class,'index']);
+Route::post('/addupdatecontact',[ContactDetailsController::class,'store']);
 
+Route::post('/marketlist',[MarketMasterController::class,'index']);
+Route::post('/addupdatemarket',[MarketMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Hotel API ROUTE===================================
