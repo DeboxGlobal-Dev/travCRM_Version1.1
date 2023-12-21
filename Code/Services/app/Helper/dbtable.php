@@ -30,6 +30,10 @@ define("_CURRENCY_MASTER_", "others.currency_master");
 define("_HOTEL_MASTER_", "others.hotel_master");
 define("_CONTACT_PERSON_MASTER_", "others.contact_person_master");
 define("_MARKET_MASTER_", "others.market_master");
+define("_ITINERARY_INFO_MASTER_", "others.itinerary_info_master");
+define("_LETTER_MASTER_", "others.letter_master");
+define("_ADDITIONAL_REQUIREMENT_MASTER_", "others.additional_requirement_master");
+
 /////////////////////////////END HERE///////////////////////////
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
@@ -37,5 +41,11 @@ define("_HOTEL_RATE_MASTER_", "hotel.hotel_rate_master");
 define("_SEARCH_HOTEL_RATE_", "hotel.search_hotelrate_");
 
 /////////////////////END HERE///////////////////////////////
+
+/////////////////////////TRANSPORT RELATED MASTER///////////////////
+define("_VEHICLE_TYPE_MASTER_", "transport.vehicle_type_master");
+define("_VEHICLE_BRAND_MASTER_", "transport.vehicle_brand_master");
+define("_TRANSFER_TYPE_MASTER_", "transport.transfer_type_master");
+define("_VEHICLE_MASTER_", "transport.vehicle_master");
 
 ?>
