@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+//===============================OTHERS CONTROLLERS==================================
 use App\Http\Controllers\Others\Master\CityMasterController;
 use App\Http\Controllers\Others\Master\RoomMasterController;
 use App\Http\Controllers\Others\Master\HotelMasterController;
@@ -10,8 +11,6 @@ use App\Http\Controllers\Others\Master\MarketMasterController;
 use App\Http\Controllers\Others\Master\SeasonMasterController;
 use App\Http\Controllers\Others\Master\CountryMasterController;
 use App\Http\Controllers\Others\Master\WeekendMasterController;
-use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
-use App\Http\Controllers\Hotel\Master\SearchHotelRateController;
 use App\Http\Controllers\Others\Master\ContactDetailsController;
 use App\Http\Controllers\Others\Master\CurrencyMasterController;
 use App\Http\Controllers\Others\Master\DivisionMasterController;
@@ -28,6 +27,22 @@ use App\Http\Controllers\Others\Master\BusinessTypeMasterController;
 use App\Http\Controllers\Others\Master\HotelCategoryMasterController;
 use App\Http\Controllers\Others\Master\HotelAdditionalMasterController;
 use App\Http\Controllers\Others\Master\RestaurantMealPlanMasterController;
+use App\Http\Controllers\Others\Master\ItineraryInfoMasterController;
+use App\Http\Controllers\Others\Master\LetterMasterController;
+use App\Http\Controllers\Others\Master\AdditionalRequirementMasterController;
+
+//===============================HOTEL CONTROLLERS==================================
+use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
+use App\Http\Controllers\Hotel\Master\SearchHotelRateController;
+
+//===============================TRANSPORT CONTROLLERS==================================
+use App\Http\Controllers\Transport\Master\VehicleTypeMasterController;
+use App\Http\Controllers\Transport\Master\VehicleBrandMasterController;
+use App\Http\Controllers\Transport\Master\TransferTypeMasterController;
+use App\Http\Controllers\Transport\Master\VehicleMasterController;
+
+
+
 
 //====================================OTHERS COMMON API ROUTE======================================
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
@@ -102,6 +117,15 @@ Route::post('/addupdatecontact',[ContactDetailsController::class,'store']);
 
 Route::post('/marketlist',[MarketMasterController::class,'index']);
 Route::post('/addupdatemarket',[MarketMasterController::class,'store']);
+
+Route::post('/itineraryinfomasterlist',[ItineraryInfoMasterController::class,'index']);
+Route::post('/addupdateitineraryinfomaster',[ItineraryInfoMasterController::class,'store']);
+
+Route::post('/lettermasterlist',[LetterMasterController::class,'index']);
+Route::post('/addupdatelettermaster',[LetterMasterController::class,'store']);
+
+Route::post('/additionalrequirementmasterlist',[AdditionalRequirementMasterController::class,'index']);
+Route::post('/addupdateadditionalrequirementmaster',[AdditionalRequirementMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Hotel API ROUTE===================================
@@ -110,4 +134,18 @@ Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
 
 Route::post('/searchhotelratelist',[SearchHotelRateController::class,'index']);
 Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
+// ===========================================END HERE=======================================
+
+// ========================================Transport API ROUTE===============================
+Route::post('/vehicletypemasterlist',[VehicleTypeMasterController::class,'index']);
+Route::post('/addupdatevehicletypemaster',[VehicleTypeMasterController::class,'store']);
+
+Route::post('/vehiclebrandmasterlist',[VehicleBrandMasterController::class,'index']);
+Route::post('/addupdatevehiclebrandmaster',[VehicleBrandMasterController::class,'store']);
+
+Route::post('/transfertypemasterlist',[TransferTypeMasterController::class,'index']);
+Route::post('/addupdatetransfertypemaster',[TransferTypeMasterController::class,'store']);
+
+Route::post('/vehiclemasterlist',[VehicleMasterController::class,'index']);
+Route::post('/addupdatevehiclemaster',[VehicleMasterController::class,'store']);
 // ===========================================END HERE=======================================
