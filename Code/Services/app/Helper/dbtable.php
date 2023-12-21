@@ -33,6 +33,7 @@ define("_MARKET_MASTER_", "others.market_master");
 define("_ITINERARY_INFO_MASTER_", "others.itinerary_info_master");
 define("_LETTER_MASTER_", "others.letter_master");
 define("_ADDITIONAL_REQUIREMENT_MASTER_", "others.additional_requirement_master");
+define("_IMAGE_GALLERY_MASTER_", "others.image_gallery_master");
 
 /////////////////////////////END HERE///////////////////////////
 
@@ -47,5 +48,15 @@ define("_VEHICLE_TYPE_MASTER_", "transport.vehicle_type_master");
 define("_VEHICLE_BRAND_MASTER_", "transport.vehicle_brand_master");
 define("_TRANSFER_TYPE_MASTER_", "transport.transfer_type_master");
 define("_VEHICLE_MASTER_", "transport.vehicle_master");
+
+/////////////////////END HERE///////////////////////////////
+
+///////////////////////SIGHTSEEING RELATED MASTER //////////////////////////
+define("_AIRLINE_MASTER_", "sightseeing.airline_master");
+define("_TRAIN_MASTER_", "sightseeing.train_master");
+define("_MONUMENT_MASTER_", "sightseeing.monument_master");
+define("_SIGHTSEEING_MASTER_", "sightseeing.sightseeing_master");
+
+/////////////////////END HERE///////////////////////////////
 
 ?>
