@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Others\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Others\Master\AdditionalRequirementMaster;
@@ -74,6 +75,28 @@ class AdditionalRequirementMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
+                  
+                    $Name = $request->input('Name');
+                    $DestinationId = $request->input('DestinationId');
+                    $CurrencyId = $request->input('CurrencyId');
+                    $CostType = $request->input('CostType');
+                    $AdultCost = $request->input('AdultCost');
+                    $ChildCost = $request->input('ChildCost');
+                    $InfantCost = $request->input('InfantCost');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $Details = $request->input('Details');
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+                    
+                    $filename = uniqid() . '.png';
+                    
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
+
+
                  $savedata = AdditionalRequirementMaster::create([
                     'Name' => $request->Name,
                     'DestinationId' => $request->DestinationId,
@@ -82,8 +105,8 @@ class AdditionalRequirementMasterController extends Controller
                     'AdultCost' => $request->AdultCost,
                     'ChildCost' => $request->ChildCost,
                     'InfantCost' => $request->InfantCost,
-                    'ImageName' => $request->ImageName,
-                    'ImageData' => $request->ImageData,
+                    'ImageName' => $ImageName,
+                    'ImageData' => $filename,
                     'Details' => $request->Details,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
@@ -120,7 +143,8 @@ class AdditionalRequirementMasterController extends Controller
                         $edit->ChildCost = $request->input('ChildCost');
                         $edit->InfantCost = $request->input('InfantCost');
                         $edit->ImageName = $request->input('ImageName');
-                        $edit->ImageData = $request->input('ImageData');
+                        $base64Image = $request->input('ImageData');
+                        $edit->ImageData = base64_decode($base64Image);
                         $edit->Details = $request->input('Details');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
@@ -141,7 +165,7 @@ class AdditionalRequirementMasterController extends Controller
   
   
      
-    public function destroy(Request $request)
+    /*public function destroy(Request $request)
     {
         $brands = AdditionalRequirementMaster::find($request->id);
         $brands->delete();
@@ -152,6 +176,6 @@ class AdditionalRequirementMasterController extends Controller
             return response()->json(['result' =>'Failed to delete data.'], 500);
         }
     
-    }
+    }*/
 
 }

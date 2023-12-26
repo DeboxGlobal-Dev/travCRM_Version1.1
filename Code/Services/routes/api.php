@@ -30,6 +30,8 @@ use App\Http\Controllers\Others\Master\RestaurantMealPlanMasterController;
 use App\Http\Controllers\Others\Master\ItineraryInfoMasterController;
 use App\Http\Controllers\Others\Master\LetterMasterController;
 use App\Http\Controllers\Others\Master\AdditionalRequirementMasterController;
+use App\Http\Controllers\Others\Master\ImageGalleryMasterController;
+
 
 //===============================HOTEL CONTROLLERS==================================
 use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
@@ -40,6 +42,22 @@ use App\Http\Controllers\Transport\Master\VehicleTypeMasterController;
 use App\Http\Controllers\Transport\Master\VehicleBrandMasterController;
 use App\Http\Controllers\Transport\Master\TransferTypeMasterController;
 use App\Http\Controllers\Transport\Master\VehicleMasterController;
+
+// =================================SIGHTSEENING CONTROLLER===============================
+use App\Http\Controllers\Sightseeing\Master\AirlineMasterController;
+use App\Http\Controllers\Sightseeing\Master\MonumentMasterController;
+use App\Http\Controllers\Sightseeing\Master\SightseeingMasterController;
+use App\Http\Controllers\Sightseeing\Master\TrainMasterController;
+use App\Http\Controllers\Sightseeing\Master\MonumentRateMasterController;
+use App\Http\Controllers\Sightseeing\Master\AirRateMasterController;
+use App\Http\Controllers\Sightseeing\Master\ActivityRateMasterController;
+use App\Http\Controllers\Sightseeing\Master\TrainRateMasterController;
+
+//===============================HOTEL CONTROLLERS==================================
+use App\Http\Controllers\Visa\Master\VisaMasterController;
+
+
+
 
 
 
@@ -124,6 +142,9 @@ Route::post('/addupdateitineraryinfomaster',[ItineraryInfoMasterController::clas
 Route::post('/lettermasterlist',[LetterMasterController::class,'index']);
 Route::post('/addupdatelettermaster',[LetterMasterController::class,'store']);
 
+Route::post('/imagegallerylist',[ImageGalleryMasterController::class,'index']);
+Route::post('/addupdateimagegallery',[ImageGalleryMasterController::class,'store']);
+
 Route::post('/additionalrequirementmasterlist',[AdditionalRequirementMasterController::class,'index']);
 Route::post('/addupdateadditionalrequirementmaster',[AdditionalRequirementMasterController::class,'store']);
 //===========================================END HERE========================================
@@ -149,3 +170,34 @@ Route::post('/addupdatetransfertypemaster',[TransferTypeMasterController::class,
 Route::post('/vehiclemasterlist',[VehicleMasterController::class,'index']);
 Route::post('/addupdatevehiclemaster',[VehicleMasterController::class,'store']);
 // ===========================================END HERE=======================================
+
+// =============================================SIGHTSEENING API ROUTE================================
+Route::post('/airlinemasterlist',[AirlineMasterController::class,'index']);
+Route::post('/addupdateairlinemaster',[AirlineMasterController::class,'store']);
+
+Route::post('/trainMasterlist',[TrainMasterController::class,'index']);
+Route::post('/addupdatetrainmaster',[TrainMasterController::class,'store']);
+
+Route::post('/sightseeingmasterlist',[SightseeingMasterController::class,'index']);
+Route::post('/addupdatesightseeingmaster',[SightseeingMasterController::class,'store']);
+
+Route::post('/monumentmasterlist',[MonumentMasterController::class,'index']);
+Route::post('/addupdatemonumentmaster',[MonumentMasterController::class,'store']);
+
+Route::post('/monumentratemasterlist',[MonumentRateMasterController::class,'index']);
+Route::post('/addupdatemonumentratemaster',[MonumentRateMasterController::class,'store']);
+
+Route::post('/trainratemasterlist',[TrainRateMasterController::class,'index']);
+Route::post('/addupdatetrainratemaster',[TrainRateMasterController::class,'store']);
+
+Route::post('/activityratemasterlist',[ActivityRateMasterController::class,'index']);
+Route::post('/addupdateactivityratemaster',[ActivityRateMasterController::class,'store']);
+
+Route::post('/airratemasterlist',[AirRateMasterController::class,'index']);
+Route::post('/addupdateairratemaster',[AirRateMasterController::class,'store']);
+
+// ===========================================END HERE=======================================
+
+// =============================================SIGHTSEENING API ROUTE================================
+Route::post('/visamasterlist',[VisaMasterController::class,'index']);
+Route::post('/addupdatevisamaster',[VisaMasterController::class,'store']);

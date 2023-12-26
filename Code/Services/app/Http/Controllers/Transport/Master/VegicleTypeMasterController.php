@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Others\Master;
+namespace App\Http\Controllers\Transport\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Others\Master\ContactDetailsMaster;
+use App\Models\Transport\Master\VegicleTypeMaster;
 
-class ContactDetailsController extends Controller
+class VegicleTypeMasterController extends Controller
 {
     public function index(Request $request){
-
-        
        
          
         $arrayDataRows = array();
@@ -19,7 +17,7 @@ class ContactDetailsController extends Controller
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = ContactDetailsMaster::when($Search, function ($query) use ($Search) {
+        $posts = VegicleTypeMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
@@ -30,18 +28,8 @@ class ContactDetailsController extends Controller
             foreach ($posts as $post){
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "ParentId" => $post->ParentId,
-                    "Title" => $post->Title,
                     "Name" => $post->Name,
-                    "Designation" => $post->Designation,
-                    "CountryCode" => $post->CountryCode,
-                    "Phone1" => $post->Phone1,
-                    "Phone2" => $post->Phone2,
-                    "Phone3" => $post->Phone3,
-                    "Email1" => $post->Email1,
-                    "Email2" => $post->Email2,
-                    "Type" => $post->Type,
-                    "SetDefault" => $post->SetDefault,
+                    "PaxCapacity" => $post->PaxCapacity,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -67,13 +55,12 @@ class ContactDetailsController extends Controller
   
     public function store(Request $request)
     {
-        
         try{
             $id = $request->input('id');
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'ParentId' => 'required|unique:'._DB_.'.'._CONTACT_PERSON_MASTER_.',ParentId',
+                    'Name' => 'required|unique:'._DB_.'.'._VEGICLE_TYPE_MASTER_.',Name',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -81,19 +68,9 @@ class ContactDetailsController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = ContactDetailsMaster::create([
-                    'ParentId' => $request->ParentId,
-                    'Title' => $request->Title,
+                 $savedata = VegicleTypeMaster::create([
                     'Name' => $request->Name,
-                    'Designation' => $request->Designation,
-                    'CountryCode' => $request->CountryCode,
-                    'Phone1' => $request->Phone1,
-                    'Phone2' => $request->Phone2,
-                    'Phone3' => $request->Phone3,
-                    'Email1' => $request->Email1,
-                    'Email2' => $request->Email2,
-                    'Type' => $request->Type,
-                    'SetDefault' => $request->SetDefault,
+                    'PaxCapacity' => $request->PaxCapacity,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
@@ -109,10 +86,10 @@ class ContactDetailsController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = ContactDetailsMaster::find($id);
+                $edit = VegicleTypeMaster::find($id);
     
                 $businessvalidation =array(
-                    'ParentId' => 'required',
+                    'Name' => 'required',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -121,18 +98,8 @@ class ContactDetailsController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->ParentId = $request->input('ParentId');
-                        $edit->Title = $request->input('Title');
                         $edit->Name = $request->input('Name');
-                        $edit->Designation = $request->input('Designation');
-                        $edit->CountryCode = $request->input('CountryCode');
-                        $edit->Phone1 = $request->input('Phone1');
-                        $edit->Phone2 = $request->input('Phone2');
-                        $edit->Phone3 = $request->input('Phone3');
-                        $edit->Email1 = $request->input('Email1');
-                        $edit->Email2 = $request->input('Email2');
-                        $edit->Type = $request->input('Type');
-                        $edit->SetDefault = $request->input('SetDefault');
+                        $edit->PaxCapacity = $request->input('PaxCapacity');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -154,7 +121,7 @@ class ContactDetailsController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = ContactDetailsMaster::find($request->id);
+        $brands = VegicleTypeMaster::find($request->id);
         $brands->delete();
   
         if ($brands) {

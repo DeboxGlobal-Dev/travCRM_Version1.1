@@ -1,17 +1,15 @@
 <?php
 
-namespace App\Http\Controllers\Others\Master;
+namespace App\Http\Controllers\Visa\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Others\Master\ContactDetailsMaster;
+use App\Models\Visa\Master\VisaMaster;
 
-class ContactDetailsController extends Controller
+class VisaMasterController extends Controller
 {
     public function index(Request $request){
-
-        
        
          
         $arrayDataRows = array();
@@ -19,34 +17,21 @@ class ContactDetailsController extends Controller
         $Search = $request->input('Search');
         $Status = $request->input('Status');
         
-        $posts = ContactDetailsMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%');
+        $posts = VisaMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('VisaType', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->orderBy('Name')->get('*');
+        })->select('*')->orderBy('VisaType')->get('*');
   
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "ParentId" => $post->ParentId,
-                    "Title" => $post->Title,
-                    "Name" => $post->Name,
-                    "Designation" => $post->Designation,
-                    "CountryCode" => $post->CountryCode,
-                    "Phone1" => $post->Phone1,
-                    "Phone2" => $post->Phone2,
-                    "Phone3" => $post->Phone3,
-                    "Email1" => $post->Email1,
-                    "Email2" => $post->Email2,
-                    "Type" => $post->Type,
-                    "SetDefault" => $post->SetDefault,
+                    "VisaType" => $post->VisaType,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
                 ];
             }
             
@@ -67,13 +52,12 @@ class ContactDetailsController extends Controller
   
     public function store(Request $request)
     {
-        
         try{
             $id = $request->input('id');
             if($id == '') {
                  
                 $businessvalidation =array(
-                    'ParentId' => 'required|unique:'._DB_.'.'._CONTACT_PERSON_MASTER_.',ParentId',
+                    'VisaType' => 'required|unique:'._DB_.'.'._VISA_MASTER_.',VisaType',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation); 
@@ -81,19 +65,8 @@ class ContactDetailsController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = ContactDetailsMaster::create([
-                    'ParentId' => $request->ParentId,
-                    'Title' => $request->Title,
-                    'Name' => $request->Name,
-                    'Designation' => $request->Designation,
-                    'CountryCode' => $request->CountryCode,
-                    'Phone1' => $request->Phone1,
-                    'Phone2' => $request->Phone2,
-                    'Phone3' => $request->Phone3,
-                    'Email1' => $request->Email1,
-                    'Email2' => $request->Email2,
-                    'Type' => $request->Type,
-                    'SetDefault' => $request->SetDefault,
+                 $savedata = VisaMaster::create([
+                    'VisaType' => $request->VisaType,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy, 
                     'created_at' => now(),
@@ -109,10 +82,10 @@ class ContactDetailsController extends Controller
             }else{
     
                 $id = $request->input('id');
-                $edit = ContactDetailsMaster::find($id);
+                $edit = VisaMaster::find($id);
     
                 $businessvalidation =array(
-                    'ParentId' => 'required',
+                    'VisaType' => 'required',
                 );
                  
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -121,18 +94,7 @@ class ContactDetailsController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->ParentId = $request->input('ParentId');
-                        $edit->Title = $request->input('Title');
-                        $edit->Name = $request->input('Name');
-                        $edit->Designation = $request->input('Designation');
-                        $edit->CountryCode = $request->input('CountryCode');
-                        $edit->Phone1 = $request->input('Phone1');
-                        $edit->Phone2 = $request->input('Phone2');
-                        $edit->Phone3 = $request->input('Phone3');
-                        $edit->Email1 = $request->input('Email1');
-                        $edit->Email2 = $request->input('Email2');
-                        $edit->Type = $request->input('Type');
-                        $edit->SetDefault = $request->input('SetDefault');
+                        $edit->VisaType = $request->input('VisaType');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -154,7 +116,7 @@ class ContactDetailsController extends Controller
      
     public function destroy(Request $request)
     {
-        $brands = ContactDetailsMaster::find($request->id);
+        $brands = VisaMaster::find($request->id);
         $brands->delete();
   
         if ($brands) {
