@@ -53,6 +53,7 @@ define("_VEHICLE_MASTER_", "transport.vehicle_master");
 
 /////////////////////////VISA RELATED MASTER///////////////////
 define("_VISA_MASTER_", "visa.visa_type_master");
+define("_USER_MASTER_", "visa.user_type_master");
 /////////////////////END HERE///////////////////////////////
 
 

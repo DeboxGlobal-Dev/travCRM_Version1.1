@@ -201,3 +201,6 @@ Route::post('/addupdateairratemaster',[AirRateMasterController::class,'store']);
 // =============================================SIGHTSEENING API ROUTE================================
 Route::post('/visamasterlist',[VisaMasterController::class,'index']);
 Route::post('/addupdatevisamaster',[VisaMasterController::class,'store']);
+
+Route::post('/adduser',[UserMasterController::class,'store']);
+Route::post('/userlist',[UserMasterController::class,'index']);
