@@ -31,6 +31,7 @@ use App\Http\Controllers\Others\Master\ItineraryInfoMasterController;
 use App\Http\Controllers\Others\Master\LetterMasterController;
 use App\Http\Controllers\Others\Master\AdditionalRequirementMasterController;
 use App\Http\Controllers\Others\Master\ImageGalleryMasterController;
+use App\Http\Controllers\Others\Master\QueryMasterController;
 
 
 //===============================HOTEL CONTROLLERS==================================
@@ -53,8 +54,9 @@ use App\Http\Controllers\Sightseeing\Master\AirRateMasterController;
 use App\Http\Controllers\Sightseeing\Master\ActivityRateMasterController;
 use App\Http\Controllers\Sightseeing\Master\TrainRateMasterController;
 
-//===============================HOTEL CONTROLLERS==================================
+//===============================VISA CONTROLLERS==================================
 use App\Http\Controllers\Visa\Master\VisaMasterController;
+use App\Http\Controllers\Visa\Master\UserMasterController;
 
 
 
@@ -145,6 +147,9 @@ Route::post('/addupdatelettermaster',[LetterMasterController::class,'store']);
 Route::post('/imagegallerylist',[ImageGalleryMasterController::class,'index']);
 Route::post('/addupdateimagegallery',[ImageGalleryMasterController::class,'store']);
 
+Route::post('/querymasterlist',[QueryMasterController::class,'index']);
+Route::post('/addupdatequerymaster',[QueryMasterController::class,'store']);
+
 Route::post('/additionalrequirementmasterlist',[AdditionalRequirementMasterController::class,'index']);
 Route::post('/addupdateadditionalrequirementmaster',[AdditionalRequirementMasterController::class,'store']);
 //===========================================END HERE========================================
@@ -204,3 +209,6 @@ Route::post('/addupdatevisamaster',[VisaMasterController::class,'store']);
 
 Route::post('/adduser',[UserMasterController::class,'store']);
 Route::post('/userlist',[UserMasterController::class,'index']);
+
+
+

@@ -15,7 +15,7 @@ public function index(Request $request){
 
     $arrayDataRows = array();
 
-    call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+    call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
 
     $Search = $request->input('Search');
     $Status = $request->input('Status');
@@ -25,10 +25,6 @@ public function index(Request $request){
     })->when($Status, function ($query) use ($Status) {
          return $query->where('Status',$Status);
     })->select('*')->orderBy('AgentId')->get('*');
-
-    //$countryName = getName(_COUNTRY_MASTER_,3);
-    //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-    //call_logger('REQUEST2: '.$countryName22);
 
     if ($posts->isNotEmpty()) {
         $arrayDataRows = [];
@@ -96,8 +92,9 @@ public function store(Request $request)
             if($validatordata->fails()){
                 return $validatordata->errors();
             }else{
+                $otp = mt_rand(100000, 999999);
              $savedata = QueryMaster::create([
-                "QueryId" => $request->QueryId,
+                "QueryId" => $otp,
                     "ClientType" => $request->ClientType,
                     "AgentId" => $request->AgentId,
                     "LeadPax" => $request->LeadPax,
@@ -170,7 +167,7 @@ public function store(Request $request)
                     $edit->UpdatedBy = $request->input('UpdatedBy');
                     $edit->updated_at = now();
                     $edit->save();
-                    
+
 
                     return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
                 } else {
