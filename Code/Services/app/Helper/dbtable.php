@@ -36,6 +36,7 @@ define("_ADDITIONAL_REQUIREMENT_MASTER_", "others.additional_requirement_master"
 define("_IMAGE_GALLERY_MASTER_", "others.image_gallery_master");
 define("_QUERY_MASTER_", "others.query_master");
 
+
 /////////////////////////////END HERE///////////////////////////
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
@@ -49,7 +50,12 @@ define("_VEHICLE_TYPE_MASTER_", "transport.vehicle_type_master");
 define("_VEHICLE_BRAND_MASTER_", "transport.vehicle_brand_master");
 define("_TRANSFER_TYPE_MASTER_", "transport.transfer_type_master");
 define("_VEHICLE_MASTER_", "transport.vehicle_master");
-/////////////////////END HERE///////////////////////////////
+define("_CABIN_CATEGORY_MASTER_", "transport.cabin_category_master");
+define("_CABIN_TYPE_MASTER_", "transport.cabin_type_master");
+define("_CRUISE_MASTER_", "transport.cruise_master");
+define("_CRUISE_COMPANY_MASTER_", "transport.cruise_company_master");
+/////////////////////END HERE//////////////////////////////  
+
 
 /////////////////////////VISA RELATED MASTER///////////////////
 define("_VISA_MASTER_", "visa.visa_type_master");
