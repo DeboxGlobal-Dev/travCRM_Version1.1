@@ -45,6 +45,7 @@ class HotelRateMaster extends Migration
             $table->Integer('Status')->default(0);
             $table->integer('AddedBy')->default(0);
             $table->integer('UpdatedBy')->default(0);
+            $table->json('JsonItem');
             $table->timestamps();
         });
     }
