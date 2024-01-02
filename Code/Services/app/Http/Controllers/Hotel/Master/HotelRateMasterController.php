@@ -123,8 +123,9 @@ class HotelRateMasterController extends Controller
                     'MarkUpValue' => $request->MarkUpValue,
                     'Remarks' => $request->Remarks,
                     'Status' => $request->Status,
+                    'JsonItem' => $request->getContent(),
                     'AddedBy' => $request->AddedBy,
-                    'created_at' => now(),
+                    'created_at' => now()
                 ]);
 
                 if ($savedata) {
@@ -178,6 +179,7 @@ class HotelRateMasterController extends Controller
                         $edit->Remarks = $request->input('Remarks');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
+                        $edit->JsonItem = $request->getContent();
                         $edit->updated_at = now();
                         $edit->save();
 
