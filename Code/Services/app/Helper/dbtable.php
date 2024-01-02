@@ -54,7 +54,8 @@ define("_CABIN_CATEGORY_MASTER_", "transport.cabin_category_master");
 define("_CABIN_TYPE_MASTER_", "transport.cabin_type_master");
 define("_CRUISE_MASTER_", "transport.cruise_master");
 define("_CRUISE_COMPANY_MASTER_", "transport.cruise_company_master");
-/////////////////////END HERE//////////////////////////////  
+define("_CRUISE_NAME_MASTER_", "transport.cruise_name_master");
+/////////////////////END HERE////////////////////////////////  
 
 
 /////////////////////////VISA RELATED MASTER///////////////////

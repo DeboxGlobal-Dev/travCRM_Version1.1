@@ -46,6 +46,8 @@ use App\Http\Controllers\Transport\Master\VehicleMasterController;
 use App\Http\Controllers\Transport\Master\CabinCategoryMasterController;
 use App\Http\Controllers\Transport\Master\CabinTypeMasterController;
 use App\Http\Controllers\Transport\Master\CruiseMasterController;
+use App\Http\Controllers\Transport\Master\CruiseCompanyMasterController;
+use App\Http\Controllers\Transport\Master\CruiseNameMasterController;
 
 // =================================SIGHTSEENING CONTROLLER===============================
 use App\Http\Controllers\Sightseeing\Master\AirlineMasterController;
@@ -186,6 +188,12 @@ Route::post('/addupdatecabintypemaster',[CabinTypeMasterController::class,'store
 
 Route::post('/cruisemasterlist',[CruiseMasterController::class,'index']);
 Route::post('/addupdatecruisemaster',[CruiseMasterController::class,'store']);
+
+Route::post('/cruisecompanymasterlist',[CruiseCompanyMasterController::class,'index']);
+Route::post('/addupdatecruisecompanymaster',[CruiseCompanyMasterController::class,'store']);
+
+Route::post('/cruisenamemasterlist',[CruiseNameMasterController::class,'index']);
+Route::post('/addupdatecruisenamemaster',[CruiseNameMasterController::class,'store']);
 // ===========================================END HERE=======================================
 
 // =============================================SIGHTSEENING API ROUTE================================
