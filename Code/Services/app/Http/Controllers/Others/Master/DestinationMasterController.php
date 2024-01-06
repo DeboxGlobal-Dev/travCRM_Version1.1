@@ -15,16 +15,17 @@ class DestinationMasterController extends Controller
 
       call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
       
-      $Search = $request->input('Search');
+      $CountryId = $request->input('CountryId');
+      $StateId = $request->input('StateId');
+      $Name = $request->input('Name');
+      $Default = $request->input('Default');
       $Status = $request->input('Status');
       
       $posts = DestinationMaster::when($Search, function ($query) use ($Search) {
-          return $query->where('CountryId', 'like', '%' . $Search . '%')
-                     ->orwhere('State', 'like', '%' . $Search . '%')
-                     ->orwhere('DestinationName', 'like', '%' . $Search . '%')
-                     ->orwhere('Description', 'like', '%' . $Search . '%')
-                     ->orwhere('SetDefault', 'like', '%' . $Search . '%')
-                     ->orwhere('State', 'like', '%' . $Search . '%');
+          return $query->where('CountryId',$CountryId)
+                     ->orwhere('StateId',$StateId)
+                     ->orwhere('Name', 'like', '%' . $Name . '%')
+                     ->orwhere('SetDefault',$Default);
       })->when($Status, function ($query) use ($Status) {
            return $query->where('Status',$Status);
       })->select('*')->orderBy('Name')->get('*');

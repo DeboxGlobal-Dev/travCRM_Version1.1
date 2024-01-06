@@ -158,7 +158,7 @@ Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
 Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
 
 Route::post('/searchhotelratelist',[SearchHotelRateController::class,'index']);
-Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
+// Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
 // ===========================================END HERE=======================================
 
 // ========================================Transport API ROUTE===============================

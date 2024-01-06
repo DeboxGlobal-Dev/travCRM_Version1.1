@@ -37,6 +37,8 @@ class HotelRateMasterController extends Controller
                     "SeasonYear" => $post->SeasonYear,
                     "ValidFrom" => $post->ValidFrom,
                     "ValidTo" => $post->ValidTo,
+                    "DestinationId" => $post->Destination,
+                    "Destination" => getName(_DESTINATION_MASTER_,$post->Destination),
                     "RoomType" => getName(_ROOM_MASTER_,$post->RoomType),
                     "MealType" => getName(_MEAL_PLAN_MASTER_,$post->MealType),
                     "Currency" => $post->Currency,
@@ -105,6 +107,7 @@ class HotelRateMasterController extends Controller
                     'SeasonYear' => $request->SeasonYear,
                     'ValidFrom' => $request->ValidFrom,
                     'ValidTo' => $request->ValidTo,
+                    'Destination' => $request->Destination,
                     'RoomType' => $request->RoomType,
                     'MealType' => $request->MealType,
                     'Currency' => $request->Currency,
@@ -160,6 +163,7 @@ class HotelRateMasterController extends Controller
                         $edit->SeasonYear = $request->input('SeasonYear');
                         $edit->ValidFrom = $request->input('ValidFrom');
                         $edit->ValidTo = $request->input('ValidTo');
+                        $edit->Destination = $request->input('Destination');
                         $edit->RoomType = $request->input('RoomType');
                         $edit->MealType = $request->input('MealType');
                         $edit->Currency = $request->input('Currency');

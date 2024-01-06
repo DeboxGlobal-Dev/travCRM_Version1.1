@@ -23,6 +23,7 @@ class HotelRateMaster extends Migration
             $table->integer('TariffType');
             $table->integer('SeasonType');
             $table->integer('SeasonYear');
+            $table->integer('Destination');
             $table->date('ValidFrom');
             $table->date('ValidTo');
             $table->Integer('RoomType');

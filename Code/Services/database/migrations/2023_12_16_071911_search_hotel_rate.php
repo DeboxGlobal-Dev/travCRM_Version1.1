@@ -13,8 +13,12 @@ class SearchHotelRate extends Migration
      */
     public function up()
     {
-        //
-    }
+        Schema::create(_SEARCH_HOTEL_RATE_, function (Blueprint $table) {
+            $table->id();
+            $table->string('RateCode', 100)->default(null);
+            $table->json('JsonResult');
+        });
+        }
 
     /**
      * Reverse the migrations.

@@ -41,7 +41,7 @@ define("_QUERY_MASTER_", "others.query_master");
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
 define("_HOTEL_RATE_MASTER_", "hotel.hotel_rate_master");
-define("_SEARCH_HOTEL_RATE_", "hotel.search_hotelrate_");
+define("_SEARCH_HOTEL_RATE_", "hotel.search_hotel_rate");
 
 /////////////////////END HERE///////////////////////////////
 
