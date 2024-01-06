@@ -63,12 +63,6 @@ use App\Http\Controllers\Sightseeing\Master\TrainRateMasterController;
 use App\Http\Controllers\Visa\Master\VisaMasterController;
 use App\Http\Controllers\Visa\Master\UserMasterController;
 
-
-
-
-
-
-
 //====================================OTHERS COMMON API ROUTE======================================
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
 Route::post('/addupdateamenities',[AmenitiesMasterController::class,'store']);
