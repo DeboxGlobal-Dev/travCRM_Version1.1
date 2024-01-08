@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class MealPlanMaster extends Model
 {
-    use HasFactory;use HasFactory;
+    use HasFactory;
     protected $table = _MEAL_PLAN_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [

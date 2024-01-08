@@ -41,7 +41,7 @@ define("_QUERY_MASTER_", "others.query_master");
 
 /////////////////////////HOTEL RELATED MASTER///////////////////
 define("_HOTEL_RATE_MASTER_", "hotel.hotel_rate_master");
-define("_SEARCH_HOTEL_RATE_", "hotel.search_hotel_rate");
+define("_SEARCH_HOTEL_RATE_", "hotel.search_hotelrate_");
 
 /////////////////////END HERE///////////////////////////////
 
@@ -61,6 +61,7 @@ define("_CRUISE_NAME_MASTER_", "transport.cruise_name_master");
 /////////////////////////VISA RELATED MASTER///////////////////
 define("_VISA_MASTER_", "visa.visa_type_master");
 define("_USER_MASTER_", "visa.user_type_master");
+define("_PACKAGE_MASTER_", "visa.package_master");
 /////////////////////END HERE///////////////////////////////
 
 

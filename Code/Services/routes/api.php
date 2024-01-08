@@ -37,6 +37,7 @@ use App\Http\Controllers\Others\Master\QueryMasterController;
 //===============================HOTEL CONTROLLERS==================================
 use App\Http\Controllers\Hotel\Master\HotelRateMasterController;
 use App\Http\Controllers\Hotel\Master\SearchHotelRateController;
+//use App\Http\Controllers\Hotel\Master\QueryIntegretionController;
 
 //===============================TRANSPORT CONTROLLERS==================================
 use App\Http\Controllers\Transport\Master\VehicleTypeMasterController;
@@ -62,6 +63,13 @@ use App\Http\Controllers\Sightseeing\Master\TrainRateMasterController;
 //===============================VISA CONTROLLERS==================================
 use App\Http\Controllers\Visa\Master\VisaMasterController;
 use App\Http\Controllers\Visa\Master\UserMasterController;
+use App\Http\Controllers\Visa\Master\PackagesMasterController;
+
+
+
+
+
+
 
 //====================================OTHERS COMMON API ROUTE======================================
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
@@ -158,7 +166,7 @@ Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
 Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
 
 Route::post('/searchhotelratelist',[SearchHotelRateController::class,'index']);
-// Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
+Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
 // ===========================================END HERE=======================================
 
 // ========================================Transport API ROUTE===============================
@@ -217,12 +225,16 @@ Route::post('/addupdateairratemaster',[AirRateMasterController::class,'store']);
 
 // ===========================================END HERE=======================================
 
-// =============================================SIGHTSEENING API ROUTE================================
+// =============================================VISA API ROUTE================================
 Route::post('/visamasterlist',[VisaMasterController::class,'index']);
 Route::post('/addupdatevisamaster',[VisaMasterController::class,'store']);
 
 Route::post('/adduser',[UserMasterController::class,'store']);
 Route::post('/userlist',[UserMasterController::class,'index']);
+
+Route::post('/addpackage',[PackagesMasterController::class,'store']);
+Route::post('/packagelist',[PackagesMasterController::class,'index']);
+
 
 
 
