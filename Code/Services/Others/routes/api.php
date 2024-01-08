@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
+use Illuminate\Http\Request;
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Master\StateMasterController;
 use App\Http\Controllers\Master\CityMasterController;
 use App\Http\Controllers\Master\RoomMasterController;
 use App\Http\Controllers\Master\HotelMasterController;
