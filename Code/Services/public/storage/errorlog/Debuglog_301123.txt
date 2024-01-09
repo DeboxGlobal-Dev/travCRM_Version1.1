@@ -1,0 +1,8 @@
+127.0.0.1	30-11-2023 02:47:33 PM	REQUEST COMES FROM ADD/UPDATE STATE: {
+    "id":"",
+    "Name":"Rajasthan",
+    "CountryId":"3",
+    "AddedBy":"1",
+    "UpdatedBy":"1",
+    "Status":"0"
+}
