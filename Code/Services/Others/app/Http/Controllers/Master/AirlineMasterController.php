@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Sightseeing\Master;
+namespace App\Http\Controllers\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Sightseeing\Master\AirlineMaster;
+use App\Models\Master\AirlineMaster;
 
 class AirlineMasterController extends Controller
 {

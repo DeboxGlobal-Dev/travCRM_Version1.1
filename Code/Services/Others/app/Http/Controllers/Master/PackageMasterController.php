@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Http\Controllers\Visa\Master;
+namespace App\Http\Controllers\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Validator;
-use App\Models\Visa\Master\PackageMaster;
+use App\Models\Master\PackageMaster;
 
 class PackageMasterController extends Controller
 {
     public function index(){
-       
-         
+
+
         $arrayDataRows = array();
-        
-       
+
+
         $posts = PackageMaster::whereJsonContains('Data',  ["FromDate" => "10-12-2023"])->get();
         //$posts = PackageMaster::select('*')->get('*');
-     
+
         if ($posts->isNotEmpty()) {
           $arrayDataRows = [];
           foreach ($posts as $post){
@@ -33,20 +33,20 @@ class PackageMasterController extends Controller
                       "PackageType" => $post->Data['PackageType'],
                       "Status" => $post->Data['Status']
                   ),
-                  
+
               ];
           }
-          
+
           return response()->json([
               'Status' => 200,
               'TotalRecord' => $posts->count('id'),
               'DataList' => $arrayDataRows
           ]);
-      
+
       }else {
           return response()->json([
               "Status" => 0,
-              "TotalRecord" => $posts->count('id'), 
+              "TotalRecord" => $posts->count('id'),
               "Message" => "No Record Found."
           ]);
        }
@@ -58,7 +58,7 @@ class PackageMasterController extends Controller
             $id = $request->input('id');
             if($id == '') {
 
-                
+
 
                 $final_data = array();
                 foreach($request['Data'] as $data){
@@ -71,8 +71,8 @@ class PackageMasterController extends Controller
                     );
                     array_push($final_data,$data_array);
                 }
-                
-                   
+
+
                     //print_r($request['Data']['Name']);
              //exit;
 
@@ -89,7 +89,7 @@ class PackageMasterController extends Controller
             else{
                 $id = $request->input('id');
                 $edit = PackageMaster::find($id);
-                
+
                 if ($edit) {
 
                     PackageMaster::where('id', $id)->update([
@@ -103,6 +103,6 @@ class PackageMasterController extends Controller
                     }
             }
     }
-    
+
 
 }

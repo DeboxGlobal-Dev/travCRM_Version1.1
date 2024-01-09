@@ -9,8 +9,8 @@ class VehicleTypeMaster extends Model
 {
     use HasFactory;
     protected $table = _VEHICLE_TYPE_MASTER_;
-    protected $primarykey = 'id'; 
-    protected $fillable = [
+    protected $primarykey = 'id';
+    protected   $fillable = [
         'Name',
         'PaxCapacity',
         'Status',
@@ -18,8 +18,6 @@ class VehicleTypeMaster extends Model
         'UpdatedBy',
         'created_at',
         'updated_at',
-       
-       
     ];
-    public $timestamps = false;
+ public $timestamps = false;
 }

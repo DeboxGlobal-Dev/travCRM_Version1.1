@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\Visa\Master;
+namespace App\Http\Controllers\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 //use Illuminate\Support\Facades\Validator;
-use App\Models\Visa\Master\UserMaster;
+use App\Models\Master\UserMaster;
 
 class UserMasterController extends Controller
 {
      public function index(){
-       
-         
+
+
           $arrayDataRows = array();
-         
+
           $posts = UserMaster::whereJsonContains('Data',  ["Name" => "Token"])->get();
-       
+
           if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
@@ -26,25 +26,25 @@ class UserMasterController extends Controller
                         "Name" => $post->Data['Name'],
                         "Gender" => $post->Data['Gender']
                     ),
-                    
+
                 ];
             }
-            
+
             return response()->json([
                 'Status' => 200,
                 'TotalRecord' => $posts->count('id'),
                 'DataList' => $arrayDataRows
             ]);
-        
+
         }else {
             return response()->json([
                 "Status" => 0,
-                "TotalRecord" => $posts->count('id'), 
+                "TotalRecord" => $posts->count('id'),
                 "Message" => "No Record Found."
             ]);
          }
     }
-  
+
     public function store(Request $request)
     {
              //print_r($request['Data']['Name']);
@@ -58,7 +58,7 @@ class UserMasterController extends Controller
                         'Code' => $request['Data']['Code'],
                         'Status' => $request['Data']['Status'],
                     );
-                    
+
 
                  $savedata = UserMaster::create([
                     'Title' => $request->Title,

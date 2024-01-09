@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\sightseeing\master;
+namespace App\Models\master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +9,7 @@ class TrainMaster extends Model
 {
     use HasFactory;
     protected $table = _TRAIN_MASTER_;
-    protected $primarykey = 'id'; 
+    protected $primarykey = 'id';
     protected $fillable =  [
         'Name',
         'ImageName',
@@ -19,7 +19,7 @@ class TrainMaster extends Model
         'Status',
         'created_at',
         'updated_at',
-       
-       
+
+
     ];
 }

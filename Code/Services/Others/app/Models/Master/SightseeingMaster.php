@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Models\sightseeing\master;
+namespace App\Models\master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class SightseeingMaster extends Model
 {
-   
+
     use HasFactory;
     protected $table = _SIGHTSEEING_MASTER_;
-    protected $primarykey = 'id'; 
+    protected $primarykey = 'id';
     protected $fillable = [
         'Name',
         'DestinationId',
@@ -28,6 +28,6 @@ class SightseeingMaster extends Model
         'Status',
         'created_at',
         'updated_at',
-       
+
     ];
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Transport\Master;
+namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +9,7 @@ class CabinCategoryMaster extends Model
 {
     use HasFactory;
     protected $table = _CABIN_CATEGORY_MASTER_;
-    protected $primarykey = 'id'; 
+    protected $primarykey = 'id';
     protected $fillable = [
         'Name',
         'Status',
@@ -17,8 +17,8 @@ class CabinCategoryMaster extends Model
         'UpdatedBy',
         'created_at',
         'updated_at',
-       
-       
+
+
     ];
     public $timestamps = false;
 }

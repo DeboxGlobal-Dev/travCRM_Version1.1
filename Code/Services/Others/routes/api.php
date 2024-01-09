@@ -1,36 +1,52 @@
 <?php
-
-
 use Illuminate\Http\Request;
-
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Master\StateMasterController;
+
+use App\Http\Controllers\Master\AdditionalRequirementMasterController;
+use App\Http\Controllers\Master\AmenitiesMasterController;
+use App\Http\Controllers\Master\BusinessTypeMasterController;
 use App\Http\Controllers\Master\CityMasterController;
-use App\Http\Controllers\Master\RoomMasterController;
+use App\Http\Controllers\Master\ContactDetailsController;
+use App\Http\Controllers\Master\CountryMasterController;
+use App\Http\Controllers\Master\CurrencyMasterController;
+use App\Http\Controllers\Master\DestinationMasterController;
+use App\Http\Controllers\Master\DivisionMasterController;
+use App\Http\Controllers\master\HotelAdditionalMasterController;
+use App\Http\Controllers\Master\HotelCategoryMasterController;
+use App\Http\Controllers\Master\HotelChainMasterController;
 use App\Http\Controllers\Master\HotelMasterController;
+use App\Http\Controllers\Master\HotelTypeMasterController;
+use App\Http\Controllers\Master\ImageGalleryMasterController;
+use App\Http\Controllers\Master\ItineraryInfoMasterController;
+use App\Http\Controllers\Master\LanguageMasterController;
+use App\Http\Controllers\Master\LeadSourceMasterController;
 use App\Http\Controllers\Master\LetterMasterController;
 use App\Http\Controllers\Master\MarketMasterController;
-use App\Http\Controllers\Master\SeasonMasterController;
-use App\Http\Controllers\Master\CountryMasterController;
-use App\Http\Controllers\Master\WeekendMasterController;
-use App\Http\Controllers\Master\ContactDetailsController;
-use App\Http\Controllers\Master\CurrencyMasterController;
-use App\Http\Controllers\Master\DivisionMasterController;
-use App\Http\Controllers\Master\LanguageMasterController;
 use App\Http\Controllers\Master\MealPlanMasterController;
-use App\Http\Controllers\master\TourTypeMasterController;
-use App\Http\Controllers\Master\AmenitiesMasterController;
-use App\Http\Controllers\Master\HotelTypeMasterController;
-use App\Http\Controllers\Master\HotelChainMasterController;
-use App\Http\Controllers\Master\LeadSourceMasterController;
 use App\Http\Controllers\master\RestaurantMasterController;
-use App\Http\Controllers\Master\DestinationMasterController;
-use App\Http\Controllers\Master\BusinessTypeMasterController;
-use App\Http\Controllers\Master\ImageGalleryMasterController;
-use App\Http\Controllers\Master\HotelCategoryMasterController;
-use App\Http\Controllers\Master\ItineraryInfoMasterController;
-use App\Http\Controllers\master\HotelAdditionalMasterController;
 use App\Http\Controllers\master\RestaurantMealPlanMasterController;
+use App\Http\Controllers\Master\RoomMasterController;
+use App\Http\Controllers\Master\SeasonMasterController;
+use App\Http\Controllers\Master\StateMasterController;
+use App\Http\Controllers\master\TourTypeMasterController;
+use App\Http\Controllers\Master\WeekendMasterController;
+use App\Http\Controllers\Master\AirlineMasterController;
+use App\Http\Controllers\Master\MonumentMasterController;
+use App\Http\Controllers\Master\SightseeingMasterController;
+use App\Http\Controllers\Master\TrainMasterController;
+use App\Http\Controllers\Master\CabinCategoryMasterController;
+use App\Http\Controllers\Master\CabinTypeMasterController;
+use App\Http\Controllers\Master\CruiseCompanyMasterController;
+use App\Http\Controllers\Master\CruiseMasterController;
+use App\Http\Controllers\Master\CruiseNameMasterController;
+use App\Http\Controllers\Master\TransferTypeMasterController;
+use App\Http\Controllers\Master\VehicleBrandMasterController;
+use App\Http\Controllers\Master\VehicleMasterController;
+use App\Http\Controllers\Master\VehicleTypeMasterController;
+use App\Http\Controllers\Master\UserMasterController;
+use App\Http\Controllers\Master\VisaMasterController;
+use App\Http\Controllers\Master\PackagesMasterController;
+
 
 //====================================OTHERS COMMON API ROUTE======================================
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
@@ -114,9 +130,6 @@ Route::post('/addupdatelettermaster',[LetterMasterController::class,'store']);
 
 Route::post('/imagegallerylist',[ImageGalleryMasterController::class,'index']);
 Route::post('/addupdateimagegallery',[ImageGalleryMasterController::class,'store']);
-
-Route::post('/querymasterlist',[QueryMasterController::class,'index']);
-Route::post('/addupdatequerymaster',[QueryMasterController::class,'store']);
 
 Route::post('/additionalrequirementmasterlist',[AdditionalRequirementMasterController::class,'index']);
 Route::post('/addupdateadditionalrequirementmaster',[AdditionalRequirementMasterController::class,'store']);

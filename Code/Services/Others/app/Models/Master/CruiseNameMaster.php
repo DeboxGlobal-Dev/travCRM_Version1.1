@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Transport\Master;
+namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +9,7 @@ class CruiseNameMaster extends Model
 {
     use HasFactory;
     protected $table = _CRUISE_NAME_MASTER_;
-    protected $primarykey = 'id'; 
+    protected $primarykey = 'id';
     protected $fillable = [
         'CruiseCompany',
         'CruiseName',
@@ -20,8 +20,8 @@ class CruiseNameMaster extends Model
         'UpdatedBy',
         'created_at',
         'updated_at',
-       
-       
+
+
     ];
     public $timestamps = false;
 }

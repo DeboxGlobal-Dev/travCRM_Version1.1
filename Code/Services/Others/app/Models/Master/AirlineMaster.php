@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\sightseeing\master;
+namespace App\Models\master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -9,7 +9,7 @@ class AirlineMaster extends Model
     use HasFactory;
 
     protected $table = _AIRLINE_MASTER_;
-    protected $primarykey = 'id'; 
+    protected $primarykey = 'id';
     protected $fillable = [
         'Name',
         'ImageName',
@@ -18,7 +18,7 @@ class AirlineMaster extends Model
         'AddedBy',
         'UpdatedBy',
         'created_at',
-        'updated_at'   
+        'updated_at'
     ];
-    
+
 }
