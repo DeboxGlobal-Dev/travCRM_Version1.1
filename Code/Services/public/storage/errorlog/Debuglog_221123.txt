@@ -1,13 +1,0 @@
-127.0.0.1	22-11-2023 11:11:05 AM	REQUEST COMES FROM STATE LIST: {
-    "Search": "",
-    "Status": 0
-}127.0.0.1	22-11-2023 11:13:35 AM	REQUEST COMES FROM STATE LIST: {
-    "Search": "",
-    "Status": 0
-}127.0.0.1	22-11-2023 11:16:29 AM	REQUEST COMES FROM STATE LIST: {
-    "Search": "",
-    "Status": 0
-}127.0.0.1	22-11-2023 11:20:26 AM	REQUEST COMES FROM STATE LIST: {
-    "Search": "",
-    "Status": 0
-}
