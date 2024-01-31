@@ -47,6 +47,11 @@ use App\Http\Controllers\Master\UserMasterController;
 use App\Http\Controllers\Master\VisaMasterController;
 use App\Http\Controllers\Master\PackagesMasterController;
 
+use App\Http\Controllers\Master\FerrySearMasterController;
+use App\Http\Controllers\Master\FerryNameMasterController;
+use App\Http\Controllers\Master\FerryCompanyMasterController;
+use App\Http\Controllers\Master\DriverMasterController;
+
 
 //====================================OTHERS COMMON API ROUTE======================================
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
@@ -133,6 +138,19 @@ Route::post('/addupdateimagegallery',[ImageGalleryMasterController::class,'store
 
 Route::post('/additionalrequirementmasterlist',[AdditionalRequirementMasterController::class,'index']);
 Route::post('/addupdateadditionalrequirementmaster',[AdditionalRequirementMasterController::class,'store']);
+
+Route::post('/ferrysearlist',[FerrySearMasterController::class,'index']);
+Route::post('/addupdateferrysear',[FerrySearMasterController::class,'store']);
+
+Route::post('/ferrynamelist',[FerryNameMasterController::class,'index']);
+Route::post('/addupdateferryname',[FerryNameMasterController::class,'store']);
+
+Route::post('/ferrycompanylist',[FerryCompanyMasterController::class,'index']);
+Route::post('/addupdateferrycompany',[FerryCompanyMasterController::class,'store']);
+
+Route::post('/drivermasterlist',[DriverMasterController::class,'index']);
+Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
+
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================

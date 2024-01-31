@@ -2,18 +2,15 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+//===============================CRUISE CONTROLLERS============================
+use App\Http\Controllers\Master\CruiseRateMasterController;
+use App\Http\Controllers\Master\SearchCruiseRateController;
+use App\Http\Controllers\Master\FilterCruiseRateController;
+//===============================END HERE===================================
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
-
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//===============================CRUISE CONTROLLERS============================
+Route::post('/searchcruiserate',[SearchCruiseRateController::class,'index']);
+Route::post('/filtercruiserate',[FilterCruiseRateController::class,'index']);
+Route::post('/addupdatecruiseratemaster',[CruiseRateMasterController::class,'store']);
+Route::post('/cruiseratemasterlist',[CruiseRateMasterController::class,'index']);
+//===============================END HERE===================================

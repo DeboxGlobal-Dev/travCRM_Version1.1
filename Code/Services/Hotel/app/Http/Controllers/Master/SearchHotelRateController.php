@@ -15,7 +15,7 @@ class SearchHotelRateController extends Controller
     public function index(){
 
         $users = DB::table(_HOTEL_RATE_MASTER_)->get();
-
+ 
 foreach ($users as $user) {
 
     $startDate = Carbon::parse($user->ValidFrom);
@@ -47,7 +47,7 @@ foreach ($users as $user) {
                     // Return "yes" if the insertion is successful
                 } catch (QueryException $exception) {
                     call_logger('Not Updated: '.$value);
-                }
+                }           
 
         // 'JsonResult' => DB::raw("JSON_ARRAY_APPEND(JsonResult, '$', CAST('".json_encode($existingData)."' AS JSON))"),
     // ]);
@@ -58,7 +58,7 @@ foreach ($users as $user) {
 
 
 
-
+        
             } else {
                 try {
                     DB::table(_SEARCH_HOTEL_RATE_)->insert([
@@ -70,8 +70,8 @@ foreach ($users as $user) {
                 } catch (QueryException $exception) {
                     call_logger('Not Successfull: '.$value);
                 }
-
-
+                
+              
             }
 
     });

@@ -1,6 +1,7 @@
 
 <?php
 
+
 use Carbon\Carbon;
 
 function call_logger($errorlog){
@@ -14,6 +15,7 @@ function call_logger($errorlog){
             Storage::put($newfile, '');
         }
 
+
         $logfile=fopen(Storage::path($newfile),'a');
 
         $ip = \Request::ip();
@@ -22,7 +24,9 @@ function call_logger($errorlog){
         $contents = "$ip\t$time\t$errorlog\r";
         fwrite($logfile,$contents);
 
+
     }
+
 }
 
 function getName($tableName,$id){
@@ -30,6 +34,7 @@ function getName($tableName,$id){
     if($name->isNotEmpty()){
         return $name[0]->Name;
     }
+
 
 }
 
@@ -92,4 +97,3 @@ return $arr;
 
 
 ?>
-

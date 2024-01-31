@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Master\PdfExtractController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('pdf', [PdfExtractController::class, 'extractPDF']);
+Route::get('ShowPdf', [PdfExtractController::class, 'ReadPdf']);

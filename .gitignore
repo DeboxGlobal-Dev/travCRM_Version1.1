@@ -14,3 +14,6 @@ Code/Services/Hotel/composer.json
 Code/Services/Hotel/composer.json
 Code/Services/Hotel/composer.lock
 Code/Services/.vscode/settings.json
+
+Code/Services/bootstrap/cache/packages.php
+Code/Services/bootstrap/cache/services.php

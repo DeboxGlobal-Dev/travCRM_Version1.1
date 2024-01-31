@@ -7,7 +7,7 @@ define("_DB_", "pgsql");
 
 /////////////////////////FOR HOTEL ONLY///////////////////
 define("_HOTEL_RATE_MASTER_", "hotel.hotel_rate_master");
-define("_SEARCH_HOTEL_RATE_", "hotel.search_hotel_rate");
+define("_SEARCH_HOTEL_RATE_", "hotel.search_hotelrate_");
 
 /////////////////////END HERE///////////////////////////////
 ?>

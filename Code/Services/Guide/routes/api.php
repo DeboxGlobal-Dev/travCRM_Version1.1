@@ -2,18 +2,16 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+//===============================GUIDE CONTROLLERS============================
+use App\Http\Controllers\Master\GuideRateMasterController;
+use App\Http\Controllers\Master\SearchGuideRateController;
+use App\Http\Controllers\Master\FilterGuideRateController;
+//===============================END HERE===================================
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+//===============================GUIDE CONTROLLERS============================
+Route::post('/searchguiderate',[SearchGuideRateController::class,'index']);
+Route::post('/filterguiderate',[FilterGuideRateController::class,'index']);
+Route::post('/addupdateguideratemaster',[GuideRateMasterController::class,'store']);
+Route::post('/guideratemasterlist',[GuideRateMasterController::class,'index']);
+//===============================END HERE===================================
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});

@@ -3,9 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\Master\HotelRateMasterController;
-use App\Http\Controllers\Master\SearchHotelRateController;
-use App\Http\Controllers\Master\FilterHotelRateController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -20,11 +17,3 @@ use App\Http\Controllers\Master\FilterHotelRateController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::post('/hotelratelist',[HotelRateMasterController::class,'index']);
-Route::post('/addupdatehotelrate',[HotelRateMasterController::class,'store']);
-
-Route::post('/searchhotelratelist',[SearchHotelRateController::class,'index']);
-// Route::post('/addupdatesearchhotelrate',[SearchHotelRateController::class,'store']);
-
-Route::post('/filterhotelratelist',[FilterHotelRateController::class,'index']);

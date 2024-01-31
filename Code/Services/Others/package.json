@@ -8,6 +8,9 @@
     "devDependencies": {
         "axios": "^1.6.1",
         "laravel-vite-plugin": "^1.0.0",
+        "@popperjs/core": "^2.11.6",
+        "bootstrap": "^5.2.3",
+        "sass": "^1.56.1",
         "vite": "^5.0.0"
     }
 }
