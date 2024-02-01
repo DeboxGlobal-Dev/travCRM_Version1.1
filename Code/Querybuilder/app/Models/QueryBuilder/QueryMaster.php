@@ -11,32 +11,8 @@ class QueryMaster extends Model
     protected $table = _QUERY_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'QueryId',
-        'ClientType',
-        'AgentId',
-        'LeadPax',
-        'Subject',
-        'AddEmail',
-        'AdditionalInfo',
-        'QueryType',
-        'ValueAddedServices',
-        'TravelInfo',
-        'PaxType',
-        'TravelDate',
-        'PaxInfo',
-        'RoomInfo',
-        'Priority',
-        'TAT',
-        'TourType',
-        'LeadSource',
-        'LeadRefrenceId',
-        'HotelPrefrence',
-        'HotelType',
-        'MealPlan',
-        'AddedBy',
-        'UpdatedBy',
-        'created_at',
-        'updated_at',
+        'QueryId', 'ClientType', 'AgentId', 'LeadPax', 'Subject', 'AddEmail', 'AdditionalInfo', 'QueryType', 'ValueAddedServices', 'TravelInfo', 'PaxType', 'TravelDate', 'PaxInfo', 'RoomInfo', 'Priority', 'TAT', 'TourType', 'LeadSource', 'LeadRefrenceId', 'HotelPrefrence', 'HotelType', 'MealPlan', 'AddedBy', 'UpdatedBy',
+        'created_at', 'updated_at', 'QueryJson',
     ];
     public $timestamps = false;
 }

@@ -15,7 +15,7 @@ public function index(Request $request){
 
     $arrayDataRows = array();
 
-    call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+    call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
 
     $Search = $request->input('Search');
     $Status = $request->input('Status');
@@ -25,10 +25,6 @@ public function index(Request $request){
     })->when($Status, function ($query) use ($Status) {
          return $query->where('Status',$Status);
     })->select('*')->orderBy('AgentId')->get('*');
-
-    //$countryName = getName(_COUNTRY_MASTER_,3);
-    //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-    //call_logger('REQUEST2: '.$countryName22);
 
     if ($posts->isNotEmpty()) {
         $arrayDataRows = [];
@@ -81,7 +77,7 @@ public function index(Request $request){
 
 public function store(Request $request)
 {
-    call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+    call_logger('REQUEST COMES FROM ADD/UPDATE QUERY: '.$request->getContent());
 
     try{
         $id = $request->input('id');
@@ -97,29 +93,9 @@ public function store(Request $request)
                 return $validatordata->errors();
             }else{
                 $otp = mt_rand(100000, 999999);
-             $savedata = QueryMaster::create([
-                "QueryId" => $otp,
-                    "ClientType" => $request->ClientType,
-                    "AgentId" => $request->AgentId,
-                    "LeadPax" => $request->LeadPax,
-                    "Subject" => $request->Subject,
-                    "AddEmail" => $request->AddEmail,
-                    "AdditionalInfo" => $request->AdditionalInfo,
-                    "QueryType" => $request->QueryType,
-                    "ValueAddedServices" => $request->ValueAddedServices,
-                    "TravelInfo" => $request->TravelInfo,
-                    "PaxType" => $request->PaxType,
-                    "TravelDate" => $request->TravelDate,
-                    "PaxInfo" => $request->PaxInfo,
-                    "RoomInfo" => $request->RoomInfo,
-                    "Priority" => $request->Priority,
-                    "TAT" => $request->TAT,
-                    "TourType" => $request->TourType,
-                    "LeadSource" => $request->LeadSource,
-                    "LeadRefrenceId" => $request->LeadRefrenceId,
-                    "HotelPrefrence" => $request->HotelPrefrence,
-                    "HotelType" => $request->HotelType,
-                    "MealPlan" => $request->MealPlan,
+                $savedata = QueryMaster::create([
+                    "QueryId" => $otp,
+                    "QueryJson" => $request->QueryJson,
                     "AddedBy" => $request->AddedBy,
                     'created_at' => now(),
             ]);
@@ -147,31 +123,10 @@ public function store(Request $request)
             }else{
                 if ($edit) {
                     $edit->QueryId = $request->input('QueryId');
-                    $edit->ClientType = $request->input('ClientType');
-                    $edit->AgentId = $request->input('AgentId');
-                    $edit->LeadPax = $request->input('LeadPax');
-                    $edit->Subject = $request->input('Subject');
-                    $edit->AddEmail = $request->input('AddEmail');
-                    $edit->AdditioalInfo = $request->input('AdditionalInfo');
-                    $edit->QueryType = $request->input('QueryType');
-                    $edit->ValueAdedServices = $request->input('ValueAddedServices');
-                    $edit->TravelInfo = $request->input('TravelInfo');
-                    $edit->PaxType = $request->input('PaxType');
-                    $edit->TravelDate = $request->input('TravelDate');
-                    $edit->PaxInfo = $request->input('PaxInfo');
-                    $edit->RoomInfo = $request->input('RoomInfo');
-                    $edit->Priority = $request->input('Priority');
-                    $edit->TAT = $request->input('TAT');
-                    $edit->TourType = $request->input('TourType');
-                    $edit->LeadSource = $request->input('LeadSource');
-                    $edit->LeadRefenceId = $request->input('LeadRefrenceId');
-                    $edit->HotelPrfrence = $request->input('HotelPrefrence');
-                    $edit->HotelType = $request->input('HotelType');
-                    $edit->MealPlan = $request->input('MealPlan');
+                    $edit->QueryJson = $request->input('QueryJson');
                     $edit->UpdatedBy = $request->input('UpdatedBy');
                     $edit->updated_at = now();
                     $edit->save();
-
 
                     return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
                 } else {
