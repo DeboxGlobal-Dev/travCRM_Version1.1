@@ -1,157 +1,148 @@
 <?php
 
 namespace App\Http\Controllers\QueryBuilder;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Validator;
 use App\Models\QueryBuilder\QueryMaster;
+use Illuminate\Support\Facades\Validator;
+
 
 class QueryMasterController extends Controller
 {
 
-public function index(Request $request){
+    public function index(Request $request){
 
 
-    $arrayDataRows = array();
+        $arrayDataRows = array();
 
-    call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
+        call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
 
-    $Search = $request->input('Search');
-    $Status = $request->input('Status');
+        $Search = $request->input('Search');
+        $Status = $request->input('Status');
 
-    $posts = QueryMaster::when($Search, function ($query) use ($Search) {
-        return $query->where('AgentId', 'like', '%' . $Search . '%');
-    })->when($Status, function ($query) use ($Status) {
-         return $query->where('Status',$Status);
-    })->select('*')->orderBy('AgentId')->get('*');
+        $posts = QueryMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('QueryId', 'like', '%' . $Search . '%');
+        })->when($Status, function ($query) use ($Status) {
+            return $query->where('Status',$Status);
+        })->select('*')->orderBy('QueryId')->get('*');
 
-    if ($posts->isNotEmpty()) {
-        $arrayDataRows = [];
-        foreach ($posts as $post){
-            $arrayDataRows[] = [
-                "Id" => $post->id,
-                "QueryId" => $post->QueryId,
-                "ClientType" => $post->ClientType,
-                "AgentId" => $post->AgentId,
-                "LeadPax" => $post->LeadPax,
-                "Subject" => $post->Subject,
-                "AddEmail" => $post->AddEmail,
-                "AdditionalInfo" => $post->AdditionalInfo,
-                "QueryType" => $post->QueryType,
-                "ValueAddedServices" => $post->ValueAddedServices,
-                "TravelInfo" => $post->TravelInfo,
-                "PaxType" => $post->PaxType,
-                "TravelDate" => $post->TravelDate,
-                "PaxInfo" => $post->PaxInfo,
-                "RoomInfo" => $post->RoomInfo,
-                "Priority" => $post->Priority,
-                "TAT" => $post->TAT,
-                "TourType" => $post->TourType,
-                "LeadSource" => $post->LeadSource,
-                "LeadRefrenceId" => $post->LeadRefrenceId,
-                "HotelPrefrence" => $post->HotelPrefrence,
-                "HotelType" => $post->HotelType,
-                "MealPlan" => $post->MealPlan,
-                "AddedBy" => $post->AddedBy,
-                "UpdatedBy" => $post->UpdatedBy,
-                "Created_at" => $post->created_at,
-                "Updated_at" => $post->updated_at
-            ];
-        }
+        if ($posts->isNotEmpty()) {
+            $arrayDataRows = [];
+            foreach ($posts as $post){
+                $arrayDataRows[] = [
+                    "Id" => $post->id,
+                    "QueryId" => $post->QueryId,
+                    "ClientType" => $post->ClientType,
+                    "LeadPax" => $post->LeadPax,
+                    "Subject" => $post->Subject,
+                    "QueryType" => $post->QueryType,
+                    "Priority" => $post->Priority,
+                    "TAT" => $post->TAT,
+                    "LeadSource" => $post->LeadSource,
+                    "FromDate" => $post->FromDate,
+                    "ToDate" => $post->ToDate,
+                    "AddedBy" => $post->AddedBy,
+                    "UpdatedBy" => $post->UpdatedBy,
+                    "Created_at" => $post->created_at,
+                    "Updated_at" => $post->updated_at
+                ];
+            }
 
-        return response()->json([
-            'Status' => 200,
-            'TotalRecord' => $posts->count('id'),
-            'DataList' => $arrayDataRows
-        ]);
-
-    }else {
-        return response()->json([
-            "Status" => 0,
-            "TotalRecord" => $posts->count('id'),
-            "Message" => "No Record Found."
-        ]);
-    }
-}
-
-public function store(Request $request)
-{
-    call_logger('REQUEST COMES FROM ADD/UPDATE QUERY: '.$request->getContent());
-
-    try{
-        $id = $request->input('id');
-        if($id == '') {
-
-            $businessvalidation =array(
-                // 'Name' => 'required|unique:'._DB_.'.'._TOUR_TYPE_MASTER_.',Name',
-            );
-
-            $validatordata = validator::make($request->all(), $businessvalidation);
-
-            if($validatordata->fails()){
-                return $validatordata->errors();
-            }else{
-                $otp = mt_rand(100000, 999999);
-                $savedata = QueryMaster::create([
-                    "QueryId" => $otp,
-                    "QueryJson" => $request->QueryJson,
-                    "AddedBy" => $request->AddedBy,
-                    'created_at' => now(),
+            return response()->json([
+                'Status' => 200,
+                'TotalRecord' => $posts->count('id'),
+                'DataList' => $arrayDataRows
             ]);
 
-            if ($savedata) {
-                return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
-            } else {
-                return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
-            }
-          }
+        }else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'),
+                "Message" => "No Record Found."
+            ]);
+        }
+    }
 
-        }else{
+    public function store(Request $request)
+    {
+        try{
+            call_logger('REQUEST COMES FROM QUERY ADD/UPDATE: '.$request->getContent());
 
             $id = $request->input('id');
-            $edit = QueryMaster::find($id);
+            call_logger('new id'.$id);
+            if($id == ''){
 
-            $businessvalidation =array(
-                // 'Name' => 'required',
-            );
+                $businessvalidation =array(
+                    //'Subject' => 'required'
+                );
+                $validatordata = validator::make($request->all(), $businessvalidation);
 
-            $validatordata = validator::make($request->all(), $businessvalidation);
-
-            if($validatordata->fails()){
-             return $validatordata->errors();
+                if($validatordata->fails()){
+                    return $validatordata->errors();
+                }else{
+                    $otp = mt_rand(100000, 999999);
+                    call_logger('REQUEST COMES FROM : '.$request->Subject.'+++++++++++'.$request->ClientType);
+                    $savedata = QueryMaster::create([
+                        "QueryId" => $otp,
+                        "ClientType" => $request->ClientType,
+                        "LeadPax" => $request->LeadPax,
+                        "Subject" => $request->Subject,
+                        "QueryType" => $request->QueryType,
+                        "Priority" => $request->Priority,
+                        "TAT" => $request->TAT,
+                        "LeadSource" => $request->LeadSource,
+                        "FromDate" => $request->FromDate,
+                        "ToDate" => $request->ToDate,
+                        "QueryJson" => $request->QueryJson,
+                        "AddedBy" => $request->AddedBy,
+                        'created_at' => now(),
+                    ]);
+                    if ($savedata) {
+                        return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                    } else {
+                        return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                    }
+                }
             }else{
-                if ($edit) {
-                    $edit->QueryId = $request->input('QueryId');
-                    $edit->QueryJson = $request->input('QueryJson');
-                    $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->updated_at = now();
-                    $edit->save();
 
-                    return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
-                } else {
-                    return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                $id = $request->input('id');
+                $edit = QueryMaster::find($id);
+
+                $businessvalidation =array(
+                    // 'Name' => 'required',
+                );
+
+                $validatordata = validator::make($request->all(), $businessvalidation);
+
+                if($validatordata->fails()){
+                return $validatordata->errors();
+                }else{
+                    if ($edit) {
+                        $edit->QueryId = $request->input('QueryId');
+                        $edit->ClientType = $request->input('ClientType');
+                        $edit->LeadPax = $request->input('LeadPax');
+                        $edit->Subject = $request->input('Subject');
+                        $edit->QueryType = $request->input('QueryType');
+                        $edit->Priority = $request->input('Priority');
+                        $edit->TAT = $request->input('TAT');
+                        $edit->LeadSource = $request->input('LeadSource');
+                        $edit->FromDate = $request->input('FromDate');
+                        $edit->ToDate = $request->input('ToDate');
+                        $edit->QueryJson = $request->input('QueryJson');
+                        $edit->UpdatedBy = $request->input('UpdatedBy');
+                        $edit->updated_at = now();
+                        $edit->save();
+
+                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                    } else {
+                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                    }
                 }
             }
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
-    }catch (\Exception $e){
-        call_logger("Exception Error  ===>  ". $e->getMessage());
-        return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
     }
-}
-
-
-
-public function destroy(Request $request)
-{
-    $brands = QueryMaster::find($request->id);
-    $brands->delete();
-
-    if ($brands) {
-        return response()->json(['result' =>'Data deleted successfully!']);
-    } else {
-        return response()->json(['result' =>'Failed to delete data.'], 500);
-    }
-
-}
 }

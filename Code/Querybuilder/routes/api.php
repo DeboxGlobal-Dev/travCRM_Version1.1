@@ -15,4 +15,4 @@ use App\Http\Controllers\QueryBuilder\QueryMasterController;
 */
 
 Route::post('/querymasterlist',[QueryMasterController::class,'index']);
-Route::post('/addupdatequerymaster',[QueryMasterController::class,'store']);
+Route::post('addupdatequerymaster',[QueryMasterController::class,'store']);
