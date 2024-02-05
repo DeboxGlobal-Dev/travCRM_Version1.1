@@ -1,26 +1,22 @@
 <?php
 
 namespace App\Http\Controllers\QueryBuilder;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use App\Http\Controllers\Controller;
-use App\Models\QueryBuilder\QueryMaster;
-use Illuminate\Support\Facades\Validator;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use App\Models\QueryBuilder\QueryMaster;
 
 class QueryMasterController extends Controller
 {
-
     public function index(Request $request){
-
-
         $arrayDataRows = array();
 
         call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
 
         $Search = $request->input('Search');
         $Status = $request->input('Status');
-
+        call_logger('REQUEST COMES search query: '.$Search);
         $posts = QueryMaster::when($Search, function ($query) use ($Search) {
             return $query->where('QueryId', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
@@ -62,6 +58,7 @@ class QueryMasterController extends Controller
                 "Message" => "No Record Found."
             ]);
         }
+
     }
 
     public function store(Request $request)
