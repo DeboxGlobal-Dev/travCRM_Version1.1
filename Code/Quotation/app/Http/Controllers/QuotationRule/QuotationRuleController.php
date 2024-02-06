@@ -18,9 +18,9 @@ class QuotationRuleController extends Controller
         $Status = $request->input('Status');
 
         $posts = QuotationInfo::when($Search, function ($query) use ($Search) {
-            return $query->where('QueryId',  $Search);
+            return $query->where('QueryId', 'like', '%' . $Search . '%');
         })->when($Subject, function ($query) use ($Subject) {
-            return $query->where('Subject',$Subject);
+            return $query->where('Subject','like', '%' . $Subject . '%');
        })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('QueryId')->get('*');
@@ -116,9 +116,9 @@ class QuotationRuleController extends Controller
                             'AddedBy' => $request->AddedBy,
                             'created_at' => now()
                         ]);
-                        return response()->json(['Status' => 0, 'Message' => 'Data increament successfully']);
+                        return response()->json(['Status' => 0, 'Message' => 'Data saved successfully']);
                     } else {
-                        return response()->json(['Status' => 1, 'Message' => 'Failed to increament data.'], 401);
+                        return response()->json(['Status' => 1, 'Message' => 'Failed to saved data.'], 401);
                     }
                 
             }
