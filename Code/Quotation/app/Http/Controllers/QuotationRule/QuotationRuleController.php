@@ -13,12 +13,14 @@ class QuotationRuleController extends Controller
 
         call_logger('REQUEST COMES FROM QuotationInfo LIST: '.$request->getContent());
 
-        $Search = $request->input('QueryId');
-        // $Status = $request->input('Status');
+        $Search = $request->input('Search');
+        $Status = $request->input('Status');
 
         $posts = QuotationInfo::when($Search, function ($query) use ($Search) {
-            return $query->where('QueryId', $Search);
-        })->select('*')->get('*');
+            return $query->where('QueryId',  $Search);
+        })->when($Status, function ($query) use ($Status) {
+             return $query->where('Status',$Status);
+        })->select('*')->orderBy('QueryId')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
@@ -33,7 +35,8 @@ class QuotationRuleController extends Controller
                     "Child" => $post->Child,
                     "TotalPax" => $post->TotalPax,
                     "LeadPaxName" => $post->LeadPaxName,
-                    "JsonData" => $post->JsonData,
+                    "Version" => $post->Version,
+                    "Is_flag" => $post->Is_flag,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "Created_at" => $post->created_at,
@@ -61,9 +64,9 @@ class QuotationRuleController extends Controller
         call_logger('REQUEST COMES FROM ADD QuotationInfo: '.$request->getContent());
 
         try{
-            $id = $request->input('id');
-            if($id == '') {
-
+            $queryId=$request->input('QueryId');
+            $Id= QuotationInfo::where('QueryId','=' ,$queryId)->first();
+            if($Id == '') {
                  $savedata = QuotationInfo::create([
                     'QueryId' => $request->QueryId,
                     'Subject' => $request->Subject,
@@ -71,24 +74,98 @@ class QuotationRuleController extends Controller
                     'ToDate' => $request->ToDate,
                     'Adult' => $request->Adult,
                     'Child' => $request->Child,
-                    'LeadPaxName' => $request->LeadPaxName,
                     'TotalPax' => $request->TotalPax,
-                    'JsonData' => $request->JsonData,
+                    'LeadPaxName' => $request->LeadPaxName,
+                    'JsonData' => $request->getContent(),
+                    'Version' => '1',
+                    'Is_flag' => '1',
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now()
                 ]);
-
                 if ($savedata) {
                     return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
                 } else {
                     return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
                 }
 
+                
+
+            }
+            else{
+                // $edit= QuotationInfo::where('id','=' ,$Id->id)->orderBy('id', 'desc')->get();
+                $edit = QuotationInfo::where('QueryId', $request->QueryId)->orderBy('id', 'desc')->take(1)->get();
+                print_r($edit[0]->Version);
+                    if ($edit) {    
+                        $savedata = QuotationInfo::create([
+                            'QueryId' => $request->QueryId,
+                            'Subject' => $request->Subject,
+                            'FromDate' => $request->FromDate,
+                            'ToDate' => $request->ToDate,
+                            'Adult' => $request->Adult,
+                            'Child' => $request->Child,
+                            'TotalPax' => $request->TotalPax,
+                            'LeadPaxName' => $request->LeadPaxName,
+                            'JsonData' => $request->getContent(),
+                            'Version' => $edit[0]->Version+1,
+                            'Is_flag' => '0',
+                            'Status' => $request->Status,
+                            'AddedBy' => $request->AddedBy,
+                            'created_at' => now()
+                        ]);
+                        return response()->json(['Status' => 0, 'Message' => 'Data increament successfully']);
+                    } else {
+                        return response()->json(['Status' => 1, 'Message' => 'Failed to increament data.'], 401);
+                    }
+                
             }
         }catch (\Exception $e){
             call_logger("Exception Error  ===>  ". $e->getMessage());
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
     }
-}
+
+
+    Public function updatedata(Request $request){
+        $id=$request->input('id');
+        $edit = QuotationInfo::find($id);
+
+        if($edit){
+                        $edit->QueryId = $request->input('QueryId');
+                        $edit->Subject = $request->input('Subject');
+                        $edit->FromDate = $request->input('FromDate');
+                        $edit->ToDate = $request->input('ToDate');
+                        $edit->Adult = $request->input('Adult');
+                        $edit->Child = $request->input('Child');
+                        $edit->TotalPax = $request->input('TotalPax');
+                        $edit->LeadPaxName = $request->input('LeadPaxName');
+                        $edit->JsonData = $request->getContent();
+                        $edit->Version = $request->input('Version');
+                        $edit->Is_flag = $request->input('Is_flag');
+                        $edit->Status = $request->input('Status');
+                        $edit->UpdatedBy = $request->input('UpdatedBy');
+                        $edit->updated_at = now();
+                        $edit->save();
+                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                    } else {
+                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data.'], 401);
+                    }
+        }
+    }
+    // public function increamentdata(Request $request){
+
+    //     $id = $request->input('id');
+    //     $data = QuotationInfo::find($id);
+
+    //     if($data->exists){
+    //         $data->Version++;
+    //         $data->Is_flag = 0;
+    //     }else{
+    //         $data->Version = 1;
+    //         $data->Is_flag = 1;
+    //     }
+
+    //     $data->save();
+
+    // }
+

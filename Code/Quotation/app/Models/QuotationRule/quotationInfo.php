@@ -15,13 +15,16 @@ class QuotationInfo extends Model
         'Subject',
         'FromDate',
         'ToDate',
-        'TotalPax',
         'Adult',
         'Child',
+        'TotalPax',
         'LeadPaxName',
         'JsonData',
+        'Version',
+        'Is_flag',
         'Status',
         'AddedBy',
+        'UpdatedBy',
         'created_at',
         'updated_at'
     ];
