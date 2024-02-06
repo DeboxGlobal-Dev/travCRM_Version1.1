@@ -13,12 +13,12 @@ class QuotationRuleController extends Controller
 
         call_logger('REQUEST COMES FROM QuotationInfo LIST: '.$request->getContent());
 
-        $Search = $request->input('QueryId');
+        $QueryId = $request->input('QueryId');
         $Subject = $request->input('Subject');
         $Status = $request->input('Status');
 
-        $posts = QuotationInfo::when($Search, function ($query) use ($Search) {
-            return $query->where('QueryId', 'like', '%' . $Search . '%');
+        $posts = QuotationInfo::when($QueryId, function ($query) use ($QueryId) {
+            return $query->where('QueryId',$QueryId);
         })->when($Subject, function ($query) use ($Subject) {
             return $query->where('Subject','like', '%' . $Subject . '%');
        })->when($Status, function ($query) use ($Status) {
@@ -144,7 +144,7 @@ class QuotationRuleController extends Controller
                         $edit->LeadPaxName = $request->input('LeadPaxName');
                         $edit->JsonData = $request->getContent();
                         $edit->Version = $request->input('Version');
-                        $edit->IsSave = $request->input('IsSave');
+                        $edit->IsSave = '1';
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
