@@ -13,12 +13,15 @@ class QuotationRuleController extends Controller
 
         call_logger('REQUEST COMES FROM QuotationInfo LIST: '.$request->getContent());
 
-        $Search = $request->input('Search');
+        $Search = $request->input('QueryId');
+        $Subject = $request->input('Subject');
         $Status = $request->input('Status');
 
         $posts = QuotationInfo::when($Search, function ($query) use ($Search) {
             return $query->where('QueryId',  $Search);
-        })->when($Status, function ($query) use ($Status) {
+        })->when($Subject, function ($query) use ($Subject) {
+            return $query->where('Subject',$Subject);
+       })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('QueryId')->get('*');
 
@@ -36,7 +39,7 @@ class QuotationRuleController extends Controller
                     "TotalPax" => $post->TotalPax,
                     "LeadPaxName" => $post->LeadPaxName,
                     "Version" => $post->Version,
-                    "Is_flag" => $post->Is_flag,
+                    "IsSave" => $post->IsSave,
                     "Status" => $post->Status,
                     "AddedBy" => $post->AddedBy,
                     "Created_at" => $post->created_at,
@@ -78,7 +81,7 @@ class QuotationRuleController extends Controller
                     'LeadPaxName' => $request->LeadPaxName,
                     'JsonData' => $request->getContent(),
                     'Version' => '1',
-                    'Is_flag' => '1',
+                    'IsSave' => '1',
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now()
@@ -95,7 +98,7 @@ class QuotationRuleController extends Controller
             else{
                 // $edit= QuotationInfo::where('id','=' ,$Id->id)->orderBy('id', 'desc')->get();
                 $edit = QuotationInfo::where('QueryId', $request->QueryId)->orderBy('id', 'desc')->take(1)->get();
-                print_r($edit[0]->Version);
+                //print_r($edit[0]->Version);
                     if ($edit) {    
                         $savedata = QuotationInfo::create([
                             'QueryId' => $request->QueryId,
@@ -108,7 +111,7 @@ class QuotationRuleController extends Controller
                             'LeadPaxName' => $request->LeadPaxName,
                             'JsonData' => $request->getContent(),
                             'Version' => $edit[0]->Version+1,
-                            'Is_flag' => '0',
+                            'IsSave' => '0',
                             'Status' => $request->Status,
                             'AddedBy' => $request->AddedBy,
                             'created_at' => now()
@@ -141,7 +144,7 @@ class QuotationRuleController extends Controller
                         $edit->LeadPaxName = $request->input('LeadPaxName');
                         $edit->JsonData = $request->getContent();
                         $edit->Version = $request->input('Version');
-                        $edit->Is_flag = $request->input('Is_flag');
+                        $edit->IsSave = $request->input('IsSave');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();

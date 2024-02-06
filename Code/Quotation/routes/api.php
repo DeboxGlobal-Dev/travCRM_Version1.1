@@ -22,4 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/quotationinfolist',[QuotationRuleController::class,'index']);
 Route::post('/addquotationinfo',[QuotationRuleController::class,'store']);
 Route::post('/updatequotationinfo',[QuotationRuleController::class,'updatedata']);
-Route::post('/increamentquotationinfo',[QuotationRuleController::class,'increamentcolumn']);
+//Route::post('/increamentquotation',[QuotationRuleController::class,'increamentcolumn']);
