@@ -51,6 +51,7 @@ use App\Http\Controllers\Master\FerrySearMasterController;
 use App\Http\Controllers\Master\FerryNameMasterController;
 use App\Http\Controllers\Master\FerryCompanyMasterController;
 use App\Http\Controllers\Master\DriverMasterController;
+use App\Http\Controllers\Master\ModuleMasterController;
 
 
 //====================================OTHERS COMMON API ROUTE======================================
@@ -150,6 +151,9 @@ Route::post('/addupdateferrycompany',[FerryCompanyMasterController::class,'store
 
 Route::post('/drivermasterlist',[DriverMasterController::class,'index']);
 Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
+
+Route::post('/modulemasterlist',[ModuleMasterController::class,'index']);
+Route::post('/addupdatemodulemaster',[ModuleMasterController::class,'store']);
 
 //===========================================END HERE========================================
 
