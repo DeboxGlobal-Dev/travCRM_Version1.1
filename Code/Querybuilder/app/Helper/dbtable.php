@@ -6,7 +6,7 @@ define("_DB_", "pgsql");
 /*-----------------------------------------------------*/
 
 ///////////////////////FOR QUERY BUILDER ONLY/////////////////////////////
-define("_QUERY_MASTER_", "others.query_master");
+define("_QUERY_MASTER_", "querybuilder.query_master");
 
 ///////////////////////END HERE/////////////////////////////?
 
