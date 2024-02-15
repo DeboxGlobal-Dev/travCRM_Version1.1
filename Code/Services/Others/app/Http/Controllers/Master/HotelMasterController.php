@@ -15,17 +15,22 @@ class HotelMasterController extends Controller
         call_logger('REQUEST COMES FROM HOTEL   MASTER LIST: '.$request->getContent());
 
         $Search = $request->input('Search');
-        $Status = $request->input('Status');
+        $Status = $request->input('HotelStatus');
 
         $posts = HotelMaster::when($Search, function ($query) use ($Search) {
             return $query->where('HotelName', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
-             return $query->where('Status',$Status);
+             return $query->where('HotelStatus',$Status);
         })->select('*')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
+                if($Status == 0){
+                    $Status = 'Active';
+               }elseif ($Status == 1) {
+                    $Status = 'InActive';
+               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "HotelChain" => getName(_HOTEL_CHAIN_MASTER_,$post->HotelChain),
@@ -49,7 +54,7 @@ class HotelMasterController extends Controller
                     "HotelTC" => $post->HotelTC,
                     "HotelAmenties" => $post->HotelAmenties,
                     "HotelRoomType" => $post->HotelRoomType,
-                    "HotelStatus" => $post->HotelStatus,
+                    "HotelStatus" => $Status,
                     "SelfSupplier" => ($post->SelfSupplier==0) ? 'No' : 'Yes',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,

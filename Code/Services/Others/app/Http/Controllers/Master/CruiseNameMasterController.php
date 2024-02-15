@@ -27,11 +27,16 @@ class CruiseNameMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
+                if($Status == 0){
+                    $Status = 'Active';
+               }elseif ($Status == 1) {
+                    $Status = 'InActive';
+               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "CruiseCompany" => $post->CruiseCompany,
                     "CruiseName" => $post->CruiseName,
-                    "Status" => $post->Status,
+                    "Status" => $Status,
                     "ImageName" => $post->ImageName,
                     "ImageData" => $post->ImageData,
                     "AddedBy" => $post->AddedBy,

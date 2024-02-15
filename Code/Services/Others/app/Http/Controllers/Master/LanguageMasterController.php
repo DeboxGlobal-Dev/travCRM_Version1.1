@@ -32,10 +32,15 @@ class LanguageMasterController extends Controller
       if ($posts->isNotEmpty()) {
           $arrayDataRows = [];
           foreach ($posts as $post){
+            if($Status == 0){
+                $Status = 'Active';
+           }elseif ($Status == 1) {
+                $Status = 'InActive';
+           }
               $arrayDataRows[] = [
                   "Id" => $post->id,
                   "Name" => $post->Name,
-                  "Status" => $post->Status,
+                  "Status" => $Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
                   "Created_at" => $post->created_at,

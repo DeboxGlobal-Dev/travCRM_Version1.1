@@ -40,6 +40,13 @@ class DestinationMasterController extends Controller
       if ($posts->isNotEmpty()) {
           $arrayDataRows = [];
           foreach ($posts as $post){
+            if($Status == 0 && $Default == 0){
+                $Status = 'Active';
+                $Default = 'False';
+           }elseif ($Status == 1 && $Default == 1) {
+                $Status = 'InActive';
+                $Default = 'True';
+           }
               $arrayDataRows[] = [
                   "Id" => $post->id,
                   "Name" => $post->Name,
@@ -48,8 +55,8 @@ class DestinationMasterController extends Controller
                   "CountryId" => $post->CountryId,
                   "StateId" => $post->StateId,
                   "Description" => $post->Description,
-                  "SetDefault" => $post->SetDefault,
-                  "Status" => $post->Status,
+                  "SetDefault" => $Default,
+                  "Status" => $Status,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
                   "Created_at" => $post->created_at,

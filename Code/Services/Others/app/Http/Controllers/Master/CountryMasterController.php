@@ -12,19 +12,45 @@ class CountryMasterController extends Controller
     public function index(Request $request){
         $Search = $request->input('Search');
         $Status = $request->input('Status');
+        $SetDefault = $request->input('SetDefault');
 
         $posts = CountryMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
                    ->orwhere('ShortName', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->orderBy('Name')->get('*');
+        })->when($SetDefault, function ($query) use ($SetDefault) {
+            return $query->where('SetDefault',$SetDefault);
+       })->select('*')->orderBy('Name')->get('*');
 
         if ($posts->isNotEmpty()) {
+            $arrayDataRows = [];
+            foreach ($posts as $post){
+                if($Status == 0 && $SetDefault == 0){
+                    $Status = 'Active';
+                    $SetDefault = 'False';
+               }elseif ($Status == 1 && $SetDefault == 1) {
+                    $Status = 'InActive';
+                    $SetDefault = 'True';
+               }
+                $arrayDataRows[] = [
+                    "Id" => $post->id,
+                    "Name" => $post->Name,
+                    "ShortName" => $post->ShortName,
+                    "SetDefault" => $SetDefault,
+                    "Status" => $Status,
+                    "AddedBy" => $post->AddedBy,
+                    "UpdatedBy" => $post->UpdatedBy,
+                    "Created_at" => $post->created_at,
+                    "Updated_at" => $post->updated_at
+                ];
+            }
+    
             return response()->json([
-                'Status' => 200,
+                'Status' => 0,
+                'message' => '',
                 'TotalRecord' => $posts->count('id'),
-                'DataList' => $posts
+                'DataList' => $arrayDataRows
             ]);
         } else {
             return response()->json([

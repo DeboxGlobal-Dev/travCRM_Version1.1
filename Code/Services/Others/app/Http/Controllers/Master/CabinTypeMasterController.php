@@ -26,11 +26,16 @@ class CabinTypeMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
+                if($Status == 0){
+                    $Status = 'Active';
+               }elseif ($Status == 1) {
+                    $Status = 'InActive';
+               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "CruiseName" => $post->CruiseName,
                     "CabinType" => $post->CabinType,
-                    "Status" => $post->Status,
+                    "Status" => $Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

@@ -28,6 +28,11 @@ class DriverMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
+                if($Status == 0){
+                    $Status = 'Active';
+               }elseif ($Status == 1) {
+                    $Status = 'InActive';
+               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Country" => $post->Country,
@@ -42,7 +47,7 @@ class DriverMasterController extends Controller
                     "Address" => $post->Address,
                     "ValidUpto" => $post->ValidUpto,
                     "ImageName" => $post->ImageName,
-                    "Status" => $post->Status,
+                    "Status" => $Status,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

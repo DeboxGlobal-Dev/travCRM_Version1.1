@@ -26,6 +26,11 @@ class CruiseMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
+                if($Status == 0){
+                    $Status = 'Active';
+               }elseif ($Status == 1) {
+                    $Status = 'InActive';
+               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "CruisePackageName" => $post->CruisePackageName,
@@ -33,7 +38,7 @@ class CruiseMasterController extends Controller
                     "RunningDays" => $post->RunningDays,
                     "ArrivalTime" => $post->ArrivalTime,
                     "DepartureTime" => $post->DepartureTime,
-                    "Status" => $post->Status,
+                    "Status" => $Status,
                     "Details" => $post->Details,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,

@@ -19,12 +19,15 @@ class CurrencyMasterController extends Controller
 
       $Search = $request->input('Search');
       $Status = $request->input('Status');
+      $SetDefault = $request->input('SetDefault');
 
       $posts = CurrencyMaster::when($Search, function ($query) use ($Search) {
           return $query->where('CountryCode', 'like', '%' . $Search . '%');
       })->when($Status, function ($query) use ($Status) {
            return $query->where('Status',$Status);
-      })->select('*')->orderBy('CurrencyName')->get('*');
+      })->when($SetDefault, function ($query) use ($SetDefault) {
+        return $query->where('SetDefault',$SetDefault);
+   })->select('*')->orderBy('CurrencyName')->get('*');
 
 
 
@@ -35,13 +38,20 @@ class CurrencyMasterController extends Controller
       if ($posts->isNotEmpty()) {
           $arrayDataRows = [];
           foreach ($posts as $post){
+            if($Status == 0 && $SetDefault == 0){
+                $Status = 'Active';
+                $SetDefault = 'False';
+           }elseif ($Status == 1 && $SetDefault == 1) {
+                $Status = 'InActive';
+                $SetDefault = 'True';
+           }
               $arrayDataRows[] = [
                   "Id" => $post->id,
                   "CountryId" => $post->CountryId,
                   "CountryCode" => $post->CountryCode,
                   "Currencyname" => $post->CurrencyName,
-                  "Status" => $post->Status,
-                  "SetDefault" => $post->SetDefault,
+                  "Status" => $Status,
+                  "SetDefault" => $SetDefault,
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
 

@@ -29,12 +29,37 @@ class TourTypeMasterController extends Controller
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
         //call_logger('REQUEST2: '.$countryName22);
 
-        if($Status==0){return response()->json([
-            'Status' => 'Active',
-        ]);}
-        elseif($Status == 1){
+        if ($posts->isNotEmpty()) {
+            $arrayDataRows = [];
+            foreach ($posts as $post){
+                if($Status == 0 ){
+                    $Status = 'Active';
+               }elseif ($Status == 1 ) {
+                    $Status = 'InActive';
+                
+               }
+                $arrayDataRows[] = [
+                    "Id" => $post->id,
+                    "Name" => $post->Name,
+                    "Status" => $Status,
+                    "AddedBy" => $post->AddedBy,
+                    "UpdatedBy" => $post->UpdatedBy,
+                    "Created_at" => $post->created_at,
+                    "Updated_at" => $post->updated_at
+                ];
+            }
+
             return response()->json([
-                'Status' => 'InActive',
+                'Status' => 200,
+                'TotalRecord' => $posts->count('id'),
+                'DataList' => $arrayDataRows
+            ]);
+
+        }else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'),
+                "Message" => "No Record Found."
             ]);
         }
     }
