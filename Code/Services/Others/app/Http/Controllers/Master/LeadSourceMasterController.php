@@ -27,32 +27,14 @@ class LeadSourceMasterController extends Controller
         })->select('*')->orderBy('Name')->get('*');
 
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "SetDefault" => $post->SetDefault,
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
-                ];
-            }
-
+        if($Status==0 && $SetDefault == 0){return response()->json([
+            'Status' => 'Active',
+            'SetDefault' => 'Yes',
+        ]);}
+        elseif($Status == 1 && $SetDefault == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
-            ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
+                'Status' => 'InActive',
+                'SetDefault' => 'Yes',
             ]);
         }
     }

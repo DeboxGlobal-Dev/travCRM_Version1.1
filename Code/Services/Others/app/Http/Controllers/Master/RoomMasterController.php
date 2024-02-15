@@ -23,38 +23,19 @@ class RoomMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
-                ];
-            }
-
+       
+        if($Status==0){return response()->json([
+            'Status' => 'Active',
+        ]);}
+        elseif($Status == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
+                'Status' => 'InActive',
             ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
-            ]);
-        }
-    }
+        } }
 
     public function store(Request $request)
     {
-        try{
+        //try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -108,10 +89,10 @@ class RoomMasterController extends Controller
                     }
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+        // }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        // }
     }
 
 

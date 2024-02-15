@@ -1,27 +1,37 @@
 <?php
 
 namespace App\Http\Controllers\Master;
-use Illuminate\Support\Facades\DB;
+
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Master\ModuleMaster;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Master\LetterMaster;
 
-class LetterMasterController extends Controller
+class ModuleMasterController extends Controller
 {
     public function index(Request $request){
 
 
         $arrayDataRows = array();
 
-        $Search = $request->input('Search');
+        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
+
+        $ModuleName = $request->input('ModuleName');
+        $ModuleType = $request->input('ModuleType');
         $Status = $request->input('Status');
 
-        $posts = LetterMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%');
+        $posts = ModuleMaster::when($ModuleName, function ($query) use ($ModuleName) {
+            return $query->where('ModuleName', 'like', '%' . $ModuleName . '%');
+        })->when($ModuleType, function ($query) use ($ModuleType) {
+             return $query->where('ModuleType',$ModuleType);
         })->when($Status, function ($query) use ($Status) {
-             return $query->where('Status',$Status);
-        })->select('*')->orderBy('Name')->get('*');
+            return $query->where('Status',$Status);
+       })->select('*')->orderBy('SerialNumber')->get('*');
+
+        //$countryName = getName(_COUNTRY_MASTER_,3);
+        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
+        //call_logger('REQUEST2: '.$countryName22);
 
         if($Status==0){return response()->json([
             'Status' => 'Active',
@@ -35,12 +45,14 @@ class LetterMasterController extends Controller
 
     public function store(Request $request)
     {
-        //try{
+        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+
+        try{
             $id = $request->input('id');
             if($id == '') {
 
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._LETTER_MASTER_.',Name',
+                    'ModuleName' => 'required|unique:'._DB_.'.'._MODULE_MASTER_.',ModuleName',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -48,13 +60,12 @@ class LetterMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = LetterMaster::create([
-                    'FromDestination' => $request->FromDestination,
-                    'ToDestination' => $request->ToDestination,
-                    'TransferMode' => $request->TransferMode,
-                    'Name' => $request->Name,
-                    'GreetingNote' => $request->GreetingNote,
-                    'WelcomeNote' => $request->WelcomeNote,
+                 $savedata = ModuleMaster::create([
+                    'SerialNumber' => $request->SerialNumber,
+                    'ModuleName' => $request->ModuleName,
+                    'ModuleType' => $request->ModuleType,
+                    'Url' => $request->Url,
+                    'Icon' => $request->Icon,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -70,10 +81,10 @@ class LetterMasterController extends Controller
             }else{
 
                 $id = $request->input('id');
-                $edit = LetterMaster::find($id);
+                $edit = ModuleMaster::find($id);
 
                 $businessvalidation =array(
-                    'Name' => 'required',
+                    'ModuleName' => 'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -82,12 +93,11 @@ class LetterMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->FromDestination = $request->input('FromDestination');
-                        $edit->ToDestination = $request->input('ToDestination');
-                        $edit->TransferMode = $request->input('TransferMode');
-                        $edit->Name = $request->input('Name');
-                        $edit->GreetingNote = $request->input('GreetingNote');
-                        $edit->WelcomeNote = $request->input('WelcomeNote');
+                        $edit->SerialNumber = $request->input('SerialNumber');
+                        $edit->ModuleName = $request->input('ModuleName');
+                        $edit->ModuleType = $request->input('ModuleType');
+                        $edit->Url = $request->input('Url');
+                        $edit->Icon = $request->input('Icon');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -99,25 +109,10 @@ class LetterMasterController extends Controller
                     }
                 }
             }
-        //}catch (\Exception $e){
-            //call_logger("Exception Error  ===>  ". $e->getMessage());
-            //return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        //}
-    }
-
-
-
-    public function destroy(Request $request)
-    {
-        $brands = LetterMaster::find($request->id);
-        $brands->delete();
-
-        if ($brands) {
-            return response()->json(['result' =>'Data deleted successfully!']);
-        } else {
-            return response()->json(['result' =>'Failed to delete data.'], 500);
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
-
     }
 
 }

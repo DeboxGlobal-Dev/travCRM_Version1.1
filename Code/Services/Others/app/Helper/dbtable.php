@@ -57,6 +57,11 @@ define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
 define("_FERRY_NAME_MASTER_", "others.ferry_name_master");
 define("_FERRY_COMPANY_MASTER_", "others.ferry_company_master");
 define("_DRIVER_MASTER_", "others.driver_master");
+define("_MODULE_MASTER_", "others.module_master");
+define("_USERS_", "others.users");
+// define("_USERS_", "others.users");
+// define("_USERS_", "others.users");
+// define("_USERS_", "others.users");
 /////////////////////////////END HERE///////////////////////////
 
 

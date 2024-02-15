@@ -124,9 +124,23 @@ class ImageGalleryMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->ImageName = $request->input('ImageName');
+
+                        $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
-                        $edit->ImageData = base64_decode($base64Image);
+                        $ImageData = base64_decode($base64Image);
+                        $Type = $request->input('Type');
+                        $ParentId = $request->input('ParentId');
+                        $Status = $request->input('Status');
+                        $AddedBy = $request->input('AddedBy');
+                        $UpdatedBy = $request->input('UpdatedBy');
+    
+                        $filename = uniqid() . '.png';
+    
+                        // print_r($filename);die();
+                        Storage::disk('public')->put($filename, $ImageData);
+
+                        $edit->ImageName = $request->input('ImageName');
+                        $edit->ImageData = $request->input('ImageData');
                         $edit->Type = $request->input('Type');
                         $edit->ParentId = $request->input('ParentId');
                         $edit->Status = $request->input('Status');

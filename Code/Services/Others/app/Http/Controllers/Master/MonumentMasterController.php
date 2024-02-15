@@ -31,38 +31,12 @@ class MonumentMasterController extends Controller
         })->select('*')->orderBy('Name')->get('*');
 
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "DestinationId" => $post->DestinationId,
-                    "TransferType" => $post->TransferType,
-                    "DayId" => $post->DayId,
-                    "DefaultQuotation" => $post->DefaultQuotation,
-                    "DefaultProposal" => $post->DefaultProposal,
-                    "WeekendDays" => $post->WeekendDays,
-                    "Details" => $post->WeekendDays,
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
-                ];
-            }
-
+        if($Status==0){return response()->json([
+            'Status' => 'Active',
+        ]);}
+        elseif($Status == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
-            ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
+                'Status' => 'InActive',
             ]);
         }
     }

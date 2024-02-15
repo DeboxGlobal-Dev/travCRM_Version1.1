@@ -21,12 +21,15 @@ class DestinationMasterController extends Controller
       $Default = $request->input('Default');
       $Status = $request->input('Status');
 
-      $posts = DestinationMaster::when($Search, function ($query) use ($Search) {
-          return $query->where('CountryId',$CountryId)
-                     ->orwhere('StateId',$StateId)
-                     ->orwhere('Name', 'like', '%' . $Name . '%')
-                     ->orwhere('SetDefault',$Default);
-      })->when($Status, function ($query) use ($Status) {
+      $posts = DestinationMaster::when($CountryId, function ($query) use ($CountryId) {
+          return $query->where('CountryId',$CountryId);
+      })->when($StateId, function ($query) use ($StateId) {
+        return $query->where('StateId',$StateId);
+   })->when($Name, function ($query) use ($Name) {
+    return $query->where('Name',$Name);
+})->when($Default, function ($query) use ($Default) {
+    return $query->where('Default',$Default);
+})->when($Status, function ($query) use ($Status) {
            return $query->where('Status',$Status);
       })->select('*')->orderBy('Name')->get('*');
 

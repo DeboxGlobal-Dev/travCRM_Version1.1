@@ -23,33 +23,13 @@ class VehicleMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "VehicleType" => $post->VehicleType,
-                    "Capacity" => $post->Capacity,
-                    "VehicleBrand" => $post->VehicleBrand,
-                    "Name" => $post->Name,
-                    "ImageName" => $post->ImageName,
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                ];
-            }
-
+        
+        if($Status==0){return response()->json([
+            'Status' => 'Active',
+        ]);}
+        elseif($Status == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
-            ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
+                'Status' => 'InActive',
             ]);
         }
     }
