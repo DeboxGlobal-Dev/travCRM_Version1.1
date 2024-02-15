@@ -31,33 +31,12 @@ class StateMasterController extends Controller
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
         //call_logger('REQUEST2: '.$countryName22);
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "CountryId" => $post->CountryId,
-                    "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
-                ];
-            }
-
+        if($Status==0){return response()->json([
+            'Status' => 'Active',
+        ]);}
+        elseif($Status == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
-            ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
+                'Status' => 'InActive',
             ]);
         }
     }

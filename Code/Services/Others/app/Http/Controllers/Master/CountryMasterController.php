@@ -73,7 +73,7 @@ class CountryMasterController extends Controller
                 $edit = CountryMaster::find($id);
 
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._PGSQL_.'.'._COUNTRY_MASTER_.',Name',
+                    'Name' => 'required|unique:'._DB_.'.'._COUNTRY_MASTER_.',Name',
                     'ShortName' => 'required'
                 );
 

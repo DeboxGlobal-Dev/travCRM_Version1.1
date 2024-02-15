@@ -44,7 +44,7 @@ class HotelAdditionalMasterController extends Controller
                     "Updated_at" => $post->updated_at
                 ];
             }
-
+//
             return response()->json([
                 'Status' => 200,
                 'TotalRecord' => $posts->count('id'),

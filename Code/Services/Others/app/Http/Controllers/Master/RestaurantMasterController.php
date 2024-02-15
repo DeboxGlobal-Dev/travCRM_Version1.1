@@ -33,48 +33,12 @@ class RestaurantMasterController extends Controller
         //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
         //call_logger('REQUEST2: '.$countryName22);
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "DestinationId" => $post->DestinationId,
-                    "Address" => $post->Address,
-                    "CountryId" => $post->CountryId,
-                    "StateId" => $post->StateId,
-                    "CityId" => $post->CityId,
-                    "SelfSupplier" => $post->SelfSupplier,
-                    "PinCode" => $post->PinCode,
-                    "GSTN" => $post->GSTN,
-                    "ContactType" => getName(_DIVISION_MASTER_,$post->ContactType),
-                    "ContactName" => $post->ContactName,
-                    "ContactDesignation" => $post->ContactDesignation,
-                    "CountryCode" => $post->CountryCode,
-                    "Phone1" => $post->Phone1,
-                    "Phone2" => $post->Phone2,
-                    "Phone3" => $post->Phone3,
-                    "ContactEmail" => $post->ContactEmail,
-                    "Image" => $post->Image,
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
-                ];
-            }
-
+        if($Status==0){return response()->json([
+            'Status' => 'Active',
+        ]);}
+        elseif($Status == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
-            ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
+                'Status' => 'InActive',
             ]);
         }
     }

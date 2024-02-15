@@ -29,33 +29,13 @@ class TrainMasterController extends Controller
         })->select('*')->orderBy('Name')->get('*');
 
 
-        if ($posts->isNotEmpty()) {
-            $arrayDataRows = [];
-            foreach ($posts as $post){
-                $arrayDataRows[] = [
-                    "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
-                    "Status" => $post->Status,
-                    "AddedBy" => $post->AddedBy,
-                    "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
-                ];
-            }
 
+        if($Status==0){return response()->json([
+            'Status' => 'Active',
+        ]);}
+        elseif($Status == 1){
             return response()->json([
-                'Status' => 200,
-                'TotalRecord' => $posts->count('id'),
-                'DataList' => $arrayDataRows
-            ]);
-
-        }else {
-            return response()->json([
-                "Status" => 0,
-                "TotalRecord" => $posts->count('id'),
-                "Message" => "No Record Found."
+                'Status' => 'InActive',
             ]);
         }
     }
@@ -116,10 +96,22 @@ class TrainMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
+                        $Name = $request->input('Name');
+                        $ImageName = $request->input('ImageName');
+                        $base64Image = $request->input('ImageData');
+                        $ImageData = base64_decode($base64Image);
+                        $Status = $request->input('Status');
+                        $AddedBy = $request->input('AddedBy');
+                        $UpdatedBy = $request->input('UpdatedBy');
+    
+                        $filename = uniqid() . '.png';
+    
+                        // print_r($filename);die();
+                        Storage::disk('public')->put($filename, $ImageData);
+
                         $edit->Name = $request->input('Name');
                         $edit->ImageName = $request->input('ImageName');
-                        $base64Image = $request->input('ImageData');
-                        $edit->ImageData = base64_decode($base64Image);
+                        $edit->ImageData = $request->input('ImageData');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
