@@ -20,7 +20,7 @@ class AdditionalRequirementMasterController extends Controller
 
         $posts = AdditionalRequirementMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
@@ -39,7 +39,7 @@ class AdditionalRequirementMasterController extends Controller
                     "ImageName" => $post->ImageName,
                     "ImageData" => $post->ImageData,
                     "Details" => $post->Details,
-                    "Status" => $post->Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

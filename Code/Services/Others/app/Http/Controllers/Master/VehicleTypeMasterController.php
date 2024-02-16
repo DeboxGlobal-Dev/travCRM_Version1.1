@@ -19,7 +19,7 @@ class VehicleTypeMasterController extends Controller
 
         $posts = VehicleTypeMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 

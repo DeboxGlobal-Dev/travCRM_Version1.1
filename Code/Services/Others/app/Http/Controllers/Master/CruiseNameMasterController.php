@@ -20,23 +20,19 @@ class CruiseNameMasterController extends Controller
 
         $posts = CruiseNameMaster::when($Search, function ($query) use ($Search) {
             return $query->where('CruiseName', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('CruiseName')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-               }
+               
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "CruiseCompany" => $post->CruiseCompany,
                     "CruiseName" => $post->CruiseName,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "ImageName" => $post->ImageName,
                     "ImageData" => $post->ImageData,
                     "AddedBy" => $post->AddedBy,

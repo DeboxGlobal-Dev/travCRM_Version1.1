@@ -19,20 +19,14 @@ class VehicleMasterController extends Controller
 
         $posts = VehicleMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0 ){
-                    $Status = 'Active';
-                    
-               }elseif ($Status == 1 ) {
-                    $Status = 'InActive';
                 
-               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "VehicleType" => $post->VehicleType,
@@ -40,7 +34,7 @@ class VehicleMasterController extends Controller
                     "VehicleBrand" => $post->VehicleBrand,
                     "Name" => $post->Name,
                     "ImageName" => $post->ImageName,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

@@ -22,7 +22,7 @@ class FerrySearMasterController extends Controller
 
         $posts = FerrySearMaster::when($Search, function ($query) use ($Search) {
             return $query->where('FerrySeat', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('FerrySeat')->get('*');
 
@@ -33,15 +33,11 @@ class FerrySearMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "FerrySeat" => $post->FerrySeat,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,

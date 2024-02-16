@@ -23,7 +23,7 @@ class FerryCompanyMasterController extends Controller
   
         $posts = FerryCompanyMaster::when($Search, function ($query) use ($Search) {
             return $query->where('FerryCompanyName', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('FerryCompanyName')->get('*');
   
@@ -36,11 +36,7 @@ class FerryCompanyMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "FerryCompanyName" => $post->FerryCompanyName,
@@ -52,7 +48,7 @@ class FerryCompanyMasterController extends Controller
                     "Designation" => $post->Designation,
                     "Phone" => $post->Phone,
                     "Email" => $post->Email,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
   

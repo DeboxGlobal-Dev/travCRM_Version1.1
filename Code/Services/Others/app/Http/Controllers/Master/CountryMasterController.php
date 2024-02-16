@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Master\CountryMaster;
+use DB;
 
 class CountryMasterController extends Controller
 {
@@ -17,9 +18,10 @@ class CountryMasterController extends Controller
         $posts = CountryMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'ilike', '%' . $Search . '%')
                 ->orwhere('ShortName', 'ilike', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
-            return $query->where('Status', $Status);
+        })->when(isset($Status), function ($query) use ($Status) {
+            return $query->where('Status',  $Status );
         })->select('*')->orderBy('Name')->get('*');
+
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];

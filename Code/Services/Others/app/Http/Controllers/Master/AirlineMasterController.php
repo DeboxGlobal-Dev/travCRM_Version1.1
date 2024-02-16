@@ -23,7 +23,7 @@ class AirlineMasterController extends Controller
         $posts = AirlineMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%')
                          ->orwhere('ImageName', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
@@ -36,7 +36,7 @@ class AirlineMasterController extends Controller
                     "Name" => $post->Name,
                     "ImageName" => $post->ImageName,
                     "ImageData" => $post->ImageData,
-                    "Status" => $post->Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,

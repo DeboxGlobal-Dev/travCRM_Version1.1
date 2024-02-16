@@ -23,7 +23,7 @@ class SeasonMasterController extends Controller
             return $query->where('Name', 'like', '%' . $Search . '%')
                          ->orwhere('FromDate', 'like', '%' . $Search . '%')
                          ->orwhere('ToDate ', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
@@ -34,18 +34,13 @@ class SeasonMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-                    
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
                     "FromDate " => $post->FromDate,
                     "ToDate " => $post->ToDate,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,

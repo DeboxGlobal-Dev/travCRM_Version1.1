@@ -19,19 +19,14 @@ class LetterMasterController extends Controller
 
         $posts = LetterMaster::when($Search, function ($query) use ($Search) {
             return $query->where('Name', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1 ) {
-                    $Status = 'InActive';
                 
-               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "FromDestination" => $post->FromDestination,
@@ -40,7 +35,7 @@ class LetterMasterController extends Controller
                     "Name" => $post->Name,
                     "GreetingNote" => $post->GreetingNote,
                     "WelcomeNote" => $post->WelcomeNote,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

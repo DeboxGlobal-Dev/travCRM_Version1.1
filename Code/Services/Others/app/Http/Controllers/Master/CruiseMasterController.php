@@ -19,18 +19,14 @@ class CruiseMasterController extends Controller
 
         $posts = CruiseMaster::when($Search, function ($query) use ($Search) {
             return $query->where('CruisePackageName', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('CruisePackageName')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "CruisePackageName" => $post->CruisePackageName,
@@ -38,7 +34,7 @@ class CruiseMasterController extends Controller
                     "RunningDays" => $post->RunningDays,
                     "ArrivalTime" => $post->ArrivalTime,
                     "DepartureTime" => $post->DepartureTime,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "Details" => $post->Details,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,

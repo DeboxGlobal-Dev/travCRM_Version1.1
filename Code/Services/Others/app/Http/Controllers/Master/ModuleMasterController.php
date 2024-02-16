@@ -25,7 +25,7 @@ class ModuleMasterController extends Controller
             return $query->where('ModuleName', 'like', '%' . $ModuleName . '%');
         })->when($ModuleType, function ($query) use ($ModuleType) {
              return $query->where('ModuleType',$ModuleType);
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
             return $query->where('Status',$Status);
        })->select('*')->orderBy('SerialNumber')->get('*');
 
@@ -36,13 +36,7 @@ class ModuleMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-                    
-               }elseif ($Status == 1 ) {
-                    $Status = 'InActive';
-                    
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "SerialNumber" => $post->SerialNumber,
@@ -50,7 +44,7 @@ class ModuleMasterController extends Controller
                     "ModuleType" => $post->ModuleType,
                     "Url" => $post->Url,
                     "Icon" => $post->Icon,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,

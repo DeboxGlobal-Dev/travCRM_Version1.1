@@ -27,9 +27,9 @@ class DestinationMasterController extends Controller
         return $query->where('StateId',$StateId);
    })->when($Name, function ($query) use ($Name) {
     return $query->where('Name',$Name);
-})->when($Default, function ($query) use ($Default) {
+})->when(isset($Default), function ($query) use ($Default) {
     return $query->where('Default',$Default);
-})->when($Status, function ($query) use ($Status) {
+})->when(isset($Status), function ($query) use ($Status) {
            return $query->where('Status',$Status);
       })->select('*')->orderBy('Name')->get('*');
 
@@ -40,13 +40,7 @@ class DestinationMasterController extends Controller
       if ($posts->isNotEmpty()) {
           $arrayDataRows = [];
           foreach ($posts as $post){
-            if($Status == 0 && $Default == 0){
-                $Status = 'Active';
-                $Default = 'False';
-           }elseif ($Status == 1 && $Default == 1) {
-                $Status = 'InActive';
-                $Default = 'True';
-           }
+           
               $arrayDataRows[] = [
                   "Id" => $post->id,
                   "Name" => $post->Name,
@@ -55,8 +49,8 @@ class DestinationMasterController extends Controller
                   "CountryId" => $post->CountryId,
                   "StateId" => $post->StateId,
                   "Description" => $post->Description,
-                  "SetDefault" => $Default,
-                  "Status" => $Status,
+                  "SetDefault" => ($post->SetDefault == 1) ? 'Yes' : 'No',
+                  "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                   "AddedBy" => $post->AddedBy,
                   "UpdatedBy" => $post->UpdatedBy,
                   "Created_at" => $post->created_at,

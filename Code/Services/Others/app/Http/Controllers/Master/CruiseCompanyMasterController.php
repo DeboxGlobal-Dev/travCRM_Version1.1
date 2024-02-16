@@ -19,18 +19,14 @@ class CruiseCompanyMasterController extends Controller
 
         $posts = CruiseCompanyMaster::when($Search, function ($query) use ($Search) {
             return $query->where('CruiseCompanyName', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('CruiseCompanyName')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "CruiseCompanyName" => $post->CruiseCompanyName,
@@ -46,7 +42,7 @@ class CruiseCompanyMasterController extends Controller
                     "Type" => $post->Type,
                     "Phone" => $post->Phone,
                     "Email" => $post->Email,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

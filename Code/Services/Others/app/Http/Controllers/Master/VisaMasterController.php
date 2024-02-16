@@ -19,7 +19,7 @@ class VisaMasterController extends Controller
 
         $posts = VisaMaster::when($Search, function ($query) use ($Search) {
             return $query->where('VisaType', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('VisaType')->get('*');
 
@@ -27,15 +27,11 @@ class VisaMasterController extends Controller
             $arrayDataRows = [];
             
             foreach ($posts as $post){
-                if($Status == 0){
-                    $Status = 'Active';
-               }elseif ($Status == 1) {
-                    $Status = 'InActive';
-               }
+                
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "VisaType" => $post->VisaType,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];

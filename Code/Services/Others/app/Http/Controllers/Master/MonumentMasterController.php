@@ -26,7 +26,7 @@ class MonumentMasterController extends Controller
                          ->orwhere('DefaultQuotation', 'like', '%' . $Search . '%')
                          ->orwhere('WeekendDays', 'like', '%' . $Search . '%')
                          ->orwhere('TransferType', 'like', '%' . $Search . '%');
-        })->when($Status, function ($query) use ($Status) {
+        })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
@@ -34,13 +34,7 @@ class MonumentMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                if($Status == 0 ){
-                    $Status = 'Active';
                 
-               }elseif ($Status == 1 ) {
-                    $Status = 'InActive';
-                    
-               }
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
@@ -51,7 +45,7 @@ class MonumentMasterController extends Controller
                     "DefaultProposal" => $post->DefaultProposal,
                     "WeekendDays" => $post->WeekendDays,
                     "Details" => $post->Details,
-                    "Status" => $Status,
+                    "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,
