@@ -134,7 +134,7 @@ Route::post('/addupdateitineraryinfomaster',[ItineraryInfoMasterController::clas
 Route::post('/lettermasterlist',[LetterMasterController::class,'index']);
 Route::post('/addupdatelettermaster',[LetterMasterController::class,'store']);
 
-Route::post('/imagegallerylist',[ImageGalleryMasterController::class,'index']);
+Route::get('/imagegallerylist',[ImageGalleryMasterController::class,'index']);
 Route::post('/addupdateimagegallery',[ImageGalleryMasterController::class,'store']);
 
 Route::post('/additionalrequirementmasterlist',[AdditionalRequirementMasterController::class,'index']);

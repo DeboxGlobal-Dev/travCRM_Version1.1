@@ -34,8 +34,11 @@ class ImageGalleryMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageName" => asset('storage/' . $post->ImageName),
+                    //'http://localhost:8000/storage/public/posts/' .$post->ImageName,
+                    //asset('storage/public/posts/' . $this->ImageName),
+                    //'http://localhost:8000/api/storage/public/posts/' .$post->ImageName,
+                    //"ImageData" => $post->ImageData,
                     "Type" => $post->Type,
                     "ParentId" => $post->ParentId,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
@@ -64,100 +67,85 @@ class ImageGalleryMasterController extends Controller
     public function store(Request $request)
     {
 
-        try{
-            $id = $request->input('id');
+       try{
+           $id = $request->input('id');
             if($id == '') {
+                
+                $images = new ImageGalleryMaster();
 
-                $businessvalidation =array(
-                    'ParentId' => 'required|unique:'._DB_.'.'._IMAGE_GALLERY_MASTER_.',Type',
-                );
-
-                $validatordata = validator::make($request->all(), $businessvalidation);
-
-                if($validatordata->fails()){
-                    return $validatordata->errors();
+                $filename = "";
+                if($request->hasFile('ImageName')){
+                    $filename=$request->file('ImageName')->store('posts', 'public');
                 }else{
+                    $filename = Null;
+                }
+                $images->ImageName=$filename;
+                $images->Type=$request->Type;
+                $images->ParentId=$request->ParentId;
+                $images->Status=$request->Status;
+                $images->AddedBy=$request->AddedBy;
 
-                    $ImageName = $request->input('ImageName');
-                    $base64Image = $request->input('ImageData');
-                    $ImageData = base64_decode($base64Image);
-                    $Type = $request->input('Type');
-                    $ParentId = $request->input('ParentId');
-                    $Status = $request->input('Status');
-                    $AddedBy = $request->input('AddedBy');
-                    $UpdatedBy = $request->input('UpdatedBy');
+                $result = $images->save();
 
-                    $filename = uniqid() . '.png';
-
-                    // print_r($filename);die();
-                    Storage::disk('public')->put($filename, $ImageData);
-
-
-                 $savedata = ImageGalleryMaster::create([
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
-                    'Type' => $request->Type,
-                    'ParentId' => $request->ParentId,
-                    'Status' => $request->Status,
-                    'AddedBy' => $request->AddedBy,
-                    'created_at' => now(),
-                 ]);
-
-                if ($savedata) {
-                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                
+                if ($result) {
+                    return response()->json(['Status' => 0,
+                     'Message' => 'Data added successfully!',
+                     //'result' => $filename
+                    ]);
                 } else {
                     return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
                 }
-              }
+              
 
             }else{
 
-                $id = $request->input('id');
-                $edit = ImageGalleryMaster::find($id);
+        //         $id = $request->input('id');
+        //         $edit = ImageGalleryMaster::find($id);
 
-                $businessvalidation =array(
-                    'Type' => 'required',
-                );
+        //         $businessvalidation =array(
+        //             'Type' => 'required',
+        //         );
 
-                $validatordata = validator::make($request->all(), $businessvalidation);
+        //         $validatordata = validator::make($request->all(), $businessvalidation);
 
-                if($validatordata->fails()){
-                 return $validatordata->errors();
-                }else{
-                    if ($edit) {
+        //         if($validatordata->fails()){
+        //          return $validatordata->errors();
+        //         }else{
+        //             if ($edit) {
 
-                        $ImageName = $request->input('ImageName');
-                        $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
-                        $Type = $request->input('Type');
-                        $ParentId = $request->input('ParentId');
-                        $Status = $request->input('Status');
-                        $AddedBy = $request->input('AddedBy');
-                        $UpdatedBy = $request->input('UpdatedBy');
+        //                 $ImageName = $request->input('ImageName');
+        //                 $base64Image = $request->input('ImageData');
+        //                 $ImageData = base64_decode($base64Image);
+        //                 $Type = $request->input('Type');
+        //                 $ParentId = $request->input('ParentId');
+        //                 $Status = $request->input('Status');
+        //                 $AddedBy = $request->input('AddedBy');
+        //                 $UpdatedBy = $request->input('UpdatedBy');
     
-                        $filename = uniqid() . '.png';
+        //                 $filename = uniqid() . '.png';
     
-                        // print_r($filename);die();
-                        Storage::disk('public')->put($filename, $ImageData);
+        //                 // print_r($filename);die();
+        //                 Storage::disk('public')->put($filename, $ImageData);
 
-                        $edit->ImageName = $request->input('ImageName');
-                        $edit->ImageData = $request->input('ImageData');
-                        $edit->Type = $request->input('Type');
-                        $edit->ParentId = $request->input('ParentId');
-                        $edit->Status = $request->input('Status');
-                        $edit->UpdatedBy = $request->input('UpdatedBy');
-                        $edit->updated_at = now();
-                        $edit->save();
+        //                 $edit->ImageName = $request->input('ImageName');
+        //                 $edit->ImageData = $request->input('ImageData');
+        //                 $edit->Type = $request->input('Type');
+        //                 $edit->ParentId = $request->input('ParentId');
+        //                 $edit->Status = $request->input('Status');
+        //                 $edit->UpdatedBy = $request->input('UpdatedBy');
+        //                 $edit->updated_at = now();
+        //                 $edit->save();
 
-                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
-                    } else {
-                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
-                    }
-                }
-            }
+        //                 return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+        //             } else {
+        //                 return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+        //             }
+        //         }
+             }
         }catch (\Exception $e){
             call_logger("Exception Error  ===>  ". $e->getMessage());
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+         }
     }
 }
