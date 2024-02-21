@@ -11,6 +11,7 @@ class QueryMasterController extends Controller
 {
     public function index(Request $request){
 
+       
         $arrayDataRows = array();
 
         call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
@@ -27,23 +28,56 @@ class QueryMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-
+                
+                $dataFromJson = json_decode($post->QueryJson);
+                // print_r($dataFromJson);
+                // exit;
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "QueryId" => $post->QueryId,
+                    "FDCode" => $dataFromJson->FDCode,
+                    "PackageCode" => $post->QueryId,
+                    "PackageName" => $post->QueryId,
                     "ClientType" => $post->ClientType,
+                    "AgentId" => $post->AgentId,
                     "LeadPax" => $post->LeadPax,
                     "Subject" => $post->Subject,
+                    "AddEmail" => $dataFromJson->AddEmail,
+                    "AdditionalInfo" => $dataFromJson->AdditionalInfo,
                     "QueryType" => $post->QueryType,
+                    "ValueAddedServices" =>$dataFromJson->ValueAddedServices,
+                    "TravelInfo" => $dataFromJson->TravelInfo,
+                    "PaxType" => $dataFromJson->PaxType,
+                    "TravelDate" => ("{
+                        'Type' = '".$dataFromJson->TravelDate->Type."',
+                        'FromDate' = '".$dataFromJson->TravelDate->FromDate."',
+                        'ToDate' = '".$dataFromJson->TravelDate->ToDate."',
+                        'TotalDays' = '".$dataFromJson->TravelDate->TotalDays."',
+                        'SeasonType' = '".$dataFromJson->TravelDate->SeasonType."',
+                        'SeasonYear' = '".$dataFromJson->TravelDate->SeasonYear."',
+                    }"),
+                    "PaxInfo" => ("{
+                        'Adult' = '".$dataFromJson->PaxInfo->Adult."',
+                        'Child' = '".$dataFromJson->PaxInfo->Child."',
+                        'Infant' = '".$dataFromJson->PaxInfo->Infant."',
+                    }"),
+                    "RoomInfo" => ("{
+                        'Single' = '".$dataFromJson->RoomInfo->Single."',
+                        'Double' = '".$dataFromJson->RoomInfo->Double."',
+                        'Twin' = '".$dataFromJson->RoomInfo->Twin."',
+                        'Triple' = '".$dataFromJson->RoomInfo->Triple."',
+                        'ExtraBed' = '".$dataFromJson->RoomInfo->ExtraBed."',
+                    }"),
                     "Priority" => $post->Priority,
                     "TAT" => $post->TAT,
+                    "TourType" => $post->TourType,
                     "LeadSource" => $post->LeadSource,
-                    "FromDate" => $post->FromDate,
-                    "ToDate" => $post->ToDate,
+                    "LeadRefrenceId" => $dataFromJson->LeadRefrenceId,
+                    "HotelPrefrence" => $dataFromJson->HotelPrefrence,
+                    "HotelType" => $dataFromJson->HotelType,
+                    "MealPlan" => $dataFromJson->MealPlan,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
-                    "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
                 ];
             }
 
@@ -52,6 +86,7 @@ class QueryMasterController extends Controller
                 'TotalRecord' => $posts->count('id'),
                 'DataList' => $arrayDataRows
             ]);
+            
 
         }else {
             return response()->json([
