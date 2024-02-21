@@ -27,6 +27,7 @@ class QueryMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "QueryId" => $post->QueryId,
@@ -47,7 +48,7 @@ class QueryMasterController extends Controller
             }
 
             return response()->json([
-                'Status' => 200,
+                'Status' => 1,
                 'TotalRecord' => $posts->count('id'),
                 'DataList' => $arrayDataRows
             ]);
