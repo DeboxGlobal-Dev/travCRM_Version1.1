@@ -45,29 +45,35 @@ class QueryMasterController extends Controller
                     "AddEmail" => $dataFromJson->AddEmail,
                     "AdditionalInfo" => $dataFromJson->AdditionalInfo,
                     "QueryType" => $post->QueryType,
-                    "ValueAddedServices" =>$dataFromJson->ValueAddedServices,
+                    "ValueAddedServices" => array(
+                        "Flight" => $dataFromJson->ValueAddedServices->Flight,
+                        "Visa" => $dataFromJson->ValueAddedServices->Visa,
+                        "Insurance" => $dataFromJson->ValueAddedServices->Insurance,
+                        "Train" => $dataFromJson->ValueAddedServices->Train,
+                        "Transfer" => $dataFromJson->ValueAddedServices->Transfer
+                    ),
                     "TravelInfo" => $dataFromJson->TravelInfo,
                     "PaxType" => $dataFromJson->PaxType,
-                    "TravelDate" => ("{
-                        'Type' = '".$dataFromJson->TravelDate->Type."',
-                        'FromDate' = '".$dataFromJson->TravelDate->FromDate."',
-                        'ToDate' = '".$dataFromJson->TravelDate->ToDate."',
-                        'TotalDays' = '".$dataFromJson->TravelDate->TotalDays."',
-                        'SeasonType' = '".$dataFromJson->TravelDate->SeasonType."',
-                        'SeasonYear' = '".$dataFromJson->TravelDate->SeasonYear."',
-                    }"),
-                    "PaxInfo" => ("{
-                        'Adult' = '".$dataFromJson->PaxInfo->Adult."',
-                        'Child' = '".$dataFromJson->PaxInfo->Child."',
-                        'Infant' = '".$dataFromJson->PaxInfo->Infant."',
-                    }"),
-                    "RoomInfo" => ("{
-                        'Single' = '".$dataFromJson->RoomInfo->Single."',
-                        'Double' = '".$dataFromJson->RoomInfo->Double."',
-                        'Twin' = '".$dataFromJson->RoomInfo->Twin."',
-                        'Triple' = '".$dataFromJson->RoomInfo->Triple."',
-                        'ExtraBed' = '".$dataFromJson->RoomInfo->ExtraBed."',
-                    }"),
+                    "TravelDate" => array(
+                        "Type" => $dataFromJson->TravelDate->Type,
+                        "FromDate" => $dataFromJson->TravelDate->FromDate,
+                        "ToDate" => $dataFromJson->TravelDate->ToDate,
+                        "TotalDays" => $dataFromJson->TravelDate->TotalDays,
+                        "SeasonType" => $dataFromJson->TravelDate->SeasonType,
+                        "SeasonYear" => $dataFromJson->TravelDate->SeasonYear
+                    ),
+                    "PaxInfo" => array(
+                        "Adult" => $dataFromJson->PaxInfo->Adult,
+                        "Child" => $dataFromJson->PaxInfo->Child,
+                        "Infant" => $dataFromJson->PaxInfo->Infant
+                    ), 
+                    "RoomInfo" =>  array(
+                        "Single" => $dataFromJson->RoomInfo->Single,
+                        "Double" => $dataFromJson->RoomInfo->Double,
+                        "Twin" => $dataFromJson->RoomInfo->Twin,
+                        "Triple" => $dataFromJson->RoomInfo->Triple,
+                        "ExtraBed" => $dataFromJson->RoomInfo->ExtraBed
+                    ),
                     "Priority" => $post->Priority,
                     "TAT" => $post->TAT,
                     "TourType" => $post->TourType,
