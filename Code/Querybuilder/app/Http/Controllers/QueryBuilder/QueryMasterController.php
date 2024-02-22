@@ -11,7 +11,7 @@ class QueryMasterController extends Controller
 {
     public function index(Request $request){
 
-       
+
         $arrayDataRows = array();
 
         call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
@@ -28,7 +28,7 @@ class QueryMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $dataFromJson = json_decode($post->QueryJson);
                 // print_r($dataFromJson);
                 // exit;
@@ -66,7 +66,7 @@ class QueryMasterController extends Controller
                         "Adult" => $dataFromJson->PaxInfo->Adult,
                         "Child" => $dataFromJson->PaxInfo->Child,
                         "Infant" => $dataFromJson->PaxInfo->Infant
-                    ), 
+                    ),
                     "RoomInfo" =>  array(
                         "Single" => $dataFromJson->RoomInfo->Single,
                         "Double" => $dataFromJson->RoomInfo->Double,
@@ -84,6 +84,8 @@ class QueryMasterController extends Controller
                     "MealPlan" => $dataFromJson->MealPlan,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
+                    "CreatedDate" => date('d-m-Y', strtotime($post->created_at)),
+                    "CreatedTime" => date('h:i:sa', strtotime($post->created_at)),
                 ];
             }
 
@@ -92,7 +94,7 @@ class QueryMasterController extends Controller
                 'TotalRecord' => $posts->count('id'),
                 'DataList' => $arrayDataRows
             ]);
-            
+
 
         }else {
             return response()->json([
