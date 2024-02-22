@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\QueryBuilder\QueryMaster;
 
-class QueryMasterController extends Controller
+class QueryMasterController extends Controller//
 {
     public function index(Request $request){
 
