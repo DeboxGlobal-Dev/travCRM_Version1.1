@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -61,6 +61,6 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'NexGenTRM'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_1234 }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_0571E8E6F0B64067AC777EDD4A3ACDD7 }}
           package: .
