@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\QueryBuilder\QueryMaster;
 
-class QueryMasterController extends Controller//
+class QueryMasterController extends Controller
 {
     public function index(Request $request){
 
@@ -18,20 +18,20 @@ class QueryMasterController extends Controller//
 
         $Search = $request->input('Search');
         $Status = $request->input('Status');
-        call_logger('REQUEST COMES search query: '.$Search);
+
         $posts = QueryMaster::when($Search, function ($query) use ($Search) {
             return $query->where('QueryId', 'like', '%' . $Search . '%');
         })->when($Status, function ($query) use ($Status) {
             return $query->where('Status',$Status);
         })->select('*')->orderBy('QueryId')->get('*');
-
+        //call_logger('REQUEST COMES search query: '.$posts);
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
 
                 $dataFromJson = json_decode($post->QueryJson);
                 // print_r($dataFromJson);
-                // exit;
+                call_logger('REQUEST COMES search query: '.$dataFromJson->AddEmail);
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "QueryId" => $post->QueryId,
@@ -45,40 +45,12 @@ class QueryMasterController extends Controller//
                     "AddEmail" => $dataFromJson->AddEmail,
                     "AdditionalInfo" => $dataFromJson->AdditionalInfo,
                     "QueryType" => $post->QueryType,
-                    "ValueAddedServices" => array(
-                        "Flight" => $dataFromJson->ValueAddedServices->Flight,
-                        "Visa" => $dataFromJson->ValueAddedServices->Visa,
-                        "Insurance" => $dataFromJson->ValueAddedServices->Insurance,
-                        "Train" => $dataFromJson->ValueAddedServices->Train,
-                        "Transfer" => $dataFromJson->ValueAddedServices->Transfer
-                    ),
                     "TravelInfo" => $dataFromJson->TravelInfo,
                     "PaxType" => $dataFromJson->PaxType,
-                    "TravelDate" => array(
-                        "Type" => $dataFromJson->TravelDate->Type,
-                        "FromDate" => $dataFromJson->TravelDate->FromDate,
-                        "ToDate" => $dataFromJson->TravelDate->ToDate,
-                        "TotalDays" => $dataFromJson->TravelDate->TotalDays,
-                        "SeasonType" => $dataFromJson->TravelDate->SeasonType,
-                        "SeasonYear" => $dataFromJson->TravelDate->SeasonYear
-                    ),
-                    "PaxInfo" => array(
-                        "Adult" => $dataFromJson->PaxInfo->Adult,
-                        "Child" => $dataFromJson->PaxInfo->Child,
-                        "Infant" => $dataFromJson->PaxInfo->Infant
-                    ),
-                    "RoomInfo" =>  array(
-                        "Single" => $dataFromJson->RoomInfo->Single,
-                        "Double" => $dataFromJson->RoomInfo->Double,
-                        "Twin" => $dataFromJson->RoomInfo->Twin,
-                        "Triple" => $dataFromJson->RoomInfo->Triple,
-                        "ExtraBed" => $dataFromJson->RoomInfo->ExtraBed
-                    ),
                     "Priority" => $post->Priority,
                     "TAT" => $post->TAT,
                     "TourType" => $post->TourType,
                     "LeadSource" => $post->LeadSource,
-                    "LeadRefrenceId" => $dataFromJson->LeadRefrenceId,
                     "HotelPrefrence" => $dataFromJson->HotelPrefrence,
                     "HotelType" => $dataFromJson->HotelType,
                     "MealPlan" => $dataFromJson->MealPlan,
