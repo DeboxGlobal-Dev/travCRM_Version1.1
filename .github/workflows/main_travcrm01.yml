@@ -60,7 +60,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'TravCRM01'
+          app-name: 'TravCRM2'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AE515C71C66C49549A6A876EDC569AF0 }}
           package: .
