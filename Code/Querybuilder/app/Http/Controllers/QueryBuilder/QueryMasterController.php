@@ -7,31 +7,32 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Models\QueryBuilder\QueryMaster;
 
-class QueryMasterController extends Controller
+class QueryMasterController extends Controller //
 {
-    public function index(Request $request){
-
+    public function index(Request $request)
+    {
 
         $arrayDataRows = array();
 
-        call_logger('REQUEST COMES FROM QUERY LIST: '.$request->getContent());
-
+        call_logger('REQUEST COMES FROM QUERY LIST: ' . $request->getContent());
+        $QueryId = $request->input('QueryId');
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
-        $posts = QueryMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('QueryId', 'like', '%' . $Search . '%');
+        $posts = QueryMaster::when($QueryId, function ($query) use ($QueryId) {
+            return $query->where('QueryId', 'like', $QueryId);
         })->when($Status, function ($query) use ($Status) {
-            return $query->where('Status',$Status);
-        })->select('*')->orderBy('QueryId')->get('*');
-        //call_logger('REQUEST COMES search query: '.$posts);
+            return $query->where('Status', $Status);
+        })
+        ->select('*')->orderBy('QueryId')->get();
+
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
-            foreach ($posts as $post){
+            foreach ($posts as $post) {
 
                 $dataFromJson = json_decode($post->QueryJson);
                 // print_r($dataFromJson);
-                call_logger('REQUEST COMES search query: '.$dataFromJson->AddEmail);
+                // exit;
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "QueryId" => $post->QueryId,
@@ -56,8 +57,6 @@ class QueryMasterController extends Controller
                     "MealPlan" => $dataFromJson->MealPlan,
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
-                    "CreatedDate" => date('d-m-Y', strtotime($post->created_at)),
-                    "CreatedTime" => date('h:i:sa', strtotime($post->created_at)),
                 ];
             }
 
@@ -66,29 +65,26 @@ class QueryMasterController extends Controller
                 'TotalRecord' => $posts->count('id'),
                 'DataList' => $arrayDataRows
             ]);
-
-
-        }else {
+        } else {
             return response()->json([
                 "Status" => 0,
                 "TotalRecord" => $posts->count('id'),
                 "Message" => "No Record Found."
             ]);
         }
-
     }
 
     public function store(Request $request)
     {
-        try{
-            call_logger('REQUEST COMES FROM QUERY ADD/UPDATE: '.$request->getContent());
+        try {
+            call_logger('REQUEST COMES FROM QUERY ADD/UPDATE: ' . $request->getContent());
 
             $id = $request->input('id');
-            call_logger('new id:'.$id.'++');
-            if($id==''){
+            call_logger('new id:' . $id . '++');
+            if ($id == '') {
                 $otp = mt_rand(100000, 999999);
 
-                call_logger('REQUEST COMES FROM : '.$request->Subject.'+++++++++++'.$request->ClientType);
+                call_logger('REQUEST COMES FROM : ' . $request->Subject . '+++++++++++' . $request->ClientType);
 
                 $savedata = QueryMaster::create([
                     "QueryId" => $otp,
@@ -108,9 +104,9 @@ class QueryMasterController extends Controller
                 if ($savedata) {
                     return response()->json(['Status' => 1, 'Message' => 'Data added successfully!']);
                 } else {
-                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
+                    return response()->json(['Status' => 0, 'Message' => 'Failed to add data.'], 500);
                 }
-            }else{
+            } else {
                 $edit = QueryMaster::find($id);
                 if ($edit) {
                     $edit->QueryId = $request->input('QueryId');
@@ -129,12 +125,11 @@ class QueryMasterController extends Controller
                     $edit->save();
 
                     return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
-                }else{
+                } else {
                     return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
+        } catch (\Exception $e) {
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
     }
