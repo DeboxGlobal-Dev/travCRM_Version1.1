@@ -35,11 +35,11 @@ class SightseeingMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
-                    "DestinationId" => $post->DestinationId,
+                    "DestinationName" => getName(_DESTINATION_MASTER_, $post->DestinationId),
                     "TransferType" => $post->TransferType,
                     "DefaultQuotation" => $post->DefaultQuotation,
                     "DefaultProposal" => $post->DefaultProposal,
-                    "CurrencyId" => $post->CurrencyId,
+                    "CurrencyName" => getName(_CURRENCY_MASTER, $post->CurrencyId),
                     "AdultCost" => $post->AdultCost,
                     "ChildCost" => $post->ChildCost,
                     "Details" => $post->Details,
@@ -103,9 +103,9 @@ class SightseeingMasterController extends Controller
                 ]);
 
                 if ($savedata) {
-                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                    return response()->json(['Status' => 1, 'Message' => 'Data added successfully!']);
                 } else {
-                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
                 }
               }
 
@@ -140,9 +140,9 @@ class SightseeingMasterController extends Controller
                         $edit->updated_at = now();
                         $edit->save();
 
-                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
                     } else {
-                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
                     }
                 }
             }

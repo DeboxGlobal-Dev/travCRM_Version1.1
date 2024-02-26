@@ -29,9 +29,9 @@ class VehicleMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "VehicleType" => $post->VehicleType,
+                    "VehicleTypeName" => getName(_VEHICLE_TYPE_MASTER_ ,$post->VehicleType),
                     "Capacity" => $post->Capacity,
-                    "VehicleBrand" => $post->VehicleBrand,
+                    "VehicleBrandName" => getName(_VEHICLE_BRAND_MASTER_ ,$post->VehicleBrand),
                     "Name" => $post->Name,
                     "ImageName" => $post->ImageName,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
@@ -82,9 +82,9 @@ class VehicleMasterController extends Controller
                 ]);
 
                 if ($savedata) {
-                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                    return response()->json(['Status' => 1, 'Message' => 'Data added successfully!']);
                 } else {
-                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
                 }
               }
 
@@ -113,9 +113,9 @@ class VehicleMasterController extends Controller
                         $edit->updated_at = now();
                         $edit->save();
 
-                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
                     } else {
-                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
                     }
                 }
             }
