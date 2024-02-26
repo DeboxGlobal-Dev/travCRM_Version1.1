@@ -10,6 +10,7 @@ class CityMasterController extends Controller
 {
 
    public function index(Request $request){
+    $id = $request->input('Id');
       $Search = $request->input('Search');
       $Status = $request->input('Status');
 
@@ -17,6 +18,8 @@ class CityMasterController extends Controller
         return $query->where('Name', 'like', '%' . $Search . '%');
     })->when(isset($Status), function ($query) use ($Status) {
          return $query->where('Status',$Status);
+    })->when($id, function ($query) use ($id) {
+        return $query->where('id',  $id );
     })->select('*')->orderBy('Name')->get('*');
 
     if ($posts->isNotEmpty()) {
@@ -91,20 +94,31 @@ class CityMasterController extends Controller
 
                 $edit = CityMaster::find($id);
 
-                if ($edit) {
-                    $edit->Name = $request->input('Name');
-                    $edit->CountryId = $request->input('CountryId');
-                    $edit->StateId = $request->input('StateId');
-                    $edit->AddedBy = $request->input('AddedBy');
-                    $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->Status = $request->input('Status');
-                    $edit->updated_at = now();
-                    $edit->save();
+                $businessvalidation =array(
+                    'Name' => 'required',
+                    'CountryId' => 'required'
+                );
+                $validatordata = validator::make($request->all(), $businessvalidation);
 
-                    return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
-                } else {
-                    return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
-                }
+                if($validatordata->fails()){
+                    return $validatordata->errors();
+                   }
+                   else{
+                    if ($edit) {
+                        $edit->Name = $request->input('Name');
+                        $edit->CountryId = $request->input('CountryId');
+                        $edit->StateId = $request->input('StateId');
+                        $edit->AddedBy = $request->input('AddedBy');
+                        $edit->UpdatedBy = $request->input('UpdatedBy');
+                        $edit->Status = $request->input('Status');
+                        $edit->updated_at = now();
+                        $edit->save();
+    
+                        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
+                    } else {
+                        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
+                    }
+                   }
           }
 
 

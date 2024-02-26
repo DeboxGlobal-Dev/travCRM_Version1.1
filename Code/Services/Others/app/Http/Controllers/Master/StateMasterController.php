@@ -18,6 +18,7 @@ class StateMasterController extends Controller
 
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
 
+        $id = $request->input('Id');
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
@@ -25,6 +26,8 @@ class StateMasterController extends Controller
             return $query->where('Name', 'like', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
+        })->when($id, function ($query) use ($id) {
+            return $query->where('id',  $id );
         })->select('*')->orderBy('Name')->get('*');
 
         //$countryName = getName(_COUNTRY_MASTER_,3);
