@@ -149,8 +149,8 @@ Route::post('/addupdateferryname',[FerryNameMasterController::class,'store']);
 Route::post('/ferrycompanylist',[FerryCompanyMasterController::class,'index']);
 Route::post('/addupdateferrycompany',[FerryCompanyMasterController::class,'store']);
 
-Route::post('/drivermasterlist',[DriverMasterController::class,'index']);
-Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
+// Route::post('/drivermasterlist',[DriverMasterController::class,'index']);
+// Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
 
 Route::post('/modulemasterlist',[ModuleMasterController::class,'index']);
 Route::post('/addupdatemodulemaster',[ModuleMasterController::class,'store']);
