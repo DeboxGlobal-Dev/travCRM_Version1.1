@@ -96,9 +96,9 @@ class TrainMasterController extends Controller
                 ]);
 
                 if ($savedata) {
-                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                    return response()->json(['Status' => 1, 'Message' => 'Data added successfully!']);
                 } else {
-                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
                 }
               }
 
@@ -138,9 +138,9 @@ class TrainMasterController extends Controller
                         $edit->updated_at = now();
                         $edit->save();
 
-                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
                     } else {
-                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
                     }
                 }
             }

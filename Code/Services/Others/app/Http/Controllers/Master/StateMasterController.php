@@ -18,6 +18,7 @@ class StateMasterController extends Controller
 
         call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
 
+        $id = $request->input('Id');
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
@@ -25,6 +26,8 @@ class StateMasterController extends Controller
             return $query->where('Name', 'like', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
+        })->when($id, function ($query) use ($id) {
+            return $query->where('id',  $id );
         })->select('*')->orderBy('Name')->get('*');
 
         //$countryName = getName(_COUNTRY_MASTER_,3);
@@ -90,9 +93,9 @@ class StateMasterController extends Controller
                 ]);
 
                 if ($savedata) {
-                    return response()->json(['Status' => 0, 'Message' => 'Data added successfully!']);
+                    return response()->json(['Status' => 1, 'Message' => 'Data added successfully!']);
                 } else {
-                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
                 }
               }
 
@@ -119,9 +122,9 @@ class StateMasterController extends Controller
                         $edit->updated_at = now();
                         $edit->save();
 
-                        return response()->json(['Status' => 0, 'Message' => 'Data updated successfully']);
+                        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
                     } else {
-                        return response()->json(['Status' => 1, 'Message' => 'Failed to update data. Record not found.'], 404);
+                        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
                     }
                 }
             }

@@ -12,6 +12,7 @@ class CountryMasterController extends Controller
 {
     public function index(Request $request)
     {
+        $id = $request->input('Id');
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
@@ -20,6 +21,8 @@ class CountryMasterController extends Controller
                 ->orwhere('ShortName', 'ilike', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status) {
             return $query->where('Status',  $Status );
+        })->when($id, function ($query) use ($id) {
+            return $query->where('id',  $id );
         })->select('*')->orderBy('Name')->get('*');
 
 
@@ -62,7 +65,7 @@ class CountryMasterController extends Controller
 
                 $businessvalidation = array(
                     'Name' => 'required|unique:' . _DB_ . '.' . _COUNTRY_MASTER_ . ',Name',
-                    'ShortName' => 'required'
+                    'ShortName' => 'required|unique:' . _DB_ . '.' . _COUNTRY_MASTER_ . ',ShortName'
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -91,7 +94,7 @@ class CountryMasterController extends Controller
                 $edit = CountryMaster::find($id);
 
                 $businessvalidation = array(
-                    'Name' => 'required|unique:' . _DB_ . '.' . _COUNTRY_MASTER_ . ',Name',
+                    'Name' => 'required',
                     'ShortName' => 'required'
                 );
 

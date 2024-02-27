@@ -89,12 +89,12 @@ class ImageGalleryMasterController extends Controller
 
                 
                 if ($result) {
-                    return response()->json(['Status' => 0,
+                    return response()->json(['Status' => 1,
                      'Message' => 'Data added successfully!',
                      //'result' => $filename
                     ]);
                 } else {
-                    return response()->json(['Status' => 1, 'Message' =>'Failed to add data.'], 500);
+                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
                 }
               
 
