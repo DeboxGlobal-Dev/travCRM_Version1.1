@@ -50,7 +50,11 @@ define("_AIRLINE_MASTER_", "sightseeing.airline_master");
 define("_TRAIN_MASTER_", "sightseeing.train_master");
 define("_MONUMENT_MASTER_", "sightseeing.monument_master");
 define("_SIGHTSEEING_MASTER_", "sightseeing.sightseeing_master");
-
+define("_VISA_TYPE_MASTER_", "others.visa_type_master");
+define("_VISA_COST_MASTER_", "others.visa_cost_master");
+define("_INSURANCE_TYPE_MASTER_", "others.insurance_type_master");
+define("_INSURANCE_COST_MASTER_", "others.insurance_cost_master");
+define("_TOUR_ESCORT_PRICE_MASTER_", "others.tour_escort_Price");
 //define("_QUERY_MASTER_", "others.query_master");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");

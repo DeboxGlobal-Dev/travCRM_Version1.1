@@ -21,14 +21,14 @@ class MonumentMasterController extends Controller
         $Status = $request->input('Status');
 
         $posts = MonumentMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('Name', 'like', '%' . $Search . '%')
-                         ->orwhere('DestinationId', 'like', '%' . $Search . '%')
+            return $query->where('MonumentName', 'like', '%' . $Search . '%')
+                         ->orwhere('Destination', 'like', '%' . $Search . '%')
                          ->orwhere('DefaultQuotation', 'like', '%' . $Search . '%')
                          ->orwhere('WeekendDays', 'like', '%' . $Search . '%')
                          ->orwhere('TransferType', 'like', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->orderBy('Name')->get('*');
+        })->select('*')->orderBy('MonumentName')->get('*');
 
 
         if ($posts->isNotEmpty()) {
@@ -37,14 +37,14 @@ class MonumentMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "Name" => $post->Name,
-                    "DestinationId" => getName(_DESTINATION_MASTER_ ,$post->DestinationId),
+                    "MonumentName" => $post->MonumentName,
+                    "Destination" => $post->Destination,
                     "TransferType" => $post->TransferType,
-                    "DayId" => $post->DayId,
+                    "ClosedOnDays" => $post->ClosedOnDays,
                     "DefaultQuotation" => $post->DefaultQuotation,
                     "DefaultProposal" => $post->DefaultProposal,
                     "WeekendDays" => $post->WeekendDays,
-                    "Details" => $post->Details,
+                    "Description" => $post->Description,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -72,12 +72,12 @@ class MonumentMasterController extends Controller
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE LEAD: '.$request->getContent());
 
-        try{
+        //try{
             $id = $request->input('id');
             if($id == '') {
 
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._MONUMENT_MASTER_.',Name',
+                    'MonumentName' => 'required|unique:'._DB_.'.'._MONUMENT_MASTER_.',MonumentName',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -86,15 +86,15 @@ class MonumentMasterController extends Controller
                     return $validatordata->errors();
                 }else{
                  $savedata = MonumentMaster::create([
-                    'Name' => $request->Name,
-                    'DestinationId' => $request->DestinationId,
+                    'MonumentName' => $request->MonumentName,
+                    'Destination' => $request->Destination,
                     'TransferType' => $request->TransferType,
-                    'DayId' => $request->DayId,
+                    'ClosedOnDays' => $request->ClosedOnDays,
                     'DefaultQuotation' => $request->DefaultQuotation,
                     'DefaultProposal' => $request->DefaultProposal,
                     'WeekendDays' => $request->WeekendDays,
-                    'Details' => $request->Details,
                     'Status' => $request->Status,
+                    'Description' => $request->Description,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
                 ]);
@@ -112,7 +112,7 @@ class MonumentMasterController extends Controller
                 $edit = MonumentMaster::find($id);
 
                 $businessvalidation =array(
-                    'Name' => 'required',
+                    'MonumentName' => 'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -121,14 +121,14 @@ class MonumentMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->Name = $request->input('Name');
-                        $edit->DestinationId = $request->input('DestinationId');
+                        $edit->MonumentName = $request->input('MonumentName');
+                        $edit->Destination = $request->input('Destination');
                         $edit->TransferType = $request->input('TransferType');
-                        $edit->DayId = $request->input('DayId');
+                        $edit->ClosedOnDays = $request->input('ClosedOnDays');
                         $edit->DefaultQuotation = $request->input('DefaultQuotation');
                         $edit->DefaultProposal = $request->input('DefaultProposal');
                         $edit->WeekendDays = $request->input('WeekendDays');
-                        $edit->Details = $request->input('Details');
+                        $edit->Description = $request->input('Description');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -140,10 +140,10 @@ class MonumentMasterController extends Controller
                     }
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+        // }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        // }
     }
 
 

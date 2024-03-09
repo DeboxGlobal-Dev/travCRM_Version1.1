@@ -12,15 +12,12 @@ class SightseeingMaster extends Model
     protected $table = _SIGHTSEEING_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'Name',
-        'DestinationId',
+        'SightseeingName',
+        'Destination',
         'TransferType',
         'DefaultQuotation',
         'DefaultProposal',
-        'CurrencyId',
-        'AdultCost',
-        'ChildCost',
-        'Details',
+        'Description',
         'InclusionsExclusionsTiming',
         'ImportantNote',
         'AddedBy',

@@ -52,6 +52,12 @@ use App\Http\Controllers\Master\FerryNameMasterController;
 use App\Http\Controllers\Master\FerryCompanyMasterController;
 use App\Http\Controllers\Master\DriverMasterController;
 use App\Http\Controllers\Master\ModuleMasterController;
+use App\Http\Controllers\Master\VisaTypeMasterController;
+use App\Http\Controllers\Master\VisaCostMasterController;
+use App\Http\Controllers\Master\InsuranceTypeMasterController;
+use App\Http\Controllers\Master\InsuranceCostMasterController;
+use App\Http\Controllers\Master\TourEscortPriceMasterController;
+
 
 
 //====================================OTHERS COMMON API ROUTE======================================
@@ -155,6 +161,20 @@ Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
 Route::post('/modulemasterlist',[ModuleMasterController::class,'index']);
 Route::post('/addupdatemodulemaster',[ModuleMasterController::class,'store']);
 
+Route::post('/visatypemasterlist',[VisaTypeMasterController::class,'index']);
+Route::post('/addupdatevisatypemaster',[VisaTypeMasterController::class,'store']);
+
+Route::post('/visacostmasterlist',[VisaCostMasterController::class,'index']);
+Route::post('/addupdatevisacostmaster',[VisaCostMasterController::class,'store']);
+
+Route::post('/insurancetypemasterlist',[InsuranceTypeMasterController::class,'index']);
+Route::post('/addupdateinsurancetypemaster',[InsuranceTypeMasterController::class,'store']);
+
+Route::post('/insurancecostmasterlist',[InsuranceCostMasterController::class,'index']);
+Route::post('/addupdateinsurancecostmaster',[InsuranceCostMasterController::class,'store']);
+
+Route::post('/tourescortpricelist',[TourEscortPriceMasterController::class,'index']);
+Route::post('/addupdatetourescortprice',[TourEscortPriceMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
