@@ -57,6 +57,7 @@ use App\Http\Controllers\Master\VisaCostMasterController;
 use App\Http\Controllers\Master\InsuranceTypeMasterController;
 use App\Http\Controllers\Master\InsuranceCostMasterController;
 use App\Http\Controllers\Master\TourEscortPriceMasterController;
+use App\Http\Controllers\Master\TourEscortMasterController;
 
 
 
@@ -175,6 +176,9 @@ Route::post('/addupdateinsurancecostmaster',[InsuranceCostMasterController::clas
 
 Route::post('/tourescortpricelist',[TourEscortPriceMasterController::class,'index']);
 Route::post('/addupdatetourescortprice',[TourEscortPriceMasterController::class,'store']);
+
+Route::post('/tourescortmasterlist',[TourEscortMasterController::class,'index']);
+Route::post('/addupdatetourescortmaster',[TourEscortMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================

@@ -55,6 +55,7 @@ define("_VISA_COST_MASTER_", "others.visa_cost_master");
 define("_INSURANCE_TYPE_MASTER_", "others.insurance_type_master");
 define("_INSURANCE_COST_MASTER_", "others.insurance_cost_master");
 define("_TOUR_ESCORT_PRICE_MASTER_", "others.tour_escort_Price");
+define("_TOUR_ESCORT_MASTER_", "others.tour_escort_master");
 //define("_QUERY_MASTER_", "others.query_master");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
