@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Master;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;//
 
 class CompanyController extends Controller
 {
@@ -12,3 +12,4 @@ class CompanyController extends Controller
         return response()->json(['status' => true]);
     }
 }
+//
