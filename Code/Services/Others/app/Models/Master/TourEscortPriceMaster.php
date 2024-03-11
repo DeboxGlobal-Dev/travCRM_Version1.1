@@ -1,32 +1,27 @@
 <?php
 
-namespace App\Models\master;
+namespace App\Models\Master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MonumentMaster extends Model
+class TourEscortPriceMaster extends Model
 {
-
-
     use HasFactory;
-    protected $table = _MONUMENT_MASTER_;
+    protected $table = _TOUR_ESCORT_PRICE_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'MonumentName',
+        'ServiceType',
         'Destination',
-        'TransferType',
-        'ClosedOnDays',
-        'DefaultQuotation',
-        'DefaultProposal',
-        'WeekendDays',
+        'TourEscortService',
+        'Status',
+        'Default',
         'AddedBy',
         'UpdatedBy',
-        'Status',
-        'Description',
         'created_at',
         'updated_at',
 
 
     ];
+    public $timestamps = false;
 }

@@ -2,30 +2,32 @@
 
 namespace App\Http\Controllers\Master;
 
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Master\SightseeingMaster;
-class SightseeingMasterController extends Controller
+use App\Models\Master\VisaTypeMaster;
+
+class VisaTypeMasterController extends Controller
 {
     public function index(Request $request){
 
 
         $arrayDataRows = array();
 
-        call_logger('REQUEST COMES FROM LEAD SOURCE: '.$request->getContent());
+        call_logger('REQUEST COMES FROM VISA TYPE SOURCE: '.$request->getContent());
 
+        $id = $request->input('Id');
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
-        $posts = SightseeingMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('SightseeingName', 'like', '%' . $Search . '%')
-                         ->orwhere('Destination', 'like', '%' . $Search . '%')
-                         ->orwhere('TransferType', 'like', '%' . $Search . '%');
+        $posts = VisaTypeMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('VisaType', 'like', '%' . $Search . '%');
+        })->when($id, function ($query) use ($id) {
+            return $query->where('id',  $id );
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->orderBy('SightseeingName')->get('*');
+        })->select('*')->orderBy('VisaType')->get('*');
 
 
         if ($posts->isNotEmpty()) {
@@ -34,14 +36,7 @@ class SightseeingMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "SightseeingName" => $post->SightseeingName,
-                    "Destination" => $post->Destination,
-                    "TransferType" => $post->TransferType,
-                    "DefaultQuotation" => $post->DefaultQuotation,
-                    "DefaultProposal" => $post->DefaultProposal,
-                    "Description" => $post->Description,
-                    "InclusionsExclusionsTiming" => $post->InclusionsExclusionsTiming,
-                    "ImportantNote" => $post->ImportantNote,
+                    "VisaType" => $post->VisaType,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -64,17 +59,16 @@ class SightseeingMasterController extends Controller
             ]);
         }
     }
-
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE LEAD: '.$request->getContent());
+        call_logger('REQUEST COMES FROM ADD/UPDATE VISA TYPE: '.$request->getContent());
 
         try{
             $id = $request->input('id');
             if($id == '') {
 
                 $businessvalidation =array(
-                    'SightseeingName' => 'required|unique:'._DB_.'.'._SIGHTSEEING_MASTER_.',SightseeingName',
+                    'VisaType' => 'required|unique:'._DB_.'.'._VISA_TYPE_MASTER_.',VisaType',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -82,15 +76,8 @@ class SightseeingMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = SightseeingMaster::create([
-                    'SightseeingName' => $request->SightseeingName,
-                    'Destination' => $request->Destination,
-                    'TransferType' => $request->TransferType,
-                    'DefaultQuotation' => $request->DefaultQuotation,
-                    'DefaultProposal' => $request->DefaultProposal,
-                    'Description' => $request->Description,
-                    'InclusionsExclusionsTiming' => $request->InclusionsExclusionsTiming,
-                    'ImportantNote' => $request->ImportantNote,
+                 $savedata = VisaTypeMaster::create([
+                    'VisaType' => $request->VisaType,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -106,10 +93,10 @@ class SightseeingMasterController extends Controller
             }else{
 
                 $id = $request->input('id');
-                $edit = SightseeingMaster::find($id);
+                $edit = VisaTypeMaster::find($id);
 
                 $businessvalidation =array(
-                    'SightseeingName' => 'required',
+                    'VisaType' => 'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -118,14 +105,7 @@ class SightseeingMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->SightseeingName = $request->input('SightseeingName');
-                        $edit->Destination = $request->input('Destination');
-                        $edit->TransferType = $request->input('TransferType');
-                        $edit->DefaultQuotation = $request->input('DefaultQuotation');
-                        $edit->DefaultProposal = $request->input('DefaultProposal');
-                        $edit->Description = $request->input('Description');
-                        $edit->InclusionsExclusionsTiming = $request->input('InclusionsExclusionsTiming');
-                        $edit->ImportantNote = $request->input('ImportantNote');
+                        $edit->VisaType = $request->input('VisaType');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -143,18 +123,4 @@ class SightseeingMasterController extends Controller
         }
     }
 
-
-
-    // public function destroy(Request $request)
-    // {
-    //     $brands = SightseeingMaster::find($request->id);
-    //     $brands->delete();
-
-    //     if ($brands) {
-    //         return response()->json(['result' =>'Data deleted successfully!']);
-    //     } else {
-    //         return response()->json(['result' =>'Failed to delete data.'], 500);
-    //     }
-
-    // }
 }
