@@ -185,6 +185,7 @@ Route::post('/addupdatetourescortmaster',[TourEscortMasterController::class,'sto
 Route::post('/companymaster',[CompanyController::class,'healthCheck']);
 
 Route::post('/createupdatecompany',[CreateUpdateCompanyController::class,'store']);
+Route::post('/updatecompany',[CreateUpdateCompanyController::class,'update']);
 
 //===========================================END HERE========================================
 
