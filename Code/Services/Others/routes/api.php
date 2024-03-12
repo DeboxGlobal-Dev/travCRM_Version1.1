@@ -59,6 +59,7 @@ use App\Http\Controllers\Master\InsuranceCostMasterController;
 use App\Http\Controllers\Master\TourEscortPriceMasterController;
 use App\Http\Controllers\Master\TourEscortMasterController;
 use App\Http\Controllers\Master\CompanyController;
+use App\Http\Controllers\Master\CreateUpdateCompanyController;
 
 
 
@@ -182,6 +183,9 @@ Route::post('/tourescortmasterlist',[TourEscortMasterController::class,'index'])
 Route::post('/addupdatetourescortmaster',[TourEscortMasterController::class,'store']);
 
 Route::post('/companymaster',[CompanyController::class,'healthCheck']);
+
+Route::post('/createupdatecompany',[CreateUpdateCompanyController::class,'store']);
+
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
