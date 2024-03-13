@@ -15,7 +15,7 @@ class CreateUpdateCompanyController extends Controller
             $id = $request->input('id');
             if ($id == '') {
                 $businessvalidation =array(
-                    'COMPANYNAME' => 'required|:'._DB_.'.'._CREATE_UPDATE_COMPANY_.',COMPANYNAME',
+                    'COMPANYNAME' => 'required|unique:'._DB_.'.'._CREATE_UPDATE_COMPANY_.',COMPANYNAME',
                     'LICENSEKEY' => 'required',
                     'ISACTIVE' => 'required',
                     'ACTIONDATE' => 'required',
@@ -23,7 +23,11 @@ class CreateUpdateCompanyController extends Controller
                  );
                  $validatordata = validator::make($request->all(), $businessvalidation);
             if($validatordata->fails()){
-             return $validatordata->errors();
+             return  response()->json([
+                'STATUSID' => "-1", 
+                'STATUSMESSAGE' => 'Validation Error!',
+                'COMPANYID' => ""
+            ]);
 
     
             }else{ $savedata = CreateUpdateCompany::create([
@@ -56,7 +60,7 @@ class CreateUpdateCompanyController extends Controller
                 return response()->json([
                 'STATUSID' => "-1",
                 'STATUSMESSAGE' => 'Failed to add data.',
-                'COMPANYID' => "$savedata->id"
+                'COMPANYID' => ""
              ]);
             }
           }
@@ -64,10 +68,10 @@ class CreateUpdateCompanyController extends Controller
     }
 
     public function update(Request $request){
-        $companyName = $request->input('COMPANYNAME');
+        $id = $request->input('id');
 
         $businessvalidation = array(
-            'COMPANYNAME' => 'required',
+            'COMPANYNAME' => 'required|unique:'._DB_.'.'._CREATE_UPDATE_COMPANY_.',COMPANYNAME',
             'LICENSEKEY' => 'required',
             'ISACTIVE' => 'required',
             'ACTIONDATE' => 'required',
@@ -77,10 +81,15 @@ class CreateUpdateCompanyController extends Controller
         $validatordata = validator::make($request->all(), $businessvalidation);
 
         if ($validatordata->fails()) {
-            return $validatordata->errors();
+            return  
+            response()->json([
+                'STATUSID' => "-1", 
+                'STATUSMESSAGE' => "Validation Error!",
+                'COMPANYID' => ""
+            ]);
         } else {
             if (true) {
-                CreateUpdateCompany::where('COMPANYNAME', $companyName)->update([
+                CreateUpdateCompany::where('id', $id)->update([
                     'COMPANYNAME'=>$request->input('COMPANYNAME'),
                     'LICENSEKEY'=>$request->input('LICENSEKEY'),
                     'ISACTIVE'=>$request->input('ISACTIVE'),
@@ -99,13 +108,13 @@ class CreateUpdateCompanyController extends Controller
                 return response()->json([
                     'STATUSID' => "0", 
                     'STATUSMESSAGE' => 'Data Updated successfully!',
-                    'COMPANYID' => $savedata->id
+                    'COMPANYID' => $id
                 ]);
             } else {
                 return response()->json([
                     'STATUSID' => "-1", 
                     'STATUSMESSAGE' => 'Failed To Update Data!',
-                    'COMPANYID' => $savedata->id
+                    'COMPANYID' => ""
                 ]);
             }
         }
