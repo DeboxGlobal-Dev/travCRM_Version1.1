@@ -182,7 +182,7 @@ Route::post('/addupdatetourescortprice',[TourEscortPriceMasterController::class,
 Route::post('/tourescortmasterlist',[TourEscortMasterController::class,'index']);
 Route::post('/addupdatetourescortmaster',[TourEscortMasterController::class,'store']);
 
-Route::post('/companymaster',[CompanyController::class,'healthCheck']);
+Route::post('/healthcheck',[HealthCheckController::class,'index']);
 
 Route::post('/createupdatecompany',[CreateUpdateCompanyController::class,'store']);
 Route::post('/updatecompany',[CreateUpdateCompanyController::class,'update']);
