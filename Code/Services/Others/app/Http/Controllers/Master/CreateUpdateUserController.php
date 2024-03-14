@@ -18,6 +18,9 @@ class CreateUpdateUserController extends Controller
 
                 $businessvalidation =array(
                     'CompanyKey' => 'required|unique:'._DB_.'.'._USERS_MASTER_.',CompanyKey',
+                    'FirstName' => 'required',
+                    'Email' => 'required',
+                    'Password' => 'required'
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -76,6 +79,9 @@ class CreateUpdateUserController extends Controller
 
                 $businessvalidation =array(
                     'CompanyKey' => 'required',
+                    'FirstName' => 'required',
+                    'Email' => 'required',
+                    'Password' => 'required'
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
