@@ -12,6 +12,7 @@ class CreateUpdateCompany extends Model
     protected $primarykey = "id";
     protected $fillable = [
         'COMPANYNAME',
+        'RIGISTEREDEMAIL',
         'LICENSEKEY',
         'ISACTIVE',
         'ACTIONDATE',

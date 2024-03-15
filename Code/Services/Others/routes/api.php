@@ -61,6 +61,7 @@ use App\Http\Controllers\Master\TourEscortMasterController;
 use App\Http\Controllers\Master\CompanyController;
 use App\Http\Controllers\Master\CreateUpdateCompanyController;
 use App\Http\Controllers\Master\CreateUpdateUserController;
+use App\Http\Controllers\Master\NewUser;
 
 
 
@@ -186,10 +187,10 @@ Route::post('/addupdatetourescortmaster',[TourEscortMasterController::class,'sto
 Route::post('/healthcheck',[HealthCheckController::class,'index']);
 
 Route::post('/createupdatecompany',[CreateUpdateCompanyController::class,'store']);
-Route::post('/updatecompany',[CreateUpdateCompanyController::class,'update']);
+Route::post('/companylist',[CreateUpdateCompanyController::class,'index']);
 
 Route::post('/createupdateuser',[CreateUpdateUserController::class,'store']);
-//Route::post('/updatecompany',[CreateUpdateCompanyController::class,'update']);
+Route::post('/testApi',[NewUser::class,'handleResponse']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
