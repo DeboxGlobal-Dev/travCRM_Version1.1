@@ -29,7 +29,7 @@ class CreateUpdateCompanyController extends Controller
                 $arrayDataRows[] = [
                     "ID" => $post->id,
                     "COMPANYNAME" => $post->COMPANYNAME,
-                    "RIGISTEREDEMAIL" => $post->RIGISTEREDEMAIL,
+                    "REGISTEREDEMAIL" => $post->REGISTEREDEMAIL,
                     "LICENSEKEY" => $post->LICENSEKEY,
                     "ISACTIVE" => $post->ISACTIVE,
                     "ACTIONDATE" => $post->ACTIONDATE,
@@ -127,7 +127,7 @@ class CreateUpdateCompanyController extends Controller
 
                 $savedata = CreateUpdateCompany::create([
                 'COMPANYNAME' => $request->COMPANYNAME,
-                'RIGISTEREDEMAIL' => $request->RIGISTEREDEMAIL,
+                'REGISTEREDEMAIL' => $request->REGISTEREDEMAIL,
                 'LICENSEKEY' => $request->LICENSEKEY,
                 'ISACTIVE' => $request->ISACTIVE,
                 'ACTIONDATE' => $request->ACTIONDATE,
@@ -175,7 +175,7 @@ class CreateUpdateCompanyController extends Controller
 
                 $updatedata = CreateUpdateCompany::where('id', $id)->update([
                     'COMPANYNAME'=>$request->input('COMPANYNAME'),
-                    'RIGISTEREDEMAIL' => $request->input('RIGISTEREDEMAIL'),
+                    'REGISTEREDEMAIL' => $request->input('REGISTEREDEMAIL'),
                     'LICENSEKEY'=>$request->input('LICENSEKEY'),
                     'ISACTIVE'=>$request->input('ISACTIVE'),
                     'ACTIONDATE'=>$request->input('ACTIONDATE'),
