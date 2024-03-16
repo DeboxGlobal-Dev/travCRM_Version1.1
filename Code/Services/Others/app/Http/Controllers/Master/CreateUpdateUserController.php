@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Master;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Master\CreateUpdateUser;
@@ -14,25 +15,61 @@ class CreateUpdateUserController extends Controller
     {
        // try{
             $id = $request->input('id');
+            $Status = 1;
+            $ErrorMessage = "";
+
+            if($request->CompanyKey == ""){
+                $Status *=0;
+                $ErrorMessage .= "|CompanyKey is missing";
+            }
+            if($id != ""){
+                if (CreateUpdateUser::where('CompanyKey', $request->CompanyKey)->where('id', '!=', $id)->exists()) {
+                  $Status *= 0;
+                  $ErrorMessage .= "|User CompanyKey already exists";
+                } 
+               }else{
+                 if (CreateUpdateUser::where('CompanyKey', $request->CompanyKey)->exists()) {
+                  $Status *= 0;
+                  $ErrorMessage .= "|User CompanyKey already exists";
+                }   
+               }
+               if($request->FristName ==""){
+                $Status *= 0;
+                $ErrorMessage .= "|FirstName already exists";
+               }
+               if(strlen($request->FristName) > 200){
+                $Status *= 0;
+                $ErrorMessage .= "|FristName should not contain more than 200 words"; 
+             }
+             if($id != ""){
+                if (CreateUpdateUser::where('Email', $request->Email == "")->where('id', '!=', $id)->exists()) {
+                  $Status *= 0;
+                  $ErrorMessage .= "|User Email already exists";
+                } 
+               }else{
+                 if (CreateUpdateUser::where('Email', $request->Email)->exists()) {
+                  $Status *= 0;
+                  $ErrorMessage .= "|User Email already exists";
+                }   
+               }
+               if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $request->Email)){
+                $Status *= 0;
+                $ErrorMessage .= "|Email Format is not correct";
+               }if($request->Email == ""){
+                $Status *= 0;
+                $ErrorMessage .= "|Email is missing";
+               }
+               
+             if($request->Password ==""){
+                $Status *= 0;
+                $ErrorMessage .= "|Password is missing"; 
+             }
+            
             if($id == '') {
 
-                $businessvalidation =array(
-                    'CompanyKey' => 'required|unique:'._DB_.'.'._USERS_MASTER_.',CompanyKey',
-                    'FirstName' => 'required',
-                    'Email' => 'required',
-                    'Password' => 'required'
-                );
-
-                $validatordata = validator::make($request->all(), $businessvalidation);
-
-                if($validatordata->fails()){
-                    return  response()->json([
-                        'STATUSID' => "-1", 
-                        'STATUSMESSAGE' => 'Validation Error!',
-                        'COMPANYID' => ""
-                    ]);
-                }else{
-                 $savedata = CreateUpdateUser::create([
+                
+                if($Status == 1){
+                   $savedata = CreateUpdateUser::create([
 
                     'CompanyKey' => $request->CompanyKey,
                     'UserCode' => $request->UserCode,
@@ -57,6 +94,29 @@ class CreateUpdateUserController extends Controller
                     'created_at' => now(),
                 ]);
 
+                $response = Http::post('http://127.0.0.1:8000/api/testApi', [
+                    'COMPANYKEY' => $savedata->CompanyKey,
+                    "USERID" => $savedata->id,
+                    "USERKEY" => "",
+                    "USEREMAIL" => $savedata->Email,
+                    "ACTION" => "0"
+                ]);
+                $data = $response->json(); // Get response body as JSON
+                $status = $response->status(); // Get the status code of the response
+
+                
+                // $requestData = [
+                //     "COMPANYKEY" => $savedata->CompanyKey,
+                //     "USERID" => $savedata->id,
+                //     "USERKEY" => "",
+                //     "USEREMAIL" => $savedata->Email,
+                //     "ACTION" => "0"
+                // ];
+    
+                
+                //call_logger("Hii-----".$requestData);
+                
+
                 if ($savedata) {
                     return response()->json([
                         'STATUSID' => "0",
@@ -72,52 +132,65 @@ class CreateUpdateUserController extends Controller
                 }
               }
 
+              else{
+
+                return response()->json([
+                    'STATUSID' => "-1",
+                    'STATUSMESSAGE' => "$ErrorMessage",
+                    'USERKEY' => ""
+                 ]);
+    
+            } 
+
             }else{
 
                 $id = $request->input('id');
                 $edit = CreateUpdateUser::find($id);
+                if($Status == 1) {
 
-                $businessvalidation =array(
-                    'CompanyKey' => 'required',
-                    'FirstName' => 'required',
-                    'Email' => 'required',
-                    'Password' => 'required'
-                );
+                        $CompanyKey = $request->input('CompanyKey');
+                        $Email = $request->input('Email');
 
-                $validatordata = validator::make($request->all(), $businessvalidation);
+                        $updatedata = CreateUpdateUser::where('id', $id)->update([
+                            'CompanyKey'=>$request->input('CompanyKey'),
+                            'UserCode'=>$request->input('UserCode'),
+                            'FristName'=>$request->input('FristName'),
+                            'LastName'=>$request->input('LastName'),
+                            'Email'=>$request->input('Email'),
+                            'Phone'=>$request->input('Phone'),
+                            'Mobile'=>$request->input('Mobile'),
+                            'Password'=>$request->input('Password'),
+                            'PIN'=>$request->input('PIN'),
+                            'Role'=>$request->input('Role'),
+                            'Street'=>$request->input('Street'),
+                            'LanguageKnown'=>$request->input('LanguageKnown'),
+                            'TimeFormat'=>$request->input('TimeFormat'),
+                            'Profile'=>$request->input('Profile'),
+                            'Destination'=>$request->input('Destination'),
+                            'UsersDepartment'=>$request->input('UsersDepartment'),
+                            'ReportingManager'=>$request->input('ReportingManager'),
+                            'UserType'=>$request->input('UserType'),
+                            'UserLoginType'=>$request->input('UserLoginType'),
+                            'UpdatedBy'=>$request->input('UpdatedBy'),
+                            'updated_at'=>now(),
+                        ]);
 
-                if($validatordata->fails()){
-                 return  response()->json([
-                    'STATUSID' => "-1", 
-                    'STATUSMESSAGE' => 'Validation Error!',
-                    'COMPANYID' => ""
-                ]);
-                }else{
-                    if ($edit) {
+                        // $requestData = [
+                        //     "COMPANYKEY" => $CompanyKey,
+                        //     "USERID" => $id,
+                        //     "USERKEY" => "",
+                        //     "USEREMAIL" => $Email,
+                        //     "ACTION" => "2"
+                        // ];
+                        //  print_r($requestData);
+                        //  exit;
 
-                        $edit->CompanyKey = $request->input('CompanyKey');
-                        $edit->UserCode = $request->input('UserCode');
-                        $edit->FristName = $request->input('FristName');
-                        $edit->LastName = $request->input('LastName');
-                        $edit->Email = $request->input('Email');
-                        $edit->Phone = $request->input('Phone');
-                        $edit->Mobile = $request->input('Mobile');
-                        $edit->Password = $request->input('Password');
-                        $edit->PIN = $request->input('PIN');
-                        $edit->Role = $request->input('Role');
-                        $edit->Street = $request->input('Street');
-                        $edit->LanguageKnown = $request->input('LanguageKnown');
-                        $edit->TimeFormat = $request->input('TimeFormat');
-                        $edit->Profile = $request->input('Profile');
-                        $edit->Destination = $request->input('Destination');
-                        $edit->UsersDepartment = $request->input('UsersDepartment');
-                        $edit->ReportingManager = $request->input('ReportingManager');
-                        $edit->UserType = $request->input('UserType');
-                        $edit->UserLoginType = $request->input('UserLoginType');
-                        $edit->UpdatedBy = $request->input('UpdatedBy');
-                        $edit->updated_at = now();
-                        $edit->save();
+                        // $response = Http::post('http://127.0.0.1:8000/api/testApi', $requestData);
+        
+                        
+                        // call_logger("test-".$requestData); 
 
+                       if($updatedata){
                         return response()->json([
                             'STATUSID' => "0",
                             'STATUSMESSAGE' => 'Data Updated successfully',
@@ -130,12 +203,16 @@ class CreateUpdateUserController extends Controller
                             'USERKEY' => ""
                             ]);
                     }
-                }
+                       }else{
+
+                        return response()->json([
+                            'STATUSID' => "-1",
+                            'STATUSMESSAGE' => "$ErrorMessage",
+                            'USERKEY' => ""
+                         ]);
+            
+                    } 
             }
-        // }catch (\Exception $e){
-        //     call_logger("Exception Error  ===>  ". $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        // }
     }
 
 }
