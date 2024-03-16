@@ -15,10 +15,10 @@ class CreateUpdateUserController extends Controller
     public function index(Request $request)
     {
         $id = $request->input('Id');
-        $Search = $request->input('Search');
+        $companyId = $request->input('CompanyId');
 
-        $posts = CreateUpdateUser::when($Search, function ($query) use ($Search) {
-            return $query->where('CompanyKey', 'ilike', '%' . $Search . '%');
+        $posts = CreateUpdateUser::when($companyId, function ($query) use ($companyId) {
+            return $query->where('CompanyKey', $companyId);
         })->when($id, function ($query) use ($id) {
             return $query->where('id',  $id );
         })->select('*')->orderBy('CompanyKey')->get('*');
@@ -30,7 +30,7 @@ class CreateUpdateUserController extends Controller
 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "CompanyKey" => $post->CompanyKey,
+                    "companyKey" => $post->CompanyKey,
                     "UserCode" => $post->UserCode,
                     "FirstName" => $post->FirstName,
                     "LastName" => $post->LastName,
