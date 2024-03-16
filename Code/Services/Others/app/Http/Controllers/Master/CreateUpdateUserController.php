@@ -22,24 +22,13 @@ class CreateUpdateUserController extends Controller
                 $Status *=0;
                 $ErrorMessage .= "|CompanyKey is missing";
             }
-            if($id != ""){
-                if (CreateUpdateUser::where('CompanyKey', $request->CompanyKey)->where('id', '!=', $id)->exists()) {
-                  $Status *= 0;
-                  $ErrorMessage .= "|User CompanyKey already exists";
-                } 
-               }else{
-                 if (CreateUpdateUser::where('CompanyKey', $request->CompanyKey)->exists()) {
-                  $Status *= 0;
-                  $ErrorMessage .= "|User CompanyKey already exists";
-                }   
-               }
                if($request->FristName ==""){
                 $Status *= 0;
                 $ErrorMessage .= "|FirstName already exists";
                }
-               if(strlen($request->FristName) > 200){
+               if(strlen($request->FristName) > 50){
                 $Status *= 0;
-                $ErrorMessage .= "|FristName should not contain more than 200 words"; 
+                $ErrorMessage .= "|FristName should not contain more than 50 words"; 
              }
              if($id != ""){
                 if (CreateUpdateUser::where('Email', $request->Email == "")->where('id', '!=', $id)->exists()) {
@@ -94,15 +83,15 @@ class CreateUpdateUserController extends Controller
                     'created_at' => now(),
                 ]);
 
-                $response = Http::post('http://127.0.0.1:8000/api/testApi', [
-                    'COMPANYKEY' => $savedata->CompanyKey,
-                    "USERID" => $savedata->id,
-                    "USERKEY" => "",
-                    "USEREMAIL" => $savedata->Email,
-                    "ACTION" => "0"
-                ]);
-                $data = $response->json(); // Get response body as JSON
-                $status = $response->status(); // Get the status code of the response
+                // $response = Http::post('http://127.0.0.1:8000/api/testApi', [
+                //     'COMPANYKEY' => $savedata->CompanyKey,
+                //     "USERID" => $savedata->id,
+                //     "USERKEY" => "",
+                //     "USEREMAIL" => $savedata->Email,
+                //     "ACTION" => "0"
+                // ]);
+                // $data = $response->json(); // Get response body as JSON
+                // $status = $response->status(); // Get the status code of the response
 
                 
                 // $requestData = [
