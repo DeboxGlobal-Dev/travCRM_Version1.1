@@ -190,6 +190,7 @@ Route::post('/createupdatecompany',[CreateUpdateCompanyController::class,'store'
 Route::post('/companylist',[CreateUpdateCompanyController::class,'index']);
 
 Route::post('/createupdateuser',[CreateUpdateUserController::class,'store']);
+Route::post('/createupdateuserlist',[CreateUpdateUserController::class,'index']);
 Route::post('/testApi',[NewUser::class,'handleResponse']);
 //===========================================END HERE========================================
 

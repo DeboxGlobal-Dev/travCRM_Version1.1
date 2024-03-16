@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('CompanyKey', 250);
             $table->string('UserCode', 250);
-            $table->string('FristName', 50);
+            $table->string('FirstName', 50);
             $table->string('LastName', 50);
             $table->string('Email', 50);
             $table->string('Phone', 50);

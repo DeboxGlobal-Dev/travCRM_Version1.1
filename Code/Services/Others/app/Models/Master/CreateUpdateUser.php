@@ -13,7 +13,7 @@ class CreateUpdateUser extends Model
     protected $fillable = [
         'CompanyKey',
         'UserCode',
-        'FristName',
+        'FirstName',
         'LastName',
         'Email',
         'Phone',

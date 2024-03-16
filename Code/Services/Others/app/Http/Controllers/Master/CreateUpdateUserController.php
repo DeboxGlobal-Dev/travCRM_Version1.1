@@ -11,6 +11,64 @@ use App\Models\Master\CreateUpdateUser;
 
 class CreateUpdateUserController extends Controller
 {
+
+    public function index(Request $request)
+    {
+        $id = $request->input('Id');
+        $Search = $request->input('Search');
+
+        $posts = CreateUpdateUser::when($Search, function ($query) use ($Search) {
+            return $query->where('CompanyKey', 'ilike', '%' . $Search . '%');
+        })->when($id, function ($query) use ($id) {
+            return $query->where('id',  $id );
+        })->select('*')->orderBy('CompanyKey')->get('*');
+
+
+        if ($posts->isNotEmpty()) {
+            $arrayDataRows = [];
+            foreach ($posts as $post) {
+
+                $arrayDataRows[] = [
+                    "Id" => $post->id,
+                    "CompanyKey" => $post->CompanyKey,
+                    "UserCode" => $post->UserCode,
+                    "FirstName" => $post->FirstName,
+                    "LastName" => $post->LastName,
+                    "Email" => $post->Email,
+                    "Phone" => $post->Phone,
+                    "Mobile" => $post->Mobile,
+                    "Password" => $post->Password,
+                    "PIN" => $post->PIN,
+                    "Role" => $post->Role,
+                    "Street" => $post->Street,
+                    "LanguageKnown" => $post->LanguageKnown,
+                    "TimeFormat" => $post->TimeFormat,
+                    "Profile" => $post->Profile,
+                    "Destination" => $post->Destination,
+                    "UsersDepartment" => $post->UsersDepartment,
+                    "ReportingManager" => $post->ReportingManager,
+                    "UserType" => $post->UserType,
+                    "UserLoginType" => $post->UserLoginType,
+                    "AddedBy" => $post->AddedBy,
+                    "UpdatedBy" => $post->UpdatedBy,
+                    "Created_at" => $post->created_at,
+                    "Updated_at" => $post->updated_at
+                ];
+            }
+
+            return response()->json([
+                "Status" => 200,
+                'TotalRecord' => $posts->count('id'),
+                "DataList" => $arrayDataRows
+            ]);
+        } else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'),
+                "DataList" => "No Record Found."
+            ]);
+        }
+    }
     public function store(Request $request)
     {
        // try{
@@ -22,13 +80,13 @@ class CreateUpdateUserController extends Controller
                 $Status *=0;
                 $ErrorMessage .= "|CompanyKey is missing";
             }
-               if($request->FristName ==""){
+               if($request->FirstName ==""){
                 $Status *= 0;
                 $ErrorMessage .= "|FirstName already exists";
                }
-               if(strlen($request->FristName) > 50){
+               if(strlen($request->FirstName) > 50){
                 $Status *= 0;
-                $ErrorMessage .= "|FristName should not contain more than 50 words"; 
+                $ErrorMessage .= "|FirstName should not contain more than 50 words"; 
              }
              if($id != ""){
                 if (CreateUpdateUser::where('Email', $request->Email == "")->where('id', '!=', $id)->exists()) {
@@ -62,7 +120,7 @@ class CreateUpdateUserController extends Controller
 
                     'CompanyKey' => $request->CompanyKey,
                     'UserCode' => $request->UserCode,
-                    'FristName' => $request->FristName,
+                    'FirstName' => $request->FirstName,
                     'LastName' => $request->LastName,
                     'Email' => $request->Email,
                     'Phone' => $request->Phone,
@@ -143,7 +201,7 @@ class CreateUpdateUserController extends Controller
                         $updatedata = CreateUpdateUser::where('id', $id)->update([
                             'CompanyKey'=>$request->input('CompanyKey'),
                             'UserCode'=>$request->input('UserCode'),
-                            'FristName'=>$request->input('FristName'),
+                            'FirstName'=>$request->input('FirstName'),
                             'LastName'=>$request->input('LastName'),
                             'Email'=>$request->input('Email'),
                             'Phone'=>$request->input('Phone'),
