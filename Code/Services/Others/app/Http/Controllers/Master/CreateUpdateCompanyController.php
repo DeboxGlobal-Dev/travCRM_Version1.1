@@ -10,28 +10,124 @@ use App\Models\Master\CreateUpdateCompany;
 
 class CreateUpdateCompanyController extends Controller
 {
+    public function index(Request $request)
+    {
+        $id = $request->input('ID');
+        $Search = $request->input('Search');
+
+        $posts = CreateUpdateCompany::when($Search, function ($query) use ($Search) {
+            return $query->where('COMPANYNAME', 'ilike', '%' . $Search . '%');
+        })->when($id, function ($query) use ($id) {
+            return $query->where('id',  $id );
+        })->select('*')->orderBy('COMPANYNAME')->get('*');
+
+
+        if ($posts->isNotEmpty()) {
+            $arrayDataRows = [];
+            foreach ($posts as $post) {
+
+                $arrayDataRows[] = [
+                    "ID" => $post->id,
+                    "COMPANYNAME" => $post->COMPANYNAME,
+                    "RIGISTEREDEMAIL" => $post->RIGISTEREDEMAIL,
+                    "LICENSEKEY" => $post->LICENSEKEY,
+                    "ISACTIVE" => $post->ISACTIVE,
+                    "ACTIONDATE" => $post->ACTIONDATE,
+                    "LUT" => $post->LUT,
+                    "ZIP" => $post->ZIP,
+                    "PAN" => $post->PAN,
+                    "TAN" => $post->TAN,
+                    "CIN" => $post->CIN,
+                    "ADDRESS1" => $post->ADDRESS1,
+                    "ADDRESS2" => $post->ADDRESS2,
+                    "ADDEDBY" => $post->AddedBy,
+                    "UPDATEDBY" => $post->UpdatedBy,
+                    "Created_at" => $post->created_at,
+                    "Updated_at" => $post->updated_at
+                ];
+            }
+
+            return response()->json([
+                "Status" => 200,
+                'TotalRecord' => $posts->count('id'),
+                "DataList" => $arrayDataRows
+            ]);
+        } else {
+            return response()->json([
+                "Status" => 0,
+                "TotalRecord" => $posts->count('id'),
+                "DataList" => "No Record Found."
+            ]);
+        }
+    }
     public function store(Request $request)
     {
             $id = $request->input('id');
-            if ($id == '') {
-                $businessvalidation =array(
-                    'COMPANYNAME' => 'required|unique:'._DB_.'.'._CREATE_UPDATE_COMPANY_.',COMPANYNAME',
-                    'LICENSEKEY' => 'required',
-                    'ISACTIVE' => 'required',
-                    'ACTIONDATE' => 'required',
-                    'ADDRESS1' => 'required',
-                 );
-                 $validatordata = validator::make($request->all(), $businessvalidation);
-            if($validatordata->fails()){
-             return  response()->json([
-                'STATUSID' => "-1", 
-                'STATUSMESSAGE' => 'Validation Error!',
-                'COMPANYID' => ""
-            ]);
+            $Status = 1;
+            $ErrorMessage = "";
 
-    
-            }else{ $savedata = CreateUpdateCompany::create([
+             if($request->COMPANYNAME == ""){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Company Name is missing";
+
+                }
+                if(strlen($request->COMPANYNAME) > 250){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Company Name should not contain more than 250 words"; 
+                }
+
+                if($request->RIGISTEREDEMAIL == ""){
+                    $Status *= 0;
+                    $ErrorMessage .= "|Registered Email is missing";
+ 
+                 }
+                 if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $request->RIGISTEREDEMAIL)){
+                    $Status *= 0;
+                    $ErrorMessage .= "|Email Format is not correct";
+                   }
+                 if(strlen($request->RIGISTEREDEMAIL) >350){
+                    $Status *= 0;
+                    $ErrorMessage .= "|Registered Email should not contain more than 350 words"; 
+ 
+                 }
+
+                if($request->LICENSEKEY == ""){
+                   $Status *= 0;
+                   $ErrorMessage .= "|License Key is missing";
+
+                }
+                if(strlen($request->LICENSEKEY) > 1000){
+                   $Status *= 0;
+                   $ErrorMessage .= "|License Key should not contain more than 1000 words"; 
+                }
+                if($request->ADDRESS1 == ""){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Address 1 is missing";
+
+                }
+                if(strlen($request->ADDRESS1) > 500){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Address 1 should not contain more than 500 words"; 
+                }
+                if($request->ACTIONDATE == ""){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Action Date is missing";
+                }
+                if(!preg_match("/^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/",$request->ACTIONDATE)){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Action Date Incorrect Format";
+                }
+                if($request->ISACTIVE == ""){
+                   $Status *= 0;
+                   $ErrorMessage .= "|Incorrect Active/Inactive Flag";
+                }
+            if ($id == '') {
+
+                if($Status == 1){
+
+                $savedata = CreateUpdateCompany::create([
                 'COMPANYNAME' => $request->COMPANYNAME,
+                'RIGISTEREDEMAIL' => $request->RIGISTEREDEMAIL,
                 'LICENSEKEY' => $request->LICENSEKEY,
                 'ISACTIVE' => $request->ISACTIVE,
                 'ACTIONDATE' => $request->ACTIONDATE,
@@ -49,48 +145,37 @@ class CreateUpdateCompanyController extends Controller
             ]);
             
 
-
             if ($savedata) {
                 return response()->json([
                 'STATUSID' => "0", 
                 'STATUSMESSAGE' => 'Data added successfully!',
-                'COMPANYID' => $savedata->id
+                'COMPANYID' => "$savedata->id"
             ]);
-            } else {
+            }
+            else {
                 return response()->json([
                 'STATUSID' => "-1",
                 'STATUSMESSAGE' => 'Failed to add data.',
                 'COMPANYID' => ""
              ]);
-            }
           }
-         } 
-    }
+        }else{
 
-    public function update(Request $request){
-        $id = $request->input('id');
-
-        $businessvalidation = array(
-            'COMPANYNAME' => 'required|unique:'._DB_.'.'._CREATE_UPDATE_COMPANY_.',COMPANYNAME',
-            'LICENSEKEY' => 'required',
-            'ISACTIVE' => 'required',
-            'ACTIONDATE' => 'required',
-            'ADDRESS1' => 'required',
-        );
-
-        $validatordata = validator::make($request->all(), $businessvalidation);
-
-        if ($validatordata->fails()) {
-            return  
-            response()->json([
-                'STATUSID' => "-1", 
-                'STATUSMESSAGE' => "Validation Error!",
+            return response()->json([
+                'STATUSID' => "-1",
+                'STATUSMESSAGE' => "$ErrorMessage",
                 'COMPANYID' => ""
-            ]);
-        } else {
-            if (true) {
-                CreateUpdateCompany::where('id', $id)->update([
+             ]);
+
+        } 
+         } 
+   if($id != '') {
+
+                if($Status == 1){
+
+                $updatedata = CreateUpdateCompany::where('id', $id)->update([
                     'COMPANYNAME'=>$request->input('COMPANYNAME'),
+                    'RIGISTEREDEMAIL' => $request->input('RIGISTEREDEMAIL'),
                     'LICENSEKEY'=>$request->input('LICENSEKEY'),
                     'ISACTIVE'=>$request->input('ISACTIVE'),
                     'ACTIONDATE'=>$request->input('ACTIONDATE'),
@@ -105,10 +190,12 @@ class CreateUpdateCompanyController extends Controller
                     'updated_at'=>now(),
                 ]);
 
+                if($updatedata){
+
                 return response()->json([
                     'STATUSID' => "0", 
                     'STATUSMESSAGE' => 'Data Updated successfully!',
-                    'COMPANYID' => $id
+                    'COMPANYID' => "$id"
                 ]);
             } else {
                 return response()->json([
@@ -117,7 +204,15 @@ class CreateUpdateCompanyController extends Controller
                     'COMPANYID' => ""
                 ]);
             }
-        }
+        }else{
+
+            return response()->json([
+                'STATUSID' => "-1",
+                'STATUSMESSAGE' => "$ErrorMessage",
+                'COMPANYID' => ""
+             ]);
+
+        } 
     }
-               
+}
 }

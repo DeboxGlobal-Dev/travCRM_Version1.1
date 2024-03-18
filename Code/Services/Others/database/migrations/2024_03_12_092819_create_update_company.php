@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create(_CREATE_UPDATE_COMPANY_, function (Blueprint $table) {
             $table->id();
             $table->string('COMPANYNAME', 250);
+            $table->string('RIGISTEREDEMAIL', 350);
             $table->string('LICENSEKEY', 1000);
             $table->boolean('ISACTIVE');
             $table->date('ACTIONDATE');
