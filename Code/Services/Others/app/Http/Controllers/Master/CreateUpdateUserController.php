@@ -13,7 +13,8 @@ class CreateUpdateUserController extends Controller
 {
 
     public function index(Request $request)
-    {
+        {
+
         $id = $request->input('Id');
         $companyId = $request->input('CompanyId');
 
@@ -30,7 +31,7 @@ class CreateUpdateUserController extends Controller
 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "companyKey" => $post->CompanyKey,
+                    "CompanyKey" => $post->CompanyKey,
                     "UserCode" => $post->UserCode,
                     "FirstName" => $post->FirstName,
                     "LastName" => $post->LastName,
@@ -52,7 +53,8 @@ class CreateUpdateUserController extends Controller
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,
-                    "Updated_at" => $post->updated_at
+                    "Updated_at" => $post->updated_at,
+                    "Status" => $post->Status,
                 ];
             }
 
@@ -82,7 +84,7 @@ class CreateUpdateUserController extends Controller
             }
                if($request->FirstName ==""){
                 $Status *= 0;
-                $ErrorMessage .= "|FirstName already exists";
+                $ErrorMessage .= "|FirstName is Missing";
                }
                if(strlen($request->FirstName) > 50){
                 $Status *= 0;
@@ -139,37 +141,55 @@ class CreateUpdateUserController extends Controller
                     'UserLoginType' => $request->UserLoginType,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
-                ]);
-
-                // $response = Http::post('http://127.0.0.1:8000/api/testApi', [
-                //     'COMPANYKEY' => $savedata->CompanyKey,
-                //     "USERID" => $savedata->id,
-                //     "USERKEY" => "",
-                //     "USEREMAIL" => $savedata->Email,
-                //     "ACTION" => "0"
-                // ]);
-                // $data = $response->json(); // Get response body as JSON
-                // $status = $response->status(); // Get the status code of the response
-
-                
-                // $requestData = [
-                //     "COMPANYKEY" => $savedata->CompanyKey,
-                //     "USERID" => $savedata->id,
-                //     "USERKEY" => "",
-                //     "USEREMAIL" => $savedata->Email,
-                //     "ACTION" => "0"
-                // ];
-    
-                
-                //call_logger("Hii-----".$requestData);
-                
+                ]);    
+                        
 
                 if ($savedata) {
-                    return response()->json([
-                        'STATUSID' => "0",
-                        'STATUSMESSAGE' => 'Data Added successfully',
-                        'USERKEY' => $savedata->id
+                    // return response()->json([
+                    //     'STATUSID' => "0",
+                    //     'STATUSMESSAGE' => 'Data Added successfully',
+                    //     'USERKEY' => $savedata->id
+                    // ]);
+                    $response = Http::post('https://travcrm.in/Stratos/api/createUpdateUser.php', [
+                    'COMPANYKEY' => $savedata->CompanyKey,
+                    "USERID" => $savedata->id,
+                    "USERKEY" => "",
+                    "USEREMAIL" => $savedata->Email,
+                    "ACTION" => "0"
+                ]);
+                 $data = $response->json(); 
+
+                 if($data['STATUSID'] == 0){
+
+                    $UserKey = $data['USERKEY'];
+                    $UserId = $savedata->id;
+
+                    $updateKey = CreateUpdateUser::where('id', $UserId)->update([
+                            'UserKey'=>$UserKey,
+                        ]);
+
+                    if($updateKey){
+                        return response()->json([
+                        'Status' => "0",
+                        'Message' => "User Created successfully"
                     ]);
+                    } else {
+                         return response()->json([
+                        'Status' => "-1",
+                        'Message' => "User Creation Failed"
+                    ]);
+                        
+                    }
+
+                 }else{
+                    return response()->json([
+                        'Status' => "-1",
+                        'Message' => "User Creation Failed"
+                    ]); 
+                 }
+ 
+
+
                 } else {
                     return response()->json([
                         'STATUSID' => "-1",
@@ -221,21 +241,6 @@ class CreateUpdateUserController extends Controller
                             'UpdatedBy'=>$request->input('UpdatedBy'),
                             'updated_at'=>now(),
                         ]);
-
-                        // $requestData = [
-                        //     "COMPANYKEY" => $CompanyKey,
-                        //     "USERID" => $id,
-                        //     "USERKEY" => "",
-                        //     "USEREMAIL" => $Email,
-                        //     "ACTION" => "2"
-                        // ];
-                        //  print_r($requestData);
-                        //  exit;
-
-                        // $response = Http::post('http://127.0.0.1:8000/api/testApi', $requestData);
-        
-                        
-                        // call_logger("test-".$requestData); 
 
                        if($updatedata){
                         return response()->json([
