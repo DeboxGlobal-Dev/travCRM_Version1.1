@@ -34,6 +34,8 @@ class CreateUpdateUser extends Model
         'UpdatedBy',
         'created_at',
         'updated_at',
+        'UserKey',
+        'Status',
     ];
 
     public $timestamps = false;
