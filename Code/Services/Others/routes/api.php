@@ -61,7 +61,7 @@ use App\Http\Controllers\Master\TourEscortMasterController;
 use App\Http\Controllers\Master\CompanyController;
 use App\Http\Controllers\Master\CreateUpdateCompanyController;
 use App\Http\Controllers\Master\CreateUpdateUserController;
-use App\Http\Controllers\Master\NewUser;
+// use App\Http\Controllers\Master\NewUser;
 
 
 
@@ -189,9 +189,10 @@ Route::post('/healthcheck',[HealthCheckController::class,'index']);
 Route::post('/createupdatecompany',[CreateUpdateCompanyController::class,'store']);
 Route::post('/companylist',[CreateUpdateCompanyController::class,'index']);
 
+Route::post('/usersall',[CreateUpdateUserController::class,'index']);
 Route::post('/createupdateuser',[CreateUpdateUserController::class,'store']);
-Route::post('/createupdateuserlist',[CreateUpdateUserController::class,'index']);
-Route::post('/testApi',[NewUser::class,'handleResponse']);
+
+Route::post('/authuservalidate',[AuthoriseUserController::class,'authenticate']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
@@ -242,12 +243,11 @@ Route::post('/addupdatemonumentmaster',[MonumentMasterController::class,'store']
 Route::post('/visamasterlist',[VisaMasterController::class,'index']);
 Route::post('/addupdatevisamaster',[VisaMasterController::class,'store']);
 
-Route::post('/adduser',[UserMasterController::class,'store']);
-Route::post('/userlist',[UserMasterController::class,'index']);
+// Route::post('/adduser',[UserMasterController::class,'store']);
+// Route::post('/userlist',[UserMasterController::class,'index']);
 
 Route::post('/addpackage',[PackagesMasterController::class,'store']);
 Route::post('/packagelist',[PackagesMasterController::class,'index']);
-
 
 
 
