@@ -40,8 +40,8 @@ class CreateUpdateCompanyController extends Controller
                     "CIN" => $post->CIN,
                     "ADDRESS1" => $post->ADDRESS1,
                     "ADDRESS2" => $post->ADDRESS2,
-                    "ADDEDBY" => $post->AddedBy,
-                    "UPDATEDBY" => $post->UpdatedBy,
+                    "AddedBy" => $post->AddedBy,
+                    "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,
                     "Updated_at" => $post->updated_at
                 ];
@@ -76,21 +76,20 @@ class CreateUpdateCompanyController extends Controller
                    $ErrorMessage .= "|Company Name should not contain more than 250 words"; 
                 }
 
-                if($request->RIGISTEREDEMAIL == ""){
+                if($request->REGISTEREDEMAIL == ""){
                     $Status *= 0;
                     $ErrorMessage .= "|Registered Email is missing";
  
                  }
-                 if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $request->RIGISTEREDEMAIL)){
+                 if(!preg_match("/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,})$/i", $request->REGISTEREDEMAIL)){
                     $Status *= 0;
                     $ErrorMessage .= "|Email Format is not correct";
                    }
-                 if(strlen($request->RIGISTEREDEMAIL) >350){
+                 if(strlen($request->REGISTEREDEMAIL) > 100){
                     $Status *= 0;
-                    $ErrorMessage .= "|Registered Email should not contain more than 350 words"; 
- 
-                 }
+                    $ErrorMessage .= "|Registered Email should not contain more than 100 words"; 
 
+                 }
                 if($request->LICENSEKEY == ""){
                    $Status *= 0;
                    $ErrorMessage .= "|License Key is missing";
@@ -121,6 +120,18 @@ class CreateUpdateCompanyController extends Controller
                    $Status *= 0;
                    $ErrorMessage .= "|Incorrect Active/Inactive Flag";
                 }
+                if($id != ""){
+                 if (CreateUpdateCompany::where('COMPANYNAME', $request->COMPANYNAME)->where('id', '!=', $id)->exists()) {
+                   $Status *= 0;
+                   $ErrorMessage .= "|Company already exists";
+                 } 
+                }else{
+                  if (CreateUpdateCompany::where('COMPANYNAME', $request->COMPANYNAME)->exists()) {
+                   $Status *= 0;
+                   $ErrorMessage .= "|Company already exists";
+                 }   
+                }
+
             if ($id == '') {
 
                 if($Status == 1){
