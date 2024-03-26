@@ -21,7 +21,7 @@ class AuthoriseUserController extends Controller
         ->where('Email', $userId)
         ->where('Password', $password)
         ->get();
-        if ($posts) {
+        if ($posts->count() > 0) {
             $company = CreateUpdateCompany::select('LICENSEKEY')->where('id',$posts[0]->CompanyKey) // Add the column you want to fetch
             ->get();
            $response = Http::post('https://travcrm.in/Stratos/api/authoriseUser.php', [
