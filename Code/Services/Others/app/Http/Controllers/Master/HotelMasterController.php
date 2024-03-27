@@ -29,14 +29,14 @@ class HotelMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "HotelChain" => getName(_HOTEL_CHAIN_MASTER_,$post->HotelChain),
+                    "HotelChain" =>$post->HotelChain,
                     "HotelName" => $post->HotelName,
                     "HotelCode" => $post->HotelCode,
-                    "HotelCategory" => getName(_HOTEL_CATEGORY_MASTER_,$post->HotelCategory),
-                    "HotelType" => getName(_HOTEL_TYPE_MASTER_,$post->HotelType),
-                    "HotelCountry" => getName(_COUNTRY_MASTER_,$post->HotelCountry),
-                    "HotelState" => getName(_STATE_MASTER_,$post->HotelState),
-                    "HotelCity" => getName(_CITY_MASTER_,$post->HotelCity),
+                    "HotelCategory" =>$post->HotelCategory,
+                    "HotelType" => $post->HotelType,
+                    "HotelCountry" =>$post->HotelCountry,
+                    "HotelState" => $post->HotelState,
+                    "HotelCity" => $post->HotelCity,
                     "HotelPinCode" => $post->HotelPinCode,
                     "HotelAddress" => $post->HotelAddress,
                     "HotelLocality" => $post->HotelLocality,
@@ -81,50 +81,57 @@ class HotelMasterController extends Controller
         try{
             $id = $request->input('id');
             if($id == '') {
+               // $validatordata = validator::make($request->all(), $businessvalidation);
 
-                $businessvalidation =array(
-                    'HotelName' => 'required',
-                );
-
-                $validatordata = validator::make($request->all(), $businessvalidation);
-
-                if($validatordata->fails()){
-                    return $validatordata->errors();
-                }else{
-                 $savedata = HotelMaster::create([
-                    "HotelChain" => $request->HotelChain,
-                    "HotelName" => $request->HotelName,
-                    "HotelCode" => $request->HotelCode,
-                    "HotelCategory" => $request->HotelCategory,
-                    "HotelType" => $request->HotelType,
-                    "HotelCountry" => $request->HotelCountry,
-                    "HotelState" => $request->HotelState,
-                    "HotelCity" => $request->HotelCity,
-                    "HotelPinCode" => $request->HotelPinCode,
-                    "HotelAddress" => $request->HotelAddress,
-                    "HotelLocality" => $request->HotelLocality,
-                    "HotelGSTN" => $request->HotelGSTN,
-                    "HotelWeekend" => $request->HotelWeekend,
-                    "CheckIn" => $request->CheckIn,
-                    "CheckOut" => $request->CheckOut,
-                    "HotelLink" => $request->HotelLink,
-                    "HotelInfo" => $request->HotelInfo,
-                    "HotelPolicy" => $request->HotelPolicy,
-                    "HotelTC" => $request->HotelTC,
-                    "HotelAmenties" => $request->HotelAmenties,
-                    "HotelRoomType" => $request->HotelRoomType,
-                    "SelfSupplier" => $request->SelfSupplier,
-                    "HotelStatus" => $request->HotelStatus,
-                    "AddedBy" => $request->AddedBy,
-                    'created_at' => now(),
-                ]);
-
+                // if($validatordata->fails()){
+                //     return $validatordata->errors();
+                // }else{
+                    $dataList = $request->DataList;
+                    $hotelData = [];
+                    foreach ($dataList as $data) {
+                        $hotelData[] = [
+                            "HotelChain" => $data['HotelChain'],
+                            "HotelName" => $data['HotelName'],
+                            "HotelCode" => $data['HotelCode'],
+                            "HotelCategory" => $data['HotelCategory'],
+                            "HotelType" => $data['HotelType'],
+                            "HotelCountry" => $data['HotelCountry'],
+                            "HotelState" => $data['HotelState'],
+                            "HotelCity" => $data['HotelCity'],
+                            "HotelPinCode" => $data['HotelPinCode'],
+                            "HotelAddress" => $data['HotelAddress'],
+                            "HotelLocality" => $data['HotelLocality'],
+                            "HotelGSTN" => $data['HotelGSTN'],
+                            "HotelWeekend" => $data['HotelWeekend'],
+                            "CheckIn" => $data['CheckIn'],
+                            "CheckOut" => $data['CheckOut'],
+                            "HotelLink" => $data['HotelLink'],
+                            "HotelInfo" => $data['HotelInfo'],
+                            "HotelPolicy" => $data['HotelPolicy'],
+                            "HotelTC" => $data['HotelTC'],
+                            "HotelAmenties" => $data['HotelAmenties'],
+                            "HotelRoomType" => $data['HotelRoomType'],
+                            "SelfSupplier" => $data['SelfSupplier'],
+                            "HotelStatus" => $data['HotelStatus'],
+                            "AddedBy" => $data['AddedBy'],
+                            'created_at' => now(),
+                            'updated_at' => now(), // Assuming you want to update 'updated_at' field as well
+                        ];
+                    }
+                    
+                    // Bulk insert the data into the table
+                    $count = count($hotelData);
+                    $savedata = HotelMaster::insert($hotelData);
+                
                 if ($savedata) {
-                    return response()->json(['Status' => 1, 'Message' => 'Data added successfully!']);
+                    return response()->json([
+                    'Status' => 1, 
+                    'TotalSuccess'=> $count,
+                    'Message' => 'Data added successfully!']);
                 } else {
                     return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
                 }
-              }
+             // }
 
             }else{
 
