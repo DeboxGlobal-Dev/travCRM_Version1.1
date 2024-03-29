@@ -186,4 +186,58 @@ class HotelMasterController extends Controller
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
     }
+     public function hotelImport(Request $request){
+
+        call_logger('REQUEST COMES FROM Hotel Import: '.$request->getContent());
+
+        try{
+
+             $requestData = $request->all();
+             // $SuccessCount = 0;
+             // $FailureCount = 0;
+                $insertedCount = 0;
+
+            foreach ($requestData as $data) {
+
+             // $Status = 1;
+             // $ErrorMessage = "";
+
+             // if($data['Hotel Name'] == ""){
+             //    $Status *= 0;
+             //    $ErrorMessage .= "|HotelName is Empty";
+             // } 
+
+
+            $hotelMaster = new HotelMaster();
+            $hotelMaster->HotelName = $data['Hotel Name'];
+            $hotelMaster->SelfSupplier = $data['Self Supplier'];
+            $hotelMaster->HotelCountry = $data['Hotel Country'];
+            $hotelMaster->HotelCity = $data['City'];
+            $hotelMaster->created_at = now();
+            $hotelMaster->HotelData = json_encode([
+            'Pin Code' => $data['Pin Code'],
+            'Hotel Address' => $data['Hotel Address'],
+            'GSTN' => $data['GSTN'],
+            'Hotel Type' => $data['Hotel Type'],
+            'Hotel Category' => $data['Hotel Category'],
+            'Hotel Website Link' => $data['Hotel Website Link'],
+            'Hotel Information' => $data['Hotel Information'],
+            'Policy' => $data['Policy'],
+            'T&C' => $data['T&C'],
+            'Room Type' => $data['Room Type'],
+            'State' => $data['State'],
+            'Weekend Name' => $data['Weekend Name'],
+            'Hotel Chain' => $data['Hotel Chain']
+            ], JSON_PRETTY_PRINT);
+            $hotelMaster->save();
+            $insertedCount++;
+        }
+
+        return response()->json(['Status' => '1','Message' => 'Hotels saved successfully','Count' => $insertedCount]);
+            
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
+    }
 }
