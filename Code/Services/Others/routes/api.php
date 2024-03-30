@@ -132,6 +132,7 @@ Route::post('/addupdatecurrencymaster',[CurrencyMasterController::class,'store']
 
 Route::post('/hotellist',[HotelMasterController::class,'index']);
 Route::post('/addupdatehotel',[HotelMasterController::class,'store']);
+Route::post('/importhotel',[HotelMasterController::class,'hotelImport']);
 
 Route::post('/contactlist',[ContactDetailsController::class,'index']);
 Route::post('/addupdatecontact',[ContactDetailsController::class,'store']);
