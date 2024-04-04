@@ -61,6 +61,7 @@ use App\Http\Controllers\Master\TourEscortMasterController;
 use App\Http\Controllers\Master\CompanyController;
 use App\Http\Controllers\Master\CreateUpdateCompanyController;
 use App\Http\Controllers\Master\CreateUpdateUserController;
+use App\Http\Controllers\Master\TempUploadController;
 // use App\Http\Controllers\Master\NewUser;
 
 
@@ -194,6 +195,8 @@ Route::post('/usersall',[CreateUpdateUserController::class,'index']);
 Route::post('/createupdateuser',[CreateUpdateUserController::class,'store']);
 
 Route::post('/authuservalidate',[AuthoriseUserController::class,'authenticate']);
+
+Route::post('/uploaddata',[TempUploadController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================

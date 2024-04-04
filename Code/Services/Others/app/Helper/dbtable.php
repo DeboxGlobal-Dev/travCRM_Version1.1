@@ -58,6 +58,7 @@ define("_TOUR_ESCORT_PRICE_MASTER_", "others.tour_escort_Price");
 define("_TOUR_ESCORT_MASTER_", "others.tour_escort_master");
 define("_CREATE_UPDATE_COMPANY_", "others.create_update_company");
 define("_USERS_MASTER_", "others.user_master");
+define("_TEMP_UPLOAD_DATA_", "others.temp_upload_data");
 //define("_QUERY_MASTER_", "others.query_master");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
