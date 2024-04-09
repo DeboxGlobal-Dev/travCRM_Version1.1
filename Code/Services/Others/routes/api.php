@@ -63,6 +63,7 @@ use App\Http\Controllers\Master\CreateUpdateCompanyController;
 use App\Http\Controllers\Master\CreateUpdateUserController;
 use App\Http\Controllers\Master\TempUploadController;
 use App\Http\Controllers\Master\HotelImportController;
+use App\Http\Controllers\Master\RoomTypeController;
 // use App\Http\Controllers\Master\NewUser;
 
 
@@ -200,6 +201,9 @@ Route::post('/authuservalidate',[AuthoriseUserController::class,'authenticate'])
 Route::post('/uploaddata',[TempUploadController::class,'store']);
 //Route::post('/hotelimportlist',[HotelImportController::class,'hotelImport']);
 Route::post('/importdata',[HotelImportController::class,'store']);
+
+Route::post('/roomtypelist',[RoomTypeController::class,'index']);
+Route::post('/addupdateroomtype',[RoomTypeController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
