@@ -64,6 +64,7 @@ use App\Http\Controllers\Master\CreateUpdateUserController;
 use App\Http\Controllers\Master\TempUploadController;
 use App\Http\Controllers\Master\HotelImportController;
 use App\Http\Controllers\Master\RoomTypeController;
+use App\Http\Controllers\Master\OperationRestrictionController;
 // use App\Http\Controllers\Master\NewUser;
 
 
@@ -204,6 +205,9 @@ Route::post('/importdata',[HotelImportController::class,'store']);
 
 Route::post('/roomtypelist',[RoomTypeController::class,'index']);
 Route::post('/addupdateroomtype',[RoomTypeController::class,'store']);
+
+Route::post('/operationlist',[OperationRestrictionController::class,'index']);
+Route::post('/addupdateoperation',[OperationRestrictionController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
