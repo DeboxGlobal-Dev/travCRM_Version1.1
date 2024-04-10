@@ -31,10 +31,22 @@ function getName($tableName,$id){
 
 }
 
+
 function getColumnValue($tableName,$where,$val,$columnName){
     $value = DB::table($tableName)->where($where,$val)->get($columnName);
     if($value->isNotEmpty()){
         return $value[0]->$columnName;
+    }
+}
+
+function getColumn($tableName, $id, $columnName) {
+    try {
+        $result = DB::table($tableName)->where('id', $id)->get([$columnName]);
+        if ($result->isNotEmpty()){
+            return $result[0]->$columnName;
+        }
+    } catch (\Exception $e) {
+        return 'Error: ' . $e->getMessage();
     }
 }
 

@@ -29,28 +29,11 @@ class HotelMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "HotelChain" =>$post->HotelChain,
                     "HotelName" => $post->HotelName,
-                    "HotelCode" => $post->HotelCode,
-                    "HotelCategory" =>$post->HotelCategory,
-                    "HotelType" => $post->HotelType,
                     "HotelCountry" =>$post->HotelCountry,
-                    "HotelState" => $post->HotelState,
                     "HotelCity" => $post->HotelCity,
-                    "HotelPinCode" => $post->HotelPinCode,
-                    "HotelAddress" => $post->HotelAddress,
-                    "HotelLocality" => $post->HotelLocality,
-                    "HotelGSTN" => $post->HotelGSTN,
-                    "HotelWeekend" => $post->HotelWeekend,
-                    "CheckIn" => $post->CheckIn,
-                    "CheckOut" => $post->CheckOut,
-                    "HotelLink" => $post->HotelLink,
-                    "HotelInfo" => $post->HotelInfo,
-                    "HotelPolicy" => $post->HotelPolicy,
-                    "HotelTC" => $post->HotelTC,
-                    "HotelAmenties" => $post->HotelAmenties,
-                    "HotelRoomType" => $post->HotelRoomType,
-                    "HotelStatus" => ($post->Status == 1) ? 'Active' : 'Inactive',
+                    "HotelBasicDetails" => json_decode($post->HotelBasicDetails),
+                    "HotelContactDetails" => json_decode($post->HotelContactDetails),
                     "SelfSupplier" => ($post->SelfSupplier==0) ? 'No' : 'Yes',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -190,23 +173,51 @@ class HotelMasterController extends Controller
 
         call_logger('REQUEST COMES FROM Hotel Import: '.$request->getContent());
 
-        try{
+        //try{
 
-             $requestData = $request->all();
+            $requestData = $request->all();
              // $SuccessCount = 0;
              // $FailureCount = 0;
+             
                 $insertedCount = 0;
-
             foreach ($requestData as $data) {
+                
+                $Status = 1;
+                $ErrorMessage = "";
+    
+                if ($data['Hotel Name'] == "") {
+                    $Status *= 0;
+                    $ErrorMessage .= "|HotelName is missing";
+                } elseif (strlen($data['Hotel Name']) > 150) {
+                    $Status *= 0;
+                    $ErrorMessage .= "|HotelName should not contain more than 150 words";
+                }
+    
+                if ($data['Self Supplier'] == "") {
+                    $Status *= 0;
+                    $ErrorMessage .= "|SelfSupplier is Missing";
+                }
+    
+                if ($data['Hotel Country'] == "") {
+                    $Status *= 0;
+                    $ErrorMessage .= "|HotelCountry is Missing";
+                }
+                if ($data['Hotel Chain'] == "") {
+                    $Status *= 0;
+                    $ErrorMessage .= "|Hotel Chain is missing";
+                }
+    
+                if ($data['Weekend Name'] == "") {
+                    $Status *= 0;
+                    $ErrorMessage .= "|Weekend Name is missing";
+                }
+    
+                if ($data['Room Type'] == "") {
+                    $Status *= 0;
+                    $ErrorMessage .= "|Room Type is missing";
+                }
 
-             // $Status = 1;
-             // $ErrorMessage = "";
-
-             // if($data['Hotel Name'] == ""){
-             //    $Status *= 0;
-             //    $ErrorMessage .= "|HotelName is Empty";
-             // } 
-
+                if($Status == 1){
 
             $hotelMaster = new HotelMaster();
             $hotelMaster->HotelName = $data['Hotel Name'];
@@ -214,10 +225,10 @@ class HotelMasterController extends Controller
             $hotelMaster->HotelCountry = $data['Hotel Country'];
             $hotelMaster->HotelCity = $data['City'];
             $hotelMaster->created_at = now();
-            $hotelMaster->HotelData = json_encode([
+            $hotelMaster->HotelBasicDetails = json_encode([
             'Pin Code' => $data['Pin Code'],
             'Hotel Address' => $data['Hotel Address'],
-            'GSTN' => $data['GSTN'],
+            'GSTN' =>$data['GSTN'],
             'Hotel Type' => $data['Hotel Type'],
             'Hotel Category' => $data['Hotel Category'],
             'Hotel Website Link' => $data['Hotel Website Link'],
@@ -229,15 +240,28 @@ class HotelMasterController extends Controller
             'Weekend Name' => $data['Weekend Name'],
             'Hotel Chain' => $data['Hotel Chain']
             ], JSON_PRETTY_PRINT);
+            $hotelMaster->HotelContactDetails = json_encode([
+                'Division' => $data['Division'],
+                'Contact Person' => $data['Contact Person'],
+                'Designation' => $data['Designation'],
+                'Mobile no' => $data['Mobile no'],
+                'Contact Person Email Id' => $data['Contact Person Email Id']
+                ], JSON_PRETTY_PRINT);
             $hotelMaster->save();
             $insertedCount++;
-        }
-
-        return response()->json(['Status' => '1','Message' => 'Hotels saved successfully','Count' => $insertedCount]);
-            
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+        
+         return response()->json(['Status' => '1','Message' => 'Hotels saved successfully','Count' => $insertedCount]);
+    }else{
+        return response()->json(['Status'=> '1', 'Message' => 'Validation Error: ' . $ErrorMessage]);
     }
 }
+    
+    
+    
+    //  }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        // }
+    }
+}
+
