@@ -65,7 +65,7 @@ use App\Http\Controllers\Master\TempUploadController;
 use App\Http\Controllers\Master\HotelImportController;
 use App\Http\Controllers\Master\RoomTypeController;
 use App\Http\Controllers\Master\OperationRestrictionController;
-// use App\Http\Controllers\Master\NewUser;
+use App\Http\Controllers\Master\SacCodeController;
 
 
 
@@ -208,6 +208,9 @@ Route::post('/addupdateroomtype',[RoomTypeController::class,'store']);
 
 Route::post('/operationlist',[OperationRestrictionController::class,'index']);
 Route::post('/addupdateoperation',[OperationRestrictionController::class,'store']);
+
+Route::post('/saccodelist',[SacCodeController::class,'index']);
+Route::post('/addupdatesaccode',[SacCodeController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
