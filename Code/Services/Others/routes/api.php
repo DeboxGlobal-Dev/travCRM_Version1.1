@@ -66,6 +66,7 @@ use App\Http\Controllers\Master\HotelImportController;
 use App\Http\Controllers\Master\RoomTypeController;
 use App\Http\Controllers\Master\OperationRestrictionController;
 use App\Http\Controllers\Master\SacCodeController;
+use App\Http\Controllers\Master\PaymentTypeNameController;
 
 
 
@@ -211,6 +212,9 @@ Route::post('/addupdateoperation',[OperationRestrictionController::class,'store'
 
 Route::post('/saccodelist',[SacCodeController::class,'index']);
 Route::post('/addupdatesaccode',[SacCodeController::class,'store']);
+
+Route::post('/paymenttypelist',[PaymentTypeNameController::class,'index']);
+Route::post('/addupdatepaymenttype',[PaymentTypeNameController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
