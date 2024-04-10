@@ -72,7 +72,7 @@ class SeasonMasterController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    'Name' => 'required|unique:'._DB_.'.'._SEASON_MASTER_.',Name',
+                    
                     'FromDate' =>'required',
                     'ToDate' =>'required',
                 );
@@ -83,7 +83,8 @@ class SeasonMasterController extends Controller
                     return $validatordata->errors();
                 }else{
                  $savedata = SeasonMaster::create([
-                    'Name' => $request->Name,
+                    'SeasonName' => $request->SeasonName,
+                    'Name' => $request->SeasonName.' - '.date('Y',strtotime($request->FromDate)),
                     'FromDate' => $request->FromDate,
                     'ToDate' => $request->ToDate,
                     'Status' => $request->Status,
@@ -104,7 +105,6 @@ class SeasonMasterController extends Controller
                 $edit = SeasonMaster::find($id);
 
                 $businessvalidation =array(
-                    'Name' => 'required',
                     'FromDate' =>'required',
                     'ToDate' =>'required',
                 );
@@ -115,7 +115,8 @@ class SeasonMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->Name = $request->input('Name');
+                        $edit->SeasonName = $request->input('SeasonName');
+                        $edit->Name = $request->SeasonName.' - '.date('Y',strtotime($request->FromDate));
                         $edit->FromDate = $request->input('FromDate');
                         $edit->ToDate  = $request->input('ToDate');
                         $edit->Status = $request->input('Status');

@@ -12,6 +12,7 @@ class SeasonMaster extends Model
     protected $primarykey = 'id';
     protected $fillable = [
         'Name',
+        'SeasonName',
         'FromDate',
         'ToDate',
         'AddedBy',
