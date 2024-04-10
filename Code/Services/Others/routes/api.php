@@ -67,6 +67,7 @@ use App\Http\Controllers\Master\RoomTypeController;
 use App\Http\Controllers\Master\OperationRestrictionController;
 use App\Http\Controllers\Master\SacCodeController;
 use App\Http\Controllers\Master\PaymentTypeNameController;
+use App\Http\Controllers\Master\ExpenseHeadMasterController;
 
 
 
@@ -215,6 +216,9 @@ Route::post('/addupdatesaccode',[SacCodeController::class,'store']);
 
 Route::post('/paymenttypelist',[PaymentTypeNameController::class,'index']);
 Route::post('/addupdatepaymenttype',[PaymentTypeNameController::class,'store']);
+
+Route::post('/expenseheadmasterlist',[ExpenseHeadMasterController::class,'index']);
+Route::post('/addupdateexpensehead',[ExpenseHeadMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
