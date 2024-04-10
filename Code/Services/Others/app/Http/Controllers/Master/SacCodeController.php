@@ -64,7 +64,7 @@ class SacCodeController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    'ServiceType' => 'required|unique:'._DB_.'.'._OPERATION_RESTRICTION_MASTER_.',ServiceType',
+                    'ServiceType' => 'required|unique:'._DB_.'.'._SAC_CODE_MASTER_.',ServiceType',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
