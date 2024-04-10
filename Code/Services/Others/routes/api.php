@@ -69,6 +69,7 @@ use App\Http\Controllers\Master\SacCodeController;
 use App\Http\Controllers\Master\PaymentTypeNameController;
 use App\Http\Controllers\Master\ExpenseHeadMasterController;
 use App\Http\Controllers\Master\ExpenseTypeMasterController;
+use App\Http\Controllers\Master\TaxMasterController;
 
 
 
@@ -223,6 +224,9 @@ Route::post('/addupdateexpensehead',[ExpenseHeadMasterController::class,'store']
 
 Route::post('/expensetypemasterlist',[ExpenseTypeMasterController::class,'index']);
 Route::post('/addupdateexpensetype',[ExpenseTypeMasterController::class,'store']);
+
+Route::post('/taxmasterlist',[TaxMasterController::class,'index']);
+Route::post('/addupdatetax',[TaxMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================

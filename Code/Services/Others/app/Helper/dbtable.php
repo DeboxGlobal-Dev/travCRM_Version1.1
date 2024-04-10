@@ -65,6 +65,7 @@ define("_SAC_CODE_MASTER_", "others.sac_code_master");
 define("_PAYMENT_TYPE_NAME_MASTER", "others.payment_type_master");
 define("_EXPENSE_HEAD_MASTER", "others.expense_head_master");
 define("_EXPENSE_TYPE_MASTER", "others.expense_type_master");
+define("_TAX_MASTER_", "others.tax_master");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
 define("_FERRY_NAME_MASTER_", "others.ferry_name_master");
