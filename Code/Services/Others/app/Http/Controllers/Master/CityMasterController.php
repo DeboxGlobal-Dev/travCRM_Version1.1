@@ -29,6 +29,8 @@ class CityMasterController extends Controller
             $arrayDataRows[] = [
                 "Id" => $post->id,
                 "Name" => $post->Name,
+                "CountryId" => $post->CountryId,
+                "StateId" => $post->StateId,
                 "StateName" => getName(_STATE_MASTER_,$post->StateId),
                 "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
                 "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
