@@ -11,7 +11,7 @@ use App\Http\Controllers\Master\CountryMasterController;
 use App\Http\Controllers\Master\CurrencyMasterController;
 use App\Http\Controllers\Master\DestinationMasterController;
 use App\Http\Controllers\Master\DivisionMasterController;
-use App\Http\Controllers\master\HotelAdditionalMasterController;
+use App\Http\Controllers\Master\HotelAdditionalMasterController;
 use App\Http\Controllers\Master\HotelCategoryMasterController;
 use App\Http\Controllers\Master\HotelChainMasterController;
 use App\Http\Controllers\Master\HotelMasterController;
@@ -23,12 +23,12 @@ use App\Http\Controllers\Master\LeadSourceMasterController;
 use App\Http\Controllers\Master\LetterMasterController;
 use App\Http\Controllers\Master\MarketMasterController;
 use App\Http\Controllers\Master\MealPlanMasterController;
-use App\Http\Controllers\master\RestaurantMasterController;
-use App\Http\Controllers\master\RestaurantMealPlanMasterController;
+use App\Http\Controllers\Master\RestaurantMasterController;
+use App\Http\Controllers\Master\RestaurantMealPlanMasterController;
 use App\Http\Controllers\Master\RoomMasterController;
 use App\Http\Controllers\Master\SeasonMasterController;
 use App\Http\Controllers\Master\StateMasterController;
-use App\Http\Controllers\master\TourTypeMasterController;
+use App\Http\Controllers\Master\TourTypeMasterController;
 use App\Http\Controllers\Master\WeekendMasterController;
 use App\Http\Controllers\Master\AirlineMasterController;
 use App\Http\Controllers\Master\MonumentMasterController;
@@ -70,6 +70,7 @@ use App\Http\Controllers\Master\PaymentTypeNameController;
 use App\Http\Controllers\Master\ExpenseHeadMasterController;
 use App\Http\Controllers\Master\ExpenseTypeMasterController;
 use App\Http\Controllers\Master\TaxMasterController;
+
 
 
 
