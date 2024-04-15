@@ -72,6 +72,7 @@ use App\Http\Controllers\Master\ExpenseTypeMasterController;
 use App\Http\Controllers\Master\TaxMasterController;
 use App\Http\Controllers\Master\BankMasterController;
 use App\Http\Controllers\Master\ItineraryOverviewController;
+use App\Http\Controllers\Master\GitController;
 
 
 
@@ -233,6 +234,9 @@ Route::post('/addupdatetax',[TaxMasterController::class,'store']);
 
 Route::post('/bankmasterlist',[BankMasterController::class,'index']);
 Route::post('/addupdatebank',[BankMasterController::class,'store']);
+
+Route::post('/gitmasterlist',[GitController::class,'index']);
+Route::post('/addupdategit',[GitController::class,'store']);
 
 Route::post('/itineraryoverviewlist',[ItineraryOverviewController::class,'index']);
 Route::post('/addupdateitineraryoverview',[ItineraryOverviewController::class,'store']);

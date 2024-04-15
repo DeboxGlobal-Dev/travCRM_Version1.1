@@ -6,9 +6,10 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Master\ItineraryOverview;
+use App\Models\Master\Git;
 
-class ItineraryOverviewController extends Controller
+
+class GitController extends Controller
 {
     public function index(Request $request){
 
@@ -18,11 +19,11 @@ class ItineraryOverviewController extends Controller
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
-        $posts = ItineraryOverview::when($Search, function ($query) use ($Search) {
-            return $query->where('OverviewName', 'like', '%' . $Search . '%');
+        $posts = Git::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status){
             return $query->where('Status', $Status);
-        })->select('*')->orderBy('OverviewName')->get('*');
+        })->select('*')->orderBy('Name')->get('*');
 
 
         if($posts->isNotEmpty()) {
@@ -31,11 +32,16 @@ class ItineraryOverviewController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "OverviewName" => $post->OverviewName,
-                    "OverviewInformation" => $post->OverviewInformation,
-                    "HighlightInformation" => $post->HighlightInformation,
-                    "ItineraryIntroduction" => $post->ItineraryIntroduction,
-                    "ItinerarySummary" => $post->ItinerarySummary,
+                    "Destination" => $post->Destination,
+                    "Inclusion" => $post->Inclusion,
+                    "Exclusion" => $post->Exclusion,
+                    "TermsCondition" => $post->TermsCondition,
+                    "Cancelation" => $post->Cancelation,
+                    "ServiceUpgradation" => $post->ServiceUpgradation,
+                    "OptionalTour" => $post->OptionalTour,
+                    "PaymentPolicy" => $post->PaymentPolicy,
+                    "Remarks" => $post->Remarks,
+                    "SetDefault" => ($post->SetDefault == 1) ? 'Yes' : 'No',
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -64,7 +70,7 @@ class ItineraryOverviewController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    'OverviewName' => 'required|unique:'._DB_.'.'._ITINERARY_OVERVIEW_.',OverviewName',
+                    'Name' => 'required|unique:'._DB_.'.'._GIT_MASTER_.',Name',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -72,12 +78,18 @@ class ItineraryOverviewController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
-                 $savedata = ItineraryOverview::create([
-                    'OverviewName' => $request->OverviewName,
-                    'OverviewInformation' => $request->OverviewInformation,
-                    'HighlightInformation' => $request->HighlightInformation,
-                    'ItineraryIntroduction' => $request->ItineraryIntroduction,
-                    'ItinerarySummary' => $request->ItinerarySummary,
+                 $savedata = Git::create([
+                    'Name' => $request->Name,
+                    'Destination' => $request->Destination,
+                    'Inclusion' => $request->Inclusion,
+                    'Exclusion' => $request->Exclusion,
+                    'TermsCondition' => $request->TermsCondition,
+                    'Cancelation' => $request->Cancelation,
+                    'ServiceUpgradation' => $request->ServiceUpgradation,
+                    'OptionalTour' => $request->OptionalTour,
+                    'PaymentPolicy' => $request->PaymentPolicy,
+                    'Remarks' => $request->Remarks,
+                    'SetDefault' => $request->SetDefault,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -93,10 +105,10 @@ class ItineraryOverviewController extends Controller
             }else{
 
                 $id = $request->input('id');
-                $edit = ItineraryOverview::find($id);
+                $edit = Git::find($id);
 
                 $businessvalidation =array(
-                    'OverviewName' => 'required',
+                    'Name' => 'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -106,12 +118,18 @@ class ItineraryOverviewController extends Controller
                 }else{
                     if ($edit) {
 
-                        ItineraryOverview::where('id', $id)->update([
-                        'OverviewName'=>$request->input('OverviewName'),
-                        'OverviewInformation'=>$request->input('OverviewInformation'),
-                        'HighlightInformation'=>$request->input('HighlightInformation'),
-                        'ItineraryIntroduction'=>$request->input('ItineraryIntroduction'),
-                        'ItinerarySummary'=>$request->input('ItinerarySummary'),
+                        Git::where('id', $id)->update([
+                        'Name'=>$request->input('Name'),
+                        'Destination'=>$request->input('Destination'),
+                        'Inclusion'=>$request->input('Inclusion'),
+                        'Exclusion'=>$request->input('Exclusion'),
+                        'TermsCondition'=>$request->input('TermsCondition'),
+                        'Cancelation'=>$request->input('Cancelation'),
+                        'ServiceUpgradation'=>$request->input('ServiceUpgradation'),
+                        'OptionalTour'=>$request->input('OptionalTour'),
+                        'PaymentPolicy'=>$request->input('PaymentPolicy'),
+                        'Remarks'=>$request->input('Remarks'),
+                        'SetDefault'=>$request->input('SetDefault'),
                         'Status'=>$request->input('Status'),
                         'UpdatedBy'=>$request->input('UpdatedBy'),
                         //'updated_at'=>now(),
