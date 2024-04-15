@@ -67,6 +67,7 @@ define("_EXPENSE_HEAD_MASTER", "others.expense_head_master");
 define("_EXPENSE_TYPE_MASTER", "others.expense_type_master");
 define("_TAX_MASTER_", "others.tax_master");
 define("_BANK_MASTER_", "others.bank_master");
+define("_ITINERARY_OVERVIEW_", "others.itinerary_overview");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
 define("_FERRY_NAME_MASTER_", "others.ferry_name_master");
