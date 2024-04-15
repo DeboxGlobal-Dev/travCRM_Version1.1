@@ -27,17 +27,15 @@ class SeasonMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
-        //$countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-        //call_logger('REQUEST2: '.$countryName22);
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
+                    "SeasonName" => $post->SeasonName,
                     "FromDate" => $post->FromDate,
                     "ToDate" => $post->ToDate,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
@@ -72,9 +70,7 @@ class SeasonMasterController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    
-                    'FromDate' =>'required',
-                    'ToDate' =>'required',
+                    'SeasonName' =>'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -83,7 +79,7 @@ class SeasonMasterController extends Controller
                     return $validatordata->errors();
                 }else {
                     $savedata = SeasonMaster::create([
-                        'SeasonName' => $request->SeasonName,
+                        'SeasonName' => $request->input('SeasonName'),
                         'Name' => $request->SeasonName.' - '.date('Y',strtotime($request->FromDate)),
                         'FromDate' => $request->FromDate,
                         'ToDate' => $request->ToDate,
@@ -105,8 +101,7 @@ class SeasonMasterController extends Controller
                 $edit = SeasonMaster::find($id);
 
                 $businessvalidation =array(
-                    'FromDate' =>'required',
-                    'ToDate' =>'required',
+                    'SeasonName' =>'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);

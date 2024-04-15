@@ -128,7 +128,7 @@ Route::post('/addupdaterestaurantmeal',[RestaurantMealPlanMasterController::clas
 Route::post('/roomlist',[RoomMasterController::class,'index']);
 Route::post('/addupdateroom',[RoomMasterController::class,'store']);
 
-Route::get('/seasonlist',[SeasonMasterController::class,'index']);
+Route::post('/seasonlist',[SeasonMasterController::class,'index']);
 Route::post('/addupdateseason',[SeasonMasterController::class,'store']);
 
 Route::post('/tourlist',[TourTypeMasterController::class,'index']);
