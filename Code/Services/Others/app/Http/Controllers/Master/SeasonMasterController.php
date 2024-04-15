@@ -38,8 +38,8 @@ class SeasonMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
-                    "FromDate " => $post->FromDate,
-                    "ToDate " => $post->ToDate,
+                    "FromDate" => $post->FromDate,
+                    "ToDate" => $post->ToDate,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -67,7 +67,7 @@ class SeasonMasterController extends Controller
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE SEASON: '.$request->getContent());
 
-        try{
+        //try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -81,15 +81,15 @@ class SeasonMasterController extends Controller
 
                 if($validatordata->fails()){
                     return $validatordata->errors();
-                }else{
-                 $savedata = SeasonMaster::create([
-                    'SeasonName' => $request->SeasonName,
-                    'Name' => $request->SeasonName.' - '.date('Y',strtotime($request->FromDate)),
-                    'FromDate' => $request->FromDate,
-                    'ToDate' => $request->ToDate,
-                    'Status' => $request->Status,
-                    'AddedBy' => $request->AddedBy,
-                    'created_at' => now(),
+                }else {
+                    $savedata = SeasonMaster::create([
+                        'SeasonName' => $request->SeasonName,
+                        'Name' => $request->SeasonName.' - '.date('Y',strtotime($request->FromDate)),
+                        'FromDate' => $request->FromDate,
+                        'ToDate' => $request->ToDate,
+                        'Status' => isset($request->Status), // Here is where Status is set
+                        'AddedBy' => $request->AddedBy,
+                        'created_at' => now(),
                 ]);
 
                 if ($savedata) {
@@ -130,10 +130,10 @@ class SeasonMasterController extends Controller
                     }
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+        // }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        //}
     }
 
 
