@@ -73,6 +73,7 @@ use App\Http\Controllers\Master\TaxMasterController;
 use App\Http\Controllers\Master\BankMasterController;
 use App\Http\Controllers\Master\ItineraryOverviewController;
 use App\Http\Controllers\Master\GitController;
+use App\Http\Controllers\Master\FitController;
 
 
 
@@ -237,6 +238,9 @@ Route::post('/addupdatebank',[BankMasterController::class,'store']);
 
 Route::post('/gitmasterlist',[GitController::class,'index']);
 Route::post('/addupdategit',[GitController::class,'store']);
+
+Route::post('/fitmasterlist',[FitController::class,'index']);
+Route::post('/addupdatefit',[FitController::class,'store']);
 
 Route::post('/itineraryoverviewlist',[ItineraryOverviewController::class,'index']);
 Route::post('/addupdateitineraryoverview',[ItineraryOverviewController::class,'store']);
