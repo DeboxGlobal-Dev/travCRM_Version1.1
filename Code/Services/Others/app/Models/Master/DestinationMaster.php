@@ -12,7 +12,7 @@ class DestinationMaster extends Model
     protected $primarykey = "id";
     protected $fillable = [
      'CountryId',
-     'State',
+     'StateId',
      'Name',
      'Description',
      'SetDefault',
