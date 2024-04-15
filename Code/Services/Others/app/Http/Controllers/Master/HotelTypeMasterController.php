@@ -37,6 +37,7 @@ class HotelTypeMasterController extends Controller
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
+                    "ProposalType" => $post->ProposalType,
                     "UploadKeyword" => $post->UploadKeyword,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
@@ -82,6 +83,7 @@ class HotelTypeMasterController extends Controller
                  $savedata = HotelTypeMaster::create([
                     'Name' => $request->Name,
                     'UploadKeyword' => $request->UploadKeyword,
+                    'ProposalType' => $request->ProposalType,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -112,6 +114,7 @@ class HotelTypeMasterController extends Controller
                     if ($edit) {
                         $edit->Name = $request->input('Name');
                         $edit->UploadKeyword = $request->input('UploadKeyword');
+                        $edit->ProposalType = $request->input('ProposalType');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();

@@ -13,6 +13,7 @@ class HotelTypeMaster extends Model
     protected $fillable = [
         'Name',
         'UploadKeyword',
+        'ProposalType',
         'AddedBy',
         'UpdatedBy',
         'Status',
