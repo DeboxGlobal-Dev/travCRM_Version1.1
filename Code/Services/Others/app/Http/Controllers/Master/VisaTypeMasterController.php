@@ -22,21 +22,21 @@ class VisaTypeMasterController extends Controller
         $Status = $request->input('Status');
 
         $posts = VisaTypeMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('VisaType', 'like', '%' . $Search . '%');
+            return $query->where('Name', 'like', '%' . $Search . '%');
         })->when($id, function ($query) use ($id) {
             return $query->where('id',  $id );
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->orderBy('VisaType')->get('*');
+        })->select('*')->orderBy('Name')->get('*');
 
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "VisaType" => $post->VisaType,
+                    "Name" => $post->Name,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -68,7 +68,7 @@ class VisaTypeMasterController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    'VisaType' => 'required|unique:'._DB_.'.'._VISA_TYPE_MASTER_.',VisaType',
+                    'Name' => 'required|unique:'._DB_.'.'._VISA_TYPE_MASTER_.',Name',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -77,7 +77,7 @@ class VisaTypeMasterController extends Controller
                     return $validatordata->errors();
                 }else{
                  $savedata = VisaTypeMaster::create([
-                    'VisaType' => $request->VisaType,
+                    'Name' => $request->Name,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -96,7 +96,7 @@ class VisaTypeMasterController extends Controller
                 $edit = VisaTypeMaster::find($id);
 
                 $businessvalidation =array(
-                    'VisaType' => 'required',
+                    'Name' => 'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -105,7 +105,7 @@ class VisaTypeMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->VisaType = $request->input('VisaType');
+                        $edit->Name = $request->input('Name');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
