@@ -70,6 +70,7 @@ use App\Http\Controllers\Master\PaymentTypeNameController;
 use App\Http\Controllers\Master\ExpenseHeadMasterController;
 use App\Http\Controllers\Master\ExpenseTypeMasterController;
 use App\Http\Controllers\Master\TaxMasterController;
+use App\Http\Controllers\Master\BankMasterController;
 
 
 
@@ -127,7 +128,7 @@ Route::post('/addupdaterestaurantmeal',[RestaurantMealPlanMasterController::clas
 Route::post('/roomlist',[RoomMasterController::class,'index']);
 Route::post('/addupdateroom',[RoomMasterController::class,'store']);
 
-Route::post('/seasonlist',[SeasonMasterController::class,'index']);
+Route::get('/seasonlist',[SeasonMasterController::class,'index']);
 Route::post('/addupdateseason',[SeasonMasterController::class,'store']);
 
 Route::post('/tourlist',[TourTypeMasterController::class,'index']);
@@ -228,6 +229,9 @@ Route::post('/addupdateexpensetype',[ExpenseTypeMasterController::class,'store']
 
 Route::post('/taxmasterlist',[TaxMasterController::class,'index']);
 Route::post('/addupdatetax',[TaxMasterController::class,'store']);
+
+Route::post('/bankmasterlist',[BankMasterController::class,'index']);
+Route::post('/addupdatebank',[BankMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
