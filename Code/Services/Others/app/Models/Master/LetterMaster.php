@@ -11,9 +11,6 @@ class LetterMaster extends Model
     protected $table = _LETTER_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'FromDestination',
-        'ToDestination',
-        'TransferMode',
         'Name',
         'GreetingNote',
         'WelcomeNote',
