@@ -33,11 +33,13 @@ class VisaCostMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Country" => $post->Country,
+                    "CountryName" => getName(_COUNTRY_MASTER_,$post->Country),
                     "VisaType" => $post->VisaType,
+                    "VisaTypeName" => getName(_VISA_TYPE_MASTER_,$post->VisaType),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,

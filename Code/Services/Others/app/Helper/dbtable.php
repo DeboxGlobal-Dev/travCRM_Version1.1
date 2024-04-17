@@ -77,6 +77,11 @@ define("_FERRY_COMPANY_MASTER_", "others.ferry_company_master");
 define("_DRIVER_MASTER_", "others.driver_master");
 define("_MODULE_MASTER_", "others.module_master");
 
+define("_TRANSFER_MASTER_", "others.transfer_master");
+define("_TRANSPORT_MASTER_", "others.transport_master");
+define("_FERRY_PRICE_MASTER_", "others.ferry_price_master");
+define("_FLEET_MASTER_", "others.fleet_master");
+
 /////////////////////////////END HERE///////////////////////////
 
 

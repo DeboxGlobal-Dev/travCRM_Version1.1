@@ -74,6 +74,10 @@ use App\Http\Controllers\Master\BankMasterController;
 use App\Http\Controllers\Master\ItineraryOverviewController;
 use App\Http\Controllers\Master\GitController;
 use App\Http\Controllers\Master\FitController;
+use App\Http\Controllers\Master\TransfermasterController;
+use App\Http\Controllers\Master\TransportMasterController;
+use App\Http\Controllers\Master\FerryPriceMasterController;
+use App\Http\Controllers\Master\FleetMasterController;
 
 
 
@@ -244,6 +248,18 @@ Route::post('/addupdatefit',[FitController::class,'store']);
 
 Route::post('/itineraryoverviewlist',[ItineraryOverviewController::class,'index']);
 Route::post('/addupdateitineraryoverview',[ItineraryOverviewController::class,'store']);
+
+Route::post('/transfermasterlist',[TransfermasterController::class,'index']);
+Route::post('/addupdatetransfermaster',[TransfermasterController::class,'store']);
+
+Route::post('/transportmasterlist',[TransportMasterController::class,'index']);
+Route::post('/addupdatetransportmaster',[TransportMasterController::class,'store']);
+
+Route::post('/ferrypricemasterlist',[FerryPriceMasterController::class,'index']);
+Route::post('/addupdateferrypricemaster',[FerryPriceMasterController::class,'store']);
+
+Route::post('/fleetmasterlist',[FleetMasterController::class,'index']);
+Route::post('/addupdatefleetmaster',[FleetMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
