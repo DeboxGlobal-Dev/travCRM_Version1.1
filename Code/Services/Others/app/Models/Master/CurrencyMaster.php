@@ -12,7 +12,7 @@ class CurrencyMaster extends Model
     protected $primarykey = "id";
     protected $fillable = [
      'CountryId',
-     'CountryCode',
+     'CurrencyCode',
      'CurrencyName',
      'Status',
      'SetDefault',
