@@ -48,7 +48,7 @@ define("_CRUISE_COMPANY_MASTER_", "transport.cruise_company_master");
 define("_CRUISE_NAME_MASTER_", "transport.cruise_name_master");
 define("_AIRLINE_MASTER_", "sightseeing.airline_master");
 define("_TRAIN_MASTER_", "sightseeing.train_master");
-define("_MONUMENT_MASTER_", "sightseeing.monument_master");
+define("_MONUMENT_MASTER_", "others.monument_master");
 define("_SIGHTSEEING_MASTER_", "sightseeing.sightseeing_master");
 define("_VISA_TYPE_MASTER_", "others.visa_type_master");
 define("_VISA_COST_MASTER_", "others.visa_cost_master");
