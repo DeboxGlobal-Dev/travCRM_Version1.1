@@ -131,12 +131,25 @@ class CruiseNameMasterController extends Controller
                      return $validatordata->errors();
                     }else{
                         if ($edit) {
+                            $CruiseCompany = $request->input('CruiseCompany');
+                    $CruiseName = $request->input('CruiseName');
+                    $Status = $request->input('Status');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
+
                             $edit->CruiseCompany = $request->input('CruiseCompany');
                             $edit->CruiseName = $request->input('CruiseName');
                             $edit->Status = $request->input('Status');
-                            $edit->ImageName = $request->input('ImageName');
-                            $base64Image = $request->input('ImageData');
-                            $edit->ImageData = base64_decode($base64Image);
+                            $edit->ImageName = $ImageName;
+                            $edit->ImageData = $filename;
                             $edit->UpdatedBy = $request->input('UpdatedBy');
                             $edit->updated_at = now();
                             $edit->save();

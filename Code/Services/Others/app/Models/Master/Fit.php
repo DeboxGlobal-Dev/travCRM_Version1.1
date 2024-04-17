@@ -5,17 +5,24 @@ namespace App\Models\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CurrencyMaster extends Model
+class Fit extends Model
 {
     use HasFactory;
-    protected $table = _CURRENCY_MASTER_;
+    protected $table = _FIT_MASTER_;
     protected $primarykey = "id";
     protected $fillable = [
-     'CountryId',
-     'CurrencyCode',
-     'CurrencyName',
-     'Status',
+     'Name',
+     'Destination',
+     'Inclusion',
+     'Exclusion',
+     'TermsCondition',
+     'Cancelation',
+     'ServiceUpgradation',
+     'OptionalTour',
+     'PaymentPolicy',
+     'Remarks',
      'SetDefault',
+     'Status',
      'AddedBy',
      'UpdatedBy',
      'created_at',

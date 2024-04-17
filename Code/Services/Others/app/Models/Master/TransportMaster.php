@@ -1,19 +1,21 @@
 <?php
 
-namespace App\Models\Master;
+namespace App\Models\master;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LetterMaster extends Model
+class TransportMaster extends Model
 {
     use HasFactory;
-    protected $table = _LETTER_MASTER_;
+    protected $table = _TRANSPORT_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
         'Name',
-        'GreetingNote',
-        'WelcomeNote',
+        'Destinations',
+        'TransferType',
+        'Detail',
+        'Default',
         'Status',
         'AddedBy',
         'UpdatedBy',

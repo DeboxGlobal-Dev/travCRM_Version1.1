@@ -71,6 +71,13 @@ use App\Http\Controllers\Master\ExpenseHeadMasterController;
 use App\Http\Controllers\Master\ExpenseTypeMasterController;
 use App\Http\Controllers\Master\TaxMasterController;
 use App\Http\Controllers\Master\BankMasterController;
+use App\Http\Controllers\Master\ItineraryOverviewController;
+use App\Http\Controllers\Master\GitController;
+use App\Http\Controllers\Master\FitController;
+use App\Http\Controllers\Master\TransfermasterController;
+use App\Http\Controllers\Master\TransportMasterController;
+use App\Http\Controllers\Master\FerryPriceMasterController;
+use App\Http\Controllers\Master\FleetMasterController;
 
 
 
@@ -171,8 +178,8 @@ Route::post('/addupdateferryname',[FerryNameMasterController::class,'store']);
 Route::post('/ferrycompanylist',[FerryCompanyMasterController::class,'index']);
 Route::post('/addupdateferrycompany',[FerryCompanyMasterController::class,'store']);
 
-// Route::post('/drivermasterlist',[DriverMasterController::class,'index']);
-// Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
+Route::post('/drivermasterlist',[DriverMasterController::class,'index']);
+Route::post('/addupdatedrivermaster',[DriverMasterController::class,'store']);
 
 Route::post('/modulemasterlist',[ModuleMasterController::class,'index']);
 Route::post('/addupdatemodulemaster',[ModuleMasterController::class,'store']);
@@ -232,6 +239,27 @@ Route::post('/addupdatetax',[TaxMasterController::class,'store']);
 
 Route::post('/bankmasterlist',[BankMasterController::class,'index']);
 Route::post('/addupdatebank',[BankMasterController::class,'store']);
+
+Route::post('/gitmasterlist',[GitController::class,'index']);
+Route::post('/addupdategit',[GitController::class,'store']);
+
+Route::post('/fitmasterlist',[FitController::class,'index']);
+Route::post('/addupdatefit',[FitController::class,'store']);
+
+Route::post('/itineraryoverviewlist',[ItineraryOverviewController::class,'index']);
+Route::post('/addupdateitineraryoverview',[ItineraryOverviewController::class,'store']);
+
+Route::post('/transfermasterlist',[TransfermasterController::class,'index']);
+Route::post('/addupdatetransfermaster',[TransfermasterController::class,'store']);
+
+Route::post('/transportmasterlist',[TransportMasterController::class,'index']);
+Route::post('/addupdatetransportmaster',[TransportMasterController::class,'store']);
+
+Route::post('/ferrypricemasterlist',[FerryPriceMasterController::class,'index']);
+Route::post('/addupdateferrypricemaster',[FerryPriceMasterController::class,'store']);
+
+Route::post('/fleetmasterlist',[FleetMasterController::class,'index']);
+Route::post('/addupdatefleetmaster',[FleetMasterController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================

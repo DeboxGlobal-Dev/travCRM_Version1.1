@@ -40,7 +40,7 @@ class CurrencyMasterController extends Controller
               $arrayDataRows[] = [
                   "Id" => $post->id,
                   "CountryName" => getName(_COUNTRY_MASTER_, $post->CountryId),
-                  "CountryCode" => $post->CountryCode,
+                  "CurrencyCode" => $post->CountryCode,
                   "Currencyname" => $post->CurrencyName,
                   "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                   "SetDefault" => ($post->SetDefault == 1) ? 'Yes' : 'No',
@@ -84,7 +84,7 @@ class CurrencyMasterController extends Controller
               }else{
                $savedata = CurrencyMaster::create([
                 'CountryId' => $request->CountryId,
-                  'CountryCode' => $request->CountryCode,
+                  'CurrencyCode' => $request->CurrencyCode,
                   'CurrencyName' => $request->CurrencyName,
                   'Status' => $request->Status,
                   'SetDefault' => $request->SetDefault,
@@ -105,7 +105,7 @@ class CurrencyMasterController extends Controller
               $edit = CurrencyMaster::find($id);
 
               $businessvalidation =array(
-                  'CountryCode' => 'required',
+                  'CurrencyCode' => 'required',
               );
 
               $validatordata = validator::make($request->all(), $businessvalidation);
@@ -115,7 +115,7 @@ class CurrencyMasterController extends Controller
               }else{
                   if ($edit) {
                       $edit->CountryId = $request->input('CountryId');
-                      $edit->CountryCode = $request->input('CountryCode');
+                      $edit->CurrencyCode = $request->input('CurrencyCode');
                       $edit->CurrencyName = $request->input('CurrencyName');
                       $edit->Status = $request->input('Status');
                       $edit->SetDefault = $request->input('SetDefault');

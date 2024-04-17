@@ -11,7 +11,7 @@ class VisaTypeMaster extends Model
     protected $table = _VISA_TYPE_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'VisaType',
+        'Name',
         'Status',
         'AddedBy',
         'UpdatedBy',

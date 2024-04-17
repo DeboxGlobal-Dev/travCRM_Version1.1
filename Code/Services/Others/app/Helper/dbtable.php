@@ -48,7 +48,7 @@ define("_CRUISE_COMPANY_MASTER_", "transport.cruise_company_master");
 define("_CRUISE_NAME_MASTER_", "transport.cruise_name_master");
 define("_AIRLINE_MASTER_", "sightseeing.airline_master");
 define("_TRAIN_MASTER_", "sightseeing.train_master");
-define("_MONUMENT_MASTER_", "sightseeing.monument_master");
+define("_MONUMENT_MASTER_", "others.monument_master");
 define("_SIGHTSEEING_MASTER_", "sightseeing.sightseeing_master");
 define("_VISA_TYPE_MASTER_", "others.visa_type_master");
 define("_VISA_COST_MASTER_", "others.visa_cost_master");
@@ -67,12 +67,20 @@ define("_EXPENSE_HEAD_MASTER", "others.expense_head_master");
 define("_EXPENSE_TYPE_MASTER", "others.expense_type_master");
 define("_TAX_MASTER_", "others.tax_master");
 define("_BANK_MASTER_", "others.bank_master");
+define("_ITINERARY_OVERVIEW_", "others.itinerary_overview");
+define("_GIT_MASTER_", "others.git_master");
+define("_FIT_MASTER_", "others.fit_master");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
 define("_FERRY_NAME_MASTER_", "others.ferry_name_master");
 define("_FERRY_COMPANY_MASTER_", "others.ferry_company_master");
 define("_DRIVER_MASTER_", "others.driver_master");
 define("_MODULE_MASTER_", "others.module_master");
+
+define("_TRANSFER_MASTER_", "others.transfer_master");
+define("_TRANSPORT_MASTER_", "others.transport_master");
+define("_FERRY_PRICE_MASTER_", "others.ferry_price_master");
+define("_FLEET_MASTER_", "others.fleet_master");
 
 /////////////////////////////END HERE///////////////////////////
 

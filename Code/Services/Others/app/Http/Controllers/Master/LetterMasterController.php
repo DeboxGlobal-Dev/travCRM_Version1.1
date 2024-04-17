@@ -29,9 +29,6 @@ class LetterMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "FromDestination" => $post->FromDestination,
-                    "ToDestination" => $post->ToDestination,
-                    "TransferMode" => $post->TransferMode,
                     "Name" => $post->Name,
                     "GreetingNote" => $post->GreetingNote,
                     "WelcomeNote" => $post->WelcomeNote,
@@ -72,9 +69,6 @@ class LetterMasterController extends Controller
                     return $validatordata->errors();
                 }else{
                  $savedata = LetterMaster::create([
-                    'FromDestination' => $request->FromDestination,
-                    'ToDestination' => $request->ToDestination,
-                    'TransferMode' => $request->TransferMode,
                     'Name' => $request->Name,
                     'GreetingNote' => $request->GreetingNote,
                     'WelcomeNote' => $request->WelcomeNote,
@@ -105,9 +99,6 @@ class LetterMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->FromDestination = $request->input('FromDestination');
-                        $edit->ToDestination = $request->input('ToDestination');
-                        $edit->TransferMode = $request->input('TransferMode');
                         $edit->Name = $request->input('Name');
                         $edit->GreetingNote = $request->input('GreetingNote');
                         $edit->WelcomeNote = $request->input('WelcomeNote');

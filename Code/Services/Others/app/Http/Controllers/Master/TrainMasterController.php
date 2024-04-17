@@ -65,7 +65,7 @@ class TrainMasterController extends Controller
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE LEAD: '.$request->getContent());
 
-        try{
+       // try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -79,11 +79,14 @@ class TrainMasterController extends Controller
                     return $validatordata->errors();
                 }else{
 
+                    $Name = $request->input('Name');
                     $ImageName = $request->input('ImageName');
                     $base64Image = $request->input('ImageData');
                     $ImageData = base64_decode($base64Image);
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
                     $filename = uniqid() . '.png';
-
                     Storage::disk('public')->put($filename, $ImageData);
 
                  $savedata = TrainMaster::create([
@@ -117,22 +120,20 @@ class TrainMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $Name = $request->input('Name');
-                        $ImageName = $request->input('ImageName');
-                        $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
-                        $Status = $request->input('Status');
-                        $AddedBy = $request->input('AddedBy');
-                        $UpdatedBy = $request->input('UpdatedBy');
-    
-                        $filename = uniqid() . '.png';
-    
-                        // print_r($filename);die();
-                        Storage::disk('public')->put($filename, $ImageData);
+                    $Name = $request->input('Name');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+                    $filename = uniqid() . '.png';
+
+                    Storage::disk('public')->put($filename, $ImageData);
 
                         $edit->Name = $request->input('Name');
-                        $edit->ImageName = $request->input('ImageName');
-                        $edit->ImageData = $request->input('ImageData');
+                        $edit->ImageName = $ImageName;
+                        $edit->ImageData = $filename;
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -144,10 +145,10 @@ class TrainMasterController extends Controller
                     }
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+        // }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        // }
     }
 
 

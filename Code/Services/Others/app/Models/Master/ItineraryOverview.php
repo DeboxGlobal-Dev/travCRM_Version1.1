@@ -5,17 +5,18 @@ namespace App\Models\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CurrencyMaster extends Model
+class ItineraryOverview extends Model
 {
     use HasFactory;
-    protected $table = _CURRENCY_MASTER_;
+    protected $table = _ITINERARY_OVERVIEW_;
     protected $primarykey = "id";
     protected $fillable = [
-     'CountryId',
-     'CurrencyCode',
-     'CurrencyName',
+     'OverviewName',
+     'OverviewInformation',
+     'HighlightInformation',
+     'ItineraryIntroduction',
+     'ItinerarySummary',
      'Status',
-     'SetDefault',
      'AddedBy',
      'UpdatedBy',
      'created_at',

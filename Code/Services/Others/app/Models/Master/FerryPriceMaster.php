@@ -5,15 +5,18 @@ namespace App\Models\Master;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class LetterMaster extends Model
+class FerryPriceMaster extends Model
 {
     use HasFactory;
-    protected $table = _LETTER_MASTER_;
+    protected $table = _FERRY_PRICE_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
         'Name',
-        'GreetingNote',
-        'WelcomeNote',
+        'FromDestination',
+        'ToDestination',
+        'ArrivalTime',
+        'DepartureTime',
+        'Detail',
         'Status',
         'AddedBy',
         'UpdatedBy',

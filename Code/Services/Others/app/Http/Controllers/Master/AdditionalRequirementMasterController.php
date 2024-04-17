@@ -62,7 +62,7 @@ class AdditionalRequirementMasterController extends Controller
 
     public function store(Request $request)
     {
-        try{
+       // try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -135,6 +135,25 @@ class AdditionalRequirementMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
+
+                        $Name = $request->input('Name');
+                        $DestinationId = $request->input('DestinationId');
+                        $CurrencyId = $request->input('CurrencyId');
+                        $CostType = $request->input('CostType');
+                        $AdultCost = $request->input('AdultCost');
+                        $ChildCost = $request->input('ChildCost');
+                        $InfantCost = $request->input('InfantCost');
+                        $ImageName = $request->input('ImageName');
+                        $base64Image = $request->input('ImageData');
+                        $ImageData = base64_decode($base64Image);
+                        $Details = $request->input('Details');
+                        $Status = $request->input('Status');
+                        $AddedBy = $request->input('AddedBy');
+                        $UpdatedBy = $request->input('UpdatedBy');
+    
+                        $filename = uniqid() . '.png';
+                        Storage::disk('public')->put($filename, $ImageData);
+
                         $edit->Name = $request->input('Name');
                         $edit->DestinationId = $request->input('DestinationId');
                         $edit->CurrencyId = $request->input('CurrencyId');
@@ -142,9 +161,8 @@ class AdditionalRequirementMasterController extends Controller
                         $edit->AdultCost = $request->input('AdultCost');
                         $edit->ChildCost = $request->input('ChildCost');
                         $edit->InfantCost = $request->input('InfantCost');
-                        $edit->ImageName = $request->input('ImageName');
-                        $base64Image = $request->input('ImageData');
-                        $edit->ImageData = base64_decode($base64Image);
+                        $edit->ImageName = $ImageName;
+                        $edit->ImageData = $filename;
                         $edit->Details = $request->input('Details');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
@@ -157,10 +175,10 @@ class AdditionalRequirementMasterController extends Controller
                     }
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
+        // }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        // }
     }
 
 
