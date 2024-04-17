@@ -33,7 +33,7 @@ class VisaTypeMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "Name" => $post->Name,
