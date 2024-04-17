@@ -177,8 +177,8 @@ class BankMasterController extends Controller
                         $edit->BeneficiaryName = $request->input('BeneficiaryName');
                         $edit->BranchIfsc = $request->input('BranchIfsc');
                         $edit->BranchSwiftCode = $request->input('BranchSwiftCode');
-                        $edit->ImageName = $request->input('ImageName');
-                        $edit->ImageData = $request->input('ImageData');
+                        $edit->ImageName = $ImageName;
+                        $edit->ImageData = $filename;
                         $edit->ShowHide = $request->input('ShowHide');
                         $edit->SetDefault = $request->input('SetDefault');
                         $edit->Status = $request->input('Status');
