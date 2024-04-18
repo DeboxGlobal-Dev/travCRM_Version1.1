@@ -57,203 +57,145 @@ class HotelMasterController extends Controller
         }
     }
 
-    public function store(Request $request){
-
-        call_logger('REQUEST COMES FROM ADD/UPDATE Hotel Rate: '.$request->getContent());
-
-        try{
-            $id = $request->input('id');
-            if($id == '') {
-               // $validatordata = validator::make($request->all(), $businessvalidation);
-
-                // if($validatordata->fails()){
-                //     return $validatordata->errors();
-                // }else{
-                    $dataList = $request->DataList;
-                    $hotelData = [];
-                    foreach ($dataList as $data) {
-                        $hotelData[] = [
-                            "HotelChain" => $data['HotelChain'],
-                            "HotelName" => $data['HotelName'],
-                            "HotelCode" => $data['HotelCode'],
-                            "HotelCategory" => $data['HotelCategory'],
-                            "HotelType" => $data['HotelType'],
-                            "HotelCountry" => $data['HotelCountry'],
-                            "HotelState" => $data['HotelState'],
-                            "HotelCity" => $data['HotelCity'],
-                            "HotelPinCode" => $data['HotelPinCode'],
-                            "HotelAddress" => $data['HotelAddress'],
-                            "HotelLocality" => $data['HotelLocality'],
-                            "HotelGSTN" => $data['HotelGSTN'],
-                            "HotelWeekend" => $data['HotelWeekend'],
-                            "CheckIn" => $data['CheckIn'],
-                            "CheckOut" => $data['CheckOut'],
-                            "HotelLink" => $data['HotelLink'],
-                            "HotelInfo" => $data['HotelInfo'],
-                            "HotelPolicy" => $data['HotelPolicy'],
-                            "HotelTC" => $data['HotelTC'],
-                            "HotelAmenties" => $data['HotelAmenties'],
-                            "HotelRoomType" => $data['HotelRoomType'],
-                            "SelfSupplier" => $data['SelfSupplier'],
-                            "HotelStatus" => $data['HotelStatus'],
-                            "AddedBy" => $data['AddedBy'],
-                            'created_at' => now(),
-                            'updated_at' => now(), // Assuming you want to update 'updated_at' field as well
-                        ];
-                    }
-                    
-                    // Bulk insert the data into the table
-                    $count = count($hotelData);
-                    $savedata = HotelMaster::insert($hotelData);
-                
-                if ($savedata) {
-                    return response()->json([
-                    'Status' => 1, 
-                    'TotalSuccess'=> $count,
-                    'Message' => 'Data added successfully!']);
-                } else {
-                    return response()->json(['Status' => 0, 'Message' =>'Failed to add data.'], 500);
-                }
-             // }
-
-            }else{
-
-                $id = $request->input('id');
-                $edit = HotelMaster::find($id);
-
-                $businessvalidation =array(
-                    'HotelName' => 'required',
-                );
-
-                $validatordata = validator::make($request->all(), $businessvalidation);
-
-                if($validatordata->fails()){
-                 return $validatordata->errors();
-                }else{
-                    if ($edit) {
-                        $edit->HotelChain = $request->input('HotelChain');
-                        $edit->HotelName = $request->input('HotelName');
-                        $edit->HotelCode = $request->input('HotelCode');
-                        $edit->HotelCategory = $request->input('HotelCategory');
-                        $edit->HotelType = $request->input('HotelType');
-                        $edit->HotelCountry = $request->input('HotelCountry');
-                        $edit->HotelState = $request->input('HotelState');
-                        $edit->HotelCity = $request->input('HotelCity');
-                        $edit->HotelPinCode = $request->input('HotelPinCode');
-                        $edit->HotelAddress = $request->input('HotelAddress');
-                        $edit->HotelLocality = $request->input('HotelLocality');
-                        $edit->HotelGSTN = $request->input('HotelGSTN');
-                        $edit->HotelWeekend = $request->input('HotelWeekend');
-                        $edit->CheckIn = $request->input('CheckIn');
-                        $edit->CheckOut = $request->input('CheckOut');
-                        $edit->HotelLink = $request->input('HotelLink');
-                        $edit->HotelInfo = $request->input('HotelInfo');
-                        $edit->HotelPolicy = $request->input('HotelPolicy');
-                        $edit->HotelTC = $request->input('HotelTC');
-                        $edit->HotelAmenties = $request->input('HotelAmenties');
-                        $edit->HotelRoomType = $request->input('HotelRoomType');
-                        $edit->SelfSupplier = $request->input('SelfSupplier');
-                        $edit->HotelStatus = $request->input('HotelStatus');
-                        $edit->UpdatedBy = $request->input('UpdatedBy');
-                        $edit->updated_at = now();
-                        $edit->save();
-
-                        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
-                    } else {
-                        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
-                    }
-                }
-            }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        }
-    }
-     public function hotelImport(Request $request){
+    
+     public function store(Request $request){
 
         call_logger('REQUEST COMES FROM Hotel Import: '.$request->getContent());
 
         //try{
+            $id = $request->input('id');
+            
 
             $requestData = $request->all();
-             // $SuccessCount = 0;
-             // $FailureCount = 0;
              
-                $insertedCount = 0;
-            foreach ($requestData as $data) {
-                
+             
+                $insertedCount = 0;                
                 $Status = 1;
                 $ErrorMessage = "";
     
-                if ($data['Hotel Name'] == "") {
+                if ($requestData['Hotel Name'] == "") {
                     $Status *= 0;
                     $ErrorMessage .= "|HotelName is missing";
-                } elseif (strlen($data['Hotel Name']) > 150) {
+                } elseif (strlen($requestData['Hotel Name']) > 150) {
                     $Status *= 0;
                     $ErrorMessage .= "|HotelName should not contain more than 150 words";
                 }
     
-                if ($data['Self Supplier'] == "") {
+                if ($requestData['Self Supplier'] == "") {
                     $Status *= 0;
                     $ErrorMessage .= "|SelfSupplier is Missing";
                 }
     
-                if ($data['Hotel Country'] == "") {
+                if ($requestData['Hotel Country'] == "") {
                     $Status *= 0;
                     $ErrorMessage .= "|HotelCountry is Missing";
                 }
-                if ($data['Hotel Chain'] == "") {
+                if ($requestData['Hotel Chain'] == "") {
                     $Status *= 0;
                     $ErrorMessage .= "|Hotel Chain is missing";
                 }
     
-                if ($data['Weekend Name'] == "") {
+                if ($requestData['Weekend Name'] == "") {
                     $Status *= 0;
                     $ErrorMessage .= "|Weekend Name is missing";
                 }
     
-                if ($data['Room Type'] == "") {
+                if ($requestData['Room Type'] == "") {
                     $Status *= 0;
                     $ErrorMessage .= "|Room Type is missing";
                 }
 
                 if($Status == 1){
+                    if($id == '') {
 
             $hotelMaster = new HotelMaster();
-            $hotelMaster->HotelName = $data['Hotel Name'];
-            $hotelMaster->SelfSupplier = $data['Self Supplier'];
-            $hotelMaster->HotelCountry = $data['Hotel Country'];
-            $hotelMaster->HotelCity = $data['City'];
+            $hotelMaster->HotelName = $requestData['Hotel Name'];
+            $hotelMaster->SelfSupplier = $requestData['Self Supplier'];
+            $hotelMaster->HotelCountry = $requestData['Hotel Country'];
+            $hotelMaster->HotelCity = $requestData['City'];
+            $hotelMaster->AddedBy = $requestData['AddedBy'];
             $hotelMaster->created_at = now();
             $hotelMaster->HotelBasicDetails = json_encode([
-            'Pin Code' => $data['Pin Code'],
-            'Hotel Address' => $data['Hotel Address'],
-            'GSTN' =>$data['GSTN'],
-            'Hotel Type' => $data['Hotel Type'],
-            'Hotel Category' => $data['Hotel Category'],
-            'Hotel Website Link' => $data['Hotel Website Link'],
-            'Hotel Information' => $data['Hotel Information'],
-            'Policy' => $data['Policy'],
-            'T&C' => $data['T&C'],
-            'Room Type' => $data['Room Type'],
-            'State' => $data['State'],
-            'Weekend Name' => $data['Weekend Name'],
-            'Hotel Chain' => $data['Hotel Chain']
+            'Pin Code' => $requestData['Pin Code'],
+            'Hotel Address' => $requestData['Hotel Address'],
+            'GSTN' =>$requestData['GSTN'],
+            'Hotel Type' => $requestData['Hotel Type'],
+            'Hotel Category' => $requestData['Hotel Category'],
+            'Hotel Website Link' => $requestData['Hotel Website Link'],
+            'Hotel Information' => $requestData['Hotel Information'],
+            'Policy' => $requestData['Policy'],
+            'T&C' => $requestData['T&C'],
+            'Room Type' => $requestData['Room Type'],
+            'State' => $requestData['State'],
+            'Weekend Name' => $requestData['Weekend Name'],
+            'Hotel Chain' => $requestData['Hotel Chain']
             ], JSON_PRETTY_PRINT);
             $hotelMaster->HotelContactDetails = json_encode([
-                'Division' => $data['Division'],
-                'Contact Person' => $data['Contact Person'],
-                'Designation' => $data['Designation'],
-                'Mobile no' => $data['Mobile no'],
-                'Contact Person Email Id' => $data['Contact Person Email Id']
+                'Division' => $requestData['Division'],
+                'Contact Person' => $requestData['Contact Person'],
+                'Designation' => $requestData['Designation'],
+                'Mobile no' => $requestData['Mobile no'],
+                'Contact Person Email Id' => $requestData['Contact Person Email Id']
                 ], JSON_PRETTY_PRINT);
             $hotelMaster->save();
             $insertedCount++;
         
          return response()->json(['Status' => '1','Message' => 'Hotels saved successfully','Count' => $insertedCount]);
-    }else{
-        return response()->json(['Status'=> '1', 'Message' => 'Validation Error: ' . $ErrorMessage]);
+    
+    
+}else{
+    $id = $request->input('id');
+    $requestData = $request->all();
+
+    
+    if($id != '') {
+        $hotelMaster = HotelMaster::find($id);
+        if (!$hotelMaster) {
+            return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
+        }
+        
+
+
+        $hotelMaster->HotelName = $requestData['Hotel Name'];
+        $hotelMaster->SelfSupplier = $requestData['Self Supplier'];
+        $hotelMaster->HotelCountry = $requestData['Hotel Country'];
+        $hotelMaster->HotelCity = $requestData['City'];
+        $hotelMaster->UpdatedBy = $requestData['UpdatedBy'];
+        $hotelMaster->updated_at = now();
+        $hotelMaster->HotelBasicDetails = json_encode([
+            'Pin Code' => $requestData['Pin Code'],
+            'Hotel Address' => $requestData['Hotel Address'],
+            'GSTN' =>$requestData['GSTN'],
+            'Hotel Type' => $requestData['Hotel Type'],
+            'Hotel Category' => $requestData['Hotel Category'],
+            'Hotel Website Link' => $requestData['Hotel Website Link'],
+            'Hotel Information' => $requestData['Hotel Information'],
+            'Policy' => $requestData['Policy'],
+            'T&C' => $requestData['T&C'],
+            'Room Type' => $requestData['Room Type'],
+            'State' => $requestData['State'],
+            'Weekend Name' => $requestData['Weekend Name'],
+            'Hotel Chain' => $requestData['Hotel Chain']
+        ], JSON_PRETTY_PRINT);
+        $hotelMaster->HotelContactDetails = json_encode([
+            'Division' => $requestData['Division'],
+            'Contact Person' => $requestData['Contact Person'],
+            'Designation' => $requestData['Designation'],
+            'Mobile no' => $requestData['Mobile no'],
+            'Contact Person Email Id' => $requestData['Contact Person Email Id']
+        ], JSON_PRETTY_PRINT);
+        $hotelMaster->save();
+
+        return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
+    } else {
+        
+        return response()->json(['Status' => 0, 'Message' => 'Failed to update data. ID is missing.'], 400);
     }
+    
+
+}
+}else{
+    return response()->json(['Status'=> '1', 'Message' => 'Validation Error: ' . $ErrorMessage]);
 }
     
     
