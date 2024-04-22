@@ -81,6 +81,7 @@ define("_TRANSFER_MASTER_", "others.transfer_master");
 define("_TRANSPORT_MASTER_", "others.transport_master");
 define("_FERRY_PRICE_MASTER_", "others.ferry_price_master");
 define("_FLEET_MASTER_", "others.fleet_master");
+define("_ITINERARY_REQUIREMENT_MASTER_", "others.itinerary_requirement");
 
 /////////////////////////////END HERE///////////////////////////
 
