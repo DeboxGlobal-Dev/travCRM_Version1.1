@@ -53,8 +53,17 @@ class HotelImportController extends Controller
 
                 $uploadJson = json_decode($data->UploadJson);
 
-                $existingHotel = HotelMaster::where('HotelName', $uploadJson->{'Hotel Name'})
-                                        ->where('HotelCity', $uploadJson->{'City'})
+                $destination = getColumnValue("others.destination_master","Name",$uploadJson->{'DESTINATION'},"id");
+                $division = getColumnValue("others.division_master","Name",$uploadJson->{'DIVISION'},"id");
+                $country = getColumnValue("others.country_master","Name",$uploadJson->{'HOTEL_COUNTRY'},"id");
+                $hotelchain = getColumnValue("others.hotel_chain_master","Name",$uploadJson->{'HOTEL_CHAIN'},"id");
+                $weekend = getColumnValue("others.weekend_master","Name",$uploadJson->{'WEEKEND_NAME'},"id");
+                $state = getColumnValue("others.state_master","Name",$uploadJson->{'STATE'},"id");
+                $roomtype = getColumnValue("others.room_type_master","Name",$uploadJson->{'ROOM_TYPE'},"id");
+                $hoteltype = getColumnValue("others.hotel_type_master","Name",$uploadJson->{'HOTEL_TYPE'},"id");
+
+                $existingHotel = HotelMaster::where('HotelName', $uploadJson->{'HOTEL_NAME'})
+                                        ->where('HotelCity', $destination)
                                         ->first();
 
             if ($existingHotel) {
@@ -63,12 +72,13 @@ class HotelImportController extends Controller
                 if (!is_array($existingContactDetails)) {
                     $existingContactDetails = []; // Initialize as an empty array if not already an array
                 }
+                
                 array_push($existingContactDetails, [
-                    'Division' => $uploadJson->{'Division'},
-                    'Contact Person' => $uploadJson->{'Contact Person'},
-                    'Designation' => $uploadJson->{'Designation'},
-                    'Mobile no' => $uploadJson->{'Mobile no'},
-                    'Contact Person Email Id' => $uploadJson->{'Contact Person Email Id'}
+                    'Division' => $division,
+                    'Contact Person' => $uploadJson->{'CONTACT_PERSON'},
+                    'Designation' => $uploadJson->{'DESIGNATION'},
+                    'Mobile no' => $uploadJson->{'MOBILE_NO'},
+                    'Contact Person Email Id' => $uploadJson->{'CONTACT_PERSON_EMAIL'}
                 ]);
 
                 
@@ -78,34 +88,36 @@ class HotelImportController extends Controller
                 // Save the changes
                 $existingHotel->save();
             } else {
+
                 $hotelMaster = new HotelMaster();
-                $hotelMaster->HotelName = $uploadJson->{'Hotel Name'};
-                $hotelMaster->SelfSupplier = $uploadJson->{'Self Supplier'};
-                $hotelMaster->HotelCountry = $uploadJson->{'Hotel Country'};
-                $hotelMaster->HotelCity = $uploadJson->{'City'};
+                $hotelMaster->HotelName = $uploadJson->{'HOTEL_NAME'};
+                $hotelMaster->SelfSupplier = $uploadJson->{'SELF_SUPPLIER'} == "Yes"?1:0;
+                $hotelMaster->HotelCountry = $country;
+                $hotelMaster->HotelCity = $destination;
+                ;
                 $hotelMaster->created_at = now();
                 $hotelMaster->HotelBasicDetails = json_encode([
-                    'Pin Code' => $uploadJson->{'Pin Code'},
-                    'Hotel Address' => $uploadJson->{'Hotel Address'},
-                    'GSTN' => $uploadJson->{'GSTN'},
-                    'Hotel Type' => $uploadJson->{'Hotel Type'},
-                    'Hotel Category' => $uploadJson->{'Hotel Category'},
-                    'Hotel Website Link' => $uploadJson->{'Hotel Website Link'},
-                    'Hotel Information' => $uploadJson->{'Hotel Information'},
-                    'Policy' => $uploadJson->{'Policy'},
-                    'T&C' => $uploadJson->{'T&C'},
-                    'Room Type' => $uploadJson->{'Room Type'},
-                    'State' => $uploadJson->{'State'},
-                    'Weekend Name' => $uploadJson->{'Weekend Name'},
-                    'Hotel Chain' => $uploadJson->{'Hotel Chain'}
+                    //'Pin Code' => $uploadJson->{'Pin Code'} == ""?"":$uploadJson->{'Pin Code'} ,
+                    'Hotel Address' => $uploadJson->{'HOTEL_ADDRESS'},
+                    //'GSTN' => $uploadJson->{'GSTN'}  == ""?"":$uploadJson->{'GSTN'},
+                    'Hotel Type' => $hoteltype,
+                   // 'Hotel Category' => $uploadJson->{'Hotel Category'} == ""?"":$uploadJson->{'Hotel Category'},
+                    'Hotel Website Link' => $uploadJson->{'HOTEL_WEB_LINK'},
+                    //'Hotel Information' => $uploadJson->{'Hotel Information'} == ""?"":$uploadJson->{'Hotel Information'},
+                    // 'Policy' => $uploadJson->{'Policy'} == ""?"":$uploadJson->{'Policy'},
+                    // 'T&C' => $uploadJson->{'T&C'} == ""?"":$uploadJson->{'T&C'},
+                    'Room Type' => $roomtype,
+                    'State' => $state,
+                    'Weekend Name' => $weekend,
+                    'Hotel Chain' => $hotelchain,
                 ], JSON_PRETTY_PRINT);
                 $hotelMaster->HotelContactDetails = json_encode([
                    [ 
-                    'Division' => $uploadJson->{'Division'},
-                    'Contact Person' => $uploadJson->{'Contact Person'},
-                    'Designation' => $uploadJson->{'Designation'},
-                    'Mobile no' => $uploadJson->{'Mobile no'},
-                    'Contact Person Email Id' => $uploadJson->{'Contact Person Email Id'}
+                    'Division' => $division,
+                    'Contact Person' => $uploadJson->{'CONTACT_PERSON'},
+                    'Designation' => $uploadJson->{'DESIGNATION'},
+                    'Mobile no' => $uploadJson->{'MOBILE_NO'},
+                    'Contact Person Email Id' => $uploadJson->{'CONTACT_PERSON_EMAIL'}
                     ]
                 ], JSON_PRETTY_PRINT);
                 $hotelMaster->save();
