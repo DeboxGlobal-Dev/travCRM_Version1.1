@@ -10,42 +10,10 @@ use App\Models\Master\HotelMaster;
 
 class HotelImportController extends Controller
 {
-    // public function hotelImport(){
-    //     $posts = TempUpload::select('*')->where('ServiceType', 'hotel')->get();
-        
-    //     if ($posts->isNotEmpty()) {
-    //         $arrayDataRows = [];
-    //         foreach ($posts as $post){
-                
-    //             $arrayDataRows[] = [
-    //                 "Id" => $post->id,
-    //                 "ServiceType" => $post->ServiceType,
-    //                 "UploadJson" => json_decode($post->UploadJson),
-    //                 "Status" => ($post->Status==0) ? 'InActive' : 'Active',
-    //                 "AddedBy" => $post->AddedBy,
-    //                 "UpdatedBy" => $post->UpdatedBy,
-    //                 "Created_at" => $post->created_at,
-    //                 "Updated_at" => $post->updated_at
-    //             ];
-    //         }
-
-    //         return response()->json([
-    //             'Status' => 200,
-    //             'DataList' => $arrayDataRows
-    //         ]);
-
-    //     }else {
-    //         return response()->json([
-    //             "Status" => 0,
-    //             "Message" => "No Record Found."
-    //         ]);
-    //     }
-    // }
 
     public function store(Request $request) {
         call_logger('REQUEST COMES FROM Hotel Import: ' . $request->getContent());
     
-       // try {
             $requestData = TempUpload::select('*')->where('ServiceType', 'hotel')->get();
     
             $insertedCount = 0;
@@ -114,9 +82,5 @@ class HotelImportController extends Controller
         }
             return response()->json(['Status' => 1, 'Message' => 'Hotels saved successfully', 'Count' => $insertedCount]);
     
-        // } catch (\Exception $e) {
-        //     call_logger("Exception Error  ===>  " . $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        // }
     }
 }
