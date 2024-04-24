@@ -1,46 +1,44 @@
 <?php
 
 namespace App\Http\Controllers\Master;
-
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
-use App\Models\Master\TourEscortPriceMaster;
+use App\Models\Master\SeasonMaster;
 
-class TourEscortPriceMasterController extends Controller
+class SeasonMasterController extends Controller
 {
     public function index(Request $request){
 
 
         $arrayDataRows = array();
 
-        call_logger('REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: '.$request->getContent());
+        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
 
-        $id = $request->input('Id');
         $Search = $request->input('Search');
         $Status = $request->input('Status');
 
-        $posts = TourEscortPriceMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('ServiceType', 'like', '%' . $Search . '%');
-        })->when($id, function ($query) use ($id) {
-            return $query->where('id',  $id );
+        $posts = SeasonMaster::when($Search, function ($query) use ($Search) {
+            return $query->where('Name', 'like', '%' . $Search . '%')
+                         ->orwhere('FromDate', 'like', '%' . $Search . '%')
+                         ->orwhere('ToDate ', 'like', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
-        })->select('*')->orderBy('ServiceType')->get('*');
+        })->select('*')->orderBy('Name')->get('*');
 
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "ServiceType" => $post->ServiceType,
-                    "Destination" => $post->Destination,
-                    "TourEscortService" => $post->TourEscortService,
+                    "Name" => $post->Name,
+                    "SeasonName" => $post->SeasonName,
+                    "FromDate" => $post->FromDate,
+                    "ToDate" => $post->ToDate,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
-                    "Default" => ($post->Default == 1) ? 'Yes' : 'No',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                     "Created_at" => $post->created_at,
@@ -62,31 +60,32 @@ class TourEscortPriceMasterController extends Controller
             ]);
         }
     }
+
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE TOUR ESCORT PRICE: '.$request->getContent());
+        call_logger('REQUEST COMES FROM ADD/UPDATE SEASON: '.$request->getContent());
 
-        try{
+        //try{
             $id = $request->input('id');
             if($id == '') {
 
                 $businessvalidation =array(
-                    'ServiceType' => 'required|unique:'._DB_.'.'._TOUR_ESCORT_PRICE_MASTER_.',ServiceType',
+                    'SeasonName' =>'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
 
                 if($validatordata->fails()){
                     return $validatordata->errors();
-                }else{
-                 $savedata = TourEscortPriceMaster::create([
-                    'ServiceType' => $request->ServiceType,
-                    'Destination' => $request->Destination,
-                    'TourEscortService' => $request->TourEscortService,
-                    'Status' => $request->Status,
-                    'Default' => $request->Default,
-                    'AddedBy' => $request->AddedBy,
-                    'created_at' => now(),
+                }else {
+                    $savedata = SeasonMaster::create([
+                        'SeasonName' => $request->input('SeasonName'),
+                        'Name' => $request->SeasonName.' - '.date('Y',strtotime($request->FromDate)),
+                        'FromDate' => $request->FromDate,
+                        'ToDate' => $request->ToDate,
+                        'Status' => isset($request->Status), // Here is where Status is set
+                        'AddedBy' => $request->AddedBy,
+                        'created_at' => now(),
                 ]);
 
                 if ($savedata) {
@@ -99,10 +98,10 @@ class TourEscortPriceMasterController extends Controller
             }else{
 
                 $id = $request->input('id');
-                $edit = TourEscortPriceMaster::find($id);
+                $edit = SeasonMaster::find($id);
 
                 $businessvalidation =array(
-                    'ServiceType' => 'required',
+                    'SeasonName' =>'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -111,11 +110,11 @@ class TourEscortPriceMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->ServiceType = $request->input('ServiceType');
-                        $edit->Destination = $request->input('Destination');
-                        $edit->TourEscortService = $request->input('TourEscortService');
+                        $edit->SeasonName = $request->input('SeasonName');
+                        $edit->Name = $request->SeasonName.' - '.date('Y',strtotime($request->FromDate));
+                        $edit->FromDate = $request->input('FromDate');
+                        $edit->ToDate  = $request->input('ToDate');
                         $edit->Status = $request->input('Status');
-                        $edit->Default = $request->input('Default');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
                         $edit->save();
@@ -126,9 +125,24 @@ class TourEscortPriceMasterController extends Controller
                     }
                 }
             }
-        }catch (\Exception $e){
-            call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        // }catch (\Exception $e){
+        //     call_logger("Exception Error  ===>  ". $e->getMessage());
+        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        //}
+    }
+
+
+
+    public function destroy(Request $request)
+    {
+        $brands = SeasonMaster::find($request->id);
+        $brands->delete();
+
+        if ($brands) {
+            return response()->json(['result' =>'Data deleted successfully!']);
+        } else {
+            return response()->json(['result' =>'Failed to delete data.'], 500);
         }
+
     }
 }

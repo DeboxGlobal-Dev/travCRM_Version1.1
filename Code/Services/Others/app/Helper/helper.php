@@ -9,7 +9,7 @@ function call_logger($errorlog){
         $exists = Storage::disk('local')->exists($newfile);
         if(!$exists)
         {
-            Storage::put($newfile, '');
+            Storage::put($newfile, '0777');
         }
 
         $logfile=fopen(Storage::path($newfile),'a');
@@ -31,7 +31,6 @@ function getName($tableName,$id){
 
 }
 
-
 function getColumnValue($tableName,$where,$val,$columnName){
     $value = DB::table($tableName)->where($where,$val)->get($columnName);
     if($value->isNotEmpty()){
@@ -39,15 +38,56 @@ function getColumnValue($tableName,$where,$val,$columnName){
     }
 }
 
-function getColumn($tableName, $id, $columnName) {
-    try {
-        $result = DB::table($tableName)->where('id', $id)->get([$columnName]);
-        if ($result->isNotEmpty()){
-            return $result[0]->$columnName;
-        }
-    } catch (\Exception $e) {
-        return 'Error: ' . $e->getMessage();
+function ValidateTemplate($FieldName,$FieldValue,$IsMandate,$DataType,$Length, &$ErrorMessage){
+
+$Status = 1;
+$ErrorMessage = "";
+
+if(trim($IsMandate) == 1 || strtoupper(trim($IsMandate)) == 'YES'){
+
+    if(trim($FieldValue) == ""){
+        $Status = 0;
+        $ErrorMessage .= $FieldName." is Mandatory. ";
     }
+
+}
+if(strlen($FieldValue) > $Length && $Length != ""){
+        $Status = 0;
+        $ErrorMessage .= $FieldName." Length should not exceeds ".$Length.". ";
+    }
+if($DataType == "Email" && !filter_var($FieldValue, FILTER_VALIDATE_EMAIL)){
+        $Status = 0;
+        $ErrorMessage .= "Invalid ".$FieldName.". ";
+    }
+if($DataType == "Boolean" && trim($FieldValue) != 1 && trim($FieldValue) != 0 && trim(strtoupper($FieldValue)) != "YES" && trim(strtoupper($FieldValue)) != "NO"){
+        $Status = 0;
+        $ErrorMessage .= $FieldName." should be only Yes or No. ";
+    }
+if($DataType == "Decimal"){
+
+        $pattern = "/^\d+(\.\d{1,2})?$/";
+
+        if (!preg_match($pattern, $FieldValue)) {
+            $Status = 0;
+            $ErrorMessage .= $FieldName." should be a number with two maximum two decimal value. ";
+        }
+
+    }
+if($DataType == "Date"){
+
+        $format = 'd/m/Y';
+        $dateTime = DateTime::createFromFormat($format, $FieldValue);
+
+        if (!($dateTime && $dateTime->format($format) === $FieldValue)){
+        $Status = 0;
+        $ErrorMessage .= "Invalid ".$FieldName.". ";
+        }
+
+    }
+
+
+return $Status;
+
 }
 
 

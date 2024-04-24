@@ -78,7 +78,6 @@ use App\Http\Controllers\Master\TransfermasterController;
 use App\Http\Controllers\Master\TransportMasterController;
 use App\Http\Controllers\Master\FerryPriceMasterController;
 use App\Http\Controllers\Master\FleetMasterController;
-use App\Http\Controllers\Master\ItineraryRequirementController;
 
 
 
@@ -150,6 +149,7 @@ Route::post('/addupdatecurrencymaster',[CurrencyMasterController::class,'store']
 
 Route::post('/hotellist',[HotelMasterController::class,'index']);
 Route::post('/addupdatehotel',[HotelMasterController::class,'store']);
+Route::post('/importhotel',[HotelMasterController::class,'hotelImport']);
 
 Route::post('/contactlist',[ContactDetailsController::class,'index']);
 Route::post('/addupdatecontact',[ContactDetailsController::class,'store']);
@@ -260,9 +260,6 @@ Route::post('/addupdateferrypricemaster',[FerryPriceMasterController::class,'sto
 
 Route::post('/fleetmasterlist',[FleetMasterController::class,'index']);
 Route::post('/addupdatefleetmaster',[FleetMasterController::class,'store']);
-
-Route::post('/itineraryrequirementlist',[ItineraryRequirementController::class,'index']);
-Route::post('/addupdateitineraryrequirement',[ItineraryRequirementController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
