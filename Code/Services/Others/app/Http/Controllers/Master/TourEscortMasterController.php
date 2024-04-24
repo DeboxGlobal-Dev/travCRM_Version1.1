@@ -46,7 +46,7 @@ class TourEscortMasterController extends Controller
                     "Destination" => $post->Destination,
                     "Language" => $post->Language,
                     "TourEscortImageName" => $post->TourEscortImageName,
-                    "TourEscortImageData" => $post->TourEscortImageData,
+                    "TourEscortImageData" => asset('storage/' . $post->TourEscortImageData),
                     "Supplier" => $post->Supplier,
                     "TourEscortLicenseTwo" => $post->TourEscortLicenseTwo,
                     "ContactPerson" => $post->ContactPerson,
