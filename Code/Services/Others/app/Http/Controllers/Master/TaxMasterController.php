@@ -68,7 +68,7 @@ class TaxMasterController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    'ServiceType' => 'required|unique:'._DB_.'.'._TAX_MASTER_.',ServiceType',
+                    'ServiceType' => 'required:'._DB_.'.'._TAX_MASTER_.',ServiceType',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
