@@ -43,7 +43,7 @@ class BankMasterController extends Controller
                     "BranchIfsc" => $post->BranchIfsc,
                     "BranchSwiftCode" => $post->BranchSwiftCode,
                     "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "ShowHide" => $post->ShowHide,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "SetDefault" => ($post->SetDefault == 1) ? 'Yes' : 'No',
