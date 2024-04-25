@@ -37,7 +37,7 @@ class TrainMasterController extends Controller
                     "Id" => $post->id,
                     "Name" => $post->Name,
                     "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Status" =>($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -65,7 +65,7 @@ class TrainMasterController extends Controller
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE LEAD: '.$request->getContent());
 
-       // try{
+        try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -145,24 +145,9 @@ class TrainMasterController extends Controller
                     }
                 }
             }
-        // }catch (\Exception $e){
-        //     call_logger("Exception Error  ===>  ". $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        // }
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
     }
-
-
-
-    // public function destroy(Request $request)
-    // {
-    //     $brands = TrainMaster::find($request->id);
-    //     $brands->delete();
-
-    //     if ($brands) {
-    //         return response()->json(['result' =>'Data deleted successfully!']);
-    //     } else {
-    //         return response()->json(['result' =>'Failed to delete data.'], 500);
-    //     }
-
-    // }
 }
