@@ -37,7 +37,7 @@ class AdditionalRequirementMasterController extends Controller
                     "ChildCost" => $post->ChildCost,
                     "InfantCost" => $post->InfantCost,
                     "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Details" => $post->Details,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
