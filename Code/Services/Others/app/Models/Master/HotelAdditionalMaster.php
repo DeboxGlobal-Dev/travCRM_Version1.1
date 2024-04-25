@@ -13,6 +13,8 @@ class HotelAdditionalMaster extends Model
     protected $fillable = [
         'Name',
         'Details',
+        'ImageName',
+        'ImageData',
         'AddedBy',
         'UpdatedBy',
         'Status',
