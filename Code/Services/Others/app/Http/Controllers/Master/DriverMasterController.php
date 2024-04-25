@@ -39,10 +39,12 @@ class DriverMasterController extends Controller
                     "LicenseNumber" => $post->LicenseNumber,
                     "BirthDate" => $post->BirthDate,
                     "LicenseName" => $post->LicenseName,
+                    "LicenseData" => asset('storage/' . $post->LicenseData),
                     "PassportNumber" => $post->PassportNumber,
                     "Address" => $post->Address,
                     "ValidUpto" => $post->ValidUpto,
                     "ImageName" => $post->ImageName,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -89,7 +91,7 @@ class DriverMasterController extends Controller
                     $BirthDate = $request->input('BirthDate');
                     $LicenseName = $request->input('LicenseName');
                     $base64License = $request->input('LicenseData');
-                    $LicenseData = base64_decode('base64License');
+                    $LicenseData = base64_decode($base64License);
                     $PassportNumber = $request->input('PassportNumber');
                     $Address = $request->input('Address');
                     $ValidUpto = $request->input('ValidUpto');
@@ -160,7 +162,7 @@ class DriverMasterController extends Controller
                     $BirthDate = $request->input('BirthDate');
                     $LicenseName = $request->input('LicenseName');
                     $base64License = $request->input('LicenseData');
-                    $LicenseData = base64_decode('base64License');
+                    $LicenseData = base64_decode($base64License);
                     $PassportNumber = $request->input('PassportNumber');
                     $Address = $request->input('Address');
                     $ValidUpto = $request->input('ValidUpto');
