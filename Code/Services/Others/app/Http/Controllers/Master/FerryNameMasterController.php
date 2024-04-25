@@ -35,7 +35,7 @@ class FerryNameMasterController extends Controller
                     "FerryName" => $post->FerryName,
                     "Capacity" => $post->Capacity,
                     "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -141,8 +141,8 @@ class FerryNameMasterController extends Controller
                         $edit->FerryCompany = $request->input('FerryCompany');
                         $edit->FerryName = $request->input('FerryName');
                         $edit->Capacity = $request->input('Capacity');
-                        $edit->ImageName = $request->input('ImageName');
-                        $edit->ImageData = $request->input('ImageData');
+                        $edit->ImageName = $ImageName;
+                        $edit->ImageData = $filename;
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
