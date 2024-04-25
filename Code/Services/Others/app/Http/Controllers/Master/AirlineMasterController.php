@@ -35,7 +35,7 @@ class AirlineMasterController extends Controller
                     "Id" => $post->id,
                     "Name" => $post->Name,
                     "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
