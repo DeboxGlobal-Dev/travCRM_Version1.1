@@ -33,6 +33,9 @@ class AdditionalRequirementMasterController extends Controller
                     "DestinationName" => getName(_DESTINATION_MASTER_ ,$post->DestinationId),
                     "CurrencyName" => getName(_CURRENCY_MASTER_, $post->CurrencyId),
                     "CostType" => $post->CostType,
+                    "ShowInProposal" => $post->ShowInProposal,
+                    "TaxSlab" => $post->TaxSlab,
+                    "MarkupApply" => $post->MarkupApply,
                     "AdultCost" => $post->AdultCost,
                     "ChildCost" => $post->ChildCost,
                     "InfantCost" => $post->InfantCost,
@@ -83,6 +86,9 @@ class AdditionalRequirementMasterController extends Controller
                     $AdultCost = $request->input('AdultCost');
                     $ChildCost = $request->input('ChildCost');
                     $InfantCost = $request->input('InfantCost');
+                    $ShowInProposal = $request->input('ShowInProposal');
+                    $TaxSlab = $request->input('TaxSlab');
+                    $MarkupApply = $request->input('MarkupApply');
                     $ImageName = $request->input('ImageName');
                     $base64Image = $request->input('ImageData');
                     $ImageData = base64_decode($base64Image);
@@ -105,6 +111,9 @@ class AdditionalRequirementMasterController extends Controller
                     'AdultCost' => $request->AdultCost,
                     'ChildCost' => $request->ChildCost,
                     'InfantCost' => $request->InfantCost,
+                    'TaxSlab' => $request->TaxSlab,
+                    'ShowInProposal' => $request->ShowInProposal,
+                    'MarkupApply' => $request->MarkupApply,
                     'ImageName' => $ImageName,
                     'ImageData' => $filename,
                     'Details' => $request->Details,
@@ -143,6 +152,9 @@ class AdditionalRequirementMasterController extends Controller
                         $AdultCost = $request->input('AdultCost');
                         $ChildCost = $request->input('ChildCost');
                         $InfantCost = $request->input('InfantCost');
+                        $ShowInProposal = $request->input('ShowInProposal');
+                        $TaxSlab = $request->input('TaxSlab');
+                        $MarkupApply = $request->input('MarkupApply');
                         $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
                         $ImageData = base64_decode($base64Image);
@@ -161,6 +173,9 @@ class AdditionalRequirementMasterController extends Controller
                         $edit->AdultCost = $request->input('AdultCost');
                         $edit->ChildCost = $request->input('ChildCost');
                         $edit->InfantCost = $request->input('InfantCost');
+                        $edit->ShowInProposal = $request->input('ShowInProposal');
+                        $edit->TaxSlab = $request->input('TaxSlab');
+                        $edit->MarkupApply = $request->input('MarkupApply');
                         $edit->ImageName = $ImageName;
                         $edit->ImageData = $filename;
                         $edit->Details = $request->input('Details');
@@ -180,20 +195,5 @@ class AdditionalRequirementMasterController extends Controller
         //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         // }
     }
-
-
-
-    /*public function destroy(Request $request)
-    {
-        $brands = AdditionalRequirementMaster::find($request->id);
-        $brands->delete();
-
-        if ($brands) {
-            return response()->json(['result' =>'Data deleted successfully!']);
-        } else {
-            return response()->json(['result' =>'Failed to delete data.'], 500);
-        }
-
-    }*/
 
 }
