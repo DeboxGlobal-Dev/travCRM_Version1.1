@@ -13,6 +13,8 @@ class AmenitiesMaster extends Model
     protected $fillable = [
         'Name',
         'SetDefault',
+        'ImageName',
+        'ImageData',
         'AddedBy',
         'UpdatedBy',
         'Status',

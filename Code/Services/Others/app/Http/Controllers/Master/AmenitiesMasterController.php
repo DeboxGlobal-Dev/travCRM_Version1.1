@@ -37,6 +37,8 @@ class AmenitiesMasterController extends Controller
                     "Id" => $post->id,
                     "Name" => $post->Name,
                     "SetDefault" => $post->SetDefault,
+                    "ImageName" => $post->ImageName,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -77,9 +79,24 @@ class AmenitiesMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
+                    $Name = $request->input('Name');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $SetDefault = $request->input('SetDefault');
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
                  $savedata = AmenitiesMaster::create([
                     'Name' => $request->Name,
                     'SetDefault' => $request->SetDefault,
+                    'ImageName' => $ImageName,
+                    'ImageData' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -107,8 +124,23 @@ class AmenitiesMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
+                    $Name = $request->input('Name');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $SetDefault = $request->input('SetDefault');
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
                         $edit->Name = $request->input('Name');
                         $edit->SetDefault = $request->input('SetDefault');
+                        $edit->ImageName = $ImageName;
+                        $edit->ImageData = $filename;
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
