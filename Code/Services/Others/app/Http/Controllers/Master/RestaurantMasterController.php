@@ -4,6 +4,7 @@ namespace App\Http\Controllers\master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Master\RestaurantMaster;
 
@@ -29,10 +30,6 @@ class RestaurantMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
-        //$countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-        //call_logger('REQUEST2: '.$countryName22);
-
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
@@ -56,7 +53,9 @@ class RestaurantMasterController extends Controller
                     "Phone2" => $post->Phone2,
                     "Phone3" => $post->Phone3,
                     "ContactEmail" => $post->ContactEmail,
-                    "Image" => $post->Image,
+                    "ImageName" => $post->ImageName,
+                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ShowHide" => $post->ShowHide,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -97,6 +96,36 @@ class RestaurantMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
+
+                    $Name = $request->input('Name');
+                    $DestinationId = $request->input('DestinationId');
+                    $Address = $request->input('Address');
+                    $CountryId = $request->input('CountryId');
+                    $StateId = $request->input('StateId');
+                    $CityId = $request->input('CityId');
+                    $SelfSupplier = $request->input('SelfSupplier');
+                    $PinCode = $request->input('PinCode');
+                    $GSTN = $request->input('GSTN');
+                    $ContactType = $request->input('ContactType');
+                    $ContactName = $request->input('ContactName');
+                    $ContactDesignation = $request->input('ContactDesignation');
+                    $CountryCode = $request->input('CountryCode');
+                    $Phone1 = $request->input('Phone1');
+                    $Phone2 = $request->input('Phone2');
+                    $Phone3 = $request->input('Phone3');
+                    $ContactEmail = $request->input('ContactEmail');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
+
                  $savedata = RestaurantMaster::create([
                     "Name" => $request->Name,
                     "DestinationId" => $request->DestinationId,
@@ -115,7 +144,8 @@ class RestaurantMasterController extends Controller
                     "Phone2" => $request->Phone2,
                     "Phone3" => $request->Phone3,
                     "ContactEmail" => $request->ContactEmail,
-                    "Image" => $request->Image,
+                    "ImageName" => $ImageName,
+                    "ImageData" => $filename,
                     "Status" => $request->Status,
                     "AddedBy" => $request->AddedBy,
                     "created_at" => now(),
@@ -143,6 +173,35 @@ class RestaurantMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
+
+                        $Name = $request->input('Name');
+                    $DestinationId = $request->input('DestinationId');
+                    $Address = $request->input('Address');
+                    $CountryId = $request->input('CountryId');
+                    $StateId = $request->input('StateId');
+                    $CityId = $request->input('CityId');
+                    $SelfSupplier = $request->input('SelfSupplier');
+                    $PinCode = $request->input('PinCode');
+                    $GSTN = $request->input('GSTN');
+                    $ContactType = $request->input('ContactType');
+                    $ContactName = $request->input('ContactName');
+                    $ContactDesignation = $request->input('ContactDesignation');
+                    $CountryCode = $request->input('CountryCode');
+                    $Phone1 = $request->input('Phone1');
+                    $Phone2 = $request->input('Phone2');
+                    $Phone3 = $request->input('Phone3');
+                    $ContactEmail = $request->input('ContactEmail');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
                         $edit->Name= $request->input('Name');
                         $edit->DestinationId= $request->input('DestinationId');
                         $edit->Address= $request->input('Address');
@@ -160,7 +219,8 @@ class RestaurantMasterController extends Controller
                         $edit->Phone2= $request->input('Phone2');
                         $edit->Phone3= $request->input('Phone3');
                         $edit->ContactEmail= $request->input('ContactEmail');
-                        $edit->Image= $request->input('Image');
+                        $edit->ImageName= $ImageName;
+                        $edit->ImageData= $filename;
                         $edit->Status= $request->input('Status');
                         $edit->UpdatedBy= $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -177,21 +237,6 @@ class RestaurantMasterController extends Controller
             call_logger("Exception Error  ===>  ". $e->getMessage());
             return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
         }
-    }
-
-
-
-    public function destroy(Request $request)
-    {
-        $brands = RestaurantMaster::find($request->id);
-        $brands->delete();
-
-        if ($brands) {
-            return response()->json(['result' =>'Data deleted successfully!']);
-        } else {
-            return response()->json(['result' =>'Failed to delete data.'], 500);
-        }
-
     }
 }
 
