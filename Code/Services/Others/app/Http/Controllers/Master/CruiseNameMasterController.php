@@ -34,7 +34,7 @@ class CruiseNameMasterController extends Controller
                     "CruiseName" => $post->CruiseName,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "ImageName" => $post->ImageName,
-                    "ImageData" => $post->ImageData,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];
