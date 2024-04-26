@@ -12,7 +12,7 @@ class ImageGalleryMaster extends Model
     protected $primarykey = 'id';
     protected $fillable = [
         'ImageName',
-        //'ImageData',
+        'ImageData',
         'Type',
         'ParentId',
         'Status',
