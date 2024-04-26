@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Master;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Master\VehicleMaster;
 
@@ -34,6 +35,7 @@ class VehicleMasterController extends Controller
                     "VehicleBrandName" => getName(_VEHICLE_BRAND_MASTER_ ,$post->VehicleBrand),
                     "Name" => $post->Name,
                     "ImageName" => $post->ImageName,
+                    "ImageData" => asset('storage/' . $post->ImageData),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -70,12 +72,30 @@ class VehicleMasterController extends Controller
                 if($validatordata->fails()){
                     return $validatordata->errors();
                 }else{
+
+                    $VehicleType = $request->input('VehicleType');
+                    $Capacity = $request->input('Capacity');
+                    $VehicleBrand = $request->input('VehicleBrand');
+                    $Name = $request->input('Name');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
+
                  $savedata = VehicleMaster::create([
                     'VehicleType' => $request->VehicleType,
                     'Capacity' => $request->Capacity,
                     'VehicleBrand' => $request->VehicleBrand,
                     'Name' => $request->Name,
-                    'ImageName' => $request->ImageName,
+                    'ImageName' => $ImageName,
+                    'ImageData' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -103,11 +123,28 @@ class VehicleMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
+
+                        $VehicleType = $request->input('VehicleType');
+                    $Capacity = $request->input('Capacity');
+                    $VehicleBrand = $request->input('VehicleBrand');
+                    $Name = $request->input('Name');
+                    $ImageName = $request->input('ImageName');
+                    $base64Image = $request->input('ImageData');
+                    $ImageData = base64_decode($base64Image);
+                    $Status = $request->input('Status');
+                    $AddedBy = $request->input('AddedBy');
+                    $UpdatedBy = $request->input('UpdatedBy');
+
+                    $filename = uniqid() . '.png';
+
+                    // print_r($filename);die();
+                    Storage::disk('public')->put($filename, $ImageData);
                         $edit->VehicleType = $request->input('VehicleType');
                         $edit->Capacity = $request->input('Capacity');
                         $edit->VehicleBrand = $request->input('VehicleBrand');
                         $edit->Name = $request->input('Name');
-                        $edit->ImageName = $request->input('ImageName');
+                        $edit->ImageName = $ImageName;
+                        $edit->ImageData = $filename;
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();

@@ -16,6 +16,7 @@ class VehicleMaster extends Model
         'VehicleBrand',
         'Name',
         'ImageName',
+        'ImageData',
         'Status',
         'AddedBy',
         'UpdatedBy',
