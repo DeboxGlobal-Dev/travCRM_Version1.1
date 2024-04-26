@@ -11,7 +11,7 @@ class RoomTypeMaster extends Model
     protected $table = _ROOM_TYPE_MASTER_;
     protected $primarykey = 'id';
     protected $fillable = [
-        'RoomName',
+        'Name',
         'MaximumOccupancy',
         'Bedding',
         'Size',

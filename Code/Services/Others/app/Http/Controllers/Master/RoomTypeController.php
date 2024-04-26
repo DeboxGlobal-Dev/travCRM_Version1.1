@@ -20,12 +20,12 @@ class RoomTypeController extends Controller
         $id = $request->input('Id');
 
         $posts = RoomTypeMaster::when($Search, function ($query) use ($Search) {
-            return $query->where('RoomName', 'like', '%' . $Search . '%');
+            return $query->where('Name', 'like', '%' . $Search . '%');
         })->when(isset($Status), function ($query) use ($Status) {
              return $query->where('Status',$Status);
         })->when($id, function ($query) use ($id) {
             return $query->where('id',  $id );
-        })->select('*')->orderBy('RoomName')->get('*');
+        })->select('*')->orderBy('Name')->get('*');
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
@@ -33,7 +33,7 @@ class RoomTypeController extends Controller
                 
                 $arrayDataRows[] = [
                     "Id" => $post->id,
-                    "RoomName" => $post->RoomName,
+                    "Name" => $post->Name,
                     "MaximumOccupancy" => $post->MaximumOccupancy,
                     "Bedding" => $post->Bedding,
                     "Size" => $post->Size,
@@ -67,7 +67,7 @@ class RoomTypeController extends Controller
             if($id == '') {
 
                 $businessvalidation =array(
-                    'RoomName' => 'required|unique:'._DB_.'.'._ROOM_TYPE_MASTER_.',RoomName',
+                    'Name' => 'required|unique:'._DB_.'.'._ROOM_TYPE_MASTER_.',Name',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -76,7 +76,7 @@ class RoomTypeController extends Controller
                     return $validatordata->errors();
                 }else{
                  $savedata = RoomTypeMaster::create([
-                    'RoomName' => $request->RoomName,
+                    'Name' => $request->Name,
                     'MaximumOccupancy' => $request->MaximumOccupancy,
                     'Bedding' => $request->Bedding,
                     'Size' => $request->Size,
@@ -98,7 +98,7 @@ class RoomTypeController extends Controller
                 $edit = RoomTypeMaster::find($id);
 
                 $businessvalidation =array(
-                    'RoomName' => 'required',
+                    'Name' => 'required',
                 );
 
                 $validatordata = validator::make($request->all(), $businessvalidation);
@@ -107,7 +107,7 @@ class RoomTypeController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                        $edit->RoomName = $request->input('RoomName');
+                        $edit->Name = $request->input('Name');
                         $edit->MaximumOccupancy = $request->input('MaximumOccupancy');
                         $edit->Bedding = $request->input('Bedding');
                         $edit->Size = $request->input('Size');
