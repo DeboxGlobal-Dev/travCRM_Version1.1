@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use App\Models\Master\AmenitiesMaster;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 
 class AmenitiesMasterController extends Controller
 {
@@ -14,7 +15,6 @@ class AmenitiesMasterController extends Controller
 
         $arrayDataRows = array();
 
-        call_logger('REQUEST COMES FROM STATE LIST: '.$request->getContent());
 
         $Search = $request->input('Search');
         $Status = $request->input('Status');
@@ -26,10 +26,6 @@ class AmenitiesMasterController extends Controller
              return $query->where('Status',$Status);
         })->select('*')->orderBy('Name')->get('*');
 
-        //$countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-        //call_logger('REQUEST2: '.$countryName22);
-
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
@@ -37,8 +33,7 @@ class AmenitiesMasterController extends Controller
                     "Id" => $post->id,
                     "Name" => $post->Name,
                     "SetDefault" => $post->SetDefault,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -64,7 +59,7 @@ class AmenitiesMasterController extends Controller
 
     public function store(Request $request)
     {
-        call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
+        //call_logger('REQUEST COMES FROM ADD/UPDATE STATE: '.$request->getContent());
 
         try{
             $id = $request->input('id');
@@ -88,15 +83,14 @@ class AmenitiesMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
+
                  $savedata = AmenitiesMaster::create([
                     'Name' => $request->Name,
                     'SetDefault' => $request->SetDefault,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -124,23 +118,27 @@ class AmenitiesMasterController extends Controller
                  return $validatordata->errors();
                 }else{
                     if ($edit) {
-                    $Name = $request->input('Name');
-                    $ImageName = $request->input('ImageName');
-                    $base64Image = $request->input('ImageData');
-                    $ImageData = base64_decode($base64Image);
-                    $SetDefault = $request->input('SetDefault');
-                    $Status = $request->input('Status');
-                    $AddedBy = $request->input('AddedBy');
-                    $UpdatedBy = $request->input('UpdatedBy');
+                        $Name = $request->input('Name');
+                        $ImageName = $request->input('ImageName');
+                        $base64Image = $request->input('ImageData');
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
+                        $SetDefault = $request->input('SetDefault');
+                        $Status = $request->input('Status');
+                        $AddedBy = $request->input('AddedBy');
+                        $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
 
-                    // print_r($filename);die();
-                    Storage::disk('public')->put($filename, $ImageData);
+
+
                         $edit->Name = $request->input('Name');
                         $edit->SetDefault = $request->input('SetDefault');
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -154,7 +152,7 @@ class AmenitiesMasterController extends Controller
             }
         }catch (\Exception $e){
             call_logger("Exception Error  ===>  ". $e->getMessage());
-            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+            return response()->json(['Status' => -1, 'Message' => $e->getMessage()]);
         }
     }
 

@@ -1,3497 +1,0 @@
-0777122.161.48.196	15-04-2024 09:53:14 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:53:15 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:53:41 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:53:41 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:54:55 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 09:54:55 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 09:55:21 AM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:55:21 AM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:55:29 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:55:29 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 09:55:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 09:55:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 09:58:06 AM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 09:58:06 AM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 09:58:10 AM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 09:58:10 AM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 09:58:13 AM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 09:58:13 AM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 10:34:06 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:34:06 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:34:35 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:05 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:18 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:18 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:46 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:49 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:53 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:54 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:35:54 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:16 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:16 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:20 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:20 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:27 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:27 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:39 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:39 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:53 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:36:53 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:40:54 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:40:54 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:40:56 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:41:56 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:41:56 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:41:59 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:05 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:05 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:10 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:10 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:19 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:26 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:31 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:34 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:42:50 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:43:03 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:43:03 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:43:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:43:36 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:43:46 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:44:00 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:44:00 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:44:45 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:49:25 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:49:25 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:49:47 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:49:51 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:49:53 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:02 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:03 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:05 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:43 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:47 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:52 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:50:54 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:11 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:15 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:29 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:30 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:38 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:49 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:51:52 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:52:12 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:52:20 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:52:21 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:52:30 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:52:49 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:52:57 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:53:04 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:53:56 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:54:01 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:54:18 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:54:26 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 10:54:26 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:03:22 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:03:22 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:03:26 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 11:03:26 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 11:04:56 AM	REQUEST COMES FROM HOTEL MASTER LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:04:56 AM	REQUEST COMES FROM HOTEL MASTER LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:04:59 AM	REQUEST COMES FROM HOTEL MASTER LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:17:47 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:17:47 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:18:10 AM	REQUEST COMES FROM STATE LIST: {
-    "Name":"Amir Ansari",
-    "Email":"amir@gmail.com",
-    "Passowrd":"itsispass"
-}122.161.48.196	15-04-2024 11:18:42 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Amenties","SetDefault":0,"Status":"2","AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 11:18:46 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:19:08 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:19:28 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":8,"Name":"Amentiesss","SetDefault":0,"Status":0,"AddedBy":1,"UpdatedBy":0,"Created_at":"2024-04-15 11:18:45","Updated_at":null}122.161.48.196	15-04-2024 11:19:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:20:24 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:20:28 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:20:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:21:18 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:21:20 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:21:29 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":8,"Name":"Amentiesss","SetDefault":0,"Status":"2","AddedBy":1,"UpdatedBy":0,"Created_at":"2024-04-15 11:18:45","Updated_at":"2024-04-15 11:19:31"}122.161.48.196	15-04-2024 11:21:33 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:22:37 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:22:40 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:22:41 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:23:04 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:23:09 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:24:39 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:24:39 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:26:06 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:26:06 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:26:36 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:26:36 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:27:17 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Debox","UploadKeyword":"Global","ProposalPriority":"Ithum","Status":"0","AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 11:27:21 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:28:22 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:28:46 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:28:49 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:28:53 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:28:57 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:29:16 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:29:28 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:29:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:29:35 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:29:53 AM	REQUEST COMES FROM STATE LIST: {
-    "Name":"Amir Ansari",
-    "Email":"amir@gmail.com",
-    "Passowrd":"itsispass"
-}122.161.48.196	15-04-2024 11:35:06 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":2,"Name":"Amanss","UploadKeyword":"amnssss","ProposalPriority":"s","Status":1,"AddedBy":1,"UpdatedBy":0,"Created_at":"2024-03-06 17:10:44","Updated_at":"2024-03-09 12:15:51"}122.161.48.196	15-04-2024 11:35:10 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.103	15-04-2024 11:37:56 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.103	15-04-2024 11:38:03 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}152.58.24.103	15-04-2024 11:38:12 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 11:38:39 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:39:00 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:39:00 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:39:15 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.103	15-04-2024 11:39:23 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}152.58.24.103	15-04-2024 11:39:56 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:40:00 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Indian Plan (IP)","ShortName":"","SetDefault":"1","Status":"0","AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 11:40:05 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:40:11 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:40:17 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":3,"Name":"Europeans Plan (EP)","ShortName":null,"SetDefault":1,"Status":1,"UpdatedBy":0,"Updated_at":"2024-04-10 18:28:28"}122.161.48.196	15-04-2024 11:40:19 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 11:40:21 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:42:58 AM	REQUEST COMES FROM HOTEL CARTEGORY LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:42:58 AM	REQUEST COMES FROM HOTEL CARTEGORY LIST: {"Search":"","Status":""}152.58.24.103	15-04-2024 11:43:22 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:43:24 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"5 Stars","UploadKeyword":"Five","Status":"0","AddedBy":1}122.161.48.196	15-04-2024 11:43:28 AM	REQUEST COMES FROM HOTEL CARTEGORY LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:43:42 AM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":6,"Name":"5 Stars","UploadKeyword":"Fives","Status":0,"UpdatedBy":0}122.161.48.196	15-04-2024 11:43:46 AM	REQUEST COMES FROM HOTEL CARTEGORY LIST: {"Search":"","Status":""}152.58.24.103	15-04-2024 11:43:49 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 11:48:20 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:48:20 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:48:51 AM	REQUEST COMES FROM STATE LIST: {
-    "Name":"Amir Ansari",
-    "Email":"amir@gmail.com",
-    "Passowrd":"itsispass"
-}122.161.48.196	15-04-2024 11:49:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:49:32 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:49:54 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:50:09 AM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:50:46 AM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:50:46 AM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 11:51:08 AM	REQUEST COMES FROM LEAD SOURCE: {
-    "Name":"Amir Ansari",
-    "Email":"amir@gmail.com",
-    "Passowrd":"itsispass"
-}122.161.48.196	15-04-2024 12:00:17 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:00:21 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:00:24 PM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 12:00:53 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:00:56 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:01:00 PM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 12:01:53 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:01:56 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:02:00 PM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 12:09:37 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:09:40 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:09:44 PM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 12:10:28 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:10:28 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:11:26 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:11:26 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:14:04 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:14:04 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:14:14 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:14:14 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:14:57 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {
-    "Name":"Amir Ansari",
-    "Email":"amir@gmail.com",
-    "Passowrd":"itsispass"
-}122.161.48.196	15-04-2024 12:23:48 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:23:52 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:23:52 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:23:56 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:23:59 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:23:59 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:05 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:05 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:21 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:28 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:28 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:30 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:30 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:33 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:41 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:41 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:24:52 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Punpun","CountryId":"109","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:24:56 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:25:34 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {
-    "Name":"Amir Ansari",
-    "Email":"amir@gmail.com",
-    "Passowrd":"itsispass"
-}122.161.48.196	15-04-2024 12:26:08 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":49,"Name":"Punpun","CountryId":109,"Status":"0","UpdatedBy":1}122.161.48.196	15-04-2024 12:26:12 PM	REQUEST COMES FROM STATE LIST: {"Search":"pun","Status":""}122.161.48.196	15-04-2024 12:36:24 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:36:37 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Perth","CountryId":"93","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 12:36:42 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:36:43 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:36:43 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:37:19 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":50,"Name":"Perth","CountryId":93,"Status":"0","UpdatedBy":1}122.161.48.196	15-04-2024 12:37:23 PM	REQUEST COMES FROM STATE LIST: {"Search":"pert","Status":""}122.161.48.196	15-04-2024 12:38:14 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:39:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {
-            "Id": 1,
-            "ServiceType": "gu",
-            "Destination": "fhsks",
-            "TourEscortService": "hku",
-            "Status": "Active",
-            "Default": "Yes",
-            "AddedBy": 1,
-            "UpdatedBy": 0,
-            "Created_at": "2024-03-09 13:29:29",
-            "Updated_at": "2024-03-09 13:29:37"
-        }
-122.161.48.196	15-04-2024 12:39:42 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {
-            "Id": 1,
-            "ServiceType": "gu",
-            "Destination": "fhsks",
-            "TourEscortService": "hku",
-            "Status": "Active",
-            "Default": "Yes",
-            "AddedBy": 1,
-            "UpdatedBy": 0,
-            "Created_at": "2024-03-09 13:29:29",
-            "Updated_at": "2024-03-09 13:29:37"
-        }
-122.161.48.196	15-04-2024 12:41:31 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 12:42:41 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:42:41 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:43:46 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:43:46 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:43:54 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:43:54 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:45:46 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:45:46 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:48:26 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 12:49:09 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.168.21.7	15-04-2024 12:50:44 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 12:59:12 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:00:43 PM	REQUEST COMES FROM ADD/UPDATE LEAD: {"id":19,"Name":"Organic","SetDefault":"1","Status":1,"AddedBy":2,"UpdatedBy":0,"Created_at":"2024-04-13T07:14:02.000000Z","Updated_at":"2024-04-13T07:14:02.000000Z"}122.161.48.196	15-04-2024 01:00:47 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}54.86.50.139	15-04-2024 01:03:12 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "Aurangabad",
-    "Status": 1
-}54.86.50.139	15-04-2024 01:03:21 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}122.161.48.196	15-04-2024 01:03:21 PM	REQUEST COMES FROM ADD/UPDATE LEAD: {"id":"","Name":"Outlook","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 01:03:25 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:07:22 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:07:25 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 01:08:10 PM	REQUEST COMES FROM STATE LIST: 
-122.161.48.196	15-04-2024 01:10:53 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"queensland","StateName":"","CountryName":"","CountryId":"93","StateId":"Queensland","Description":"great city ","SetDefault":"1","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:10:57 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Queensland" (Connection: pgsql, SQL: insert into "others"."destination_master" ("CountryId", "StateId", "Name", "Description", "SetDefault", "AddedBy", "Status", "created_at") values (93, Queensland, queensland, great city, 1, 1, 1, 2024-04-15 13:10:53) returning "id")122.161.48.196	15-04-2024 01:10:57 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:12:06 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:12:06 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:12:09 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 01:12:09 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 01:12:27 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Patna","StateName":"","CountryName":"","CountryId":"91","StateId":"Bihar","Description":"good place","SetDefault":"1","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:12:31 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Bihar" (Connection: pgsql, SQL: insert into "others"."destination_master" ("CountryId", "StateId", "Name", "Description", "SetDefault", "AddedBy", "Status", "created_at") values (91, Bihar, Patna, good place, 1, 1, 1, 2024-04-15 13:12:27) returning "id")122.161.48.196	15-04-2024 01:12:31 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:12:58 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Red Fort","StateName":"","CountryName":"","CountryId":"91","StateId":"32","Description":"for tourism","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}54.86.50.139	15-04-2024 01:13:00 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}122.161.48.196	15-04-2024 01:13:02 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:14:00 PM	REQUEST COMES FROM STATE LIST: 
-122.161.48.196	15-04-2024 01:14:53 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":12,"Name":"Red Fort Delhi","StateName":"Delhi","CountryName":"India","CountryId":91,"StateId":32,"Description":"for tourism purpose","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0,"Created_at":"2024-04-15 13:12:58","Updated_at":null}122.161.48.196	15-04-2024 01:14:57 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 01:15:31 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"patna","StateName":"","CountryName":"","CountryId":1,"StateId":1,"Description":"good","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:15:35 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}54.86.50.139	15-04-2024 01:40:39 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}122.168.21.7	15-04-2024 01:41:09 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:41:20 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:41:24 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.168.21.7	15-04-2024 01:47:24 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":12,"Name":"Red Fort Delhi","StateName":"Delhi","CountryName":"India","CountryId":"91","StateId":"Delhi","Description":"for tourism purpose","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0,"Created_at":"2024-04-15 13:12:58","Updated_at":"2024-04-15 13:14:56"}122.168.21.7	15-04-2024 01:47:28 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Delhi" (Connection: pgsql, SQL: update "others"."destination_master" set "StateId" = Delhi, "updated_at" = 2024-04-15 13:47:27 where "id" = 12)122.168.21.7	15-04-2024 01:47:28 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}54.86.50.139	15-04-2024 01:47:45 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}122.161.48.196	15-04-2024 01:48:03 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:48:03 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","UploadKeyword":"","ProposalPriority":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:48:07 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:48:07 PM	REQUEST COMES FROM STATE LIST: {"id":"","Name":"","ShortName":"","SetDefault":0,"Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 01:48:11 PM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.161.48.196	15-04-2024 01:48:11 PM	REQUEST COMES FROM LEAD SOURCE: {"id":"","Name":"","SetDefault":0,"Status":1,"AddedBy":2,"UpdatedBy":0}122.168.21.7	15-04-2024 01:48:13 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:48:16 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.168.21.7	15-04-2024 01:49:27 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":11,"Name":"Patna","StateName":null,"CountryName":"India","CountryId":91,"StateId":"Bihar","Description":"For 10 days tour","SetDefault":1,"Status":1,"AddedBy":1,"UpdatedBy":0,"Created_at":"2024-04-13 12:47:06","Updated_at":"2024-04-13 12:48:09"}122.168.21.7	15-04-2024 01:49:31 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Bihar" (Connection: pgsql, SQL: update "others"."destination_master" set "StateId" = Bihar, "updated_at" = 2024-04-15 13:49:30 where "id" = 11)122.168.21.7	15-04-2024 01:49:31 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:55:07 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:55:11 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:57:32 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:57:36 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:58:52 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:58:55 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 01:59:05 PM	REQUEST COMES FROM Hotel Import: [
-  {
-    "HOTEL_NAME": "Novotel Ahmedabad",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Iscon Cross RoadsNext To Wide Angle Cinema S G HighwayAhmedabad Gujarat Pin Code : 380015",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.accorhotels.com/gb/hotel-8173-novotel-ahmedabad/index.shtml",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Park Plaza",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Opposite Gujarat CollegeEllisbridge Ahmedabad Gujarat  380 006",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Radisson Blu Hotel",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Near Panchvati Cross Roads Off C.G. Road Ambawadi Ahmedabad Gujarat Pin Code : 380006",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.radissonblu.com/en/hotel-ahmedabad",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Regenta Central Antarim",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Between Girish Coldrink and Xaviers Corner Girdharlal Rd Navrangpura Ahmedabad Gujarat Pin Code : 380009",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Regenta Inn Ranip",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "GSRTC Arved Transcube Mall 132 ft. Ring Road Opp. AdiJati Girls Hostel Ranip Ahmedabad Pin Code : 382480",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.royalorchidhotels.com/regenta-inn-ranip-ahmedabad",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Renaissance Hotel",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Behind Ganesh Meridian Complex Sola Road Sarkhej Gandhinagar Hwy Ahmedabad Gujarat Pin Code : 380060",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "River Front Hotel",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Opp MuseumPaldiAhmedabad.",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.hotelriverfront.co.in",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Royal Orchid Central",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Opp. Gujrat CollegeEllis BridgeAhmedabad380 006",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.royalorchidhotels.com",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Sarovar Portico",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "1259 Khanpur Road Bhilwas Khanpur Ahmedabad Gujarat Pin Code : 380001",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.sarovarhotels.com/sarovar-portico-ahmedabad",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Silver Cloud Hotel & Banquets",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Plot No726 & 727 Opp. Gandhi Ashram & Dandi Bridge Ashram Road Wadaj Ahmedabad Gujarat Pin Code : 380027",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.hotelsilvercloud.com",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Starottel Ahmedabad Earlier ST Laurn",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "15 Ashram Road Ahmedabad Pin Code : 380013",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.starottel.com",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  }
-]122.168.21.7	15-04-2024 02:00:06 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 02:00:10 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 02:01:42 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 02:01:42 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 02:01:46 PM	REQUEST COMES FROM HOTEL   MASTER LIST: {"Search":"","Status":""}122.168.21.7	15-04-2024 02:02:01 PM	REQUEST COMES FROM Hotel Import: [
-  {
-    "HOTEL_NAME": "Novotel Ahmedabad",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Iscon Cross RoadsNext To Wide Angle Cinema S G HighwayAhmedabad Gujarat Pin Code : 380015",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.accorhotels.com/gb/hotel-8173-novotel-ahmedabad/index.shtml",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Park Plaza",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Opposite Gujarat CollegeEllisbridge Ahmedabad Gujarat  380 006",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Radisson Blu Hotel",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Near Panchvati Cross Roads Off C.G. Road Ambawadi Ahmedabad Gujarat Pin Code : 380006",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.radissonblu.com/en/hotel-ahmedabad",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Regenta Central Antarim",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Between Girish Coldrink and Xaviers Corner Girdharlal Rd Navrangpura Ahmedabad Gujarat Pin Code : 380009",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Regenta Inn Ranip",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "GSRTC Arved Transcube Mall 132 ft. Ring Road Opp. AdiJati Girls Hostel Ranip Ahmedabad Pin Code : 382480",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.royalorchidhotels.com/regenta-inn-ranip-ahmedabad",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Renaissance Hotel",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Behind Ganesh Meridian Complex Sola Road Sarkhej Gandhinagar Hwy Ahmedabad Gujarat Pin Code : 380060",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "River Front Hotel",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Opp MuseumPaldiAhmedabad.",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.hotelriverfront.co.in",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Royal Orchid Central",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Opp. Gujrat CollegeEllis BridgeAhmedabad380 006",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.royalorchidhotels.com",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Sarovar Portico",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "1259 Khanpur Road Bhilwas Khanpur Ahmedabad Gujarat Pin Code : 380001",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "https://www.sarovarhotels.com/sarovar-portico-ahmedabad",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Silver Cloud Hotel & Banquets",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "Plot No726 & 727 Opp. Gandhi Ashram & Dandi Bridge Ashram Road Wadaj Ahmedabad Gujarat Pin Code : 380027",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.hotelsilvercloud.com",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_NAME": "Starottel Ahmedabad Earlier ST Laurn",
-    "DESTINATION": "Ahmedabad",
-    "SELF_SUPPLIER": "No",
-    "SUPPLIER_NAME": "Royal Expeditions",
-    "HOTEL_COUNTRY": "India",
-    "STATE": "Gujarat",
-    "CITY": "Ahmedabad",
-    "HOTEL_ADDRESS": "15 Ashram Road Ahmedabad Pin Code : 380013",
-    "DIVISION": "Operations",
-    "CONTACT_PERSON": "\tRoyal Expedition",
-    "DESIGNATION": "Resort Manager",
-    "MOBILE_NO": "None",
-    "CONTACT_PERSON_EMAIL": "info@royalexpeditions.com",
-    "MARKET_TYPE": "General",
-    "SEASON_TYPE": "All",
-    "ROOM_TYPE": "Standard",
-    "MEAL_PLAN": "CP",
-    "FROM_VALIDITY": 44835,
-    "TO_VALIDITY": 45016,
-    "CURRENCY": "INR",
-    "SINGLE": 0,
-    "DOUBLE": 0,
-    "CHILD_WITH_BED": 0,
-    "EXTRA_BED_ADULT": 0,
-    "EXTRA_BED": 0,
-    "BREAKFAST": 0,
-    "LUNCH": 0,
-    "DINNER": 0,
-    "TARRIF_TYPE": "All",
-    "ROOM_GST_SLAB": "GSTInclusive",
-    "MEAL_GST_SLAB": "TaxInclusive",
-    "STAR": "5Star",
-    "HOTEL_WEB_LINK": "www.starottel.com",
-    "HOTEL_CHAIN": "None",
-    "WEEKEND_NAME": "None",
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  },
-  {
-    "HOTEL_TYPE": "Heritage"
-  }
-]122.161.48.196	15-04-2024 02:30:01 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 02:30:01 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 02:31:28 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 02:31:28 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 02:31:46 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 02:31:46 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}54.86.50.139	15-04-2024 03:14:12 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}54.86.50.139	15-04-2024 03:14:24 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
-}152.58.24.167	15-04-2024 03:14:35 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 03:14:35 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 03:16:21 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":3,"SeasonName":"Summer","FromDate":"2024-04-01","ToDate":"2024-06-30","Status":"1","UpdatedBy":0}152.58.24.167	15-04-2024 03:17:47 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":4,"FromDate":"2025-04-01","ToDate":"2025-06-30","Status":"1","UpdatedBy":0}152.58.24.167	15-04-2024 03:18:05 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":4,"FromDate":"2025-04-01","ToDate":"2025-06-30","Status":"1","UpdatedBy":0}152.58.24.167	15-04-2024 03:20:46 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":4,"SeasonName":"Winter","FromDate":"2025-04-01","ToDate":"2025-06-30","Status":"1","UpdatedBy":0}152.58.24.167	15-04-2024 03:21:14 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":"","SeasonName":"Summer","FromDate":"2024-04-15","ToDate":"2024-04-30","Status":1,"AddedBy":1,"UpdatedBy":0}152.58.24.167	15-04-2024 03:24:39 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":"","SeasonName":"Summer","FromDate":"2024-04-15","ToDate":"2024-04-30","Status":1,"AddedBy":1,"UpdatedBy":0}54.86.50.139	15-04-2024 03:27:42 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
-}152.58.24.167	15-04-2024 03:29:12 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":"","SeasonName":"Summer","FromDate":"2024-04-15","ToDate":"2024-04-30","Status":1,"AddedBy":1,"UpdatedBy":0}54.86.50.139	15-04-2024 03:34:37 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2023-12-20",
-    "ToDate": "2023-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:35:25 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2023-12-20",
-    "ToDate": "2023-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:36:03 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:36:35 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:36:54 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:38:23 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:39:10 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-<<<<<<< HEAD
-=======
-}54.86.50.139	15-04-2024 03:43:50 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:50:19 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:51:17 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:51:55 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Winter",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:52:04 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Summer",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:54:15 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Summer",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:54:19 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Summer",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 03:55:09 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Summer",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}122.161.48.196	15-04-2024 04:09:14 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "1",
-    "Search": "",
-    "Status": "1"
-}122.161.48.196	15-04-2024 04:09:29 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": "1"
-}122.161.48.196	15-04-2024 04:14:28 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:14:28 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:15:15 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:15:31 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:15:39 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:15:39 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:19:51 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:20:06 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:20:11 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:20:11 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:21:39 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:21:39 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:24:15 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:24:15 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:24:35 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:24:50 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:30:11 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:30:11 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}54.86.50.139	15-04-2024 04:37:52 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {
-    "id": "",
-    "SeasonName": "Summer",
-    "FromDate": "2024-04-20",
-    "ToDate": "2024-12-20",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}122.161.48.196	15-04-2024 04:42:16 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:42:16 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:42:41 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:42:41 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:43:24 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:43:24 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:45:18 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:45:19 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:46:09 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: 122.161.48.196	15-04-2024 04:46:27 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:46:27 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:46:49 PM	REQUEST COMES FROM VISA TYPE SOURCE: 122.161.48.196	15-04-2024 04:47:37 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {
-    "id": "1",
-    "VisaType": "thisis",
-    "Status": "1",
-    "AddedBy": "1",
-    "UpdatedBy": "1"
-}122.161.48.196	15-04-2024 04:48:14 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:48:14 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:48:48 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:00 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:03 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:25 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:29 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:32 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:38 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:49:38 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:50:00 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:52:52 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:53:24 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:53:38 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 04:53:38 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}152.58.24.167	15-04-2024 04:54:07 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:54:07 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:54:43 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:54:43 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:55:08 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:55:08 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:56:51 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:56:51 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:57:05 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:57:05 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:57:15 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:57:15 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:57:19 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":3,"SeasonName":null,"FromDate":"2024-04-01","ToDate":"2024-06-30","Status":"1","UpdatedBy":0}152.58.24.167	15-04-2024 04:57:21 PM	REQUEST COMES FROM ADD/UPDATE SEASON: {"id":3,"SeasonName":"Summer","FromDate":"2024-04-01","ToDate":"2024-06-30","Status":"1","UpdatedBy":0}152.58.24.167	15-04-2024 04:58:34 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}152.58.24.167	15-04-2024 04:58:34 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 04:58:46 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "id": "1",
-    "InsuranceType": "TK",
-    "Status": "1",
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}152.58.24.167	15-04-2024 04:58:50 PM	REQUEST COMES FROM ADD/UPDATE INSURANCE TYPE: {"id":"","InsuranceType":"abc","Status":1,"AddedBy":1,"UpdatedBy":0}152.58.24.167	15-04-2024 04:58:54 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 04:59:10 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 04:59:10 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:59:11 PM	REQUEST COMES FROM ADD/UPDATE INSURANCE TYPE: {"id":1,"InsuranceType":"abc111","Status":1,"AddedBy":1,"UpdatedBy":0}152.58.24.167	15-04-2024 04:59:15 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}152.58.24.167	15-04-2024 04:59:31 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:59:31 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:59:36 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {"id":"","VisaType":"Employment Visa","Status":1,"AddedBy":1,"UpdatedBy":1}152.58.24.167	15-04-2024 04:59:39 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Employment Visa" (Connection: pgsql, SQL: select count(*) as aggregate from "others"."visa_type_master" where "VisaType" = Employment Visa)152.58.24.167	15-04-2024 04:59:39 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 04:59:58 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {"id":"","VisaType":"Employment Visa","Status":1,"AddedBy":1,"UpdatedBy":1}152.58.24.167	15-04-2024 05:00:02 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Employment Visa" (Connection: pgsql, SQL: select count(*) as aggregate from "others"."visa_type_master" where "VisaType" = Employment Visa)152.58.24.167	15-04-2024 05:00:02 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:00:21 PM	Exception Error  ===>  SQLSTATE[42P01]: Undefined table: 7 ERROR:  relation "transport.vehicle_type_master" does not exist
-LINE 1: select count(*) as aggregate from "transport"."vehicle_type_...
-                                          ^ (Connection: pgsql, SQL: select count(*) as aggregate from "transport"."vehicle_type_master" where "Name" = Neelu)152.58.24.167	15-04-2024 05:00:56 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:00:56 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:01:03 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:01:03 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:01:19 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:01:19 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:01:28 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:01:28 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:02:04 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:02:04 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:02:19 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:02:20 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:02:23 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 05:02:24 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 05:02:53 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:02:53 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:03:41 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:03:41 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:42 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:42 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:49 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:49 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:51 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:52 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:52 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:55 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:03:56 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 05:03:59 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}152.58.24.167	15-04-2024 05:04:03 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:04:03 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:04:07 PM	REQUEST COMES FROM ADD/UPDATE INSURANCE TYPE: {"id":"","InsuranceType":"jjdhdh","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:04:11 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 05:04:33 PM	REQUEST COMES FROM ADD/UPDATE INSURANCE TYPE: {"id":2,"InsuranceType":"Fixed Deposite","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:04:33 PM	REQUEST COMES FROM ADD/UPDATE INSURANCE TYPE: {"id":2,"InsuranceType":"Fixed Deposite","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:04:37 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}122.161.48.196	15-04-2024 05:04:53 PM	REQUEST COMES FROM ADD/UPDATE INSURANCE TYPE: {"id":1,"InsuranceType":"For a Year","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:04:57 PM	REQUEST COMES FROM INSURANCE TYPE : {"Search":"","Status":""}54.86.50.139	15-04-2024 05:05:02 PM	REQUEST COMES FROM STATE LIST: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
-}122.161.48.196	15-04-2024 05:05:21 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:05:21 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:05:37 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:05:37 PM	REQUEST COMES FROM INSURANCE COST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:06:33 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"queensland","StateName":"","CountryName":"","CountryId":"93","StateId":"Queensland","Description":"hwll","SetDefault":"1","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:06:37 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Queensland" (Connection: pgsql, SQL: insert into "others"."destination_master" ("CountryId", "StateId", "Name", "Description", "SetDefault", "AddedBy", "Status", "created_at") values (93, Queensland, queensland, hwll, 1, 1, 1, 2024-04-15 17:06:33) returning "id")122.161.48.196	15-04-2024 05:06:37 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:07:17 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:07:17 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:08:49 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:08:49 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:09:26 PM	REQUEST COMES FROM LEAD SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:09:27 PM	REQUEST COMES FROM ADD/UPDATE LEAD: 122.161.48.196	15-04-2024 05:09:39 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}122.161.48.196	15-04-2024 05:09:55 PM	REQUEST COMES FROM ADD/UPDATE LEAD: {
-    "Name":"",
-    "Status":"1"
-}122.161.48.196	15-04-2024 05:10:10 PM	REQUEST COMES FROM ADD/UPDATE LEAD: {
-    "Name":"Monument"
-    
-}122.161.48.196	15-04-2024 05:10:18 PM	REQUEST COMES FROM ADD/UPDATE LEAD: {
-    "name":"Monument"
-    
-}122.161.48.196	15-04-2024 05:10:27 PM	REQUEST COMES FROM ADD/UPDATE LEAD: {
-    "MonumentName":"Monument"
-    
-}122.161.48.196	15-04-2024 05:11:55 PM	REQUEST COMES FROM ADD/UPDATE TOUR ESCORT PRICE: {
-    "id": "1",
-    "ServiceType": "gu",
-    "Destination": "fhsks",
-    "TourEscortService": "hku",
-    "Status": 1,
-    "Default": "1",
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}122.161.48.196	15-04-2024 05:12:12 PM	REQUEST COMES FROM ADD/UPDATE TOUR ESCORT PRICE: {
-    "ServiceType": "gu",
-    "Destination": "fhsks",
-    "TourEscortService": "hku",
-    "Status": 1,
-    "Default": "1",
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 05:12:41 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}54.86.50.139	15-04-2024 05:12:49 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": 1
-}54.86.50.139	15-04-2024 05:12:55 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
-}122.161.48.196	15-04-2024 05:13:08 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:13:28 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Goa","CountryId":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:13:42 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Panji","CountryId":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:13:44 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Panji","CountryId":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:14:04 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Jammu","CountryId":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:14:15 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Jammu","CountryId":"91","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:14:19 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:14:30 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:14:30 PM	REQUEST COMES FROM VISA TYPE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:14:35 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {
-    "Id": "1",
-    "Search": "",
-    "Status": 1
-}122.161.48.196	15-04-2024 05:15:16 PM	REQUEST COMES FROM ADD/UPDATE STATE: {"id":"","Name":"Japan","CountryId":"","Status":1,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:15:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:34 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:34 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:38 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:38 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:42 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:15:42 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}54.86.50.139	15-04-2024 05:15:45 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {
-    "id": "",
-    "VisaType": "Emp Visa",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 05:15:48 PM	Exception Error  ===>  SQLSTATE[22P02]: Invalid text representation: 7 ERROR:  invalid input syntax for integer: "Emp Visa" (Connection: pgsql, SQL: select count(*) as aggregate from "others"."visa_type_master" where "VisaType" = Emp Visa)122.161.48.196	15-04-2024 05:16:28 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:28 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:35 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:35 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:39 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:39 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:59 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:16:59 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:17:01 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:17:06 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:17:18 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:17:19 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:17:54 PM	REQUEST COMES FROM ADD/UPDATE TOUR ESCORT PRICE: {"id":"","ServiceType":"1","Destination":"2","TourEscortService":"Tour","Status":1,"Default":0,"AddedBy":1,"UpdatedBy":0}122.161.48.196	15-04-2024 05:17:58 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:18:23 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}152.58.24.167	15-04-2024 05:18:23 PM	REQUEST COMES FROM VISA COST SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:18:35 PM	REQUEST COMES FROM ADD/UPDATE TOUR ESCORT PRICE: {"id":2,"ServiceType":"1","Destination":"2","TourEscortService":"Tour","Status":"0","Default":0,"AddedBy":1,"UpdatedBy":0,"SetDefault":"1"}122.161.48.196	15-04-2024 05:18:39 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:15 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:17 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:17 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:20 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:24 PM	REQUEST COMES FROM TOUR ESCORT PRICE SOURCE: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:33 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":""}122.161.48.196	15-04-2024 05:19:37 PM	REQUEST COMES FROM STATE LIST: {"Search":"","Status":1}54.86.50.139	15-04-2024 05:20:57 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {
-    "id": "",
-    "Name": "Emp Visa",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 05:21:00 PM	Exception Error  ===>  SQLSTATE[42703]: Undefined column: 7 ERROR:  column "Name" does not exist
-LINE 1: ... aggregate from "others"."visa_type_master" where "Name" = $...
-                                                             ^ (Connection: pgsql, SQL: select count(*) as aggregate from "others"."visa_type_master" where "Name" = Emp Visa)54.86.50.139	15-04-2024 05:23:19 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {
-    "id": "",
-    "Name": "Emp Visa",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 05:23:22 PM	Exception Error  ===>  SQLSTATE[42703]: Undefined column: 7 ERROR:  column "Name" does not exist
-LINE 1: ... aggregate from "others"."visa_type_master" where "Name" = $...
-                                                             ^ (Connection: pgsql, SQL: select count(*) as aggregate from "others"."visa_type_master" where "Name" = Emp Visa)54.86.50.139	15-04-2024 05:27:45 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {
-    "id": "",
-    "Name": "Emp Visa",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 05:27:55 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
-}54.86.50.139	15-04-2024 05:29:01 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
-}54.86.50.139	15-04-2024 05:31:56 PM	REQUEST COMES FROM ADD/UPDATE VISA TYPE: {
-    "id": "",
-    "Name": "Emp Visa",
-    "Status": 1,
-    "AddedBy": 1,
-    "UpdatedBy": 0
-}54.86.50.139	15-04-2024 05:32:03 PM	REQUEST COMES FROM VISA TYPE SOURCE: {
-    "Id": "",
-    "Search": "",
-    "Status": ""
->>>>>>> Main
-}

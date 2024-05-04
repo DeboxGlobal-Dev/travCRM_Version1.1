@@ -32,7 +32,7 @@ class TourEscortMasterController extends Controller
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
-                
+
                 $arrayDataRows[] = [
                     "Id" => $post->id,
                     "ServiceType" => $post->ServiceType,
@@ -204,12 +204,12 @@ class TourEscortMasterController extends Controller
                         $Status = $request->input('Status');
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
-    
+
                         $filename = uniqid() . '.png';
-    
+
                         // print_r($filename);die();
                         Storage::disk('public')->put($filename, $TourEscortImageData);
-                        
+
                         $edit->ServiceType = $request->input('ServiceType');
                         $edit->Name = $request->input('Name');
                         $edit->MobileNumber = $request->input('MobileNumber');
