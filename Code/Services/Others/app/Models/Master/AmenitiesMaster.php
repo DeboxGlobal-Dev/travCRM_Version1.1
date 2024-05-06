@@ -14,7 +14,6 @@ class AmenitiesMaster extends Model
         'Name',
         'SetDefault',
         'ImageName',
-        'ImageData',
         'AddedBy',
         'UpdatedBy',
         'Status',

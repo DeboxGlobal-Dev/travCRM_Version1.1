@@ -75,17 +75,16 @@ class AmenitiesMasterController extends Controller
                     return $validatordata->errors();
                 }else{
                     $Name = $request->input('Name');
-                    $ImageName = $request->input('ImageName');
-                    $base64Image = $request->input('ImageData');
-                    $ImageData = base64_decode($base64Image);
+                    $base64Image = $request->input('ImageName');
+                    $ImageName = base64_decode($base64Image);
                     $SetDefault = $request->input('SetDefault');
                     $Status = $request->input('Status');
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = time().'_'.$ImageName;
+                    $filename = time().'_'.'.png';
 
-                    Storage::disk('public')->put($filename, $ImageData);
+                    Storage::disk('public')->put($filename, $ImageName);
 
                  $savedata = AmenitiesMaster::create([
                     'Name' => $request->Name,
@@ -119,12 +118,11 @@ class AmenitiesMasterController extends Controller
                 }else{
                     if ($edit) {
                         $Name = $request->input('Name');
-                        $ImageName = $request->input('ImageName');
-                        $base64Image = $request->input('ImageData');
+                        $base64Image = $request->input('ImageName');
                         if($base64Image!=''){
-                            $ImageData = base64_decode($base64Image);
-                            $filename = time().'_'.$ImageName;
-                            Storage::disk('public')->put($filename, $ImageData);
+                            $ImageName = base64_decode($base64Image);
+                            $filename = time().'_'.'.png';
+                            Storage::disk('public')->put($filename, $ImageName);
                         }
                         $SetDefault = $request->input('SetDefault');
                         $Status = $request->input('Status');
