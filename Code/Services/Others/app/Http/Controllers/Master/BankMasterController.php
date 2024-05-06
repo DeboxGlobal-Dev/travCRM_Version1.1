@@ -33,7 +33,7 @@ class BankMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "BankName" => $post->BankName,
                     "AccountNumber" => $post->AccountNumber,
                     "BranchAddress" => $post->BranchAddress,

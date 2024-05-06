@@ -30,7 +30,7 @@ class FerryNameMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "FerryCompany" => $post->FerryCompany,
                     "FerryName" => $post->FerryName,
                     "Capacity" => $post->Capacity,

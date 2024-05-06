@@ -30,7 +30,7 @@ class ItineraryOverviewController extends Controller
             foreach ($posts as $post) {
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "OverviewName" => $post->OverviewName,
                     "OverviewInformation" => $post->OverviewInformation,
                     "HighlightInformation" => $post->HighlightInformation,

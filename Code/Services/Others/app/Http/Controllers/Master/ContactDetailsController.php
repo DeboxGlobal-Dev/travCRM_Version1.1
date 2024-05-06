@@ -31,7 +31,7 @@ class ContactDetailsController extends Controller
             foreach ($posts as $post){
                
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "ParentId" => $post->ParentId,
                     "Title" => $post->Title,
                     "Name" => $post->Name,

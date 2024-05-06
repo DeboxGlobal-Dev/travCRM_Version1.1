@@ -35,7 +35,7 @@ class InsuranceCostMasterController extends Controller
             foreach ($posts as $post){
 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "InsuranceName" => $post->InsuranceName,
                     "InsuranceType" => $post->InsuranceType,
                     "InsuranceTypeName" => getColumnValue(_INSURANCE_TYPE_MASTER_,"id",$post->InsuranceType,"InsuranceType"),

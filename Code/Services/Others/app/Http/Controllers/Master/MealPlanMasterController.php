@@ -37,7 +37,7 @@ class MealPlanMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "ShortName" => $post->ShortName,
                     "SetDefault" => ($post->SetDefault == 1) ? 'Yes': 'No',

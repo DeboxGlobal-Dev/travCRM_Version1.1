@@ -28,7 +28,7 @@ class HotelChainMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "Location" => $post->Location,
                     "HotelWebsite" => $post->HotelWebsite,

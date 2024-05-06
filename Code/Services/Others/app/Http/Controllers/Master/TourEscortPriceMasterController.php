@@ -35,7 +35,7 @@ class TourEscortPriceMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "ServiceType" => $post->ServiceType,
                     "Destination" => $post->Destination,
                     "TourEscortService" => $post->TourEscortService,

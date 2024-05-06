@@ -30,7 +30,7 @@ class SacCodeController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "ServiceType" => $post->ServiceType,
                     "SacCode" => $post->SacCode,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',

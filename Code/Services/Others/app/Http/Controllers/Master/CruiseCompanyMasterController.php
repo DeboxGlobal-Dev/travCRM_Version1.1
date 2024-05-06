@@ -28,7 +28,7 @@ class CruiseCompanyMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "CruiseCompanyName" => $post->CruiseCompanyName,
                     "Destination" => $post->Destination,
                     "Country" => $post->Country,

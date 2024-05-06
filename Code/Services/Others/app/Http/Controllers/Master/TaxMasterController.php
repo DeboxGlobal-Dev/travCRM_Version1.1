@@ -33,7 +33,7 @@ class TaxMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "ServiceType" => $post->ServiceType,
                     "TaxSlabName" => $post->TaxSlabName,
                     "TaxValue" => $post->TaxValue,

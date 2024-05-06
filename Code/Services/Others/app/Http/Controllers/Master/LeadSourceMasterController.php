@@ -33,7 +33,7 @@ class LeadSourceMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "SetDefault" => ($post->SetDefault == 1) ? 'Yes' : 'No',
                     "Status" =>($post->Status == 1) ? 'Active' : 'Inactive',

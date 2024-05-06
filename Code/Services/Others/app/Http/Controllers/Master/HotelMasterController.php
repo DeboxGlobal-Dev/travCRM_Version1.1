@@ -28,7 +28,7 @@ class HotelMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "HotelName" => $post->HotelName,
                     "HotelCountry" =>$post->HotelCountry,
                     "HotelCity" => $post->HotelCity,

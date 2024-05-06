@@ -33,7 +33,7 @@ class SightseeingMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "SightseeingName" => $post->SightseeingName,
                     "Destination" => $post->Destination,
                     "TransferType" => $post->TransferType,
@@ -143,18 +143,4 @@ class SightseeingMasterController extends Controller
         }
     }
 
-
-
-    // public function destroy(Request $request)
-    // {
-    //     $brands = SightseeingMaster::find($request->id);
-    //     $brands->delete();
-
-    //     if ($brands) {
-    //         return response()->json(['result' =>'Data deleted successfully!']);
-    //     } else {
-    //         return response()->json(['result' =>'Failed to delete data.'], 500);
-    //     }
-
-    // }
 }

@@ -28,7 +28,7 @@ class AdditionalRequirementMasterController extends Controller
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "DestinationName" => getName(_DESTINATION_MASTER_ ,$post->DestinationId),
                     "CurrencyName" => getName(_CURRENCY_MASTER_, $post->CurrencyId),

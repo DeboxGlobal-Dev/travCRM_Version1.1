@@ -22,7 +22,7 @@ class PackageMasterController extends Controller
           $arrayDataRows = [];
           foreach ($posts as $post){
               $arrayDataRows[] = [
-                  "Id" => $post->id,
+                  "id" => $post->id,
                   "Status" => $post->Status,
                   "Data" =>
                   // $post->Data,

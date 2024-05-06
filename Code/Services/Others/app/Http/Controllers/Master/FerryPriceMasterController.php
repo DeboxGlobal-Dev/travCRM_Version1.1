@@ -30,7 +30,7 @@ class FerryPriceMasterController extends Controller
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "FromDestination" => $post->FromDestination,
                     "ToDestination" => $post->ToDestination,

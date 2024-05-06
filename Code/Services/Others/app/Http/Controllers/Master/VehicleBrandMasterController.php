@@ -28,7 +28,7 @@ class VehicleBrandMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "VehicleType" => $post->VehicleType,
                     "Name" => $post->Name,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',

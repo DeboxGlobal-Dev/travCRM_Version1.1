@@ -30,7 +30,7 @@ class HotelCategoryMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "UploadKeyword" => $post->UploadKeyword,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',

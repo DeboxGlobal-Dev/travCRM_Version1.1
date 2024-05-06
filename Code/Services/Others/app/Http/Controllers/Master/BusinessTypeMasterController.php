@@ -35,7 +35,7 @@ class BusinessTypeMasterController extends Controller
           $arrayDataRows = [];
           foreach ($posts as $post){
            $arrayDataRows[] = [
-                  "Id" => $post->id,
+                  "id" => $post->id,
                   "Name" => $post->Name,
                   "SetDefault" => $post->SetDefault,
                   "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',

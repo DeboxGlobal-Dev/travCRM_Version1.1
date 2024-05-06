@@ -28,7 +28,7 @@ class CabinTypeMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "CruiseName" => $post->CruiseName,
                     "CabinType" => $post->CabinType,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',

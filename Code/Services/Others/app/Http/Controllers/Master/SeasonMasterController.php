@@ -33,7 +33,7 @@ class SeasonMasterController extends Controller
             foreach ($posts as $post){
 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "SeasonName" => $post->SeasonName,
                     "FromDate" => $post->FromDate,
@@ -65,7 +65,7 @@ class SeasonMasterController extends Controller
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE SEASON: '.$request->getContent());
 
-        //try{
+        try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -125,10 +125,10 @@ class SeasonMasterController extends Controller
                     }
                 }
             }
-        // }catch (\Exception $e){
-        //     call_logger("Exception Error  ===>  ". $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        //}
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
     }
 
 

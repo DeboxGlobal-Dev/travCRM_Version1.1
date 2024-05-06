@@ -27,7 +27,7 @@ class CityMasterController extends Controller
         foreach ($posts as $post){
            
             $arrayDataRows[] = [
-                "Id" => $post->id,
+                "id" => $post->id,
                 "Name" => $post->Name,
                 "CountryId" => $post->CountryId,
                 "StateId" => $post->StateId,

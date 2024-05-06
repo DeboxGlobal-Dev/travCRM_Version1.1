@@ -30,7 +30,7 @@ class AmenitiesMasterController extends Controller
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "SetDefault" => $post->SetDefault,
                     "ImageName" => asset('storage/' . $post->ImageName),

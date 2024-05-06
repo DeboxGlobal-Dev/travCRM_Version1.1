@@ -30,7 +30,7 @@ class DriverMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Country" => $post->Country,
                     "DriverName" => $post->DriverName,
                     "MobileNumber" => $post->MobileNumber,

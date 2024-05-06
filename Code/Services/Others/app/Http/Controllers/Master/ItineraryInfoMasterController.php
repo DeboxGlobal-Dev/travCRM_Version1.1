@@ -29,7 +29,7 @@ class ItineraryInfoMasterController extends Controller
             foreach ($posts as $post) {
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "FromDestination" => $post->FromDestination,
                     "ToDestination" => $post->ToDestination,
                     "TransferMode" => $post->TransferMode,

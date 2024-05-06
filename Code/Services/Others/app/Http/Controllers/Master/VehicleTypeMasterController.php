@@ -32,7 +32,7 @@ class VehicleTypeMasterController extends Controller
                     $Status = 'InActive';
                }
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "PaxCapacity" => $post->PaxCapacity,
                     "Status" => $Status,

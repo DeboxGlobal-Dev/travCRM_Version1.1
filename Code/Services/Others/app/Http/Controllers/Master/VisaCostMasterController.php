@@ -35,7 +35,7 @@ class VisaCostMasterController extends Controller
             foreach ($posts as $post){
 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Country" => $post->Country,
                     "CountryName" => getName(_COUNTRY_MASTER_,$post->Country),
                     "VisaType" => $post->VisaType,

@@ -29,16 +29,14 @@ class ModuleMasterController extends Controller
             return $query->where('Status',$Status);
        })->select('*')->orderBy('SerialNumber')->get('*');
 
-        //$countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-        //call_logger('REQUEST2: '.$countryName22);
+       
 
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "SerialNumber" => $post->SerialNumber,
                     "ModuleName" => $post->ModuleName,
                     "ModuleType" => $post->ModuleType,

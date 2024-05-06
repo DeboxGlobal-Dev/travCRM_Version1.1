@@ -28,7 +28,7 @@ class LetterMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "GreetingNote" => $post->GreetingNote,
                     "WelcomeNote" => $post->WelcomeNote,
@@ -55,7 +55,7 @@ class LetterMasterController extends Controller
 
     public function store(Request $request)
     {
-        //try{
+        try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -113,10 +113,10 @@ class LetterMasterController extends Controller
                     }
                 }
             }
-        //}catch (\Exception $e){
-            //call_logger("Exception Error  ===>  ". $e->getMessage());
-            //return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        //}
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
     }
 
 

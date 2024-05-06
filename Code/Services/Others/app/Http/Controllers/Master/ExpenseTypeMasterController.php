@@ -33,7 +33,7 @@ class ExpenseTypeMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "ExpenseHead" => $post->ExpenseHead,
                     "ExpenseType" => $post->ExpenseType,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',

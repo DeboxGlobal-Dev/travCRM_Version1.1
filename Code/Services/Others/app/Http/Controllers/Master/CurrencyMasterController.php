@@ -38,7 +38,7 @@ class CurrencyMasterController extends Controller
           foreach ($posts as $post){
             
               $arrayDataRows[] = [
-                  "Id" => $post->id,
+                  "id" => $post->id,
                   "CountryName" => getName(_COUNTRY_MASTER_, $post->CountryId),
                   "CurrencyCode" => $post->CountryCode,
                   "Currencyname" => $post->CurrencyName,

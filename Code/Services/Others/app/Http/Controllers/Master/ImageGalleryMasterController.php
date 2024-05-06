@@ -33,7 +33,7 @@ class ImageGalleryMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "ImageName" => $post->ImageName,
                     "ImageData" => asset('storage/' . $post->ImageData),
                     "Type" => $post->Type,

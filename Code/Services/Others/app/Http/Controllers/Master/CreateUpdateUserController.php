@@ -30,7 +30,7 @@ class CreateUpdateUserController extends Controller
             foreach ($posts as $post) {
 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "CompanyKey" => $post->CompanyKey,
                     "UserCode" => $post->UserCode,
                     "FirstName" => $post->FirstName,

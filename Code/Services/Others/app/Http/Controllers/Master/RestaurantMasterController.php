@@ -35,7 +35,7 @@ class RestaurantMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "DestinationId" => $post->DestinationId,
                     "Address" => $post->Address,

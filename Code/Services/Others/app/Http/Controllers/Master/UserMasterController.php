@@ -20,7 +20,7 @@ class UserMasterController extends Controller
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Title" => $post->Title,
                     "Data" => array(
                         "Name" => $post->Data['Name'],

@@ -34,7 +34,7 @@ class HotelAdditionalMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "Details" => $post->Details,
                     "ImageName" => $post->ImageName,

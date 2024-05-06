@@ -29,7 +29,7 @@ class VehicleMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "VehicleTypeName" => getName(_VEHICLE_TYPE_MASTER_ ,$post->VehicleType),
                     "Capacity" => $post->Capacity,
                     "VehicleBrandName" => getName(_VEHICLE_BRAND_MASTER_ ,$post->VehicleBrand),

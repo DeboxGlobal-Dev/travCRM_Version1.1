@@ -31,7 +31,7 @@ class TransfermasterController extends Controller
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "TransferName" => $post->TransferName,
                     "Destinations" => $post->Destinations,
                     "TransferType" => $post->TransferType,

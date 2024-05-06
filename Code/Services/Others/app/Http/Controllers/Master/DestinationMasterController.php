@@ -42,7 +42,7 @@ class DestinationMasterController extends Controller
           foreach ($posts as $post){
            
               $arrayDataRows[] = [
-                  "Id" => $post->id,
+                  "id" => $post->id,
                   "Name" => $post->Name,
                   "StateName" => getName(_STATE_MASTER_,$post->StateId),
                   "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),

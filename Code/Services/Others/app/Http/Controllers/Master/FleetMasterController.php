@@ -30,7 +30,7 @@ class FleetMasterController extends Controller
             $arrayDataRows = [];
             foreach ($posts as $post){
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "VehicleType" => $post->VehicleType,
                     "Image" => $post->Image,

@@ -30,16 +30,13 @@ class StateMasterController extends Controller
             return $query->where('id',  $id );
         })->select('*')->orderBy('Name')->get('*');
 
-        //$countryName = getName(_COUNTRY_MASTER_,3);
-        //$countryName22 = getColumnValue(_COUNTRY_MASTER_,'ShortName','AU','Name');
-        //call_logger('REQUEST2: '.$countryName22);
-
+        
         if ($posts->isNotEmpty()) {
             $arrayDataRows = [];
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Name" => $post->Name,
                     "CountryId" => $post->CountryId,
                     "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),

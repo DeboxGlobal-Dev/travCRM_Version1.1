@@ -30,7 +30,7 @@ class FitController extends Controller
             foreach ($posts as $post) {
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "Destination" => $post->Destination,
                     "Inclusion" => $post->Inclusion,
                     "Exclusion" => $post->Exclusion,

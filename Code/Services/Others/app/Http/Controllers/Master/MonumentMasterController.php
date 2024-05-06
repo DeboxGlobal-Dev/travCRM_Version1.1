@@ -36,7 +36,7 @@ class MonumentMasterController extends Controller
             foreach ($posts as $post){
                 
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "MonumentName" => $post->MonumentName,
                     "Destination" => $post->Destination,
                     "TransferType" => $post->TransferType,

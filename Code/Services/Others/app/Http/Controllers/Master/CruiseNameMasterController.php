@@ -29,7 +29,7 @@ class CruiseNameMasterController extends Controller
             foreach ($posts as $post){
                
                 $arrayDataRows[] = [
-                    "Id" => $post->id,
+                    "id" => $post->id,
                     "CruiseCompany" => $post->CruiseCompany,
                     "CruiseName" => $post->CruiseName,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
