@@ -45,8 +45,7 @@ class TourEscortMasterController extends Controller
                     "LicenseExpiry" => $post->LicenseExpiry,
                     "Destination" => $post->Destination,
                     "Language" => $post->Language,
-                    "TourEscortImageName" => $post->TourEscortImageName,
-                    "TourEscortImageData" => asset('storage/' . $post->TourEscortImageData),
+                    "TourEscortImageName" => asset('storage/' . $post->TourEscortImageData),
                     "Supplier" => $post->Supplier,
                     "TourEscortLicenseTwo" => $post->TourEscortLicenseTwo,
                     "ContactPerson" => $post->ContactPerson,
@@ -121,10 +120,10 @@ class TourEscortMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$TourEscortImageName;
 
-                    // print_r($filename);die();
-                    Storage::disk('public')->put($filename, $TourEscortImageData);
+                    Storage::disk('public')->put($filename, $TourEscortLicenseTwo);
+
 
 
                  $savedata = TourEscortMaster::create([
@@ -138,8 +137,7 @@ class TourEscortMasterController extends Controller
                     'LicenseExpiry' => $request->LicenseExpiry,
                     'Destination' => $request->Destination,
                     'Language' => $request->Language,
-                    'TourEscortImageName' => $TourEscortImageName,
-                    'TourEscortImageData' => $filename,
+                    'TourEscortImageName' => $filename,
                     'Supplier' => $request->Supplier,
                     'TourEscortLicenseTwo' => $request->TourEscortLicenseTwo,
                     'ContactPerson' => $request->ContactPerson,
@@ -190,7 +188,11 @@ class TourEscortMasterController extends Controller
                         $Language = $request->input('Language');
                         $TourEscortImageName = $request->input('TourEscortImageName');
                         $base64Image = $request->input('TourEscortImageData');
-                        $TourEscortImageData = base64_decode($base64Image);
+                        if($base64Image!=''){
+                            $TourEscortImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$TourEscortImageName;
+                            Storage::disk('public')->put($filename, $TourEscortImageData);
+                        }
                         $Supplier = $request->input('Supplier');
                         $TourEscortLicenseTwo = $request->input('TourEscortLicenseTwo');
                         $ContactPerson = $request->input('ContactPerson');
@@ -205,10 +207,7 @@ class TourEscortMasterController extends Controller
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
 
-                        $filename = uniqid() . '.png';
-
-                        // print_r($filename);die();
-                        Storage::disk('public')->put($filename, $TourEscortImageData);
+                        
 
                         $edit->ServiceType = $request->input('ServiceType');
                         $edit->Name = $request->input('Name');
@@ -220,8 +219,9 @@ class TourEscortMasterController extends Controller
                         $edit->LicenseExpiry = $request->input('LicenseExpiry');
                         $edit->Destination = $request->input('Destination');
                         $edit->Language = $request->input('Language');
-                        $edit->TourEscortImageName = $TourEscortImageName;
-                        $edit->TourEscortImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->TourEscortImageName = $filename;
+                        }
                         $edit->Supplier = $request->input('Supplier');
                         $edit->TourEscortLicenseTwo = $request->input('TourEscortLicenseTwo');
                         $edit->ContactPerson = $request->input('ContactPerson');
