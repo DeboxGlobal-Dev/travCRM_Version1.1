@@ -34,8 +34,7 @@ class ImageGalleryMasterController extends Controller
                 
                 $arrayDataRows[] = [
                     "id" => $post->id,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "Type" => $post->Type,
                     "ParentId" => $post->ParentId,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
@@ -87,16 +86,14 @@ class ImageGalleryMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
 
                     $savedata = ImageGalleryMaster::create([
                         'Type' => $request->Type,
                         'ParentId' => $request->ParentId,
-                        'ImageName' => $ImageName,
-                        'ImageData' => $filename,
+                        'ImageName' => $filename,
                         'Status' => $request->Status,
                         'AddedBy' => $request->AddedBy,
                         'created_at' => now(),
@@ -128,20 +125,22 @@ class ImageGalleryMasterController extends Controller
 
                         $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                         $Type = $request->input('Type');
                         $ParentId = $request->input('ParentId');
                         $Status = $request->input('Status');
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
     
-                        $filename = uniqid() . '.png';
-    
-                        // print_r($filename);die();
-                        Storage::disk('public')->put($filename, $ImageData);
+                        
 
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->Type = $request->input('Type');
                         $edit->ParentId = $request->input('ParentId');
                         $edit->Status = $request->input('Status');
