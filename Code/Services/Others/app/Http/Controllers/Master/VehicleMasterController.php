@@ -34,8 +34,7 @@ class VehicleMasterController extends Controller
                     "Capacity" => $post->Capacity,
                     "VehicleBrandName" => getName(_VEHICLE_BRAND_MASTER_ ,$post->VehicleBrand),
                     "Name" => $post->Name,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -84,18 +83,15 @@ class VehicleMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
-
                  $savedata = VehicleMaster::create([
                     'VehicleType' => $request->VehicleType,
                     'Capacity' => $request->Capacity,
                     'VehicleBrand' => $request->VehicleBrand,
                     'Name' => $request->Name,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -129,22 +125,24 @@ class VehicleMasterController extends Controller
                     $VehicleBrand = $request->input('VehicleBrand');
                     $Name = $request->input('Name');
                     $ImageName = $request->input('ImageName');
-                    $base64Image = $request->input('ImageData');
-                    $ImageData = base64_decode($base64Image);
+                        $base64Image = $request->input('ImageData');
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                     $Status = $request->input('Status');
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
-
-                    // print_r($filename);die();
-                    Storage::disk('public')->put($filename, $ImageData);
+                    
                         $edit->VehicleType = $request->input('VehicleType');
                         $edit->Capacity = $request->input('Capacity');
                         $edit->VehicleBrand = $request->input('VehicleBrand');
                         $edit->Name = $request->input('Name');
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
