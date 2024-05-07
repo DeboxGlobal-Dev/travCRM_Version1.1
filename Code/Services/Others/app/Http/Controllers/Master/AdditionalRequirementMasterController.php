@@ -164,8 +164,7 @@ class AdditionalRequirementMasterController extends Controller
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
     
-                        $filename = uniqid() . '.png';
-                        Storage::disk('public')->put($filename, $ImageData);
+                    
 
                         $edit->Name = $request->input('Name');
                         $edit->DestinationId = $request->input('DestinationId');
