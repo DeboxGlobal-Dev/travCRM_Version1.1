@@ -34,8 +34,7 @@ class FerryNameMasterController extends Controller
                     "FerryCompany" => $post->FerryCompany,
                     "FerryName" => $post->FerryName,
                     "Capacity" => $post->Capacity,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -83,9 +82,8 @@ class FerryNameMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
 
 
@@ -93,8 +91,7 @@ class FerryNameMasterController extends Controller
                     'FerryCompany' => $request->FerryCompany,
                     'FerryName' => $request->FerryName,
                     'Capacity' => $request->Capacity,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -128,21 +125,23 @@ class FerryNameMasterController extends Controller
                         $Capacity = $request->input('Capacity');
                         $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                         $Status = $request->input('Status');
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
     
-                        $filename = uniqid() . '.png';
-    
-                        // print_r($filename);die();
-                        Storage::disk('public')->put($filename, $ImageData);
+                        
                         
                         $edit->FerryCompany = $request->input('FerryCompany');
                         $edit->FerryName = $request->input('FerryName');
                         $edit->Capacity = $request->input('Capacity');
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
