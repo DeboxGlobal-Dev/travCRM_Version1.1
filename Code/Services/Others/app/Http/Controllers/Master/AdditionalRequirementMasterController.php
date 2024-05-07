@@ -65,7 +65,7 @@ class AdditionalRequirementMasterController extends Controller
 
     public function store(Request $request)
     {
-       // try{
+        try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -97,9 +97,8 @@ class AdditionalRequirementMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
 
 
@@ -114,8 +113,7 @@ class AdditionalRequirementMasterController extends Controller
                     'TaxSlab' => $request->TaxSlab,
                     'ShowInProposal' => $request->ShowInProposal,
                     'MarkupApply' => $request->MarkupApply,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'Details' => $request->Details,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
@@ -157,7 +155,11 @@ class AdditionalRequirementMasterController extends Controller
                         $MarkupApply = $request->input('MarkupApply');
                         $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                         $Details = $request->input('Details');
                         $Status = $request->input('Status');
                         $AddedBy = $request->input('AddedBy');
@@ -176,8 +178,9 @@ class AdditionalRequirementMasterController extends Controller
                         $edit->ShowInProposal = $request->input('ShowInProposal');
                         $edit->TaxSlab = $request->input('TaxSlab');
                         $edit->MarkupApply = $request->input('MarkupApply');
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->Details = $request->input('Details');
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
@@ -190,10 +193,10 @@ class AdditionalRequirementMasterController extends Controller
                     }
                 }
             }
-        // }catch (\Exception $e){
-        //     call_logger("Exception Error  ===>  ". $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        // }
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
     }
 
 }
