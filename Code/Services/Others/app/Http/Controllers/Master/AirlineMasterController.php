@@ -34,8 +34,7 @@ class AirlineMasterController extends Controller
                 $arrayDataRows[] = [
                     "id" => $post->id,
                     "Name" => $post->Name,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -63,7 +62,7 @@ class AirlineMasterController extends Controller
     {
         call_logger('REQUEST COMES FROM ADD/UPDATE LEAD: '.$request->getContent());
 
-       // try{
+        try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -84,14 +83,12 @@ class AirlineMasterController extends Controller
                     $Status = $request->input('Status');
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
                     Storage::disk('public')->put($filename, $ImageData);
-
                  $savedata = AirlineMaster::create([
                     'Name' => $request->Name,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -122,18 +119,21 @@ class AirlineMasterController extends Controller
                         $Name = $request->input('Name');
                         $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                         $Status = $request->input('Status');
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
-                        $filename = uniqid() . '.png';
-    
+                        
 
-                    Storage::disk('public')->put($filename, $ImageData);
-
+                        
                         $edit->Name = $request->input('Name');
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->Status = $request->input('Status');
                         $edit->UpdatedBy = $request->input('UpdatedBy');
                         $edit->updated_at = now();
@@ -145,10 +145,10 @@ class AirlineMasterController extends Controller
                     }
                 }
             }
-        // }catch (\Exception $e){
-        //     call_logger("Exception Error  ===>  ". $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        // }
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
     }
 }
 
