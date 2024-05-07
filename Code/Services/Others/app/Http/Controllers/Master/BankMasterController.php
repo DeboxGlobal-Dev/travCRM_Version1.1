@@ -42,8 +42,7 @@ class BankMasterController extends Controller
                     "BeneficiaryName" => $post->BeneficiaryName,
                     "BranchIfsc" => $post->BranchIfsc,
                     "BranchSwiftCode" => $post->BranchSwiftCode,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "ShowHide" => $post->ShowHide,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "SetDefault" => ($post->SetDefault == 1) ? 'Yes' : 'No',
@@ -100,11 +99,9 @@ class BankMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
-
 
                  $savedata = BankMaster::create([
                     'BankName' => $request->BankName,
@@ -115,8 +112,7 @@ class BankMasterController extends Controller
                     'BeneficiaryName' => $request->BeneficiaryName,
                     'BranchIfsc' => $request->BranchIfsc,
                     'BranchSwiftCode' => $request->BranchSwiftCode,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'ShowHide' => $request->ShowHide,
                     'SetDefault' => $request->SetDefault,
                     'Status' => $request->Status,
@@ -157,17 +153,18 @@ class BankMasterController extends Controller
                         $BranchSwiftCode = $request->input('BranchSwiftCode');
                         $ImageName = $request->input('ImageName');
                         $base64Image = $request->input('ImageData');
-                        $ImageData = base64_decode($base64Image);
+                        if($base64Image!=''){
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time().'_'.$ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                         $ShowHide = $request->input('ShowHide');
                         $SetDefault = $request->input('SetDefault');
                         $Status = $request->input('Status');
                         $AddedBy = $request->input('AddedBy');
                         $UpdatedBy = $request->input('UpdatedBy');
     
-                        $filename = uniqid() . '.png';
-    
-                        // print_r($filename);die();
-                        Storage::disk('public')->put($filename, $ImageData);
+                        
                         
                         $edit->BankName = $request->input('BankName');
                         $edit->AccountNumber = $request->input('AccountNumber');
@@ -177,8 +174,9 @@ class BankMasterController extends Controller
                         $edit->BeneficiaryName = $request->input('BeneficiaryName');
                         $edit->BranchIfsc = $request->input('BranchIfsc');
                         $edit->BranchSwiftCode = $request->input('BranchSwiftCode');
-                        $edit->ImageName = $ImageName;
-                        $edit->ImageData = $filename;
+                        if($base64Image!=''){
+                            $edit->ImageName = $filename;
+                        }
                         $edit->ShowHide = $request->input('ShowHide');
                         $edit->SetDefault = $request->input('SetDefault');
                         $edit->Status = $request->input('Status');
