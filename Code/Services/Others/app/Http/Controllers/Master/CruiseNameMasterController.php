@@ -33,8 +33,7 @@ class CruiseNameMasterController extends Controller
                     "CruiseCompany" => $post->CruiseCompany,
                     "CruiseName" => $post->CruiseName,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" => asset('storage/' . $post->ImageName),
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
                 ];
@@ -57,7 +56,7 @@ class CruiseNameMasterController extends Controller
 
     public function store(Request $request)
     {
-        //try{
+        try{
             $id = $request->input('id');
             if($id == '') {
 
@@ -80,9 +79,8 @@ class CruiseNameMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
 
-                    // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
 
 
@@ -90,8 +88,7 @@ class CruiseNameMasterController extends Controller
                     'CruiseCompany' => $request->CruiseCompany,
                     'CruiseName' => $request->CruiseName,
                     'Status' => $request->Status,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
                 ]);
@@ -132,24 +129,25 @@ class CruiseNameMasterController extends Controller
                     }else{
                         if ($edit) {
                             $CruiseCompany = $request->input('CruiseCompany');
-                    $CruiseName = $request->input('CruiseName');
-                    $Status = $request->input('Status');
-                    $ImageName = $request->input('ImageName');
-                    $base64Image = $request->input('ImageData');
-                    $ImageData = base64_decode($base64Image);
-                    $AddedBy = $request->input('AddedBy');
-                    $UpdatedBy = $request->input('UpdatedBy');
+                            $CruiseName = $request->input('CruiseName');
+                            $Status = $request->input('Status');
+                            $ImageName = $request->input('ImageName');
+                            $base64Image = $request->input('ImageData');
+                           if($base64Image!=''){
+                              $ImageData = base64_decode($base64Image);
+                              $filename = time().'_'.$ImageName;
+                              Storage::disk('public')->put($filename, $ImageData);
+                            }
+                            $AddedBy = $request->input('AddedBy');
+                            $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
-
-                    // print_r($filename);die();
-                    Storage::disk('public')->put($filename, $ImageData);
-
+                   
                             $edit->CruiseCompany = $request->input('CruiseCompany');
                             $edit->CruiseName = $request->input('CruiseName');
                             $edit->Status = $request->input('Status');
-                            $edit->ImageName = $ImageName;
-                            $edit->ImageData = $filename;
+                            if($base64Image!=''){
+                                $edit->ImageName = $filename;
+                            }
                             $edit->UpdatedBy = $request->input('UpdatedBy');
                             $edit->updated_at = now();
                             $edit->save();
@@ -161,10 +159,10 @@ class CruiseNameMasterController extends Controller
                     }
                 }
             }
-        // }catch (\Exception $e){
-        //     call_logger("Exception Error  ===>  ". $e->getMessage());
-        //     return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
-        // }
+        }catch (\Exception $e){
+            call_logger("Exception Error  ===>  ". $e->getMessage());
+            return response()->json(['Status' => -1, 'Message' => 'Exception Error Found']);
+        }
     }
 
 
