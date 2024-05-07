@@ -38,13 +38,11 @@ class DriverMasterController extends Controller
                     "WhatsappNumber" => $post->WhatsappNumber,
                     "LicenseNumber" => $post->LicenseNumber,
                     "BirthDate" => $post->BirthDate,
-                    "LicenseName" => $post->LicenseName,
-                    "LicenseData" => asset('storage/' . $post->LicenseData),
+                    "LicenseName" =>  asset('storage/' . $post->LicenseData),
                     "PassportNumber" => $post->PassportNumber,
                     "Address" => $post->Address,
                     "ValidUpto" => $post->ValidUpto,
-                    "ImageName" => $post->ImageName,
-                    "ImageData" => asset('storage/' . $post->ImageData),
+                    "ImageName" =>  asset('storage/' . $post->ImageData),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -102,11 +100,13 @@ class DriverMasterController extends Controller
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
-                    $foldername = uniqid() . '.png';
+                    $filename = time().'_'.$ImageName;
+
+                    $foldername = time().'_'.$LicenseName;
 
                     // print_r($filename);die();
                     Storage::disk('public')->put($filename, $ImageData);
+
                     Storage::disk('public')->put($foldername, $LicenseData);
 
 
@@ -118,13 +118,11 @@ class DriverMasterController extends Controller
                     'WhatsappNumber' => $request->WhatsappNumber,
                     'LicenseNumber' => $request->LicenseNumber,
                     'BirthDate' => $request->BirthDate,
-                    'LicenseName' => $LicenseName,
-                    'LicenseData' => $foldername,
+                    'LicenseName' => $foldername,
                     'PassportNumber' => $request->PassportNumber,
                     'Address' => $request->Address,
                     'ValidUpto' => $request->ValidUpto,
-                    'ImageName' => $ImageName,
-                    'ImageData' => $filename,
+                    'ImageName' => $filename,
                     'Status' => $request->Status,
                     'AddedBy' => $request->AddedBy,
                     'created_at' => now(),
@@ -162,24 +160,26 @@ class DriverMasterController extends Controller
                     $BirthDate = $request->input('BirthDate');
                     $LicenseName = $request->input('LicenseName');
                     $base64License = $request->input('LicenseData');
-                    $LicenseData = base64_decode($base64License);
+                    if($base64License!=''){
+                        $LicenseData = base64_decode($base64License);
+                        $foldername = time().'_'.$LicenseName;
+                        Storage::disk('public')->put($foldername, $LicenseData);
+                    }
                     $PassportNumber = $request->input('PassportNumber');
                     $Address = $request->input('Address');
                     $ValidUpto = $request->input('ValidUpto');
                     $ImageName = $request->input('ImageName');
                     $base64Image = $request->input('ImageData');
-                    $ImageData = base64_decode($base64Image);
+                    if($base64Image!=''){
+                        $ImageData = base64_decode($base64Image);
+                        $filename = time().'_'.$ImageName;
+                        Storage::disk('public')->put($filename, $ImageData);
+                    }
                     $Status = $request->input('Status');
                     $AddedBy = $request->input('AddedBy');
                     $UpdatedBy = $request->input('UpdatedBy');
 
-                    $filename = uniqid() . '.png';
-                    $foldername = uniqid() . '.png';
-
-                    // print_r($filename);die();
-                    Storage::disk('public')->put($filename, $ImageData);
-                    Storage::disk('public')->put($foldername, $LicenseData);
-
+                   
                         
                     $edit->Country = $request->input('Country');
                     $edit->DriverName = $request->input('DriverName');
@@ -188,13 +188,11 @@ class DriverMasterController extends Controller
                     $edit->WhatsappNumber = $request->input('WhatsappNumber');
                     $edit->LicenseNumber = $request->input('LicenseNumber');
                     $edit->BirthDate = $request->input('BirthDate');
-                    $edit->LicenseName = $LicenseName;
-                    $edit->LicenseData = $foldername;
+                    $edit->LicenseName =  $foldername;
                     $edit->PassportNumber = $request->input('PassportNumber');
                     $edit->Address = $request->input('Address');
                     $edit->ValidUpto = $request->input('ValidUpto');
-                    $edit->ImageName = $ImageName;
-                    $edit->ImageData = $filename;
+                    $edit->ImageName =  $filename;
                     $edit->Status = $request->input('Status');
                     $edit->UpdatedBy = $request->input('UpdatedBy');
                     $edit->updated_at = now();
