@@ -45,7 +45,7 @@ class TourEscortMasterController extends Controller
                     "LicenseExpiry" => $post->LicenseExpiry,
                     "Destination" => $post->Destination,
                     "Language" => $post->Language,
-                    "TourEscortImageName" => asset('storage/' . $post->TourEscortImageData),
+                    "TourEscortImageName" => asset('storage/' . $post->TourEscortImageName),
                     "Supplier" => $post->Supplier,
                     "TourEscortLicenseTwo" => $post->TourEscortLicenseTwo,
                     "ContactPerson" => $post->ContactPerson,
@@ -122,7 +122,7 @@ class TourEscortMasterController extends Controller
 
                     $filename = time().'_'.$TourEscortImageName;
 
-                    Storage::disk('public')->put($filename, $TourEscortLicenseTwo);
+                    Storage::disk('public')->put($filename, $TourEscortImageData);
 
 
 
