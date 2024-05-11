@@ -38,11 +38,11 @@ class DriverMasterController extends Controller
                     "WhatsappNumber" => $post->WhatsappNumber,
                     "LicenseNumber" => $post->LicenseNumber,
                     "BirthDate" => $post->BirthDate,
-                    "LicenseName" =>  asset('storage/' . $post->LicenseData),
+                    "LicenseName" =>  asset('storage/' . $post->LicenseName),
                     "PassportNumber" => $post->PassportNumber,
                     "Address" => $post->Address,
                     "ValidUpto" => $post->ValidUpto,
-                    "ImageName" =>  asset('storage/' . $post->ImageData),
+                    "ImageName" =>  asset('storage/' . $post->ImageName),
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
@@ -152,54 +152,65 @@ class DriverMasterController extends Controller
                     if ($edit) {
 
                         $Country = $request->input('Country');
-                    $DriverName = $request->input('DriverName');
-                    $MobileNumber = $request->input('MobileNumber');
-                    $AlternateMobileNo = $request->input('AlternateMobileNo');
-                    $WhatsappNumber = $request->input('WhatsappNumber');
-                    $LicenseNumber = $request->input('LicenseNumber');
-                    $BirthDate = $request->input('BirthDate');
-                    $LicenseName = $request->input('LicenseName');
-                    $base64License = $request->input('LicenseData');
-                    if($base64License!=''){
-                        $LicenseData = base64_decode($base64License);
-                        $foldername = time().'_'.$LicenseName;
-                        Storage::disk('public')->put($foldername, $LicenseData);
-                    }
-                    $PassportNumber = $request->input('PassportNumber');
-                    $Address = $request->input('Address');
-                    $ValidUpto = $request->input('ValidUpto');
-                    $ImageName = $request->input('ImageName');
-                    $base64Image = $request->input('ImageData');
-                    if($base64Image!=''){
-                        $ImageData = base64_decode($base64Image);
-                        $filename = time().'_'.$ImageName;
-                        Storage::disk('public')->put($filename, $ImageData);
-                    }
-                    $Status = $request->input('Status');
-                    $AddedBy = $request->input('AddedBy');
-                    $UpdatedBy = $request->input('UpdatedBy');
-
-                   
+                        $DriverName = $request->input('DriverName');
+                        $MobileNumber = $request->input('MobileNumber');
+                        $AlternateMobileNo = $request->input('AlternateMobileNo');
+                        $WhatsappNumber = $request->input('WhatsappNumber');
+                        $LicenseNumber = $request->input('LicenseNumber');
+                        $BirthDate = $request->input('BirthDate');
+                        $LicenseName = $request->input('LicenseName');
+                        $base64License = $request->input('LicenseData');
+                        $foldername = '';
+                        if ($base64License != '') {
+                            $LicenseData = base64_decode($base64License);
+                            $foldername = time() . '_' . $LicenseName;
+                            Storage::disk('public')->put($foldername, $LicenseData);
+                        }
+                        $PassportNumber = $request->input('PassportNumber');
+                        $Address = $request->input('Address');
+                        $ValidUpto = $request->input('ValidUpto');
+                        $ImageName = $request->input('ImageName');
+                        $base64Image = $request->input('ImageData');
+                        $filename = '';
+                        if ($base64Image != '') {
+                            $ImageData = base64_decode($base64Image);
+                            $filename = time() . '_' . $ImageName;
+                            Storage::disk('public')->put($filename, $ImageData);
+                        }
                         
-                    $edit->Country = $request->input('Country');
-                    $edit->DriverName = $request->input('DriverName');
-                    $edit->MobileNumber = $request->input('MobileNumber');
-                    $edit->AlternateMobileNo = $request->input('AlternateMobileNo');
-                    $edit->WhatsappNumber = $request->input('WhatsappNumber');
-                    $edit->LicenseNumber = $request->input('LicenseNumber');
-                    $edit->BirthDate = $request->input('BirthDate');
-                    $edit->LicenseName =  $foldername;
-                    $edit->PassportNumber = $request->input('PassportNumber');
-                    $edit->Address = $request->input('Address');
-                    $edit->ValidUpto = $request->input('ValidUpto');
-                    $edit->ImageName =  $filename;
-                    $edit->Status = $request->input('Status');
-                    $edit->UpdatedBy = $request->input('UpdatedBy');
-                    $edit->updated_at = now();
-                    $edit->save();
-
+                        $Status = $request->input('Status');
+                        $AddedBy = $request->input('AddedBy');
+                        $UpdatedBy = $request->input('UpdatedBy');
+                        
+                        $edit->Country = $Country;
+                        $edit->DriverName = $DriverName;
+                        $edit->MobileNumber = $MobileNumber;
+                        $edit->AlternateMobileNo = $AlternateMobileNo;
+                        $edit->WhatsappNumber = $WhatsappNumber;
+                        $edit->LicenseNumber = $LicenseNumber;
+                        $edit->BirthDate = $BirthDate;
+                        $edit->PassportNumber = $PassportNumber;
+                        $edit->Address = $Address;
+                        $edit->ValidUpto = $ValidUpto;
+                        $edit->Status = $Status;
+                        $edit->UpdatedBy = $UpdatedBy;
+                        
+                        
+                        if ($base64License != '') {
+                            $edit->LicenseName = $foldername;
+                        }
+                        
+                        
+                        if ($base64Image != '') {
+                            $edit->ImageName = $filename;
+                        }
+                        
+                        
+                        $edit->updated_at = now();
+                        $edit->save();
+                        
                         return response()->json(['Status' => 1, 'Message' => 'Data updated successfully']);
-                    } else {
+                           } else {
                         return response()->json(['Status' => 0, 'Message' => 'Failed to update data. Record not found.'], 404);
                     }
                 }
