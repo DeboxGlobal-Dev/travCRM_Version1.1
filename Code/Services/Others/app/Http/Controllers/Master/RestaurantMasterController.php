@@ -54,7 +54,7 @@ class RestaurantMasterController extends Controller
                     "Phone3" => $post->Phone3,
                     "ContactEmail" => $post->ContactEmail,
                     "ImageName" => asset('storage/' . $post->ImageName),
-                    "ShowHide" => $post->ShowHide,
+                    //"ShowHide" => $post->ShowHide,
                     "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
                     "AddedBy" => $post->AddedBy,
                     "UpdatedBy" => $post->UpdatedBy,
