@@ -78,6 +78,7 @@ use App\Http\Controllers\Master\TransfermasterController;
 use App\Http\Controllers\Master\TransportMasterController;
 use App\Http\Controllers\Master\FerryPriceMasterController;
 use App\Http\Controllers\Master\FleetMasterController;
+use App\Http\Controllers\Master\ItineraryRequirementController;
 
 
 
@@ -260,6 +261,9 @@ Route::post('/addupdateferrypricemaster',[FerryPriceMasterController::class,'sto
 
 Route::post('/fleetmasterlist',[FleetMasterController::class,'index']);
 Route::post('/addupdatefleetmaster',[FleetMasterController::class,'store']);
+
+Route::post('/itineraryrequirementmasterlist',[ItineraryRequirementController::class,'index']);
+Route::post('/addupdateitineraryrequirementmaster',[ItineraryRequirementController::class,'store']);
 //===========================================END HERE========================================
 
 // ========================================Transport API ROUTE===============================
