@@ -30,6 +30,8 @@ class AdditionalRequirementMasterController extends Controller
                 $arrayDataRows[] = [
                     "id" => $post->id,
                     "Name" => $post->Name,
+                    "DestinationId" => $post->DestinationId,
+                    "CurrencyId" => $post->CurrencyId,
                     "DestinationName" => getName(_DESTINATION_MASTER_ ,$post->DestinationId),
                     "CurrencyName" => getColumnValue(_CURRENCY_MASTER_, 'id', $post->CurrencyId, 'CurrencyName'),
                     "CostType" => $post->CostType,
