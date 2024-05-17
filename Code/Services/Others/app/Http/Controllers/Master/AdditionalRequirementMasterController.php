@@ -31,7 +31,7 @@ class AdditionalRequirementMasterController extends Controller
                     "id" => $post->id,
                     "Name" => $post->Name,
                     "DestinationName" => getName(_DESTINATION_MASTER_ ,$post->DestinationId),
-                    "CurrencyName" => getName(_CURRENCY_MASTER_, $post->CurrencyId),
+                    "CurrencyName" => getColumnValue(_CURRENCY_MASTER_, 'id', $post->CurrencyId, 'CurrencyName'),
                     "CostType" => $post->CostType,
                     "ShowInProposal" => $post->ShowInProposal,
                     "TaxSlab" => $post->TaxSlab,
