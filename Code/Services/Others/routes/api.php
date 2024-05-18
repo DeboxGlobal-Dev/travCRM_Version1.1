@@ -74,6 +74,7 @@ use App\Http\Controllers\Master\BankMasterController;
 use App\Http\Controllers\Master\ItineraryOverviewController;
 use App\Http\Controllers\Master\GitController;
 use App\Http\Controllers\Master\FitController;
+//use App\Http\Controllers\Master\TransfermasterController;
 use App\Http\Controllers\Master\TransfermasterController;
 use App\Http\Controllers\Master\TransportMasterController;
 use App\Http\Controllers\Master\FerryPriceMasterController;
@@ -250,8 +251,10 @@ Route::post('/addupdatefit',[FitController::class,'store']);
 Route::post('/itineraryoverviewlist',[ItineraryOverviewController::class,'index']);
 Route::post('/addupdateitineraryoverview',[ItineraryOverviewController::class,'store']);
 
+
 Route::post('/transfermasterlist',[TransfermasterController::class,'index']);
 Route::post('/addupdatetransfermaster',[TransfermasterController::class,'store']);
+
 
 Route::post('/transportmasterlist',[TransportMasterController::class,'index']);
 Route::post('/addupdatetransportmaster',[TransportMasterController::class,'store']);
