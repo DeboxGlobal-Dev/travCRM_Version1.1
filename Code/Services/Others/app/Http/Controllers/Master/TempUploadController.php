@@ -270,7 +270,7 @@ public function store(Request $request)
         }
     ]
 }';
-
+///////test
 $template = json_decode($templateJson, true);
 //call_logger($templateJson);
 // Check if the template is properly loaded and has the "Template" key
