@@ -39,6 +39,7 @@ class CurrencyMasterController extends Controller
             
               $arrayDataRows[] = [
                   "id" => $post->id,
+                  "CountryId" => $post->CountryId,
                   "CountryName" => getName(_COUNTRY_MASTER_, $post->CountryId),
                   "CurrencyCode" => $post->CountryCode,
                   "Currencyname" => $post->CurrencyName,
