@@ -9,52 +9,72 @@ use App\Models\Master\CityMaster;
 class CityMasterController extends Controller
 {
 
-   public function index(Request $request){
+public function index(Request $request) {
+   
     $id = $request->input('Id');
-      $Search = $request->input('Search');
-      $Status = $request->input('Status');
+    $search = $request->input('Search');
+    $status = $request->input('Status');
 
-    $posts = CityMaster::when($Search, function ($query) use ($Search) {
-        return $query->where('Name', 'like', '%' . $Search . '%');
-    })->when(isset($Status), function ($query) use ($Status) {
-         return $query->where('Status',$Status);
+    
+    $postsQuery = CityMaster::when($search, function ($query) use ($search) {
+        return $query->where('Name', 'like', '%' . $search . '%');
+    })->when(isset($status), function ($query) use ($status) {
+        return $query->where('Status', $status);
     })->when($id, function ($query) use ($id) {
-        return $query->where('id',  $id );
-    })->select('*')->orderBy('Name')->get('*');
+        return $query->where('id', $id);
+    });
 
-    if ($posts->isNotEmpty()) {
-        $arrayDataRows = [];
-        foreach ($posts as $post){
-           
-            $arrayDataRows[] = [
-                "id" => $post->id,
-                "Name" => $post->Name,
-                "CountryId" => $post->CountryId,
-                "StateId" => $post->StateId,
-                "StateName" => getName(_STATE_MASTER_,$post->StateId),
-                "CountryName" => getName(_COUNTRY_MASTER_,$post->CountryId),
-                "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
-                "AddedBy" => $post->AddedBy,
-                "UpdatedBy" => $post->UpdatedBy,
-                "Created_at" => $post->created_at,
-                "Updated_at" => $post->updated_at
-            ];
+    
+    $posts = $postsQuery->select('*')->orderBy('Name')->get();
+    $totalRecord = $posts->count();
+    $arrayDataRows = [];
+    $includeStateAndCountryNames = ($search || isset($status));
+
+    foreach ($posts as $post) {
+        $dataRow = [
+            "id" => $post->id,
+            "Name" => $post->Name,
+            "CountryId" => $post->CountryId,
+            "StateId" => $post->StateId,
+            "Status" => ($post->Status == 1) ? 'Active' : 'Inactive',
+            "AddedBy" => $post->AddedBy,
+            "UpdatedBy" => $post->UpdatedBy,
+            "Created_at" => $post->created_at,
+            "Updated_at" => $post->updated_at
+        ];
+
+        if ($includeStateAndCountryNames) {
+            $dataRow["StateName"] = getName(_STATE_MASTER_, $post->StateId) ?? null;
+            $dataRow["CountryName"] = getName(_COUNTRY_MASTER_, $post->CountryId) ?? null;
         }
 
+        $arrayDataRows[] = $dataRow;
+    }
+    if ($id && !$search && !isset($status)) {
         return response()->json([
             'Status' => 0,
             'message' => '',
-            'TotalRecord' => $posts->count('id'),
+            'TotalRecord' => $totalRecord,
+            'DataList' => $arrayDataRows
+        ]);
+    }
+    if ($posts->isNotEmpty()) {
+        return response()->json([
+            'Status' => 0,
+            'message' => '',
+            'TotalRecord' => $totalRecord,
             'DataList' => $arrayDataRows
         ]);
     } else {
         return response()->json([
             "Status" => 0,
-            "TotalRecord" => $posts->count('id'),
+            "TotalRecord" => 0,
             "Message" => "No Record Found."
         ]);
     }
 }
+
+
 
     public function store(Request $request)
     {
