@@ -28,7 +28,7 @@ public function index(Request $request) {
     $posts = $postsQuery->select('*')->orderBy('Name')->get();
     $totalRecord = $posts->count();
     $arrayDataRows = [];
-    $includeStateAndCountryNames = ($search || isset($status));
+    $includeStateAndCountryNames = $request->has('Search') || $request->has('Status');
 
     foreach ($posts as $post) {
         $dataRow = [
