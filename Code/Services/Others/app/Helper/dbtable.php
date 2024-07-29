@@ -70,6 +70,7 @@ define("_BANK_MASTER_", "others.bank_master");
 define("_ITINERARY_OVERVIEW_", "others.itinerary_overview");
 define("_GIT_MASTER_", "others.git_master");
 define("_FIT_MASTER_", "others.fit_master");
+define("_EXAMPLE_API_", "others.exampleApi");
 
 define("_FERRY_SEAR_MASTER_", "others.ferry_sear_master");
 define("_FERRY_NAME_MASTER_", "others.ferry_name_master");
@@ -82,6 +83,12 @@ define("_TRANSPORT_MASTER_", "others.transport_master");
 define("_FERRY_PRICE_MASTER_", "others.ferry_price_master");
 define("_FLEET_MASTER_", "others.fleet_master");
 define("_ITINERARY_REQUIREMENT_MASTER_", "others.itinerary_requirement");
+define("_COMPANY_TYPE_MASTER_", "others.company_type_master");
+define("_CONSORTIA_MASTER_", "others.consortia_master");
+define("_NATIONALITY_MASTER_", "others.nationality_master");
+define("_ISO_MASTER_", "others.iso_master");
+define("_MARKET_TYPE_MASTER_", "others.market_type_master");
+
 
 /////////////////////////////END HERE///////////////////////////
 

@@ -80,11 +80,32 @@ use App\Http\Controllers\Master\TransportMasterController;
 use App\Http\Controllers\Master\FerryPriceMasterController;
 use App\Http\Controllers\Master\FleetMasterController;
 use App\Http\Controllers\Master\ItineraryRequirementController;
+use App\Http\Controllers\Master\ExampleController;
+use App\Http\Controllers\Master\DummyController;
+use App\Http\Controllers\Master\CompanyTypeController;
+use App\Http\Controllers\Master\ConsortiaController;
+use App\Http\Controllers\Master\NationalityMasterController;
+use App\Http\Controllers\Master\IsoMasterController;
+use App\Http\Controllers\Master\MarketTypeMasterController;
 
 
 
 
 //====================================OTHERS COMMON API ROUTE======================================
+Route::post('/examplelist',[ExampleController::class,'index']);
+Route::get('/addupdateexample',[ExampleController::class,'store']);
+
+Route::post('/isomasterlist',[IsoMasterController::class,'index']);
+
+Route::post('/markettypemasterlist',[MarketTypeMasterController::class,'index']);
+
+Route::post('/nationalitylist',[NationalityMasterController::class,'index']);
+Route::post('/addupdatenationality',[NationalityMasterController::class,'store']);
+Route::post('/deleteationality',[NationalityMasterController::class,'destroy']);
+
+Route::post('/examplelist',[DummyController::class,'index']);
+Route::post('/addupdatcurl',[DummyController::class,'makeCurlRequest']);
+
 Route::post('/amenitieslist',[AmenitiesMasterController::class,'index']);
 Route::post('/addupdateamenities',[AmenitiesMasterController::class,'store']);
 
@@ -322,6 +343,10 @@ Route::post('/addupdatevisamaster',[VisaMasterController::class,'store']);
 
 Route::post('/addpackage',[PackagesMasterController::class,'store']);
 Route::post('/packagelist',[PackagesMasterController::class,'index']);
+
+Route::post('/companytypemasterlist',[CompanyTypeController::class,'index']);
+
+Route::post('/consortiamasterlist',[ConsortiaController::class,'index']);
 
 
 
